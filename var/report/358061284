@@ -1,0 +1,7 @@
+a:5:{i:0;s:67:"Illegal scheme supplied, only alphanumeric characters are permitted";i:1;s:699:"#0 D:\phpnow\htdocs\antonmage\app\code\core\Mage\Core\Model\Store.php(712): Zend_Uri::factory('{{base_url}}')
+#1 D:\phpnow\htdocs\antonmage\app\code\core\Mage\Core\Controller\Varien\Front.php(313): Mage_Core_Model_Store->isCurrentlySecure()
+#2 D:\phpnow\htdocs\antonmage\app\code\core\Mage\Core\Controller\Varien\Front.php(161): Mage_Core_Controller_Varien_Front->_checkBaseUrl(Object(Mage_Core_Controller_Request_Http))
+#3 D:\phpnow\htdocs\antonmage\app\code\core\Mage\Core\Model\App.php(349): Mage_Core_Controller_Varien_Front->dispatch()
+#4 D:\phpnow\htdocs\antonmage\app\Mage.php(640): Mage_Core_Model_App->run(Array)
+#5 D:\phpnow\htdocs\antonmage\index.php(80): Mage::run('', 'store')
+#6 {main}";s:3:"url";s:17:"/antonmage/adminc";s:11:"script_name";s:20:"/antonmage/index.php";s:4:"skin";s:7:"default";}
