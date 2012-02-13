@@ -40,10 +40,12 @@
  */
 ?>
 <?php $_menu = $this->renderCategoriesMenuHtml(0,'level-top') ?>
-<?php if($_menu): ?>
-<div class="nav-container">
-    <ul id="nav">
-        <?php echo $_menu ?>
-    </ul>
-</div>
-<?php endif ?>
+<?php //if($_menu): ?>
+
+    <ul class="list-top-1"> 
+		<li><a href="<?php echo $this->getUrl('about-us')?>"><?php echo $this->__('About Us') ?></a></li>
+		<li><a href="<?php echo $this->getUrl('contacts')?>"><?php echo $this->__('Contact Us') ?></a></li>
+		<li><a href="<?php echo $this->getUrl('customer-service')?>"><?php echo $this->__('Customer Service') ?></a></li>
+	</ul>
+
+<?php //endif ?>

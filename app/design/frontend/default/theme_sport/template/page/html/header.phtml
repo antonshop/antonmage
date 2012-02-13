@@ -29,57 +29,19 @@
 ?>
 <div class="header-container">
     <div class="header">
-        <?php if ($this->getIsHomePage()):?>
-        <h1 class="logo"><strong><?php echo $this->getLogoAlt() ?></strong><a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo"><img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" /></a></h1>
-        <?php else:?>
-        <a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo"><strong><?php echo $this->getLogoAlt() ?></strong><img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" /></a>
-        <?php endif?>
-        <div class="quick-access">
-            <?php echo $this->getChildHtml('topSearch') ?>
-            <p class="welcome-msg"><?php echo $this->getWelcome() ?> <?php echo $this->getAdditionalHtml() ?></p>
-            <?php echo $this->getChildHtml('topLinks') ?>
-            <?php echo $this->getChildHtml('store_language') ?>
-        </div>
-        <?php echo $this->getChildHtml('topContainer'); ?>
-    </div>
-</div>
-<?php echo $this->getChildHtml('topMenu') ?>
-	<div class="header">
-    	 <div class="quick-access">
+    	<div class="quick-access">
             <div class="header-select-container">
-
-				<div class="block block-currency">
-    <div class="title-currency">
-        <strong>Select Your Currency</strong>
-    </div>
-    <div class="block-content">
-        <select name="currency" title="Select Your Currency" onchange="setLocation(this.value)">
-                    <option value="http://livedemo00.template-help.com/magento_37791/directory/currency/switch/currency/GBP/uenc/aHR0cDovL2xpdmVkZW1vMDAudGVtcGxhdGUtaGVscC5jb20vbWFnZW50b18zNzc5MS8,/">
-                British Pound Sterling - GBP            </option>
-
-                    <option value="http://livedemo00.template-help.com/magento_37791/directory/currency/switch/currency/EUR/uenc/aHR0cDovL2xpdmVkZW1vMDAudGVtcGxhdGUtaGVscC5jb20vbWFnZW50b18zNzc5MS8,/">
-                Euro - EUR            </option>
-                    <option value="http://livedemo00.template-help.com/magento_37791/directory/currency/switch/currency/USD/uenc/aHR0cDovL2xpdmVkZW1vMDAudGVtcGxhdGUtaGVscC5jb20vbWFnZW50b18zNzc5MS8,/" selected="selected">
-                US Dollar - USD            </option>
-                </select>
-    </div>
-</div>
-                            </div>
-
-            <p class="welcome-msg">Welcome to our online store! </p>
-            <ul class="links">
-                        <li class="first" ><a href="http://livedemo00.template-help.com/magento_37791/customer/account/" title="My Account" >My Account</a></li>
-                                <li ><a href="http://livedemo00.template-help.com/magento_37791/wishlist/" title="My Wishlist" >My Wishlist</a></li>
-                                <li ><a href="http://livedemo00.template-help.com/magento_37791/checkout/cart/" title="My Cart" class="top-link-cart">My Cart</a></li>
-                                <li ><a href="http://livedemo00.template-help.com/magento_37791/checkout/" title="Checkout" class="top-link-checkout">Checkout</a></li>
-
-                                <li class=" last" ><a href="http://livedemo00.template-help.com/magento_37791/customer/account/login/" title="Log In" >Log In</a></li>
-            </ul>
-  
+				<div class="block block-currency">			    
+				    <?php echo $this->getChildHtml('store_language') ?>
+				    <!--<?php echo $this->getChildHtml('topSearch') ?>-->
+				</div>
+			</div>
+			<p class="welcome-msg"><?php echo $this->getWelcome() ?> <?php echo $this->getAdditionalHtml() ?></p>
+            <?php echo $this->getChildHtml('topLinks') ?>
             <div class="block-cart-header">
         <!--<h3>Shopping Cart</h3>-->
     <div class="block-content">
-                        <p class="empty">0 items.</p>
+        <p class="empty">0 items.</p>
         <!--<p class="empty"></p>-->
         </div>
 
@@ -87,15 +49,7 @@
             <div class="clear"></div> 
         </div>
 			<div class="top-row">
-				<h1 class="logo"><strong>Magento Commerce</strong><a href="http://livedemo00.template-help.com/magento_37791/" title="Magento Commerce" class="logo"><img src="http://livedemo00.template-help.com/magento_37791/skin/frontend/default/theme272/images/logo.gif" alt="Magento Commerce" /></a></h1>
-                <ul class="list-top-1">
-					<li><a href="http://livedemo00.template-help.com/magento_37791/about-magento-demo-store/">About</a></li>
-				    <li><a href="http://livedemo00.template-help.com/magento_37791/customer-service/">Customer Service</a></li>
-				
-				    <li><a href="http://livedemo00.template-help.com/magento_37791/catalog/seo_sitemap/category/">Site Map</a></li>
-				    <li><a href="http://livedemo00.template-help.com/magento_37791/catalogsearch/term/popular/">Search Terms</a></li>
-				    <li><a href="http://livedemo00.template-help.com/magento_37791/catalogsearch/advanced/">Advanced Search </a></li>
-				    <li><a href="http://livedemo00.template-help.com/magento_37791/contacts/">Contacts</a></li>
-				</ul>      	      
+				<h1 class="logo"><strong>Magento Commerce</strong><a href="<?php echo $this->getBaseUrl();?>" title="Magento Commerce" class="logo"><img src="<?php echo $this->getSkinUrl('images/logo.gif');?>" alt="Magento Commerce" /></a></h1>   
+				<?php echo $this->getChildHtml('topMenu') ?>   	      
 				</div> 
             </div>
