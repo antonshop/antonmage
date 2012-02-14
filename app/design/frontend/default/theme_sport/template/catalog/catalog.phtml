@@ -1,0 +1,43 @@
+<?php $current_cat = $this->getCurrentCategory();?>
+<?php $current_cat = (is_object($current_cat) ? $current_cat->getName() : '');?>
+<div class="nav-container">
+<div class="block-nav">
+	<h3><strong>Categories</strong></h3>
+	<ul id="nav" class="block-content">
+	<?php $collection = $this->getStoreCategories();?>
+	 
+	<?php foreach ($collection as $_category):?>
+		<?php $i=1;?>
+	   <?php if ($_category->getName() == $current_cat) {?>
+	    <a href="<?php echo $this->getCategoryUrl($_category)?>"><?php echo $_category->getName()?><br/>
+	   <?php }else{ ?>
+	    <li class="level0 level-<?php echo $i;?> level-top"><a class="level-top" href="<?php echo $this->getCategoryUrl($_category)?>"> <?php echo $_category->getName()?></a></li>
+	   <?php }?>
+	 
+	     <?php foreach($_category->getChildren() as $_childCategory):?>
+	     	<?php $j=1;?>
+	     	<li class="level0 level-<?php echo $j;?>">
+		     <?php if ($_childCategory->getName() == $current_cat) {?>
+		      <a href="<?php echo $this->getCategoryUrl($_childCategory)?>"><?php echo $_childCategory->getName()?></a>
+		     <?php }else{ ?>
+		      <a href="<?php echo $this->getCategoryUrl($_childCategory)?>"><?php echo $_childCategory->getName()?></a>
+		     <?php }?>
+		     <?php //echo get_class($_childCategory->getChildren());//if($_childCategory->getChildren()){?>
+		 		 <ul class="level0">
+		         <?php foreach($_childCategory->getChildren() as $_cchildCategory):?>
+			         <?php if ($_cchildCategory->getName() == $current_cat) {?>
+			        	 <li><a href="<?php echo $this->getCategoryUrl($_cchildCategory)?>"><?php echo $_cchildCategory->getName()?></a></li>
+			         <?php }else{ ?>
+			        	 <li style="margin-left:10px;"><a href="<?php echo $this->getCategoryUrl($_cchildCategory)?>"><?php echo $_cchildCategory->getName()?></a></li>
+			         <?php }?>
+		         <?php endforeach?>
+		         </ul>
+	         <?php //}?>
+	         </li>
+	         <?php $j++;?>
+	    <?php endforeach?>
+	    <?php $i++;?>
+	<?php endforeach?>
+	</ul>
+</div>
+</div>

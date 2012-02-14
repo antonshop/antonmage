@@ -574,7 +574,7 @@ tr.summary-details-excluded { font-style:italic; }
 .block-cart-header .price{ font-weight:bold;}
 .block-cart-header .truncated .truncated_full_value {top:38px;}
 /******** End ***********************/
-.search-extra {width:190px; margin-left:5px; margin-right:5px; display:inline-block;}
+.search-extra {width:190px; margin-left:0px; margin-right:5px; display:inline-block;}
 #search_mini_form label {display:none;}
 .search-extra .form-search {
 	background:url(../images/search-mini-form-bg.gif) repeat-x center top #e1e1e1;
