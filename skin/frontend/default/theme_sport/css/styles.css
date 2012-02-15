@@ -495,7 +495,7 @@ tr.summary-details-excluded { font-style:italic; }
 /* Header ================================================================================ */
 .logo { float:left; }
 .header-container {position:relative; padding:0 5px 0 5px;}
-.header { padding:48px 0 31px 0; position:relative; }
+.header { padding:48px 0 10px 0; position:relative; }
 .header .logo { float:left; text-decoration:none !important; background:url(../images/logo-bg.gif) 0px 0px repeat-x; width:178px; height:41px; padding-left:11px;}
 .header .logo strong { position:absolute; top:-999em; left:-999em; width:0; height:0; font-size:0; line-height:0; text-indent:-999em; overflow:hidden; }
 .header h1.logo { margin:0; padding:0; }
@@ -2335,7 +2335,8 @@ tr.summary-details-excluded { font-style:italic; }
 /* CMS Home Page */
 
 /*=============== Home Page =====================================================*/
-.cms-home .col-main {padding:0px; width:750px; border:0px; border-radius:0; background:none; margin-top:-43px;}
+.cms-home .col-main {padding:0px; width:750px; border:0px; border-radius:0; background:none; margin:0px;}
+.home-spot{ width:730px; margin-left:20px;}
 .row-1{ width:750px; overflow:hidden; padding-bottom:10px; position:relative;}
 .cms-home  .products-grid {width:730px;}
 .cms-home .subtitle {}
