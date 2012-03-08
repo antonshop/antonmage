@@ -1,5 +1,6 @@
 <?php 
-require_once 'app/Mage.php';
+set_time_limit(0);
+/*require_once 'app/Mage.php';
    Mage::app('default');
  // $model = Mage::getModel('catalog/product'); //getting product model 
 //	$_product = $model->load(168);
@@ -20,18 +21,19 @@ require_once 'app/Mage.php';
  
         echo "----------------------------------<br/>";
     }
-	/*$options = Mage::getModel('catalog/product_option')->getProductOptionCollection($product);
+exit;*/
+
+/*$options = Mage::getModel('catalog/product_option')->getProductOptionCollection($product);
 	
 	foreach ($options as $option) {
 		$optionValue = Mage::getResourceModel('catalog/product_option_value_collection')
 		->addFieldToFilter('option_id', $option->getId())->getData();
 		$scodd[] = array($option->getPrice(),$optionValue);
 	}
-	print_r($scodd);*/
-	//foreach($_product->getOptions() as $item){
-//		print_r($item->getValues(1)->getData());
-//	}
-exit;
+	print_r($scodd);
+	foreach($_product->getOptions() as $item){
+		print_r($item->getValues(1)->getData());
+	}*/
 //   $category = Mage::getModel('catalog/category')->load(3);
 //  
 //    $productCollections = $category->getProductCollection();
@@ -197,38 +199,78 @@ function get_product_ids($tree, $category_id){
 }
 
 function put_feedlist($filename, $pids, $list_item, $google_list_item_attr){
-	global $post_content, $currency;
+	global $post_content, $currency, $title_options;
 	$replace_foundarr = array("\r",'"',"\n");
 	$replace_arr = array("",'""',"");
 	
 	$content = '';
 	$model = Mage::getModel('catalog/product'); 
+	//$pids = array(168);
 	
 	foreach($pids as $id){
 		$product = $model->load($id);
-		foreach($list_item as $key=>$item){
-			
-			if(!empty($item['value'])){
-				//$product_info[$key] = $product->$item['method']($item['value']);
-				if($item['value'] == 'fl'){
-					$content .= number_format($product->$item['method'](), 2, '.', '') . SEP;
-				}else{
-					$content .= number_format($product->$item['method'](), 2, '.', ''). $currency . SEP;
+		/* custom options */
+		if($product->getOptions()){
+			$options = array();
+			foreach ($product->getOptions() as $o) {
+				foreach ($o->getValues() as $v) {
+					if($v['price']){
+						$options[$v['option_type_id']]['price'] =$v['price'];
+						$options[$v['option_type_id']]['title'] = $v['title'];
+						$title_options = $o->getTitle();
+					}
 				}
-			}else{
-				$content .= str_replace($replace_foundarr,$replace_arr,$product->$item['method']()) . SEP;
 			}
+			//print_r($options);
+			foreach($options as $value){
+				foreach($list_item as $key=>$item){
+					if(!empty($item['value'])){
+						//$product_info[$key] = $product->$item['method']($item['value']);
+						if($item['value'] == 'fl'){
+							$content .= number_format($product->$item['method'](), 2, '.', '') . SEP;
+						}else if($item['value'] == 'pr' && floatval($product->$item['method']() > 0)){
+							/* price changed*/
+							$content .= (floatval($value['price'])+floatval($product->$item['method']())). $currency . SEP;
+						}else{
+							$content .= number_format($product->$item['method'](), 2, '.', ''). $currency . SEP;
+						}
+					}else{
+						$content .= str_replace($replace_foundarr,$replace_arr,$product->$item['method']()) . SEP;
+					}
+					
+				}
+				foreach($google_list_item_attr as $attr){
+					$content .= $product->getAttributeText($attr['title']) . SEP;
+				}
+				$content .= feedlist_fixinfo('US');
+				$content .= $post_content;
+				$content .= $value['title'].SEP."\n";
+				
+			}
+		}else{
+			foreach($list_item as $key=>$item){
+				
+				if(!empty($item['value'])){
+					//$product_info[$key] = $product->$item['method']($item['value']);
+					if($item['value'] == 'fl'){
+						$content .= number_format($product->$item['method'](), 2, '.', '') . SEP;
+					}else{
+						$content .= number_format($product->$item['method'](), 2, '.', ''). $currency . SEP;
+					}
+				}else{
+					$content .= str_replace($replace_foundarr,$replace_arr,$product->$item['method']()) . SEP;
+				}
+			}
+			foreach($google_list_item_attr as $attr){
+				$content .= $product->getAttributeText($attr['title']) . SEP;
+			}
+			$content .= feedlist_fixinfo('US');
+			$content .= $post_content."\n";
 		}
-		
-		foreach($google_list_item_attr as $value){
-			$content .= $product->getAttributeText('color') . SEP;
-		}
-		$content .= feedlist_fixinfo('US');
-		$content .= $post_content."\n";
-	}
+	}//echo 123;echo $title_options;exit;
 	//$attributes = $product->getTypeInstance(true)->getConfigurableAttributes($product);
 //	var_dump($attributes);US CH GB AU 
-	file_put_contents($filename.".txt", get_feedlist_title() . $content);
+	file_put_contents($filename.".txt", get_feedlist_title() . $title_options ."\n" . $content);
 }
 
 function feedlist_fixinfo($areacode){
@@ -253,7 +295,7 @@ function get_feedlist_title(){
 		$content .= $item['title'].SEP;
 	}
 	$content .= $post_title;
-	return $content."\n";
+	return $content;
 }
 
 $tree = load_tree();
@@ -283,7 +325,7 @@ if($pattern){
 	$post_content .= $pattern.SEP;
 	$post_title  .= "pattern".SEP;
 }
-
+$title_options = '';
 //file_put_contents('title.txt',get_feedlist_title());exit;
 
 if($filename){

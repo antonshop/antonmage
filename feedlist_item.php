@@ -56,17 +56,17 @@ $google_list_item['item_group_id'] = array(
 );
 
 
-$google_list_item_attr['size'] = array(
-	'title' => 'size',
-	'value' => 'shoes_size',
+$google_list_item_attr['color'] = array(
+	'title' => 'color',
+	'value' => 'color',
 );
 /*$google_list_item_attr = array();$google_list_item_attr['brand'] = array(
 	'title' => 'brand',
 	'value' => 'brand',
 );	
-$google_list_item_attr['color'] = array(
-	'title' => 'color',
-	'value' => 'color',
+$google_list_item_attr['size'] = array(
+	'title' => 'size',
+	'value' => 'shoes_size',
 );	
 $google_list_item_attr['gender'] = array(
 	'title' => 'gender',
