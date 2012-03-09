@@ -1,10 +1,14 @@
 <?php 
 set_time_limit(0);
 /*require_once 'app/Mage.php';
-   Mage::app('default');
+Mage::app('default');
+
+
  // $model = Mage::getModel('catalog/product'); //getting product model 
 //	$_product = $model->load(168);
 	$product = Mage::getModel('catalog/product')->load(168);
+	$cate = $product->getCategoryids();
+	print_r(Mage::getModel('catalog/category')->load($cate[0])->getName());exit;
 	$i = 1;
     echo "<pre>";
     foreach ($product->getOptions() as $o) {
@@ -85,6 +89,17 @@ define('SEP',"\t");
 	'excluded_destination' => 'excluded destination',
 	'expiration_date' => 'expiration date',
 );*/
+
+//select query  
+$read = Mage::getSingleton('core/resource')->getConnection('core_read');  
+//make connection  
+$qry = "select * FROM directory_currency_rate"; //query  
+$res = $read->fetchAll($qry); //fetch row  
+$currency_rate = array();
+foreach($res as $re){
+	$currency_rate[$re['currency_to']] = $re['rate'];
+}
+
 
 function nodeToArray(Varien_Data_Tree_Node $node)
 {
@@ -204,7 +219,7 @@ function put_feedlist($filename, $pids, $list_item, $google_list_item_attr){
 	$replace_arr = array("",'""',"");
 	
 	$content = '';
-	//$pids = array(42,43,44);
+	//$pids = array(168);
 	
 	foreach($pids as $id){
 		$model = Mage::getModel('catalog/product'); 
@@ -240,13 +255,21 @@ function put_feedlist($filename, $pids, $list_item, $google_list_item_attr){
 					if($item['title'] == 'id'){
 						$content .= $product->$item['method']()."_".$country."_".$i.SEP;
 					}else if(!empty($item['value'])){
-						//$product_info[$key] = $product->$item['method']($item['value']);
-						
-						if($item['value'] == 'fl'){
+						if($item['value'] == 'type'){
+							$cate = $product->getCategoryids();
+							
+							if(isset($cate[0]) && $cate[0]){
+								$cate_id = $cate[0];
+								$content .= Mage::getModel('catalog/category')->load($cate[0])->getName() . SEP;
+							}else{
+								$content .=  SEP;
+							}
+						}else if($item['value'] == 'fl'){
 							$content .= number_format($product->$item['method'](), 2, '.', '') . SEP;
-						}else if($item['value'] == 'pr' && floatval($product->$item['method']() > 0)){
+						}else if($item['value'] == 'pr'){
 							/* price changed*/
-							$content .= (floatval($value['price'])+floatval($product->$item['method']())). $currency . SEP;
+							$temp_price = floatval($value['price'])+floatval($product->$item['method']());
+							$content .= ($temp_price / $currency_rate[$currency]) . $currency . SEP;
 						}else{
 							$content .= number_format($product->$item['method'](), 2, '.', ''). $currency . SEP;
 						}
@@ -254,11 +277,17 @@ function put_feedlist($filename, $pids, $list_item, $google_list_item_attr){
 						$content .= str_replace($replace_foundarr,$replace_arr,$product->$item['method']()) . SEP;
 					}
 				}
-				foreach($google_list_item_attr as $attr){
-					$content .= $product->getAttributeText($attr['title']) . SEP;
-				}
 				$content .= feedlist_fixinfo($country);
 				$content .= $post_content.SEP;
+				foreach($google_list_item_attr as $attr){
+					if(empty($attr['value'])){
+						$content .= SEP;
+					}else{
+						$content .= $product->getAttributeText($attr['value']) . SEP;
+					}	
+				}
+				
+				
 				$content .= $value['title']."\n";
 				$i++;
 			}
@@ -270,7 +299,16 @@ function put_feedlist($filename, $pids, $list_item, $google_list_item_attr){
 					$content .= $product->$item['method']()."_".$country."_".$i.SEP;
 				}else if(!empty($item['value'])){
 					//$product_info[$key] = $product->$item['method']($item['value']);
-					if($item['value'] == 'fl'){
+					if($item['value'] == 'type'){
+						$cate = $product->getCategoryids();
+						
+						if(isset($cate[0]) && $cate[0]){
+							$cate_id = $cate[0];
+							$content .= Mage::getModel('catalog/category')->load($cate_id)->getName() . SEP;
+						}else{
+							$content .=  SEP;
+						}
+					}else if($item['value'] == 'fl'){
 						$content .= number_format($product->$item['method'](), 2, '.', '') . SEP;
 					}else{
 						$content .= number_format($product->$item['method'](), 2, '.', ''). $currency . SEP;
@@ -280,10 +318,15 @@ function put_feedlist($filename, $pids, $list_item, $google_list_item_attr){
 				}
 				$i++;
 			}
-			foreach($google_list_item_attr as $attr){
-				$content .= $product->getAttributeText($attr['title']) . SEP;
-			}
 			$content .= feedlist_fixinfo($country);
+			foreach($google_list_item_attr as $attr){
+				if(empty($attr['value'])){
+					$content .= SEP;
+				}else{
+					$content .= $product->getAttributeText($attr['value']) . SEP;
+				}	
+			}
+			
 			$content .= $post_content."\n";
 		}
 	}
@@ -307,14 +350,24 @@ function get_feedlist_title(){
 	foreach($google_list_item as $item){
 		$content .= $item['title'].SEP;
 	}
-	foreach($google_list_item_attr as $attr){
-		$content .= $attr['title'].SEP;
-	}
+	
 	foreach($google_list_item_fixinfo as $fixinfo){
 		$content .= $fixinfo['title'].SEP;
 	}
 	$content .= $post_title;
+	foreach($google_list_item_attr as $attr){
+		$content .= SEP.$attr['title'];
+	}
 	return $content;
+}
+
+function get_attr(){
+	global $google_list_item_attr;
+	$attr = '';
+	foreach($google_list_item_attr as $key=>$value){
+		$attr .= $key."=>".$value['value'].",";
+	}
+	return substr($attr, 0, -1);
 }
 
 $tree = load_tree();
@@ -349,6 +402,17 @@ $title_options = '';
 //file_put_contents('title.txt',get_feedlist_title());exit;
 
 if($filename){
+	$attr = explode(',',$attribute_code);
+	$attr_arr = array();
+	foreach($attr as $att){
+		$attr_arr[] = explode('=>',$att);
+	}
+	foreach($attr_arr as $val){
+		if(isset($google_list_item_attr[$val[0]])){
+			$google_list_item_attr[$val[0]]['value'] = $val[1];
+		}
+	}
+	//print_r($google_list_item_attr);exit;
 	get_product_ids($tree, $category_id);
 	sort($pids);//print_r($pids);
 	put_feedlist($filename, $pids, $google_list_item, $google_list_item_attr);
@@ -437,20 +501,12 @@ div ul li { margin:0px; padding:0px;}
         <li class="item_input"><input name="online_only" checked="checked" type="radio" value="y">yes  <input name="online_only" type="radio" value="n">
         no 商品是否只能在线购买</li>
     </ul>-->
-   <!-- <ul>
+    <ul>
     	<li class="item_title"> Attribute Code:</li>
         <li class="item_input">
-        	<textarea cols="50" rows="8" name="attribute_code" id="attribute_code">
-            brand,
-            color,
-            gender,
-            size,
-            age_group,
-            gtin,
-            mpn
-            </textarea>
+        	<textarea cols="50" rows="3" name="attribute_code" id="attribute_code"><?php echo get_attr();?></textarea>
          自定义产品属性 逗号分割</li>
-    </ul>-->
+    </ul>
     <ul>
     	<li class="item_title">&nbsp;</li>
         <li class="item_input"><input type="submit" value="submit" class="submit_but"></li>

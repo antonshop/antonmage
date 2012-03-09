@@ -31,7 +31,7 @@ $google_list_item['price'] = array(
 );                                                      
 $google_list_item['sale_price'] = array(
 	'title' => 'sale price',
-	'method' => 'getSpecialPrice',
+	'method' => 'getPrice',
 	'value' => 'pr',
 );
 /*$google_list_item['sale_price_date'] = array(
@@ -46,45 +46,45 @@ $google_list_item['shipping_weight'] = array(
 );
 $google_list_item['product_type'] = array(
 	'title' => 'product type',
-	'method' => 'getSku',
-	'value' => '',
+	'method' => '',
+	'value' => 'type',
 );
 $google_list_item['item_group_id'] = array(
 	'title' => 'item group id',
 	'method' => 'getSku',
 	'value' => '',
 );
-
+$google_list_item['mpn'] = array(
+	'title' => 'mpn',
+	'method' => 'getSku',
+	'value' => '',
+);
 
 $google_list_item_attr['color'] = array(
 	'title' => 'color',
-	'value' => 'color',
+	'value' => '',
 );
-/*$google_list_item_attr = array();$google_list_item_attr['brand'] = array(
+$google_list_item_attr['brand'] = array(
 	'title' => 'brand',
-	'value' => 'brand',
-);	
+	'value' => '',
+);
+$google_list_item_attr['age_group'] = array(
+	'title' => 'age group',
+	'value' => '',
+);		
 $google_list_item_attr['size'] = array(
 	'title' => 'size',
-	'value' => 'shoes_size',
+	'value' => '',
 );	
 $google_list_item_attr['gender'] = array(
 	'title' => 'gender',
-	'value' => 'brand',
-);	
-	
-$google_list_item_attr['age_group'] = array(
-	'title' => 'age group',
-	'value' => 'age_group',
+	'value' => '',
 );	
 $google_list_item_attr['gtin'] = array(
 	'title' => 'gtin',
-	'value' => 'gtin',
+	'value' => '',
 );	
-$google_list_item_attr['mpn'] = array(
-	'title' => 'mpn',
-	'value' => 'mpn',
-);*/	
+/**/	
 
 
 $google_list_item_fixinfo['tax'] = array(
