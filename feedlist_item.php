@@ -72,10 +72,6 @@ $google_list_item_attr['age_group'] = array(
 	'title' => 'age group',
 	'value' => '',
 );		
-$google_list_item_attr['size'] = array(
-	'title' => 'size',
-	'value' => '',
-);	
 $google_list_item_attr['gender'] = array(
 	'title' => 'gender',
 	'value' => '',
@@ -84,7 +80,10 @@ $google_list_item_attr['gtin'] = array(
 	'title' => 'gtin',
 	'value' => '',
 );	
-/**/	
+/*$google_list_item_attr['size'] = array(
+	'title' => 'size',
+	'value' => '',
+);	*/	
 
 
 $google_list_item_fixinfo['tax'] = array(

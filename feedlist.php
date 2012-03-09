@@ -93,13 +93,15 @@ define('SEP',"\t");
 //select query  
 $read = Mage::getSingleton('core/resource')->getConnection('core_read');  
 //make connection  
-$qry = "select * FROM directory_currency_rate"; //query  
+$qry = "select * FROM ".Mage::getSingleton('core/resource')->getTableName('directory_currency_rate');//query  
 $res = $read->fetchAll($qry); //fetch row  
 $currency_rate = array();
 foreach($res as $re){
 	$currency_rate[$re['currency_to']] = $re['rate'];
 }
-
+$basecurrency = $re['currency_from'];
+//print_r($currency_rate);
+//echo "*".$currency_rate['USD']."*";
 
 function nodeToArray(Varien_Data_Tree_Node $node)
 {
@@ -214,7 +216,7 @@ function get_product_ids($tree, $category_id){
 }
 
 function put_feedlist($filename, $pids, $list_item, $google_list_item_attr){
-	global $post_content, $currency, $title_options, $country;
+	global $post_content, $currency, $title_options, $country, $currency_rate;
 	$replace_foundarr = array("\r",'"',"\n");
 	$replace_arr = array("",'""',"");
 	
@@ -269,7 +271,8 @@ function put_feedlist($filename, $pids, $list_item, $google_list_item_attr){
 						}else if($item['value'] == 'pr'){
 							/* price changed*/
 							$temp_price = floatval($value['price'])+floatval($product->$item['method']());
-							$content .= ($temp_price / $currency_rate[$currency]) . $currency . SEP;
+							//echo $temp_price."**".$currency_rate['USD']."**".$currency;exit;
+							$content .= number_format($temp_price * floatval($currency_rate[$currency]),2,'.','') . $currency . SEP;
 						}else{
 							$content .= number_format($product->$item['method'](), 2, '.', ''). $currency . SEP;
 						}
@@ -310,6 +313,10 @@ function put_feedlist($filename, $pids, $list_item, $google_list_item_attr){
 						}
 					}else if($item['value'] == 'fl'){
 						$content .= number_format($product->$item['method'](), 2, '.', '') . SEP;
+					}else if($item['value'] == 'pr'){
+							/* price changed*/
+							$temp_price = floatval($value['price'])+floatval($product->$item['method']());
+							$content .= number_format($temp_price * floatval($currency_rate[$currency]),2,".","") . $currency . SEP;
 					}else{
 						$content .= number_format($product->$item['method'](), 2, '.', ''). $currency . SEP;
 					}
@@ -482,7 +489,13 @@ div ul li { margin:0px; padding:0px;}
     </ul>
     <ul>
     	<li class="item_title">currency:</li>
-        <li class="item_input"><input type="text" class="intxt" id="currency" name="currency"> 货币 ISO 4217 标准</li>
+        <li class="item_input">
+        	<select name="currency">
+            	<?php foreach($currency_rate as $key=>$rate){?>
+            	<option value="<?php echo $key;?>"<?php if($key == $basecurrency){echo ' selected="selected"';}?>><?php echo $key;?></option>
+                <?php }?>
+            </select>
+       <!-- <input type="text" class="intxt" id="currency" name="currency"> -->货币 ISO 4217 标准</li>
     </ul>
     <ul>
     	<li class="item_title">country:</li>
