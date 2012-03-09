@@ -199,33 +199,49 @@ function get_product_ids($tree, $category_id){
 }
 
 function put_feedlist($filename, $pids, $list_item, $google_list_item_attr){
-	global $post_content, $currency, $title_options;
+	global $post_content, $currency, $title_options, $country;
 	$replace_foundarr = array("\r",'"',"\n");
 	$replace_arr = array("",'""',"");
 	
 	$content = '';
-	$model = Mage::getModel('catalog/product'); 
-	//$pids = array(168);
+	//$pids = array(42,43,44);
 	
 	foreach($pids as $id){
+		$model = Mage::getModel('catalog/product'); 
 		$product = $model->load($id);
 		/* custom options */
+		
 		if($product->getOptions()){
-			$options = array();
+			if(isset($options)){				
+				unset($options);
+			}else{
+				$options = array();
+			}
+			
 			foreach ($product->getOptions() as $o) {
-				foreach ($o->getValues() as $v) {
+				$k=0;
+				$oval = $o->getValues();
+				
+				foreach ($oval as $v) {
+					//print_r($v->getData());
 					if($v['price']){
 						$options[$v['option_type_id']]['price'] =$v['price'];
 						$options[$v['option_type_id']]['title'] = $v['title'];
 						$title_options = $o->getTitle();
 					}
+					$k++;
 				}
 			}
-			//print_r($options);
+			//if($id=168){print_r($options);}
+			
+			$i=1;
 			foreach($options as $value){
 				foreach($list_item as $key=>$item){
-					if(!empty($item['value'])){
+					if($item['title'] == 'id'){
+						$content .= $product->$item['method']()."_".$country."_".$i.SEP;
+					}else if(!empty($item['value'])){
 						//$product_info[$key] = $product->$item['method']($item['value']);
+						
 						if($item['value'] == 'fl'){
 							$content .= number_format($product->$item['method'](), 2, '.', '') . SEP;
 						}else if($item['value'] == 'pr' && floatval($product->$item['method']() > 0)){
@@ -237,20 +253,22 @@ function put_feedlist($filename, $pids, $list_item, $google_list_item_attr){
 					}else{
 						$content .= str_replace($replace_foundarr,$replace_arr,$product->$item['method']()) . SEP;
 					}
-					
 				}
 				foreach($google_list_item_attr as $attr){
 					$content .= $product->getAttributeText($attr['title']) . SEP;
 				}
-				$content .= feedlist_fixinfo('US');
-				$content .= $post_content;
-				$content .= $value['title'].SEP."\n";
-				
+				$content .= feedlist_fixinfo($country);
+				$content .= $post_content.SEP;
+				$content .= $value['title']."\n";
+				$i++;
 			}
+			
 		}else{
+			$i=1;
 			foreach($list_item as $key=>$item){
-				
-				if(!empty($item['value'])){
+				if($item['title'] == 'id'){
+					$content .= $product->$item['method']()."_".$country."_".$i.SEP;
+				}else if(!empty($item['value'])){
 					//$product_info[$key] = $product->$item['method']($item['value']);
 					if($item['value'] == 'fl'){
 						$content .= number_format($product->$item['method'](), 2, '.', '') . SEP;
@@ -260,39 +278,40 @@ function put_feedlist($filename, $pids, $list_item, $google_list_item_attr){
 				}else{
 					$content .= str_replace($replace_foundarr,$replace_arr,$product->$item['method']()) . SEP;
 				}
+				$i++;
 			}
 			foreach($google_list_item_attr as $attr){
 				$content .= $product->getAttributeText($attr['title']) . SEP;
 			}
-			$content .= feedlist_fixinfo('US');
+			$content .= feedlist_fixinfo($country);
 			$content .= $post_content."\n";
 		}
-	}//echo 123;echo $title_options;exit;
-	//$attributes = $product->getTypeInstance(true)->getConfigurableAttributes($product);
+	}
 //	var_dump($attributes);US CH GB AU 
-	file_put_contents($filename.".txt", get_feedlist_title() . $title_options ."\n" . $content);
+//echo get_feedlist_title() . $title_options ."\n";
+	file_put_contents($filename.".txt", get_feedlist_title() .SEP. $title_options ."\n" . $content);
 }
 
 function feedlist_fixinfo($areacode){
 	$content = $areacode . '::0:'.SEP;
 	$content .= $areacode . ':::0'.SEP;
 	$content .= 'Product Search, Product Ads, Commerce Search'.SEP;
-	$content .= Mage::getModel('core/date')->date('Y-m-d H:i:s', strtotime('+30 day')).SEP;
+	$content .= Mage::getModel('core/date')->date('Y-m-d\TH:i:s', strtotime('+25 day')).SEP;
 	return $content;
 }
 
 
 function get_feedlist_title(){
 	global $google_list_item, $google_list_item_attr ,$google_list_item_fixinfo, $post_title;
-	$content = '';
+	$content = ''; 
 	foreach($google_list_item as $item){
 		$content .= $item['title'].SEP;
 	}
-	foreach($google_list_item_attr as $item){
-		$content .= $item['title'].SEP;
+	foreach($google_list_item_attr as $attr){
+		$content .= $attr['title'].SEP;
 	}
-	foreach($google_list_item_fixinfo as $item){
-		$content .= $item['title'].SEP;
+	foreach($google_list_item_fixinfo as $fixinfo){
+		$content .= $fixinfo['title'].SEP;
 	}
 	$content .= $post_title;
 	return $content;
@@ -310,20 +329,21 @@ $attribute_code = get_post('attribute_code');
 $condition = get_post('condition');
 $availability = get_post('availability');
 $currency = get_post('currency');
+$country = get_post('country');
 $material = get_post('material');
 $pattern = get_post('pattern');
 $online_only = get_post('online_only');
 
-$post_content = $google_product_category.SEP.$condition.SEP.$availability.SEP;
-$post_title = 'google product category'.SEP."condition".SEP."availability".SEP;
+$post_content = $google_product_category.SEP.$condition.SEP.$availability;
+$post_title = 'google product category'.SEP."condition".SEP."availability";
 
 if($material){
-	$post_content .= $material.SEP;
-	$post_title  .= "material".SEP;
+	SEP.$post_content .= $material;
+	SEP.$post_title  .= "material";
 }
 if($pattern){
-	$post_content .= $pattern.SEP;
-	$post_title  .= "pattern".SEP;
+	SEP.$post_content .= $pattern;
+	SEP.$post_title  .= "pattern";
 }
 $title_options = '';
 //file_put_contents('title.txt',get_feedlist_title());exit;
@@ -401,6 +421,10 @@ div ul li { margin:0px; padding:0px;}
         <li class="item_input"><input type="text" class="intxt" id="currency" name="currency"> 货币 ISO 4217 标准</li>
     </ul>
     <ul>
+    	<li class="item_title">country:</li>
+        <li class="item_input"><input type="text" class="intxt" id="country" name="country"> 国家编号</li>
+    </ul>
+    <ul>
     	<li class="item_title">material:</li>
         <li class="item_input"><input type="text" class="intxt" name="material" id="material"> 商品的材质</li>
     </ul>
@@ -439,6 +463,9 @@ div ul li { margin:0px; padding:0px;}
 		var filename = document.getElementById('filename');
 		var category_id = document.getElementById('category_id');
 		var google_product_category = document.getElementById('google_product_category');
+		var currency = document.getElementById("currency");
+		var country = document.getElementById("country");
+		
 		if(filename.value==''){
 			alert("Please input file name!");
 			filename.focus();
@@ -447,6 +474,16 @@ div ul li { margin:0px; padding:0px;}
 		if(google_product_category.value==''){
 			alert("Please input google product category!");
 			google_product_category.focus();
+			return false;
+		}
+		if(currency.value == ''){
+			alert("Please input currency!");
+			currency.focus();
+			return false;
+		}
+		if(country.value == ''){
+			alert("Please input country!");
+			country.focus();
 			return false;
 		}
 	}
