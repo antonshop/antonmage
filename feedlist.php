@@ -1,96 +1,11 @@
 <?php 
 set_time_limit(0);
-/*require_once 'app/Mage.php';
-Mage::app('default');
-
-
- // $model = Mage::getModel('catalog/product'); //getting product model 
-//	$_product = $model->load(168);
-	$product = Mage::getModel('catalog/product')->load(168);
-	$cate = $product->getCategoryids();
-	print_r(Mage::getModel('catalog/category')->load($cate[0])->getName());exit;
-	$i = 1;
-    echo "<pre>";
-    foreach ($product->getOptions() as $o) {
-        echo "<strong>Custom Option:" . $i . "</strong><br/>";
-        echo "Custom Option TYPE: " . $o->getType() . "<br/>";
-        echo "Custom Option TITLE: " . $o->getTitle() . "<br/>";
-        echo "Custom Option Values: <br/>";
-        // Getting Values if it has option values, case of select,dropdown,radio,multiselect
-        $values = $o->getValues();
-        foreach ($values as $v) {
-                print_r($v->getData());
-        }
-        $i++;
- 
-        echo "----------------------------------<br/>";
-    }
-exit;*/
-
-/*$options = Mage::getModel('catalog/product_option')->getProductOptionCollection($product);
-	
-	foreach ($options as $option) {
-		$optionValue = Mage::getResourceModel('catalog/product_option_value_collection')
-		->addFieldToFilter('option_id', $option->getId())->getData();
-		$scodd[] = array($option->getPrice(),$optionValue);
-	}
-	print_r($scodd);
-	foreach($_product->getOptions() as $item){
-		print_r($item->getValues(1)->getData());
-	}*/
-//   $category = Mage::getModel('catalog/category')->load(3);
-//  
-//    $productCollections = $category->getProductCollection();
-// $productCollections->addAttributeToSelect('*');
-//print_r($category->getAllChildren(1));
-//exit;
- // foreach($productCollections AS $productCollection) {
-//   print_r($productCollection->getAttributeText('brand'));
-//   echo '**' .$productCollection->getid(). '**' . $productCollection->getName();
-//      echo "<br/>";
-//   }
-//$_product = Mage::getModel('catalog/product')->load(167);
-//$id = 'getid';
-//$em = '';
-//echo '**' .$_product->$id($em). '**' . $_product->getName();
-//   exit;
 require_once "app/Mage.php";
 require_once "feedlist_item.php";
 Mage::app('default');
 define('SEP',"\t");
-/*$google_list_item = array(
-	'id' => 'id',
-	'name' => 'title',
-	'description' => 'description',
-	'google_product_category' => 'google product category',
-	'product_type' => 'product type',
-	'link' => 'link',
-	'image_link' => 'image link',
-	'a_image_link' => 'additional image link',
-	'condition' => 'condition',
-	'availability' => 'availability',
-	'price' => 'price',
-	'sale_price' => 'sale price',
-	'sale_price_date' => 'sale price effective date',
-	'brand' => 'brand',
-	'gtin' => 'gtin',
-	'mpn' => 'mpn',
-	'gender' => 'gender',
-	'age_group' => 'age group',
-	'color' => 'color',
-	'size' => 'size',
-	'material' => 'material',
-	'pattern' => 'pattern',
-	'item_group_id' => 'item group id',
-	'tax' => 'tax',
-	'shipping' => 'shipping',
-	'shipping_weight' => 'shipping weight',
-	'online_only' => 'online only',
-	'excluded_destination' => 'excluded destination',
-	'expiration_date' => 'expiration date',
-);*/
 
-//select query  
+/* currency */
 $read = Mage::getSingleton('core/resource')->getConnection('core_read');  
 //make connection  
 $qry = "select * FROM ".Mage::getSingleton('core/resource')->getTableName('directory_currency_rate');//query  
@@ -100,8 +15,6 @@ foreach($res as $re){
 	$currency_rate[$re['currency_to']] = $re['rate'];
 }
 $basecurrency = $re['currency_from'];
-//print_r($currency_rate);
-//echo "*".$currency_rate['USD']."*";
 
 function nodeToArray(Varien_Data_Tree_Node $node)
 {
@@ -121,6 +34,7 @@ function nodeToArray(Varien_Data_Tree_Node $node)
 	return $result;
 }
 
+/* category tree */
 function load_tree() {
 
 	$tree = Mage::getResourceSingleton('catalog/category_tree')
@@ -174,7 +88,7 @@ function print_tree($tree,$level) {
 	return $cate_options;
 }
 
-
+/* get category ids */
 function get_category_ids($tree){
 	
 	global $cateids;
@@ -186,12 +100,13 @@ function get_category_ids($tree){
 	}
 	return $cateids;
 }
-
+/* get sub category id */
 function get_subcate_ids($id){
 	$category = Mage::getModel('catalog/category')->load($id);
 	return $category->getAllChildren(true);
 }
 
+/* get products ids by category_id */
 function get_product_ids($tree, $category_id){
 	global $pids;
 	if($category_id){
@@ -215,19 +130,18 @@ function get_product_ids($tree, $category_id){
 	}
 }
 
+/* put file list */
 function put_feedlist($filename, $pids, $list_item, $google_list_item_attr){
 	global $post_content, $currency, $title_options, $country, $currency_rate;
-	$replace_foundarr = array("\r",'"',"\n");
-	$replace_arr = array("",'""',"");
+	$replace_foundarr = array("\r",'\t',"\n");
+	$replace_arr = array("",' ',"");
 	
 	$content = '';
-	//$pids = array(168);
 	
 	foreach($pids as $id){
 		$model = Mage::getModel('catalog/product'); 
 		$product = $model->load($id);
 		/* custom options */
-		
 		if($product->getOptions()){
 			if(isset($options)){				
 				unset($options);
@@ -249,7 +163,6 @@ function put_feedlist($filename, $pids, $list_item, $google_list_item_attr){
 					$k++;
 				}
 			}
-			//if($id=168){print_r($options);}
 			
 			$i=1;
 			foreach($options as $value){
@@ -271,7 +184,7 @@ function put_feedlist($filename, $pids, $list_item, $google_list_item_attr){
 						}else if($item['value'] == 'pr'){
 							/* price changed*/
 							$temp_price = floatval($value['price'])+floatval($product->$item['method']());
-							//echo $temp_price."**".$currency_rate['USD']."**".$currency;exit;
+							/* currency */
 							$content .= number_format($temp_price * floatval($currency_rate[$currency]),2,'.','') . $currency . SEP;
 						}else{
 							$content .= number_format($product->$item['method'](), 2, '.', ''). $currency . SEP;
@@ -301,10 +214,9 @@ function put_feedlist($filename, $pids, $list_item, $google_list_item_attr){
 				if($item['title'] == 'id'){
 					$content .= $product->$item['method']()."_".$country."_".$i.SEP;
 				}else if(!empty($item['value'])){
-					//$product_info[$key] = $product->$item['method']($item['value']);
+					/* category name */
 					if($item['value'] == 'type'){
 						$cate = $product->getCategoryids();
-						
 						if(isset($cate[0]) && $cate[0]){
 							$cate_id = $cate[0];
 							$content .= Mage::getModel('catalog/category')->load($cate_id)->getName() . SEP;
@@ -337,11 +249,10 @@ function put_feedlist($filename, $pids, $list_item, $google_list_item_attr){
 			$content .= $post_content."\n";
 		}
 	}
-//	var_dump($attributes);US CH GB AU 
-//echo get_feedlist_title() . $title_options ."\n";
+	/* txt file */
 	file_put_contents($filename.".txt", get_feedlist_title() .SEP. $title_options ."\n" . $content);
 }
-
+/* 固定信息 */
 function feedlist_fixinfo($areacode){
 	$content = $areacode . '::0:'.SEP;
 	$content .= $areacode . ':::0'.SEP;
@@ -350,7 +261,7 @@ function feedlist_fixinfo($areacode){
 	return $content;
 }
 
-
+/* feed list title */
 function get_feedlist_title(){
 	global $google_list_item, $google_list_item_attr ,$google_list_item_fixinfo, $post_title;
 	$content = ''; 
@@ -367,7 +278,7 @@ function get_feedlist_title(){
 	}
 	return $content;
 }
-
+/* 自定义属性 */
 function get_attr(){
 	global $google_list_item_attr;
 	$attr = '';
@@ -381,7 +292,7 @@ $tree = load_tree();
 $category_tree = print_tree($tree['children'],0);
 
 $pids = array();
-
+/* get post */
 $filename = get_post('filename');
 $category_id = get_post('category_id');
 $google_product_category = get_post('google_product_category');
@@ -397,6 +308,7 @@ $online_only = get_post('online_only');
 $post_content = $google_product_category.SEP.$condition.SEP.$availability;
 $post_title = 'google product category'.SEP."condition".SEP."availability";
 
+/* 可选项 */
 if($material){
 	SEP.$post_content .= $material;
 	SEP.$post_title  .= "material";
@@ -406,7 +318,6 @@ if($pattern){
 	SEP.$post_title  .= "pattern";
 }
 $title_options = '';
-//file_put_contents('title.txt',get_feedlist_title());exit;
 
 if($filename){
 	$attr = explode(',',$attribute_code);
@@ -419,9 +330,8 @@ if($filename){
 			$google_list_item_attr[$val[0]]['value'] = $val[1];
 		}
 	}
-	//print_r($google_list_item_attr);exit;
 	get_product_ids($tree, $category_id);
-	sort($pids);//print_r($pids);
+	sort($pids);
 	put_feedlist($filename, $pids, $google_list_item, $google_list_item_attr);
 }
 

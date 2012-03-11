@@ -1,0 +1,138 @@
+
+/* This is the moving lens square underneath the mouse pointer. */
+.cloud-zoom-lens {
+	border: 4px solid #888;
+	margin:-4px;	/* Set this to minus the border thickness. */
+	background-color:#fff;	
+	cursor:move;		
+}
+.product-options ul.options-list li {
+    float: left !important;
+    width: 35px !important;
+}
+.product-options ul.options-list li input{
+	position:absolute !important;
+    left: -5550px !important;
+}
+/* This is for the title text. */
+.cloud-zoom-title {
+	font-family:Arial, Helvetica, sans-serif;
+	position:absolute !important;
+	background-color:#000;
+	color:#fff;
+	padding:3px;
+	width:100%;
+	text-align:center;	
+	font-weight:bold;
+	font-size:10px;
+	top:0px;
+}
+
+/* This is the zoom window. */
+.cloud-zoom-big {
+	border:4px solid #ccc;
+	overflow:hidden;
+}
+
+/* This is the loading message. */
+.cloud-zoom-loading {
+	color:white;	
+	background:#222;
+	padding:3px;
+	border:1px solid #000;
+}
+.none
+{display:none;}
+.options-list li.selected {
+    background: none repeat scroll 0 0 #000;
+}
+.product-options ul.options-list .label
+{margin-left:0px !important;}
+.product-options ul.options-list li
+{padding:2px !important;}
+
+
+/* Horizontal Carousel */
+#horizontal_carousel {
+  float:left;
+  width: 325px;
+      padding-left: 10px;
+  height: 70px;
+  position: relative;  
+}         
+
+#horizontal_carousel .container {
+    background:none;
+    height: 70px;
+    overflow: hidden;
+    position: absolute;
+    top: 5px;
+    width: 300px;
+}            
+
+#horizontal_carousel .previous_button {
+  position: absolute;
+  top: 10px;
+  width: 12px;
+  height: 50px;
+  background: url(../../images/zoop/product-image.png) repeat scroll 45px 0 transparent;
+  z-index: 100;    
+  cursor:pointer;
+  margin-left: -10px;
+}        
+
+#horizontal_carousel .previous_button_disabled {
+  background: url(../../images/zoop/product-image.png)repeat scroll -22px 0 transparent;
+  cursor:default;
+}
+
+#horizontal_carousel .next_button {
+  position: absolute;
+  top:10px;
+  width: 12px;
+  height:50px;
+  background:url("../../images/zoop/product-image.png") no-repeat scroll -11px 0 transparent;
+  z-index: 100;
+  cursor:pointer;
+    right:5px;
+}   
+
+#horizontal_carousel .next_button_disabled {
+  background: url(../../images/zoop/product-image.png)no-repeat scroll -34px 0 transparent;
+  cursor:default;
+}
+
+#horizontal_carousel ul {
+  margin: 0;
+  padding:0;
+  width: 100000px;
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 70px;
+}                      
+
+#horizontal_carousel ul li img {
+  display:block;             
+  background:#E3EDFA;
+   margin: auto;
+}                               
+
+#horizontal_carousel ul li {
+  font-family:verdana,arial,sans-serif;
+  font-size:10px;
+}                               
+
+#horizontal_carousel ul li {
+
+    color: #E3EDFA;
+    float: left;
+	margin:0 0 5px 8px !important;
+    list-style: none outside none;
+    width:58px;
+}
+.container .selected {
+  border: 2px solid #000000 !important;
+}
+.more-views{padding: 0 8px;}
+#options-li  img{   margin: auto;}
