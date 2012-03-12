@@ -97,26 +97,4 @@ $google_list_item_fixinfo['shipping'] = array(
 	'title' => 'expiration date',
 );
 
-/*	
-	
-	$google_list_item['tax'] = array(
-	'title' => 'tax',
-	'method' => '',
-	'value' => '',
-);
-	$google_list_item['shipping'] = array(
-	'title' => 'shipping',
-	'method' => '',
-	'value' => '',
-);
-	$google_list_item['excluded_destination'] = array(
-	'title' => 'excluded destination',
-	'method' => '',
-	'value' => '',
-);
-	$google_list_item['expiration_date'] = array(
-	'title' => 'expiration date',
-	'method' => '',
-	'value' => '',
-);
-	;*/
+
