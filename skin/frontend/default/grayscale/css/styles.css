@@ -1629,14 +1629,14 @@ tr.tax-details-first td { border-top:1px solid #d2d8db; }
 /*********change by zhuo 2011/8/9********************************/
 .tag-footer{ display:block; clear:both; height:125px; margin-bottom:10px;}
 .footer .footer-links .block-content{ height:77px;}
-.tag-footer .block-tags{ float:left; width:34.5%; margin-right:12px; border:1px solid #919090;}
+.tag-footer .block-tags{ float:left; width:33%; margin-right:12px; border:1px solid #919090;}
 .tag-footer .block-tags .actions{ border:none; margin:0 5px 0 0 !important;}
 .tag-footer .block-tags .block-title, .tag-footer .block-subscribe .block-title{ border:none ;}
 .tag-footer .block-tags .tags-list{ border:none; background:none; padding:0; height:77px;}
 .tag-footer .block-tags .block-title strong{ background:none; color:#DDD; font:13px/24px Verdana, Geneva, sans-serif; border-bottom: 1px dotted #919090; text-align:left;}
 .tag-footer .block-tags .block-content{ background:none; color:#CCC !important;}
 
-.tag-footer .block-search{float:left; width:66%; margin-right:12px; border:1px solid #919090;}
+.tag-footer .block-search{float:left; width:33%; margin-right:12px; border:1px solid #919090;}
 .block-search h1{ line-height:1.7em; color:#DDD; border-bottom: 1px dotted #919090; font: 13px/26px Verdana,Geneva,sans-serif; text-transform:uppercase; text-align:left; padding-left:15px; margin:0;}
 .block-search ul{ height:102px; overflow-y:scroll; margin-bottom:5px;}
 .block-search ul li{ float:left;}

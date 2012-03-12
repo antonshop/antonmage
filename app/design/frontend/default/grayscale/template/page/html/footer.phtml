@@ -69,23 +69,7 @@
 	   		 <?php echo $this->getChildHtml('cms_footer_links') ?>
 	   </div>
 	   <div class="copyright">
-	   		&copy 360shoemall.com or its affiliates. All Rights Reserved.&nbsp;&nbsp;
-            <a class="tf_upfront_badge" href="http://www.360shoemall.com" title="TheFind Upfront" style="text-decoration:none;"><b>Nike Free Shoe Store</b> is <u>Upfront</u></a><script src="http://s20.cnzz.com/stat.php?id=3554753&web_id=3554753&show=pic" language="JavaScript"></script>
-
-              <script type="text/javascript">
-                (function() {
-                  var upfront = document.createElement('SCRIPT'); upfront.type = "text/javascript"; upfront.async = true;
-                  upfront.src = document.location.protocol + "//upfront.thefind.com/scripts/main/utils-init-ajaxlib/upfront-badgeinit.js";
-                  upfront.text = "thefind.upfront.init('tf_upfront_badge', 'ee851d934c986ab7811a3e3a2a6ec74c')";
-                  document.getElementsByTagName('HEAD')[0].appendChild(upfront);
-                })();
-              </script>
-              &nbsp; &nbsp;
-              
-            <!-- BEGIN: BizRate Medal (125x73 pixels) -->
-            <a href="http://www.bizrate.com/ratings_guide/cust_reviews__mid--252289.html" target="_blank">
-            <img src="http://medals.bizrate.com/medals/dynamic/252289_medal.gif" alt="BizRate Customer Certified (GOLD) Site - Nike Free Store Reviews at Bizrate" width="125" height="73" align="top" border="0" ></a>
-            <!-- END: BizRate Medal (125x73 pixels) -->						
+	   		<?php echo $this->getCopyright();?>
 	   </div>
     </div>
 </div>
