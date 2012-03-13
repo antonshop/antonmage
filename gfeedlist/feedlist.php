@@ -211,7 +211,7 @@ function put_feedlist($filename, $pids, $list_item, $google_list_item_attr){
 				$i++;
 			}
 			
-		}else{
+		}else{/* no custom options */
 			$i=1;
 			foreach($list_item as $key=>$item){
 				if($item['title'] == 'id'){
@@ -241,6 +241,7 @@ function put_feedlist($filename, $pids, $list_item, $google_list_item_attr){
 				$i++;
 			}
 			$content .= feedlist_fixinfo($country);
+			$content .= $post_content;
 			foreach($google_list_item_attr as $attr){
 				if(empty($attr['value'])){
 					$content .= SEP;
@@ -249,17 +250,24 @@ function put_feedlist($filename, $pids, $list_item, $google_list_item_attr){
 				}	
 			}
 			
-			$content .= $post_content."\n";
+			$content .= "\n";
 		}
 	}
+	/* custom options */
+	if($title_options){
+		$titles = get_feedlist_title() .SEP. $title_options."\n";
+	}else{
+		$titles = get_feedlist_title()."\n";
+	}
+	
 	/* txt file */
-	file_put_contents($filename.".txt", get_feedlist_title() .SEP. $title_options ."\n" . $content);
+	file_put_contents($filename.".txt", $titles  . $content);
 }
-/* 固定信息 */
+/* fix information */
 function feedlist_fixinfo($areacode){
 	$content = $areacode . '::0:'.SEP;
 	$content .= $areacode . ':::0'.SEP;
-	$content .= 'Product Search, Product Ads, Commerce Search'.SEP;
+	$content .= 'Product Ads, Commerce Search'.SEP;
 	$content .= Mage::getModel('core/date')->date('Y-m-d\TH:i:s', strtotime('+25 day')).SEP;
 	return $content;
 }

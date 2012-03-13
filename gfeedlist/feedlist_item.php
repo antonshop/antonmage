@@ -49,11 +49,11 @@ $google_list_item['product_type'] = array(
 	'method' => '',
 	'value' => 'type',
 );
-$google_list_item['item_group_id'] = array(
+/*$google_list_item['item_group_id'] = array(
 	'title' => 'item group id',
 	'method' => 'getSku',
 	'value' => '',
-);
+);*/
 $google_list_item['mpn'] = array(
 	'title' => 'mpn',
 	'method' => 'getSku',
