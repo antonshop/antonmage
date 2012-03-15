@@ -1,0 +1,141 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2009 Irubin Consulting Inc. DBA Varien (http://www.varien.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<div class="header-container">
+    <div class="header">
+        <?php if ($this->getIsHomePage()):?>
+        <h2 class="logo"><strong><?php echo $this->getLogoAlt() ?></strong><a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo"><img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" /></a></h2>
+        <?php else:?>
+        <a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo"><strong><?php echo $this->getLogoAlt() ?></strong><img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" /></a>
+        <?php endif?>
+        <div class="quick-access">
+			
+			
+			<div style=" float:left;line-height:30px; margin-left:120px; margin-top:-5px; ">
+				<span class="welcome-msg"><?php echo $this->getWelcome()?></span>
+			</div>
+            
+            <?php echo $this->getChildHtml('topLinks') ?>
+            
+        </div><div style="clear:both;"></div>
+        <?php echo $this->getChildHtml('topContainer'); ?>
+        <?php echo $this->getChildHtml('topMenu') ?>
+        <?php echo $this->getChildHtml('topSearch') ?>
+    </div>
+</div>
+
+<div class="home_page_header_block">
+<?php echo $this->getChildHtml('home_page_header_block'); ?>
+</div>
+<div id="slides">
+  
+  
+
+  <div style="overflow: hidden">
+            <div class="slides_container" style="overflow: hidden; position: relative; display: block; background: url(&quot;/img/loading.gif&quot;) no-repeat scroll 50% 50% transparent;">
+						
+                        <div class="slides_control" style="position: relative; width: 1821px; height: 327px; left: -607px;"><div style="position: absolute; top: 0px; left: 607px; z-index: 0; display: none;" class="slide ">
+                            <img class="clsbannerimg" alt="" src="http://apptha.com/demo/template/magento15/media/catalog/product/cache/18/banner/9df78eab33525d08d6e5fb8d27136e95/c/h/chocolate_and_cheest_giftbasket-banner.jpg?1331802168364">
+                <div class="banner_content clearfix"><div class="p_name">Chocolate &amp; Cheese Gift Basket</div>
+					<div class="p_des">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the...</div>
+                                        <div class="prod_price">Price:&nbsp;&nbsp;$200.00</div>
+                                        <div class="clear"></div>
+                                        <a class="clsbuynowbtn" href="http://apptha.com/demo/template/magento15/easygourmet/index.php/checkout/cart/add/uenc/aHR0cDovL2FwcHRoYS5jb20vZGVtby90ZW1wbGF0ZS9tYWdlbnRvMTUvZWFzeWdvdXJtZXQvaW5kZXgucGhwLw,,/product/95/"><img width="83" height="24" alt="Buynow" src="http://apptha.com/demo/template/magento15/skin/frontend/default/easygourmet/images/buynowbtn.jpg"></a>
+                                        
+                                        
+                                        
+					</div>
+			
+        </div><div style="position: absolute; top: 0px; left: 607px; z-index: 0; display: none;" class="slide ">
+                            <img class="clsbannerimg" alt="" src="http://apptha.com/demo/template/magento15/media/catalog/product/cache/18/banner/9df78eab33525d08d6e5fb8d27136e95/a/b/abonanza-giftbox-banner.jpg">
+                <div class="banner_content clearfix"><div class="p_name">Abbondanza Gift Box</div>
+					<div class="p_des">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the...</div>
+                                        <div class="prod_price">Price:&nbsp;&nbsp;$200.00</div>
+                                        <div class="clear"></div>
+                                        <a class="clsbuynowbtn" href="http://apptha.com/demo/template/magento15/easygourmet/index.php/checkout/cart/add/uenc/aHR0cDovL2FwcHRoYS5jb20vZGVtby90ZW1wbGF0ZS9tYWdlbnRvMTUvZWFzeWdvdXJtZXQvaW5kZXgucGhwLw,,/product/94/"><img width="83" height="24" alt="Buynow" src="http://apptha.com/demo/template/magento15/skin/frontend/default/easygourmet/images/buynowbtn.jpg"></a>
+                                        
+                                        
+                                        
+					</div>
+			
+        </div><div style="position: absolute; top: 0px; left: 607px; z-index: 5; display: block;" class="slide ">
+                            <img class="clsbannerimg" alt="" src="http://apptha.com/demo/template/magento15/media/catalog/product/cache/18/banner/9df78eab33525d08d6e5fb8d27136e95/s/k/skyscrapper-banner_1.jpg">
+                <div class="banner_content clearfix"><div class="p_name">Skyscraper Of Sweets</div>
+					<div class="p_des">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the...</div>
+                                        <div class="prod_price">Price:&nbsp;&nbsp;$200.00</div>
+                                        <div class="clear"></div>
+                                        <a class="clsbuynowbtn" href="http://apptha.com/demo/template/magento15/easygourmet/index.php/checkout/cart/add/uenc/aHR0cDovL2FwcHRoYS5jb20vZGVtby90ZW1wbGF0ZS9tYWdlbnRvMTUvZWFzeWdvdXJtZXQvaW5kZXgucGhwLw,,/product/93/"><img width="83" height="24" alt="Buynow" src="http://apptha.com/demo/template/magento15/skin/frontend/default/easygourmet/images/buynowbtn.jpg"></a>
+                                        
+                                        
+                                        
+					</div>
+			
+        </div><div style="position: absolute; top: 0px; left: 607px; z-index: 0; display: none;" class="slide ">
+                            <img class="clsbannerimg" alt="" src="http://apptha.com/demo/template/magento15/media/catalog/product/cache/18/banner/9df78eab33525d08d6e5fb8d27136e95/v/o/vosges-banner.jpg">
+                <div class="banner_content clearfix"><div class="p_name">Vosges Exotic Caramel Collecti...</div>
+					<div class="p_des">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the...</div>
+                                        <div class="prod_price">Price:&nbsp;&nbsp;$200.00</div>
+                                        <div class="clear"></div>
+                                        <a class="clsbuynowbtn" href="http://apptha.com/demo/template/magento15/easygourmet/index.php/checkout/cart/add/uenc/aHR0cDovL2FwcHRoYS5jb20vZGVtby90ZW1wbGF0ZS9tYWdlbnRvMTUvZWFzeWdvdXJtZXQvaW5kZXgucGhwLw,,/product/92/"><img width="83" height="24" alt="Buynow" src="http://apptha.com/demo/template/magento15/skin/frontend/default/easygourmet/images/buynowbtn.jpg"></a>
+                                        
+                                        
+                                        
+					</div>
+			
+        </div><div style="position: absolute; top: 0px; left: 607px; z-index: 0; display: none;" class="slide ">
+                            <img class="clsbannerimg" alt="" src="http://apptha.com/demo/template/magento15/media/catalog/product/cache/18/banner/9df78eab33525d08d6e5fb8d27136e95/g/e/german-banner.jpg">
+                <div class="banner_content clearfix"><div class="p_name">German Chocolate Brownies</div>
+					<div class="p_des">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the...</div>
+                                        <div class="prod_price">Price:&nbsp;&nbsp;$200.00</div>
+                                        <div class="clear"></div>
+                                        <a class="clsbuynowbtn" href="http://apptha.com/demo/template/magento15/easygourmet/index.php/checkout/cart/add/uenc/aHR0cDovL2FwcHRoYS5jb20vZGVtby90ZW1wbGF0ZS9tYWdlbnRvMTUvZWFzeWdvdXJtZXQvaW5kZXgucGhwLw,,/product/91/"><img width="83" height="24" alt="Buynow" src="http://apptha.com/demo/template/magento15/skin/frontend/default/easygourmet/images/buynowbtn.jpg"></a>
+                                        
+                                        
+                                        
+					</div>
+			
+        </div></div>
+                  
+						
+                        
+                  
+						
+                        
+                  
+						
+                        
+                  
+						
+                        
+                  
+					</div>
+      </div>
+	
+	
+
+        
+		
+<ul class="pagination"><li class=""><a href="#0">1</a></li><li class=""><a href="#1">2</a></li><li class="current"><a href="#2">3</a></li><li class=""><a href="#3">4</a></li><li class=""><a href="#4">5</a></li></ul></div>
