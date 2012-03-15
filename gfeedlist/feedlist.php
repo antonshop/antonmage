@@ -265,9 +265,10 @@ function put_feedlist($filename, $pids, $list_item, $google_list_item_attr){
 }
 /* fix information */
 function feedlist_fixinfo($areacode){
+	global $excluded;
 	$content = $areacode . '::0:'.SEP;
 	$content .= $areacode . ':::0'.SEP;
-	$content .= 'Product Ads, Commerce Search'.SEP;
+	$content .= $excluded.SEP;
 	$content .= Mage::getModel('core/date')->date('Y-m-d\TH:i:s', strtotime('+25 day')).SEP;
 	return $content;
 }
@@ -315,6 +316,7 @@ $country = get_post('country');
 $material = get_post('material');
 $pattern = get_post('pattern');
 $online_only = get_post('online_only');
+$excluded = get_post('excluded');
 
 $post_content = $google_product_category.SEP.$condition.SEP.$availability;
 $post_title = 'google product category'.SEP."condition".SEP."availability";
@@ -421,6 +423,10 @@ div ul li { margin:0px; padding:0px;}
     <ul>
     	<li class="item_title">country:</li>
         <li class="item_input"><input type="text" class="intxt" id="country" name="country"> 国家编号</li>
+    </ul>
+    <ul>
+    	<li class="item_title">Excluded:</li>
+        <li class="item_input"><input type="text" class="intxt" value="Product Ads, Commerce Search" id="excluded" name="excluded"> 不适用平台</li>
     </ul>
     <ul>
     	<li class="item_title">material:</li>

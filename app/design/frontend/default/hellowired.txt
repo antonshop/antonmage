@@ -1,0 +1,107 @@
+cms => page homepage
+content:
+<div class="wired-home">
+<div class="promo">{{block type="cms/block" block_id="helloslide"}}
+<div class="promo-right"><a href="http://www.365handbags.com/tag/product/list/tagId/13/" target="_blank"><img src="{{skin url='images/media/LVmenbag.jpg'}}" alt="Promotion 2" /></a></div>
+</div>
+<div class="featured-social">{{block type="catalog/product_list" category_id="132" template="catalog/product/featured.phtml"}}</div>
+<div class="latstreview">{{block type="sidebarreview/sidebarreview" name="sidebarreview.sidebarreview" alias="sidebarreview_sidebarreview" template="sidebarreview/sidebarreview.phtml"}}</div>
+</div>
+<!-- Google Website Optimizer Control Script -->
+<script type="text/javascript">// <![CDATA[
+function utmx_section(){}function utmx(){}
+(function(){var k='4252667509',d=document,l=d.location,c=d.cookie;function f(n){
+if(c){var i=c.indexOf(n+'=');if(i>-1){var j=c.indexOf(';',i);return escape(c.substring(i+n.
+length+1,j<0?c.length:j))}}}var x=f('__utmx'),xx=f('__utmxx'),h=l.hash;
+d.write('<sc'+'ript src="'+
+'http'+(l.protocol=='https:'?'s://ssl':'://www')+'.google-analytics.com'
++'/siteopt.js?v=1&utmxkey='+k+'&utmx='+(x?x:'')+'&utmxx='+(xx?xx:'')+'&utmxtime='
++new Date().valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
+'" type="text/javascript" charset="utf-8"></sc'+'ript>')})();
+// ]]></script>
+<!-- End of Google Website Optimizer Control Script --> <!-- Google Website Optimizer Tracking Script -->
+<script type="text/javascript">// <![CDATA[
+  var _gaq = _gaq || [];
+  _gaq.push(['gwo._setAccount', 'UA-25312981-1']);
+  _gaq.push(['gwo._trackPageview', '/4252667509/test']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+// ]]></script>
+<!-- End of Google Website Optimizer Tracking Script -->
+
+
+desgin: empty
+<!--<reference name="content">
+<block type="catalog/product_new" name="home.catalog.product.new" alias="product_new" template="catalog/product/new.phtml" after="cms_page"><action method="addPriceBlockType"><type>bundle</type><block>bundle/catalog_product_price</block><template>bundle/catalog/product/price.phtml</template></action></block>
+<block type="reports/product_viewed" name="home.reports.product.viewed" alias="product_viewed" template="reports/home_product_viewed.phtml" after="product_new"><action method="addPriceBlockType"><type>bundle</type><block>bundle/catalog_product_price</block><template>bundle/catalog/product/price.phtml</template></action></block>
+<block type="reports/product_compared" name="home.reports.product.compared" template="reports/home_product_compared.phtml" after="product_viewed"><action method="addPriceBlockType"><type>bundle</type><block>bundle/catalog_product_price</block><template>bundle/catalog/product/price.phtml</template></action></block>
+</reference><reference name="right">
+<action method="unsetChild"><alias>right.reports.product.viewed</alias></action>
+<action method="unsetChild"><alias>right.reports.product.compared</alias></action>
+</reference>-->
+
+
+Block Title£ºFooter Links  Identifier£ºFooterLinks
+<div id="footer">
+<div class="head">
+<div class="head2">
+<div class="head_box"><a href="http://www.facebook.com/shoebacca"><img style="border: 0pt none;" title="365handbags.com facebook" src="/media/facebook.gif" alt="" width="240" height="45" /></a></div>
+<div class="head_box"><img style="border: 0pt none;" title="365handbags.com twitter" src="/media/twitter.gif" alt="" width="240" height="45" /></div>
+<div class="head_box"><a href="http://www.youtube.com/shoebaccatv"><img style="border: 0pt none;" title="365handbags.com Youtube" src="/media/youtube.gif" alt="" width="240" height="45" /></a></div>
+<div class="head_box"><img style="float: left;" title="365handbags.com send email" src="/media/email.gif" alt="" width="60" height="45" /> 
+<table>
+<tbody>
+<tr>
+<td>
+<div class="font11" style="font-size: 10.5px; line-height: 18px;">EXCLUSIVE SALES AND COUPONS:</div>
+</td>
+</tr>
+<tr>
+<td><form action="http://www.365handbags.com/newsletter/subscriber/new/" method="post"> <input id="newsletter-footer" class="validate-email" title="you@example.com" name="email" size="18" type="text" value="you@example.com" /><input id="submit-newsletter-subscription-footer" name="submit" type="submit" value="Submit " /> </form></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="links-wrapper">
+<ul class="foot_links top">
+<li><a rel="nofollow" href="/">Home</a></li>
+<li><a rel="nofollow" href="/customer/account">My Account</a></li>
+<li><a rel="nofollow" href="/sales/order/history/">Order Status</a></li>
+<li><a href="/shipping-guide">Shipping Guide</a></li>
+<li><a href="/payment-methods">Payment Methods</a></li>
+<li><a href="/return-policy">Return Policy</a></li>
+<li><a href="/about-us">About Us</a></li>
+<li class="last"><a rel="nofollow" href="/contacts">Contact Us</a></li>
+</ul>
+</div>
+<div class="links-wrapper">
+<ul class="foot_links">
+<li><a href="/terms-of-use">Terms &amp; Conditions</a></li>
+<li><a href="/privacy-policy">Privacy Policy</a></li>
+<li><a href="/property-policy">Property Policy</a></li>
+<li><a href="/membership-policy" target="Membership Policy">Membership Policy</a></li>
+<li><a href="/catalog/seo_sitemap/category">Sitemap</a></li>
+<li class="last"><a href="/rss">RSS</a></li>
+</ul>
+</div>
+</div>
+
+Block Title£ºHelloSlide  Identifier£ºhelloslide
+<div id="slider-wrapper">
+<div id="slider">
+<div class="panel"><a href="http://www.365handbags.com/tag/product/list/tagId/15/" target="_blank"><img src="{{media url=helloslide/gucci_tote_bag.jpg}}" alt="Gucci Tote Bags" /></a></div>
+<div class="panel"><a href="http://www.365handbags.com/tag/product/list/tagId/16/" target="_blank"><img src="{{media url=helloslide/louis-vuitton-travel-bag.jpg}}" alt="Louis Vuitton Travel Bag" /></a></div>
+<div class="panel"><a href="http://www.365handbags.com/burberry-handbags.html" target="_blank"><img src="{{media url=helloslide/burberry_bag.jpg}}" alt="Burberry bags" /></a></div>
+<div id="controls">&nbsp;</div>
+</div>
+</div>
+
+Block Title£ºfoot_links  Identifier£ºfoot_links
+<p>{{block type="tag/popular" template="tag/popular.phtml"}}</p>
+<p>{{block type="catalogsearch/term" template="catalogsearch/term_footer.phtml"}}</p>
+<p>{{block type="newsletter/subscribe" name="right.newsletter.static" template="newsletter/subscribe_footer.phtml"}}</p>

@@ -1,0 +1,78 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     default_modern
+ * @copyright   Copyright (c) 2009 Irubin Consulting Inc. DBA Varien (http://www.varien.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<?php
+$_related = $this->getProduct();   // get the parent id to skip
+$_parentid = $_related->getId();
+if ($_related) {      // get collection of categories this product is associated with
+$categories =$_related->getCategoryCollection()
+->setPage(1, 1)
+->load();
+// if the product is associated with any category
+if ($categories->count())
+foreach ($categories as $_category)
+{
+$cur_category = Mage::getModel('catalog/category')->load($_category->getId());
+?>
+<div>
+<div><h4><?php echo $this->__('You may also be interested in the following product(s)') ?></h4></div>
+<table cellspacing="0" id="upsell-product-table">
+    <tr>
+    <?php
+    $visibility = array(Mage_Catalog_Model_Product_Visibility::VISIBILITY_BOTH,Mage_Catalog_Model_Product_Visibility::VISIBILITY_IN_CATALOG
+    );
+    $products = Mage::getResourceModel('catalog/product_collection')
+    ->addCategoryFilter($_category)
+    ->addAttributeToFilter('visibility', $visibility)
+    ->addAttributeToSelect('small_image');
+    $products->getSelect()->limit(8);
+    // count the number of displayed products
+    $_i=0;
+    foreach ( $products as $productModel )	   {
+    $_related = Mage::getModel('catalog/product')->load($productModel->getId());
+    $_realtedid = $_related->getId();
+    // prevents displaying the same product your are already on
+    if ($_realtedid != $_parentid && $_i<8):
+    ?>
+        <td>
+            <p><a href="<?php echo $_related->getProductUrl() ?>"><img src="<?php echo $this->helper('catalog/image')->init($_related, 'small_image')->resize(125) ?>" width="125" height="125" alt="<?php echo $this->htmlEscape($_related->getName()) ?>" /></a></p>
+            <h5><a href="<?php echo $_related->getProductUrl() ?>"><?php echo $this->htmlEscape($_related->getName()) ?></a></h5>
+            <?php echo $this->getPriceHtml($_related, true) ?>
+            <?php echo $this->getReviewsSummaryHtml($_related) ?>
+        </td>
+    <?php
+    // increment displayed products
+    $_i++;
+    endif;
+    }
+    ?>
+    </tr>
+<?php }
+}
+?>
+</table>
+<script type="text/javascript">decorateTable('upsell-product-table')</script>
+</div>

@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package>
+    <name>VS_Sidebarreview</name>
+    <version>1.0.0</version>
+    <stability>stable</stability>
+    <license uri="http://www.opensource.org/licenses/osl-3.0.php">OSL v3.0</license>
+    <channel>community</channel>
+    <extends/>
+    <summary>Enabled customer reviews to left and right sidebar.</summary>
+    <description>Enabled customer reviews to left and right sidebar.</description>
+    <notes>Enabled customer reviews to left and right sidebar.</notes>
+    <authors><author><name>virendra kumar sharma</name><user>auto-converted</user><email>bhardwajveerendra@gmail.com</email></author></authors>
+    <date>2011-07-18</date>
+    <time>11:30:12</time>
+    <contents><target name="magecommunity"><dir name="VS"><dir name="Sidebarreview"><dir name="Block"><file name="Sidebarreview.php" hash="1a586671809c4f09a59b411de6a91c98"/></dir><dir name="Helper"><file name="Data.php" hash="b5ccd0d18156d26821752a30b6701f16"/></dir><dir name="etc"><file name="config.xml" hash="171689f5f073c5e368bb9e63e3757124"/><file name="system.xml" hash="3461758ae92ff9a243dd4eb299cd2398"/></dir></dir></dir></target><target name="magedesign"><dir name="frontend"><dir name="default"><dir name="default"><dir name="layout"><file name="sidebarreview.xml" hash="42b64e2c2ba7dcec6863abd5d7d9efa6"/></dir><dir name="template"><dir name="sidebarreview"><file name="sidebarreview.phtml" hash="35b8b94818abee9691c80d13f18220fe"/></dir></dir></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="VS_Sidebarreview.xml" hash="7fd5fd506a5645c08774d158f5db7105"/></dir></target></contents>
+    <compatible/>
+    <dependencies/>
+</package>

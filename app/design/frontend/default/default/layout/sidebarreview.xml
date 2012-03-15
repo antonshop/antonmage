@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<layout version="0.1.0">
+    <default>
+	 <reference name="left">
+		<block type="sidebarreview/sidebarreview"  name="catalog.sidebarreview.left" after="-">
+		 <action method="setTemplate" ifconfig="sidebarreview/general/enabledleft">
+               <template>sidebarreview/sidebarreview.phtml</template>
+          </action>
+		</block>         	
+        </reference>
+	
+	<reference name="right">
+		<block type="sidebarreview/sidebarreview"  name="catalog.sidebarreview.right" after="-">
+		 <action method="setTemplate" ifconfig="sidebarreview/general/enabledright">
+               <template>sidebarreview/sidebarreview.phtml</template>
+          </action>
+		</block>         	
+        </reference>  
+   </default> 
+</layout>
+

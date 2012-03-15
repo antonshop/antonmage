@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package>
+    <name>Magazento_Homesellers</name>
+    <version>1.0.4</version>
+    <stability>stable</stability>
+    <license>GPL</license>
+    <channel>community</channel>
+    <extends/>
+    <summary>Organize home page in few clicks. Show best sellers,popular,new,most rated products and product reviews.</summary>
+    <description>Homepage is the main part or any website. No matter commercial or a personal, based on magento cms or without it. It's very important to show for users relevant and needful information such as new products, topsellers, toprated products. If you a shop owner you could go to magento backend and look bestsellers,toprated and other reports under the report tab. But customer can't do it.
+
+This Magento extensions shows the list of your store's best sellers, popular, new, most rated products and product reviews and displays it at you homepage. Extension allows you fully configure your frontend look from backend.</description>
+    <notes>1.0.4</notes>
+    <authors><author><name>volgodark</name><user>auto-converted</user><email>volgodark@gmail.com</email></author></authors>
+    <date>2011-08-01</date>
+    <time>10:50:26</time>
+    <contents><target name="magelocale"><dir name="en_US"><file name="Magazento_Homepage.csv" hash="d41d8cd98f00b204e9800998ecf8427e"/></dir></target><target name="magedesign"><dir name="frontend"><dir name="default"><dir name="default"><dir name="layout"><file name="magazento_homepage.xml" hash="7b244d61a84e105d831789c5e0a73b6e"/></dir><dir name="template"><dir name="magazento"><dir name="homepage"><file name="data.phtml" hash="c717afd26551c69a296486c42b633c78"/><file name="new.phtml" hash="f30b95db505c6ae76551aadaa8c792f7"/><file name="popular.phtml" hash="90995bb6f53354391ce1ec503c170428"/><file name="review.phtml" hash="6c901eb5e7b531360c1203a9cce80f15"/><file name="toprated.phtml" hash="6f18dc213d1be9c1178a8ba7014498cc"/><file name="topsell.phtml" hash="0169f023a7a91d45fae23a5b477733ef"/></dir></dir></dir></dir></dir></dir></target><target name="mageskin"><dir name="frontend"><dir name="default"><dir name="default"><dir name="magazento"><dir name="homepage"><file name="oranje475px.png" hash="dad2af309b8399cd9cfbf3f3a3540976"/><file name="promo.jpg" hash="88520d456df68c98130433b5184b8e7f"/><file name="style.css" hash="6079f1d4d0b4400c78a7313ef65e902f"/></dir></dir></dir></dir></dir></target><target name="magecommunity"><dir name="Magazento"><dir name="Homepage"><dir name="Block"><file name="Developer.php" hash="4c05f575050fc382065b9df4f99e08f9"/><file name="New.php" hash="7126d04ecfa37bed6ed4364825b4d2de"/><file name="Popular.php" hash="d6a4bbe8d9d722ef35702842d99b67a3"/><file name="Review.php" hash="3b150f0d01e514eaeae1f727a0bf44cc"/><file name="Toprated.php" hash="24a28eed699010d702e842636a870a36"/><file name="Topsell.php" hash="b4f4096b57f489d3b0d818b0bbae06fa"/></dir><dir name="etc"><file name="config.xml" hash="b54101ded19dec4ff6245825071081e8"/><file name="system.xml" hash="8bd12817342d202a9cad1a8738841b04"/></dir><dir name="Helper"><file name="Data.php" hash="a2202bd5bc733d6dacd650839e3131d8"/></dir><dir name="Model"><file name="Data.php" hash="fb3fcdccc3035c0fdc3f48e203d2403d"/></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="Magazento_Homepage.xml" hash="0400a3c20ce4f66f863d0b0f6ed989cf"/></dir></target></contents>
+    <compatible/>
+    <dependencies/>
+</package>

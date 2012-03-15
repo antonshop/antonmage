@@ -1,0 +1,300 @@
+<?php
+
+/**
+ * Product media data template
+ *
+ * @see Mage_Catalog_Block_Product_View_Media
+ */
+?>
+<?php
+    $_product = $this->getProduct();
+    $_helper = $this->helper('catalog/output');
+    
+    $_position		= Mage::getStoreConfig('magentoteam_cloudzoom/general/position');
+    $_show_title	= intval(Mage::getStoreConfig('magentoteam_cloudzoom/general/show_title'));
+    $_title_opacity	= intval(Mage::getStoreConfig('magentoteam_cloudzoom/general/title_opacity'))/100;
+    $_lens_opacity	= intval(Mage::getStoreConfig('magentoteam_cloudzoom/general/lens_opacity'))/100;
+    $_tint_color	= trim(Mage::getStoreConfig('magentoteam_cloudzoom/general/tint_color'));
+    $_tint_opacity	= intval(Mage::getStoreConfig('magentoteam_cloudzoom/general/tint_opacity'))/100;
+    $_zoom_width	= intval(Mage::getStoreConfig('magentoteam_cloudzoom/general/zoom_width'));
+    $_zoom_height	= intval(Mage::getStoreConfig('magentoteam_cloudzoom/general/zoom_height'));
+    $_big_image_width	= intval(Mage::getStoreConfig('magentoteam_cloudzoom/general/big_image_width'));
+    $_big_image_height	= intval(Mage::getStoreConfig('magentoteam_cloudzoom/general/big_image_height'));
+    
+    $config = "position:'{$_position}',showTitle:{$_show_title},titleOpacity:{$_title_opacity},lensOpacity:{$_lens_opacity},";
+    
+    if($_position == 'inside'){
+    	
+    	$config .= 'adjustX: -4, adjustY:-4,';
+    
+    }elseif($_position == 'right'){
+    	
+    	$config .= 'adjustX: 10, adjustY:-4,';
+    	
+    }elseif($_position == 'bottom'){
+    	
+    	$config .= 'adjustX: -4, adjustY:10,';
+    	
+    }
+    elseif($_position == 'left'){
+    	
+    	$config .= 'adjustX: -18, adjustY:-4,';
+    	
+    }
+    elseif($_position == 'top'){
+    	
+    	$config .= 'adjustX: -4, adjustY:-18,';
+    	
+    }
+    if($_tint_color){
+    	
+    	$config .= "tint:'{$_tint_color}', tintOpacity:{$_tint_opacity},";
+    	
+    }
+    
+    if($_zoom_width){
+    	$config .= "zoomWidth:{$_zoom_width},";
+    }
+    if($_zoom_height){
+    	$config .= "zoomHeight:{$_zoom_height},";
+    }
+    
+    $config = trim($config, ',');
+    
+?>
+
+<?php if ($_product->getImage() != 'no_selection' && $_product->getImage()): ?>
+<p class="product-image">
+	<a href='<?php echo $this->helper('catalog/image')->init($_product, 'image')->resize($_big_image_width, $_big_image_height);?>' class = 'cloud-zoom' id='zoom1' rel="<?php echo $config;?>">
+		<img src="<?php echo $this->helper('catalog/image')->init($_product, 'image')->resize(347,265);?>" alt='' title="<?php echo $this->htmlEscape($this->getImageLabel());?>" />
+	</a>
+</p>
+<?php else: ?>
+<p class="product-image">
+    <?php
+        $_img = '<img src="'.$this->helper('catalog/image')->init($_product, 'image')->resize(347,265).'" alt="'.$this->htmlEscape($this->getImageLabel()).'" title="'.$this->htmlEscape($this->getImageLabel()).'" />';
+        echo $_helper->productAttribute($_product, $_img, 'image');
+    ?>
+</p>
+<?php endif; ?>
+<?php $conutimage=0;?>
+<?php  $imglable=str_replace('_thumbnail','',$this->htmlEscape($this->getImageLabel()));?>
+<?php if (count($this->getGalleryImages()) > 0): ?>
+<div class="more-views2">
+<div class="more-views"  id="imageMenu">
+	 <div id="horizontal_carousel">
+	  <div class="previous_button"></div>  
+		<div class="container">
+			<ul>
+			<?php foreach ($this->getGalleryImages() as $_image): ?>
+			
+				<?php  $imgtitle =str_replace('_thumbnail','',$this->htmlEscape($_image->getLabel()));?>
+				<li id="<?php echo $_image->getLabel().$conutimage;?>" class="<?php echo $this->htmlEscape($_image->getLabel()) ?>  		 <?php  if($imgtitle!=$imglable&&$_GET['type']=='radio'||$_GET['type']=='checkbox'){echo "none";}?>">
+					<a  id="<?php echo $imgtitle;?>"  href='<?php echo $this->helper('catalog/image')->init($_product, 'image', $_image->getFile())->resize($_big_image_width, $_big_image_height);?>' class='cloud-zoom-gallery' title='<?php echo $imgtitle; ?>'
+					rel="useZoom: 'zoom1', smallImage: '<?php echo $this->helper('catalog/image')->init($_product, 'image', $_image->getFile())->resize(347,265);?>' ">
+					<img  src="<?php echo $this->helper('catalog/image')->init($_product, 'thumbnail', $_image->getFile())->resize(56, 56);?>" alt="<?php echo $imgtitle;?>"/>
+					</a>
+				</li>
+			<?php $conutimage++; endforeach; ?>
+			</ul>
+		   </div>
+		 <div class="next_button"></div>
+		</div>
+    <p style="clear: both;"></p>
+</div>
+</div>
+<?php endif; ?>
+
+
+
+<script type="text/javascript">
+    //<![CDATA[
+	
+	function runTest() {
+	new UI.Carousel("horizontal_carousel");
+	}
+	Event.observe(window, "load", runTest);
+jQuery(document).ready(function(){
+	jQuery(document).ready(function(){
+		jQuery('.product-links dt').click(function(){
+			jQuery('.product-links dd:visible').hide();
+			jQuery(this).next().toggle();
+		})
+	});
+	jQuery('.qty-sub').click(function(){
+		var qty = jQuery('#qty').attr('value');
+		if(qty>=2){
+			qty = parseInt(qty)-1;
+			jQuery('#qty').attr('value',qty);
+			// 更新统计信息
+			var price = jQuery('.price-box .special-price span.price').attr('value');
+			jQuery('.tongji #totalPrice').html(price*qty)
+		}
+	}) 
+	jQuery('.qty-add').click(function(){
+		var qty = jQuery('#qty').attr('value');
+		if(qty<=1000){
+			qty = parseInt(qty)+1;
+			jQuery('#qty').attr('value',qty)
+			// 更新统计信息
+			var price = jQuery('.price-box .special-price span.price').attr('value');
+			
+			jQuery('.tongji #totalPrice').html(price*qty)
+		}
+	})
+	jQuery('#qty').change(function(){
+		var qty = jQuery(this).attr('value');
+		var price = jQuery('.price-box .special-price span.price').attr('value');
+		jQuery('.tongji #totalPrice').html(price*qty)
+	})
+	jQuery('.product-selection .size-yang a').click(function(){
+		//alert('yyk')
+		var size = jQuery(this).html();
+		jQuery('#selectedSize').html(size);
+		jQuery('.product-selection .size-yang a').removeClass('current');
+		jQuery(this).addClass('current');
+		// ie中不能选定radio,手工选定
+		jQuery(this).parent().parent().siblings('.radio').attr("checked",true)
+		
+		// 更新统计信息
+		//jQuery('.tongji #selectedSize').html(size)
+	})
+	jQuery('.more-views li').mousedown( function() {
+	  jQuery('.more-views li a').removeClass('selected');
+	  var  labimageids=jQuery(this).attr("id");
+	  jQuery('#'+labimageids+' a').addClass('selected');
+	}); 
+
+	jQuery('.options-list li label img').click(function(){
+		jQuery('.options-list li').removeClass('selected');
+		jQuery('.more-views li').addClass("none");
+		jQuery(this).parents('li.options-li').addClass('selected');	
+        var  labimageid=jQuery(this).attr("id");
+		jQuery('.more-views .'+labimageid).removeClass("none");
+		// 更新统计信息
+		var color = jQuery(this).attr('value')
+		var productid = jQuery("#product-id").attr("value");
+		// ie中不能选定radio,手工选定
+		jQuery(this).parent().parent().siblings('.radio').attr("checked",true)
+		var colorArr = new Array();
+			colorArr['black'] = '黑色'
+			colorArr['chestnut'] = '栗色'
+			colorArr['chocolate'] = '巧克力色'
+			colorArr['pink'] = '粉红色'
+			colorArr['sand'] = '沙色'
+			colorArr['blue'] = 'blue'
+			colorArr['grey'] = '灰色'
+			colorArr['yellow'] = 'yellow'
+			colorArr['lilac'] = 'lilac'
+			colorArr['gold'] = '金黄色'
+			colorArr['rose'] = '玫瑰花色'
+			colorArr['green'] = '绿色'
+			colorArr['leopard'] = '豹纹'
+			colorArr['gold'] = '金黄色'
+			colorArr['red'] = '红色'
+			colorArr['purple'] = '紫色'
+			colorArr['white'] = '白色'
+			colorArr['brown'] = '棕色'
+		// 更新左侧多媒体里的信息
+		jQuery('.tongji #selectedColor').html(colorArr[color])
+		var liHtml = '';
+		// 判断颜色是否已有
+//		if(jQuery('.more-views2 ul li').is('li.'+color)){
+//			jQuery('.more-views2 ul li').hide();
+//			jQuery('.more-views2 ul li.'+color).fadeIn();
+//		}else {
+//			jQuery.getJSON('http://www.aukoala.cn/new/yang/product/pngs/',{productid:productid,color:color},function(jsonString){
+//				//alert(jsonString["pngs"][0]['label'])
+//				
+//				var jsonArray = jsonString["pngs"];
+//				var length = jsonArray.length;
+//				for(var i=0;i<length;i++){
+//					liHtml += '<li class="'+color+'"><a title="'+color+'" onclick="getPngAndJpg('+"'"+jsonArray[i]['label']+"'"+');return false;" href="#"><img height="80" width="80" src="'+jsonArray[i]['url']+'"/></a></li>'
+//				}
+//				//alert(liHtml)
+//				// 隐藏其他颜色的缩略图
+//				jQuery('.more-views2 ul li').hide();
+//				jQuery('.more-views2 ul').append(liHtml)
+//				// 显示第一张图片
+//				
+//			})
+//		}
+		showGroupImg(color);
+	})
+	jQuery('.sibling-next-yang').click(function(){ //向左走
+		var totalNum = jQuery('#sibling-num').attr('value');
+		var step = jQuery('#move-step').attr('value');
+		step = parseInt(step);
+		totalNum = parseInt(totalNum);
+		var len = step*110;
+		if(totalNum>3&&(totalNum-step)>3){
+		    var len2 = -(len+110)
+		    jQuery('#move-step').attr('value',step+1);
+			jQuery('.sibling-links').animate({'left':len2});
+			//同时激活向左走
+			jQuery('.disabled-prev').addClass('siblings-prev');
+			jQuery('.disabled-prev').removeClass('disabled-prev');
+			if((totalNum-step)==4){
+				jQuery('.sibling-next-yang').addClass('disabled-next');
+				jQuery('.sibling-next-yang').removeClass('siblings-next');
+			}
+		}
+		
+		return false;
+	})
+	jQuery('.sibling-prev-yang').click(function(){
+		
+		var totalNum = jQuery('#sibling-num').attr('value');
+		var step = jQuery('#move-step').attr('value');
+		step = parseInt(step);
+		totalNum = parseInt(totalNum);
+		var len = step*110;
+		//alert(step)
+		if(step>=1){ //只要step>0说明可以移动
+			var len2 = parseInt(-len+110)
+		    jQuery('#move-step').attr('value',step-1);
+			jQuery('.sibling-links').animate({'left':len2});
+			jQuery('.sibling-next-yang').removeClass('disabled-next');
+			jQuery('.sibling-next-yang').addClass('siblings-next');
+			if(step==1){
+				//切换CSS
+				jQuery('.siblings-prev').addClass('disabled-prev');
+				jQuery('.siblings-prev').removeClass('siblings-prev');
+			}
+		}
+		return false;
+	})
+});
+function getPngAndJpg(label){
+	var label = label;
+	var productid = jQuery("#product-id").attr("value");
+	jQuery.getJSON('http://www.aukoala.cn/new/yang/product/jpgpng/',{label:label,productid:productid},function(jsonString){
+		var pngUrl = jsonString['png']
+		var jpgUrl = jsonString['jpg']
+		//alert(pngUrl)
+		jQuery('#zoom').attr('href',jpgUrl);
+		jQuery('#zoom img').attr('src',pngUrl);
+		jSelectImage(pngUrl,jpgUrl);
+	})
+}
+function popupYang(contentTitle)
+{
+	if(contentTitle=='chart'){
+		jQuery('.popup-chart-yang').fadeIn('normal');
+	}
+	if(contentTitle=='care'){
+		jQuery('.popup-care-yang').fadeIn('normal');
+	}
+	
+}
+function popupCloseChart(){
+	jQuery('.popup-chart-yang').fadeOut();	
+}
+function popupCloseCare(){
+	jQuery('.popup-care-yang').fadeOut();
+}function showGroupImg(color){
+
+ jQuery('.'+color+'_thumbnail>a').eq(0).click();
+ } 
+    //]]>
+	</script>

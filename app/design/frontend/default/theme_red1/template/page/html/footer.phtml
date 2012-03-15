@@ -1,0 +1,79 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2009 Irubin Consulting Inc. DBA Varien (http://www.varien.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<div class="footer-container">
+	<div class="community-block">
+	   		<ul>
+				<li class="community-title">JOIN OUR COMMUNITY:</li>
+				<li class="i-blog"><a href="<?php echo Mage::getBaseUrl('web');?>" target="_blank"><img src="<?php echo Mage::getBaseUrl('media');?>myblog.png" alt="My Blog"></a></li>
+				<li class="i-twitter"><a href="<?php echo Mage::getBaseUrl('web');?>" target="_blank"><img src="<?php echo Mage::getBaseUrl('media');?>twitter.png" alt="My Twitter"></a></li>
+				<li class="i-facebook"><a href="http://www.facebook.com" target="_blank"><img src="<?php echo Mage::getBaseUrl('media');?>facebook.png" alt="My Facebook"></a></li>
+				<li class="i-youtube"><a href="http://www.youtube.com" target="_blank"><img src="<?php echo Mage::getBaseUrl('media');?>youtube.png" alt="My YouTube"></a></li>
+			</ul>
+	   </div>
+    <div class="footer">
+		<div class="footer_block">
+			   <dl>
+					<dt>Company Info</dt>
+					<dd><a href="<?php echo Mage::getBaseUrl('web');?>about-us" target="_blank">About Us</a></dd>
+					<dd><a href="<?php echo Mage::getBaseUrl('web');?>our-guarantee" target="_blank">Our Guarantee</a></dd>
+					<dd><a href="<?php echo Mage::getBaseUrl('web');?>rss" target="_blank">RSS</a></dd>
+					<dd><a href="<?php echo Mage::getBaseUrl('web');?>catalog/seo_sitemap/category/" target="_blank">Sitemap</a></dd>
+			   </dl>
+			   <dl>
+					<dt>Customer Service</dt>
+					<dd><a href="<?php echo Mage::getBaseUrl('web');?>contact-us" target="_blank">Contact Us</a></dd>
+					<dd><a href="http://settings.messenger.live.com/Conversation/IMMe.aspx?invitee=shopping.west@hotmail.com" target="_blank">Live Help</a></dd>
+					<dd><a href="<?php echo Mage::getBaseUrl('web');?>size-help" target="_blank">Size Help</a></dd>
+					<dd><a href="<?php echo Mage::getBaseUrl('web');?>catalogsearch/term/popular/" target="_blank">Search Terms</a></dd>
+			   </dl>
+			   <dl>
+					<dt>Payment & Shipping</dt>
+					<dd><a href="<?php echo Mage::getBaseUrl('web');?>payment-methods" target="_blank">Payment Methods</a></dd>
+					<dd><a href="<?php echo Mage::getBaseUrl('web');?>shipping-guide" target="_blank">Shipping Guide</a></dd>
+					<dd><a href="<?php echo Mage::getBaseUrl('web');?>locations-we-ship-to" target="_blank">Locations We Ship To</a></dd>
+					<dd><a href="<?php echo Mage::getBaseUrl('web');?>return-policy" target="_blank">Return Policy</a></dd>
+			   </dl>
+			   <dl>
+					<dt>Company Policies</dt>
+					<dd><a href="<?php echo Mage::getBaseUrl('web');?>privacy-policy" target="_blank">Privacy Policy </a></dd>
+					<dd><a href="<?php echo Mage::getBaseUrl('web');?>term-of-use-intellectual" target="_blank">Terms of Use Intellectual </a></dd>
+					<dd><a href="<?php echo Mage::getBaseUrl('web');?>intellectual-property-policy" target="_blank">Intellectual Property Policy</a></dd>
+					<dd><a href="<?php echo Mage::getBaseUrl('web');?>membership-policy" target="_blank">Membership Policy</a></dd>
+			   </dl>
+		</div>
+       <div class="tag-footer">
+	   		 <?php echo $this->getChildHtml('cms_footer_links') ?>
+	   </div>
+	   <div class="copyright">
+	   		<?php echo $this->getCopyright();?>
+	   </div>
+    </div>
+</div>
+<?php
+global $dc_script;
+if(isset($dc_script)) echo $dc_script;
+?>
