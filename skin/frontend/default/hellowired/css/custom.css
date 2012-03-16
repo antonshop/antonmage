@@ -135,3 +135,4 @@ ol#controls li a:focus, #prevBtn a:focus, #nextBtn a:focus { outline:none; }
 .jcarousel-skin-tango .jcarousel-prev-vertical:hover { background-position: 0 -32px; }
 .jcarousel-skin-tango .jcarousel-prev-vertical:active { background-position: 0 -64px; }
 .jcarousel-skin-tango .jcarousel-prev-disabled-vertical, .jcarousel-skin-tango .jcarousel-prev-disabled-vertical:hover, .jcarousel-skin-tango .jcarousel-prev-disabled-vertical:active { cursor: default; background-position: 0 -96px; }
+

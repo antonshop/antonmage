@@ -27,7 +27,7 @@
 
 
 /*** slider css ***/
-#slides {position:relative;	z-index:100;float:left;}
+#slides {position:relative;	float:left;}
 .slides_container {	width:607px;overflow:hidden;position:relative;}
 .slides_container div.slide {width:607px;height:327px;display:block;}
 .pagination {position:absolute;top:300px;right:0px;background: url("../images/paginationbg.jpg") 0 0 repeat-x;z-index:1000;height:20px;border:1px solid #B8B8B8;border-radius:5px;padding: 0 8px;}

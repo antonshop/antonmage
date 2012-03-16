@@ -66,7 +66,7 @@ $google_list_item_attr['color'] = array(
 );
 $google_list_item_attr['brand'] = array(
 	'title' => 'brand',
-	'value' => '',
+	'value' => 'brand',
 );
 $google_list_item_attr['age_group'] = array(
 	'title' => 'age group',

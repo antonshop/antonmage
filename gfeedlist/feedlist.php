@@ -202,10 +202,9 @@ function put_feedlist($filename, $pids, $list_item, $google_list_item_attr){
 					if(empty($attr['value'])){
 						$content .= SEP;
 					}else{
-						$content .= $product->getAttributeText($attr['value']) . SEP;
+						$content .= $product->getData($attr['value']) . SEP;
 					}	
 				}
-				
 				
 				$content .= $value['title']."\n";
 				$i++;
@@ -246,7 +245,7 @@ function put_feedlist($filename, $pids, $list_item, $google_list_item_attr){
 				if(empty($attr['value'])){
 					$content .= SEP;
 				}else{
-					$content .= $product->getAttributeText($attr['value']) . SEP;
+					$content .= SEP . $product->getData($attr['value']) ;
 				}	
 			}
 			
@@ -280,7 +279,6 @@ function get_feedlist_title(){
 	foreach($google_list_item as $item){
 		$content .= $item['title'].SEP;
 	}
-	
 	foreach($google_list_item_fixinfo as $fixinfo){
 		$content .= $fixinfo['title'].SEP;
 	}

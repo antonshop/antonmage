@@ -20,27 +20,29 @@
  *
  * @category    design
  * @package     base_default
- * @copyright   Copyright (c) 2009 Irubin Consulting Inc. DBA Varien (http://www.varien.com)
+ * @copyright   Copyright (c) 2011 Magento Inc. (http://www.magentocommerce.com)
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
 ?>
 <?php
 /**
- * Top menu for store
+ * Shopping cart totals template
  *
- * @see Mage_Catalog_Block_Navigation
+ * @see Mage_Checkout_Block_Cart_Totals
+ * @var $this Mage_Checkout_Block_Cart_Totals
  */
 ?>
-<?php $_menu = ''?>
-<?php foreach ($this->getStoreCategories() as $_category): ?>
-    <?php $_menu .= $this->drawItem($_category) ?>
-<?php endforeach ?>
-<?php if ($_menu): ?>
-
-    <ul id="nav">
-        <li><a href="<?php echo $this->getUrl('') ?>"><?php echo $this->__('Home'); ?></a></li>
-        <?php echo $_menu; ?>
-    </ul>
-
+<?php if ($this->canApplyMsrp()): ?>
+    <div class="cart-msrp-totals"><?php echo $this->__('ORDER TOTAL WILL BE DISPLAYED BEFORE YOU SUBMIT THE ORDER'); ?></div>
+<?php else: ?>
+    <table id="shopping-cart-totals-table">
+        <col />
+        <col width="1" />
+        <tfoot>
+            <?php echo $this->renderTotals('footer'); ?>
+        </tfoot>
+        <tbody>
+            <?php echo $this->renderTotals(); ?>
+        </tbody>
+    </table>
 <?php endif; ?>
-

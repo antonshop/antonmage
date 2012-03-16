@@ -120,8 +120,8 @@ ul,ol         { list-style:none; }
 .col3-layout .col-wrapper .col-main { float:right; }
 
 /* Content Columns */
-.col2-set .col-1 { float:left; width:48.5%; }
-.col2-set .col-2 { float:right; width:48.5%; }
+.col2-set .col-1 { float:right; width:48.5%; }
+.col2-set .col-2 { float:left; width:48.5%; }
 .col2-set .col-narrow { width:32%; }
 .col2-set .col-wide { width:65%; }
 
@@ -224,7 +224,7 @@ p.control input.radio { margin-right:6px; }
 .block-cart .actions .paypal-logo .paypal-or { clear:both; display:block; padding:0 55px 8px 0; }
 
 /* Mini Products List */
-.mini-products-list .product-image { float:left; width:50px; border:1px solid #a9a9a9; }
+.mini-products-list .product-image { float:left; width:80px; border:1px solid #a9a9a9; margin-right:5px; }
 .mini-products-list .product-details { margin-left:60px; }
 /* Regular price */
 .regular-price { }
@@ -243,16 +243,18 @@ p.control input.radio { margin-right:6px; }
 .special-price .price { font-size:13px; font-weight:bold;  }
 
 /********** < Navigation */
-.nav-container { float:left;background: url("../images/sprite_nav.png") 0 0 no-repeat;width:650px;height:60px;}
-#nav { width:647px;  font-size:13px; }
+.nav-container { float:left;background: url("../images/sprite_nav.png") 0 0 no-repeat;width:1000px;height:60px;}
+#nav { width:770px; float:left; font-size:13px; }
+.nav_search{ float:left; width:195px; text-align:left;}
 
 /* All Levels */ /* Style consistent throughout all nav levels */
 #nav li { position:relative; text-align:left; }
+#nav ul li ul {z-index:998; }
 #nav li.over,#nav li.active { z-index:998;background:url("../images/menuhoverbg.jpg") repeat-x }
 #nav a,
-#nav a:hover { display:block; line-height:1.3em; text-decoration:none; }
+#nav a:hover {z-index:998; display:block; line-height:1.3em; text-decoration:none; }
 #nav span { display:block; cursor:pointer; white-space:nowrap; }
-#nav li ul span {white-space:normal; }
+#nav li ul span {z-index:998;white-space:normal; }
 #nav ul li.parent a { background:url("../images/bkg_nav2.gif") 100% 100% no-repeat; }
 #nav ul li.parent li a { background-image:none; }
 
@@ -526,3 +528,11 @@ h2.clstitle{font-size:18px;color:#7A2120;text-transform: uppercase;font-family:G
 .footer .footersocial ul li:first-child { background: none ;padding-right:20px; }
 .footer .footersocial ul li:last-child { padding:0px;}
 .footer .footersocial  h3{font-family: 'Georgia',arial;font-size: 14px;color:#63071D;text-align: left;text-transform: uppercase;padding:0 0 5px 0;}
+
+
+//
+.block-cart{ line-height:22px;}
+.block-cart .summary { text-align:center; line-height:28px;}
+.block .block-subtitle { text-align:center; line-height:28px;}
+.copyright{ line-height:28px;}
+
