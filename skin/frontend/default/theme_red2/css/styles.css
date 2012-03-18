@@ -953,12 +953,12 @@ tr.summary-details-excluded { font-style:italic; }
 }
 #crosssell-products-list .clsprice_details{float:right}
 .cart .crosssell .item {
-   padding: 65px 21px 20px 19px;
-width: 209px;
+   padding: 45px 11px 10px 10px;
+width: 190px;
 display: inline;
 float: left;
 position: relative;
-background: url(../images/bannerborder.jpg) repeat-y 100% 0;
+/*background: url(../images/bannerborder.jpg) repeat-y 100% 0;*/
 
 }
 .cart .crosssell .item .button {
@@ -967,7 +967,7 @@ background: url(../images/bannerborder.jpg) repeat-y 100% 0;
 }
 .cart .crosssell .product-image {
     float: left;
-    margin: 3px -90px 0 0;
+    margin: 3px 0px 0 0;
 }
 .cart .crosssell .product-shop {
     margin-left: 90px;
@@ -989,7 +989,7 @@ background: url(../images/bannerborder.jpg) repeat-y 100% 0;
     width: 305px;
 	text-align:right;
 }
-.cart-collaterals .col2-set{ float:left; text-align:left; widows:350px;}
+.cart-collaterals .col2-set{ float:left; text-align:left; width:67%;}
 .cart .totals table {
     width: 100%;
 }

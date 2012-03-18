@@ -319,7 +319,7 @@ p.control input.radio { margin-right:6px; }
 .products-grid li h3 .regular-price .price,.products-grid li h3 .old-price .price,.products-grid li h3 .special-price .price,#crosssell-products-list li h3 .old-price .price,#crosssell-products-list li h3 .special-price .price,.products-grid .price-box .old-price .price,.products-grid .price-box .special-price .price{color: #4D4A3F;font: 100 11px/16px Arial, Helvetica, sans-serif;font-weight: normal;}
 .products-grid li h3 .old-price .price-label,#crosssell-products-list h3 .old-price .price-label,.products-grid .price-box .old-price .price-label {display: none;}
 .products-grid .actions button.btn-cart span{background:url("../images/addtocartbtn.jpg") 0 0 no-repeat;border:none;display:block;width:142px;height:30px;text-indent:-999em;}
-.products-grid .actions .add-to-links li a,#crosssell-products-list  .add-to-links li a {text-decoration: none;float:left;color:#999;font-weight:normal;}
+.products-grid .actions .add-to-links li a,#crosssell-products-list  .add-to-links li a {text-decoration: none;float:left;color:#999;font-weight:normal; margin-top:10px;}
 .products-grid .actions .add-to-links li:last-child,#crosssell-products-list  .add-to-links li:last-child{padding:0px;}
 .products-grid .actions .add-to-links li a.link-compare,#crosssell-products-list  .add-to-links li a.link-compare{float:right;font-weight: normal;}
 .products-grid li h3 .special-price .price-label,#crosssell-products-list h3 .special-price .price-label,.products-grid .price-box .special-price .price-label {display:none;}
@@ -461,7 +461,7 @@ h2.clstitle{font-size:18px;color:#7A2120;text-transform: uppercase;font-family:G
 .links li.last { background:none !important; padding-right:0 !important; border:none !important;}
 
 .link-cart {  font-weight:bold; }
-.link-wishlist {  float:left;background:url("../images/i_w.gif") 0 center no-repeat; overflow:hidden;font-weight: normal; margin-right:20px; color:#8f8f8f; font-size:11px; font-weight:bold; text-transform:lowercase; padding-left:13px}
+.link-wishlist {  float:left;background:url("../images/i_w.gif") 0 center no-repeat; overflow:hidden;font-weight: normal; margin-right:10px; color:#8f8f8f; font-size:11px; font-weight:bold; text-transform:lowercase; padding-left:13px}
 .link-reorder {  }
 .link-compare { float:left; background:url("../images/i_w.gif") 0 center no-repeat; overflow:hidden; color:#8f8f8f; font-size:11px; font-weight:bold; text-transform:lowercase; padding-left:13px }
 .link-print { /*background:url(../images/i_print.gif) 0 2px no-repeat; padding:2px 0 2px 25px;*/  }
