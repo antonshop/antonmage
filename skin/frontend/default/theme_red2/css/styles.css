@@ -197,10 +197,11 @@ margin: -3px 0 15px;border-bottom: 1px solid #333; }
 
 .sorter { font-size:11px; background:#fff url(../images/bkg_toolbar.gif) 0 100% repeat-x; padding:3px 8px; border-top:1px solid #e2e2e2; }
 .sorter .view-mode { float:left; margin:0; }
-.sorter .sort-by { float:right; padding-right:36px; }
+.sorter .sort-by { float:right; padding:0px 15px 0px 10px; }
 .sorter .sort-by label { vertical-align:middle; }
-.sorter .sort-by select { padding:0; margin:0 0 1px; vertical-align:middle; }
+.sorter .sort-by select { padding:0; margin:5px 0 1px; vertical-align:middle; }
 .sorter .link-feed {}
+.v-middle{ margin:5px 0px 0px 5px;}
 .toolbar-bottom{background: url(../images/rule.png) repeat-x left top;padding-top:10px;margin-top:10px;}
 
 .pages{float:left;width:25%;}

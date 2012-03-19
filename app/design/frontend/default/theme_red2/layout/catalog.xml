@@ -74,7 +74,6 @@ Category default layout
         <reference name="left">
             <block type="catalog/navigation" name="catalog.leftnav" after="currency" template="catalog/navigation/left.phtml"/>
             <block type="catalog/product_compare_sidebar" after="cart_sidebar" name="catalog.compare.sidebar" template="catalog/product/compare/sidebar.phtml"/>
-			<block type="catalog/product_list" name="featured" template="catalog/product/featured.phtml"><action method="setCategoryId"><category_id>121</category_id></action></block>
         </reference>
         <reference name="content">
             <block type="catalog/category_view" name="category.products" template="catalog/category/view.phtml">
@@ -91,14 +90,15 @@ Category default layout
                             <action method="addPagerLimit"><mode>list</mode><limit>8</limit></action>
                             <action method="addPagerLimit" translate="label"><mode>list</mode><limit>all</limit><label>All</label></action>
                         -->
+                    
+	                    <action method="addColumnCountLayoutDepend"><layout>empty</layout><count>6</count></action>
+	                    <action method="addColumnCountLayoutDepend"><layout>one_column</layout><count>5</count></action>
+	                    <action method="addColumnCountLayoutDepend"><layout>two_columns_left</layout><count>4</count></action>
+	                    <action method="addColumnCountLayoutDepend"><layout>two_columns_right</layout><count>4</count></action>
+	                    <action method="addColumnCountLayoutDepend"><layout>three_columns</layout><count>3</count></action>
+						<action method="setColumnCount"><count>4</count></action> 
+	                    <action method="setToolbarBlockName"><name>product_list_toolbar</name></action>
                     </block>
-                    <action method="addColumnCountLayoutDepend"><layout>empty</layout><count>6</count></action>
-                    <action method="addColumnCountLayoutDepend"><layout>one_column</layout><count>5</count></action>
-                    <action method="addColumnCountLayoutDepend"><layout>two_columns_left</layout><count>4</count></action>
-                    <action method="addColumnCountLayoutDepend"><layout>two_columns_right</layout><count>4</count></action>
-                    <action method="addColumnCountLayoutDepend"><layout>three_columns</layout><count>3</count></action>
-					<action method="setColumnCount"><count>4</count></action> 
-                    <action method="setToolbarBlockName"><name>product_list_toolbar</name></action>
                 </block>
             </block>
         </reference>
@@ -113,7 +113,6 @@ Category layered navigation layout
         <reference name="left">
             <block type="catalog/layer_view" name="catalog.leftnav" after="currency" template="catalog/layer/view.phtml"/>
             <block type="catalog/product_compare_sidebar" after="cart_sidebar" name="catalog.compare.sidebar" template="catalog/product/compare/sidebar.phtml"/>
-			<block type="catalog/product_list" name="featured" template="catalog/product/featured.phtml"><action method="setCategoryId"><category_id>121</category_id></action></block>
 	    </reference>
         <reference name="content">
             <block type="catalog/category_view" name="category.products" template="catalog/category/view.phtml">

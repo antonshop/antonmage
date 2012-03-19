@@ -1,5 +1,6 @@
 <?php 
 set_time_limit(0);
+ini_set('memory_limit', '-1');
 require_once "../app/Mage.php";
 require_once "feedlist_item.php";
 Mage::app('default');
@@ -260,7 +261,19 @@ function put_feedlist($filename, $pids, $list_item, $google_list_item_attr){
 	}
 	
 	/* txt file */
-	file_put_contents($filename.".txt", $titles  . $content);
+	file_put_contents('temp/' . $filename.".txt", $titles  . $content);
+	/* zip */
+	//$charset = empty($charset) ? 'utf-8' : trim($charset);
+	//$content = iconv('utf-8', $charset, $content);
+	require('phpzip.php');
+	$zip = new PHPZip;
+	//$zip->add_file($titles  . $content, 'temp/'.$filename.".txt");
+	
+
+	//header("Content-Disposition: attachment; filename=". $filename .".zip");
+	//header("Content-Type: application/unknown");
+	$zip->zip(dirname(__FILE__)."/temp", $filename.".zip", true);
+	//die($zip->file());
 }
 /* fix information */
 function feedlist_fixinfo($areacode){

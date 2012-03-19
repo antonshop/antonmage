@@ -39,7 +39,7 @@
 .banner_content{float:right;width:225px;margin-top:55px;}
 .banner_content .p_name{font-size: 24px;color: #916D47;min-height:50px;margin-bottom:20px;line-height:25px;}
 .banner_content .p_des{min-height:90px;text-align:right;line-height:20px;}
-.clsbannerimg{float:left;width:380px;}
+/*.clsbannerimg{float:left;width:380px;}*/
 
 #clscustomblock{float:right;width:310px;background: url("../images/bannerborder.jpg") top left repeat-y;padding-left:18px;}
 #clscustomblock .block-subscribe .block-title strong{display:block;margin:13px 0 0 0 ;border:none;background:none;padding-left:0px;color:#8B0000;font-size:18px;padding-bottom:25px;font-family: Georgia;text-transform: capitalize;font-weight: normal;}
