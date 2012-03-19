@@ -679,7 +679,7 @@ tr.summary-details-excluded { font-style:italic; }
 .col1-layout .product-view .product-shop { float:right; width:458px;padding-top:15px;}
 .col3-layout .product-view .product-shop { float:none; width:auto; }
 .product-view .product-shop .product-name { margin:0 0 2px; }
-.product-view .product-shop .product-name h1 { color: #600;font: 100 30px/30px Georgia, "Times New Roman", Times, serif;margin-bottom:15px; }
+.product-view .product-shop .product-name h1 { color: #600;font:16px Georgia, "Times New Roman", Times, serif;margin-bottom:15px; }
 .product-view .product-shop .availability { padding:0; font-size: 11px;color: #999;width:100%; }
 .product-view .product-shop .short-description { margin:0; padding:0; }
 .product-view .product-shop .price-box {margin:10px 0; }
