@@ -36,7 +36,9 @@ Default layout, loads most of the pages
 
             <block type="page/html_head" name="head" as="head">
                 <action method="addJs"><script>prototype/prototype.js</script></action>
-
+				<action method="addItem"><type>skin_js</type><name>js/jquery.min.js</name></action>
+                <action method="addItem"><type>skin_js</type><name>js/jquery.noConflict.min.js</name></action>
+                <action method="addItem"><type>skin_js</type><name>js/slider.min.js</name></action>
                 <action method="addJs" ifconfig="dev/js/deprecation"><script>prototype/deprecation.js</script></action>
                 <action method="addJs"><script>lib/ccard.js</script></action>
                 <action method="addJs"><script>prototype/validation.js</script></action>

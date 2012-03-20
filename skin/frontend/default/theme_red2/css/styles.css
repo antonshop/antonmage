@@ -1560,7 +1560,9 @@ background: url(../images/prod_info.jpg) 0 100%;
 float: left;
 border: 1px solid #D5D4D1;
 line-height: 18px;}
-
+.product-shop .product-options-bottom .price-box { float:left; margin:8px 0px 0px;line-height:28px; padding-left:60px;}
+.product-shop .product-options-bottom .add-to-cart { float:right; margin:8px 0px 0px; line-height:28px;}
+.product-shop .product-options-bottom .add-to-cart input{ padding:6px;}
 
 
 

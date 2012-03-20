@@ -59,7 +59,7 @@
             <?php echo $this->getReviewsSummaryHtml($_product, false, true)?>
             <?php echo $this->getChildHtml('alert_urls') ?>
             <?php echo $this->getChildHtml('product_type_data') ?>
-            <?php echo $this->getTierPriceHtml() ?>
+            <?php //echo $this->getTierPriceHtml() ?>
 
             <?php if (!$this->hasOptions()):?>
                 <div class="add-to-box">
@@ -78,13 +78,36 @@
                     <div class="std"><?php echo $_helper->productAttribute($_product, nl2br($_product->getShortDescription()), 'short_description') ?></div>
                 </div>
             <?php endif;?>
+			<div class="clearer"></div>
+			<!-- AddThis Button BEGIN -->
+            <div class="addthis_toolbox addthis_default_style addthis_32x32_style" style="margin:12px 0;">
+            <span>SHARE TO :&nbsp;</span>
+            <a class="addthis_button_preferred_1"></a>
+            <a class="addthis_button_preferred_2"></a>
+            <a class="addthis_button_preferred_3"></a>
+            <a class="addthis_button_preferred_4"></a>
+            <a class="addthis_button_compact"></a>
+            <a class="addthis_counter addthis_bubble_style"></a>
+            </div>
+            <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4e26a4cd1f3b328e"></script>
+            <!-- AddThis Button END -->
+            
+            <div id="google_translate_element"></div><script>
+			function googleTranslateElementInit() {
+			  new google.translate.TranslateElement({
+				pageLanguage: 'auto',
+				autoDisplay: false,
+				layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL
+			  }, 'google_translate_element');
+			}
+			</script><script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
             <?php echo $this->getChildHtml('other');?>
 
-            <?php if ($_product->isSaleable() && $this->hasOptions()):?>
-                <?php echo $this->getChildChildHtml('container1', '', true, true) ?>
-            <?php endif;?>
-
+            
+			<?php if ($_product->isSaleable() && $this->hasOptions()):?>
+	            <?php echo $this->getChildChildHtml('container2', '', true, true) ?>
+	        <?php endif;?>
         </div>
 
         <div class="product-img-box">
@@ -92,9 +115,7 @@
         </div>
 
         <div class="clearer"></div>
-        <?php if ($_product->isSaleable() && $this->hasOptions()):?>
-            <?php echo $this->getChildChildHtml('container2', '', true, true) ?>
-        <?php endif;?>
+        
     </form>
     <script type="text/javascript">
     //<![CDATA[

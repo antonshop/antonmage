@@ -25,13 +25,13 @@
  * @license    http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
 -->
-<config> 
+<config>
     <global>
         <install>
-            <date><![CDATA[Wed, 08 Feb 2012 05:34:44 +0000]]></date>
+            <date><![CDATA[Tue, 20 Mar 2012 02:24:04 +0000]]></date>
         </install>
         <crypt>
-            <key><![CDATA[123123]]></key>
+            <key><![CDATA[f4da03570cf5946ab6388333eaf3b1f4]]></key>
         </crypt>
         <disable_local_modules>false</disable_local_modules>
         <resources>
