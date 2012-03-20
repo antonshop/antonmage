@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package>
+    <name>jquerycloudzoom</name>
+    <version>1.1.3.2</version>
+    <stability>stable</stability>
+    <license uri="http://ecommerce-team.com/license">Single doman license</license>
+    <channel>community</channel>
+    <extends/>
+    <summary>Will replace standard Magento zoom with easy-to-use, flexible jquery cloud zoom widget.</summary>
+    <description>Magento Cloud Zoom extension will replace standard Magento zoom with easy-to-use, flexible jquery cloud zoom widget.</description>
+    <notes>Resolve "error with disabled title" and "position inside bug"</notes>
+    <authors><author><name>EcommerceTeam</name><user>ecommerceteam</user><email>team@ecommerce-team.com</email></author></authors>
+    <date>2011-12-12</date>
+    <time>15:07:26</time>
+    <contents><target name="magecommunity"><dir name="EcommerceTeam"><dir name="CloudZoom"><dir name="Block"><dir name="Product"><dir name="View"><file name="Media.php" hash="fd0b3dfe3cc90976f45d342f0a50f8ba"/></dir></dir></dir><dir name="Helper"><file name="Data.php" hash="6c5952edd74e46e9ed6569a54662a2f7"/></dir><dir name="Model"><dir name="System"><dir name="Config"><dir name="Source"><file name="Position.php" hash="3985da771b575f5f7ab256f28ad308b6"/></dir></dir></dir></dir><dir name="etc"><file name="config.xml" hash="c8d2c2c8944756f5b6ea68965b384a0d"/><file name="system.xml" hash="1dfe4e6b735bd32b1c8105fcf3d577dd"/></dir></dir></dir></target><target name="mageskin"><dir name="frontend"><dir name="base"><dir name="default"><dir name="css"><dir name="ecommerceteam"><file name="cloud-zoom.css" hash="64e6fff3ac060d130a6d575b50fbeddb"/></dir></dir></dir></dir></dir></target><target name="magedesign"><dir name="frontend"><dir name="base"><dir name="default"><dir name="layout"><file name="ecommerceteam-cloudzoom.xml" hash="5467098c5b74b9a3a1e78c5f8a785d5f"/></dir><dir name="template"><dir name="ecommerceteam"><dir name="cloud-zoom"><dir name="catalog"><dir name="product"><dir name="view"><file name="media.phtml" hash="e7523fcae3425367c1681c1358f257eb"/></dir></dir></dir></dir></dir></dir></dir></dir></dir></target><target name="mageweb"><dir name="js"><dir name="ecommerceteam"><file name="cloud-zoom.1.0.2.js" hash="cf5ab72acf8f07d26385eb9e60f23d09"/><file name="cloud-zoom.1.0.2.min.js" hash="187c6bd5c7e1357b9cb50257edc8b4e9"/></dir><dir name="jquery"><file name="jquery-1.4.2.min.js" hash="1e5389d096ff70677a5055d98c19691b"/></dir></dir></target><target name="mageetc"><dir name="modules"><file name="EcommerceTeam_CloudZoom.xml" hash="c85860f3398c71a8e935917943f65246"/></dir></target></contents>
+    <compatible/>
+    <dependencies><required><php><min>5.1.0</min><max>6.0.0</max></php></required></dependencies>
+</package>
