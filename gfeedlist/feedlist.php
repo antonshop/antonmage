@@ -332,8 +332,8 @@ $pattern = get_post('pattern');
 $online_only = get_post('online_only');
 $excluded = get_post('excluded');
 
-$post_content = $google_product_category.SEP.$condition.SEP.$availability;
-$post_title = 'google product category'.SEP."condition".SEP."availability";
+$post_content = $condition.SEP.$availability;
+$post_title = "condition".SEP."availability";
 
 /* 可选项 */
 if($material){
@@ -403,10 +403,10 @@ div ul li { margin:0px; padding:0px;}
             </select>
         </li>
     </ul>
-    <ul>
+<!--    <ul>
     	<li class="item_title">Google product category: </li>
         <li class="item_input"><input type="text" class="intxt" name="google_product_category" id="google_product_category"> Google产品分类</li>
-    </ul>
+    </ul>-->
     <ul>
     	<li class="item_title">Condition:</li>
         <li class="item_input"><select name="condition" id="condition">

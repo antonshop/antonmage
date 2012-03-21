@@ -80,6 +80,10 @@ $google_list_item_attr['gtin'] = array(
 	'title' => 'gtin',
 	'value' => '',
 );	
+$google_list_item_attr['gb'] = array(
+	'title' => 'google product category',
+	'value' => 'gb',
+);	
 /*$google_list_item_attr['size'] = array(
 	'title' => 'size',
 	'value' => '',
