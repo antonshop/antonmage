@@ -264,10 +264,10 @@ function put_feedlist($filename, $pids, $list_item, $google_list_item_attr){
 	}
 	
 	/* txt file */
+	if(!is_dir('tmep')){ mkdir('temp');}
 	file_put_contents('temp/' . $filename.".txt", $titles  . $content);
+	
 	/* zip */
-	//$charset = empty($charset) ? 'utf-8' : trim($charset);
-	//$content = iconv('utf-8', $charset, $content);
 	require('phpzip.php');
 	$zip = new PHPZip;
 	//$zip->add_file($titles  . $content, 'temp/'.$filename.".txt");
