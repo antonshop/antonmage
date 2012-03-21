@@ -197,7 +197,7 @@ margin: -3px 0 15px;border-bottom: 1px solid #333; }
 
 .sorter { font-size:11px; background:#fff url(../images/bkg_toolbar.gif) 0 100% repeat-x; padding:3px 8px; border-top:1px solid #e2e2e2; }
 .sorter .view-mode { float:left; margin:0; }
-.sorter .sort-by { float:right; padding:0px 15px 0px 10px; }
+.sorter .sort-by { float:right; padding: 0 5px; }
 .sorter .sort-by label { vertical-align:middle; }
 .sorter .sort-by select { padding:0; margin:5px 0 1px; vertical-align:middle; }
 .sorter .link-feed {}
@@ -545,7 +545,7 @@ tr.summary-details-excluded { font-style:italic; }
 /********** < Product Prices */
 .price { white-space:nowrap !important; }
 
-.price-box { margin:5px 0; }
+.price-box { margin:0px 0px 10px 0; }
 .price-box .price { font-weight:bold;  }
 
 /* Minimal price (as low as) */

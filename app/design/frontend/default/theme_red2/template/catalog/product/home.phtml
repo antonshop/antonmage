@@ -69,7 +69,7 @@ jQuery(function(){
         <ul class="products-grid">
         <?php endif ?>
             <li class="item<?php if(($i-1)%4==0): ?> first<?php elseif($i%4==0): ?> last<?php endif; ?>">
-                
+                <div class="clproductimage"><a class="product-image" href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->htmlEscape($this->getImageLabel($_product, 'small_image')) ?>" target="_blank"><img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(208,208); ?>" width="208" height="208" alt="<?php echo $this->htmlEscape($this->getImageLabel($_product, 'small_image')) ?>" /></a></div>            
                 <h3 class="product-name"><a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->htmlEscape($_product->getName()) ?>" target="_blank"><?php echo $this->htmlEscape($_product->getName()) ?></a>
                 	<span>
                 		<div class="price-box">
@@ -77,7 +77,6 @@ jQuery(function(){
                 		</div>
                 	</span>
                 </h3>
-                <div class="clproductimage"><a class="product-image" href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->htmlEscape($this->getImageLabel($_product, 'small_image')) ?>" target="_blank"><img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(150,150); ?>" width="150" height="150" alt="<?php echo $this->htmlEscape($this->getImageLabel($_product, 'small_image')) ?>" /></a></div>
                 <?php if($_product->getRatingSummary()): ?>
                 <?php echo $this->getReviewsSummaryHtml($_product, 'short') ?>
                 <?php endif; ?>

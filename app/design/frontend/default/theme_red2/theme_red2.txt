@@ -1,0 +1,16 @@
+cms => page homepage
+content:
+{{block type="catalog/product_list" category_id="12" template="catalog/product/home.phtml"}}
+
+
+desgin: empty
+1 column
+
+
+
+
+Block Title£ºfoot_links  Identifier£ºfoot_links
+
+{{block type="tag/popular" template="tag/popular_footer.phtml"}}
+{{block type="catalogsearch/term" template="catalogsearch/term_footer.phtml"}}
+{{block type="newsletter/subscribe" name="right.newsletter.static" template="newsletter/subscribe_footer.phtml"}}
