@@ -7,7 +7,6 @@ Mage::app('default');
 define('SEP',"\t");
 
 
-
 /* currency */
 $read = Mage::getSingleton('core/resource')->getConnection('core_read');  
 //make connection  
@@ -183,6 +182,8 @@ function put_feedlist($filename, $pids, $list_item, $google_list_item_attr){
 							}else{
 								$content .=  SEP;
 							}
+						}else if($item['value'] == 'url'){
+							$content .= str_replace('/'.basename(__FILE__), '/index.php', $product->$item['method']()) . SEP;
 						}else if($item['value'] == 'fl'){
 							$content .= number_format($product->$item['method'](), 2, '.', '') . SEP;
 						}else if($item['value'] == 'pr'){
@@ -226,6 +227,8 @@ function put_feedlist($filename, $pids, $list_item, $google_list_item_attr){
 						}else{
 							$content .=  SEP;
 						}
+					}else if($item['value'] == 'url'){
+						$content .= str_replace('/'.basename(__FILE__), '/index.php', $product->$item['method']()) . SEP;
 					}else if($item['value'] == 'fl'){
 						$content .= number_format($product->$item['method'](), 2, '.', '') . SEP;
 					}else if($item['value'] == 'pr'){

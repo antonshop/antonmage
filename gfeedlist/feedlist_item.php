@@ -17,7 +17,7 @@ $google_list_item['description'] = array(
 $google_list_item['link'] = array(
 	'title' => 'link',
 	'method' => 'getProductUrl',
-	'value' => '',
+	'value' => 'url',
 );
 $google_list_item['image_link'] = array(
 	'title' => 'image link',
