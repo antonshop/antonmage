@@ -200,13 +200,14 @@ function put_feedlist($filename, $pids, $list_item, $google_list_item_attr){
 				}
 				$content .= feedlist_fixinfo($country);
 				$content .= $post_content.SEP;
-				foreach($google_list_item_attr as $attr){
+				$content .= feedlist_item_attr($google_list_item_attr, $product);
+				/*foreach($google_list_item_attr as $attr){
 					if(empty($attr['value'])){
 						$content .= SEP;
 					}else{
-						$content .= $product->getData($attr['value']) . SEP;
+						$content .= $product->getAttributeText($attr['value']) . SEP ;
 					}	
-				}
+				}*/
 				
 				$content .= $value['title']."\n";
 				$i++;
@@ -245,13 +246,14 @@ function put_feedlist($filename, $pids, $list_item, $google_list_item_attr){
 			}
 			$content .= feedlist_fixinfo($country);
 			$content .= $post_content;
-			foreach($google_list_item_attr as $attr){
+			$content .= feedlist_item_attr($google_list_item_attr, $product);
+			/*foreach($google_list_item_attr as $attr){
 				if(empty($attr['value'])){
 					$content .= SEP;
 				}else{
-					$content .= SEP . $product->getData($attr['value']) ;
+					$content .= $product->getAttributeText($attr['value']) . SEP ;
 				}	
-			}
+			}*/
 			
 			$content .= "\n";
 		}
@@ -285,6 +287,24 @@ function feedlist_fixinfo($areacode){
 	$content .= $areacode . ':::0'.SEP;
 	$content .= $excluded.SEP;
 	$content .= Mage::getModel('core/date')->date('Y-m-d\TH:i:s', strtotime('+25 day')).SEP;
+	return $content;
+}
+
+/**/
+function feedlist_item_attr($item_attr, $product){
+	$content = '';
+	
+	foreach($item_attr as $attr){
+		if(empty($attr['value']) || !$product->getData($attr['value'])){
+			$content .= SEP;
+		}else{
+			if($attr['type'] == 'txt'){
+				$content .= $product->getData($attr['value']) . SEP ;
+			}else{
+				$content .= $product->getAttributeText($attr['value']) . SEP ;
+			}
+		}	
+	}
 	return $content;
 }
 

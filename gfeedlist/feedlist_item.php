@@ -63,27 +63,34 @@ $google_list_item['mpn'] = array(
 $google_list_item_attr['color'] = array(
 	'title' => 'color',
 	'value' => '',
+	'type'  => ''
 );
 $google_list_item_attr['brand'] = array(
 	'title' => 'brand',
 	'value' => 'brand',
+	'type'  => ''
 );
+$google_list_item_attr['gb'] = array(
+	'title' => 'google product category',
+	'value' => 'gb',
+	'type'  => 'txt'
+);	
 $google_list_item_attr['age_group'] = array(
 	'title' => 'age group',
 	'value' => '',
+	'type'  => ''
 );		
 $google_list_item_attr['gender'] = array(
 	'title' => 'gender',
 	'value' => '',
+	'type'  => ''
 );	
 $google_list_item_attr['gtin'] = array(
 	'title' => 'gtin',
 	'value' => '',
+	'type'  => ''
 );	
-$google_list_item_attr['gb'] = array(
-	'title' => 'google product category',
-	'value' => 'gb',
-);	
+
 /*$google_list_item_attr['size'] = array(
 	'title' => 'size',
 	'value' => '',
