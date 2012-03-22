@@ -280,7 +280,9 @@ function put_feedlist($filename, $pids, $list_item, $google_list_item_attr){
 
 	//header("Content-Disposition: attachment; filename=". $filename .".zip");
 	//header("Content-Type: application/unknown");
-	$zip->zip(dirname(__FILE__)."/temp", $filename.".zip", true);
+	$zip->zip(dirname(__FILE__)."/temp", $filename.".zip");
+	
+	check_error("temp/" . $filename . ".txt");
 	//die($zip->file());
 }
 /* fix information */
@@ -294,12 +296,11 @@ function feedlist_fixinfo($areacode){
 }
 
 function get_item_value($product, $currency, $country, $currency_rate, $key, $item, $i){
-	//global $i;
 	$replace_foundarr = array("\r",'\t',"\n");
 	$replace_arr = array("",' ',"");
 	$content = '';
-	echo $i."**";
-	//print_r($item);echo 123;
+
+
 	if($item['title'] == 'id'){
 		$content .= $product->$item['method']()."_".$country."_".$i.SEP;
 	}else if(!empty($item['value'])){
@@ -324,11 +325,43 @@ function get_item_value($product, $currency, $country, $currency_rate, $key, $it
 			$content .= number_format($product->$item['method'](), 2, '.', ''). $currency . SEP;
 		}
 	}else{
-		//print_r($item);echo "**<br>";
-		//ERR = $item['title'] . SEP;
 		$content .= str_replace($replace_foundarr,$replace_arr,$product->$item['method']()) . SEP;
 	}
 	return $content;
+}
+
+/* check error */
+function check_error($filename){
+	
+	$content = file_get_contents($filename);
+	$content = explode("\n", $content);
+	$title = $content[0];
+	$title = explode("\t", $title);
+	array_shift($content);
+	$errinfo = '';
+	$tmpid = '';
+
+	foreach($content as $item){
+		
+		if(preg_match("/\t\t/", $item)){
+			if($tmpid == substr($item, 0, strpos($item, "_"))){
+				continue;
+			}
+			$tmpid = substr($item, 0, strpos($item, "_"));
+			$item = explode("\t", $item);
+			$errinfo .= $item[0].', ';
+			foreach($item as $key=>$value){
+				if(!$value){
+					$errinfo .= $title[$key].", ";
+				}
+			}
+			$errinfo .= "\n";
+		}
+	}
+	if(!empty($errinfo)){
+		file_put_contents("error.txt", $errinfo);
+		unlink($filename);
+	}
 }
 
 /**/
