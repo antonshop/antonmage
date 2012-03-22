@@ -19,14 +19,13 @@ foreach($res as $re){
 }
 $basecurrency = $re['currency_from'];
 
-/* options */
+/* get products options */
 $sql = "SELECT * FROM " . Mage::getSingleton('core/resource')->getTableName('catalog_product_option');
 $res = $read->fetchAll($sql);
 $optionsarr = array();
 foreach($res as $value){
 	$optionsarr[$value['product_id']] = $value;
 }
-print_r($optionsarr);
 
 function nodeToArray(Varien_Data_Tree_Node $node)
 {
@@ -266,11 +265,10 @@ function put_feedlist($filename, $pids, $list_item, $google_list_item_attr){
 				}	
 			}*/
 			/* no custom options add tab */
-			if(!empty($optionsarr)){echo "*";
+			if(!empty($optionsarr)){
 				if(in_array($id, $optionsarr)){
 					unset($optionsarr[$id]);
 				}else{
-					echo $id;
 					$content .= SEP;
 				}
 			}
