@@ -19,6 +19,14 @@ foreach($res as $re){
 }
 $basecurrency = $re['currency_from'];
 
+/* options */
+$sql = "SELECT * FROM " . Mage::getSingleton('core/resource')->getTableName('catalog_product_option');
+$res = $read->fetchAll($sql);
+$optionsarr = array();
+foreach($res as $value){
+	$optionsarr[$value['product_id']] = $value;
+}
+print_r($optionsarr);
 
 function nodeToArray(Varien_Data_Tree_Node $node)
 {
@@ -136,7 +144,7 @@ function get_product_ids($tree, $category_id){
 
 /* put file list */
 function put_feedlist($filename, $pids, $list_item, $google_list_item_attr){
-	global $post_content, $currency, $title_options, $country, $currency_rate;
+	global $post_content, $currency, $title_options, $country, $currency_rate, $optionsarr;
 	$replace_foundarr = array("\r",'\t',"\n");
 	$replace_arr = array("",' ',"");
 	
@@ -201,8 +209,8 @@ function put_feedlist($filename, $pids, $list_item, $google_list_item_attr){
 					$content .= get_item_value($product, $currency, $country, $currency_rate, $key, $item, $i);
 				}
 				$content .= feedlist_fixinfo($country);
-				$content .= $post_content.SEP;
-				$content .= feedlist_item_attr($google_list_item_attr, $product);
+				$content .= $post_content;
+				$content .= feedlist_item_attr($google_list_item_attr, $product).SEP;
 				/*foreach($google_list_item_attr as $attr){
 					if(empty($attr['value'])){
 						$content .= SEP;
@@ -257,9 +265,18 @@ function put_feedlist($filename, $pids, $list_item, $google_list_item_attr){
 					$content .= $product->getAttributeText($attr['value']) . SEP ;
 				}	
 			}*/
-			
+			/* no custom options add tab */
+			if(!empty($optionsarr)){echo "*";
+				if(in_array($id, $optionsarr)){
+					unset($optionsarr[$id]);
+				}else{
+					echo $id;
+					$content .= SEP;
+				}
+			}
 			$content .= "\n";
 		}
+		
 	}
 	/* custom options */
 	if($title_options){
@@ -369,7 +386,7 @@ function feedlist_item_attr($item_attr, $product){
 	$content = '';
 	
 	foreach($item_attr as $attr){
-		if(empty($attr['value']) || !$product->getData($attr['value'])){
+		/*if(empty($attr['value']) || !$product->getData($attr['value'])){
 			$content .= SEP;
 		}else{
 			if($attr['type'] == 'txt'){
@@ -377,7 +394,16 @@ function feedlist_item_attr($item_attr, $product){
 			}else{
 				$content .= $product->getAttributeText($attr['value']) . SEP ;
 			}
-		}	
+		}*/
+		if(!empty($attr['value']) && $product->getData($attr['value'])){
+			if($attr['type'] == 'txt'){
+				$content .= SEP . $product->getData($attr['value'])  ;
+			}else{
+				$content .=  SEP .$product->getAttributeText($attr['value']);
+			}
+		}else{
+			$content .= SEP;
+		}
 	}
 	return $content;
 }
