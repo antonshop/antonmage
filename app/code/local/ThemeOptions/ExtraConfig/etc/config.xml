@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <ThemeOptions_ExtraConfig>
+            <version>1.0.0</version>
+            <depends>
+            <!-- no dependencies -->
+            </depends>
+        </ThemeOptions_ExtraConfig>
+    </modules>
+	<global>
+		<models>
+            <!-- ... -->
+            <ExtraConfig>
+                <class>ThemeOptions_ExtraConfig_Model</class>
+            </ExtraConfig>   
+            <!-- ... -->
+        </models>
+		<helpers>
+			<ExtraConfig>
+				<class>ThemeOptions_ExtraConfig_Helper</class>
+			</ExtraConfig>
+		</helpers>
+	    <resources />
+	    <extraconfig />
+	    <blocks>
+            <mygeneral><class>ThemeOptions_ExtraConfig_Block</class></mygeneral>
+		</blocks>
+	</global>
+	<!---->
+	<default>
+		<mygeneral>
+			<generaloptions>
+                <topbanner></topbanner>
+				<use_cufon>1</use_cufon>
+				<topbtn>1</topbtn>
+				<additional_nav>Clearance</additional_nav>
+				<additional_nav_href>#</additional_nav_href>
+			</generaloptions>
+			<background>
+                <maincolor>efefef</maincolor>
+                <pattern></pattern>
+                <bg_repeat></bg_repeat>
+                <bg_attachment></bg_attachment>
+                <bg_position_x></bg_position_x>
+                <bg_position_y></bg_position_y>
+			</background>
+			<share>
+				<use_share>1</use_share>
+				<share_code><![CDATA[<div style="clear: both;">&nbsp;</div>
+                                    <div class="addthis_toolbox addthis_default_style ">
+                                    <a class="addthis_button_preferred_1"></a>
+                                    <a class="addthis_button_preferred_2"></a>
+                                    <a class="addthis_button_preferred_3"></a>
+                                    <a class="addthis_button_preferred_4"></a>
+                                    <a class="addthis_button_compact"></a>
+                                    <a class="addthis_counter addthis_bubble_style"></a>            
+                                    </div>
+                                    <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=xa-4ee497253584a61e"></script>]]></share_code>
+			</share>
+			<slideshow>
+				<use_slideshow>1</use_slideshow>
+				<speed>8000</speed>
+			</slideshow>
+			<productpage>
+				<use_zoom>1</use_zoom>
+				<use_carousel>1</use_carousel>
+			</productpage>
+		</mygeneral>
+	</default>
+	<!---->
+    <adminhtml>   
+        <layout>
+            <updates>
+                <ExtraConfig>
+                    <file>options.xml</file>
+                </ExtraConfig>
+            </updates>
+        </layout>
+    </adminhtml>     
+</config>

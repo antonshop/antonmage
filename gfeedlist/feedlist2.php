@@ -19,13 +19,6 @@ foreach($res as $re){
 }
 $basecurrency = $re['currency_from'];
 
-/* get products options */
-$sql = "SELECT * FROM " . Mage::getSingleton('core/resource')->getTableName('catalog_product_option');
-$res = $read->fetchAll($sql);
-$optionsarr = array();
-foreach($res as $value){
-	$optionsarr[$value['product_id']] = $value;
-}
 
 function nodeToArray(Varien_Data_Tree_Node $node)
 {
@@ -48,9 +41,6 @@ function nodeToArray(Varien_Data_Tree_Node $node)
 /* category tree */
 function load_tree() {
 
-	$tree = Mage::getResourceSingleton('catalog/category_tree')
-		->load();
-	
 	$store = 1;
 	$parentId = 1;
 	
@@ -66,11 +56,10 @@ function load_tree() {
 	$collection = Mage::getModel('catalog/category')->getCollection()
 		->setStoreId($store)
 		->addAttributeToSelect('name')
-	//->addAttributeToSelect('id')
-	->addAttributeToSelect('is_active');
+		//->addAttributeToSelect('id')
+		->addAttributeToSelect('is_active');
 	
 	$tree->addCollectionData($collection, true);
-	
 	return nodeToArray($root);
 
 }
@@ -90,10 +79,12 @@ function print_tree($tree,$level) {
 	$level ++;
 	
 	foreach($tree as $item) {
-		$cate_options[$cate_i]['name'] = str_repeat("&nbsp;&nbsp;", $level).$item['name'];
-		$cate_options[$cate_i]['category_id'] = $item['category_id'];
-		$cate_i++;
-		print_tree($item['children'],$level);
+		if($item['is_active']){
+			$cate_options[$cate_i]['name'] = str_repeat("&nbsp;&nbsp;", $level).$item['name'];
+			$cate_options[$cate_i]['category_id'] = $item['category_id'];
+			$cate_i++;
+			print_tree($item['children'],$level);
+		}
 	}
 	
 	return $cate_options;
@@ -104,7 +95,9 @@ function get_category_ids($tree){
 	
 	global $cateids;
 	foreach($tree['children'] as $item){
-		$cateids[] = $item['category_id'];
+		if($item['is_active']){
+			$cateids[] = $item['category_id'];
+		}
 		if(is_array($item['children'])){
 			get_category_ids($item);
 		}
@@ -477,6 +470,19 @@ if($filename){
 	}
 	get_product_ids($tree, $category_id);
 	sort($pids);
+	$idstr = '';
+	foreach($pids as $item){
+		$idstr .= $item . ",";
+	}
+	/* get products options */
+	$idstr = substr($idstr, 0, -1);
+	$sql = "SELECT * FROM " . Mage::getSingleton('core/resource')->getTableName('catalog_product_option') . " WHERE product_id in (".$idstr.")";
+	$res = $read->fetchAll($sql);
+	$optionsarr = array();
+	foreach($res as $value){
+		$optionsarr[$value['product_id']] = $value;
+	}
+	
 	put_feedlist($filename, $pids, $google_list_item, $google_list_item_attr);
 }
 

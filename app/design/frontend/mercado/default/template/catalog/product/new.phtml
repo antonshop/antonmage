@@ -1,0 +1,42 @@
+<?php if (($_products = $this->getProductCollection()) && $_products->getSize()): ?>
+<?php $now = date("Y-m-d H:m:s"); ?>
+    <div id="mycarousel" class="touchcarousel grey-blue">
+        <ul class="newproducts touchcarousel-container">
+            <?php $i=0; foreach ($_products->getItems() as $_product): $i++; ?>
+                <li class="item touchcarousel-item <?php if($i == 4 && $_products->getSize() < 5) echo 'last'?>">
+                    <?php $newFromDate = $_product->getNewsFromDate(); ?>
+                    <?php $newToDate = $_product->getNewsToDate(); ?>                                               
+                    <?php if($newFromDate < $now && $newToDate > $now): ?>
+                            <div class="newproduct_grid"></div>
+                    <?php endif; ?>   
+                    <?php echo $this->getReviewsSummaryHtml($_product, 'short') ?>          
+                    <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->htmlEscape($_product->getName()) ?>" class="product-image"><img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(210) ?>" width="210" height="210" alt="<?php echo $this->htmlEscape($_product->getName()) ?>" /></a>
+                    <div class="new-description">
+                        <h3><a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->htmlEscape($_product->getName()) ?>"><?php echo $this->htmlEscape($_product->getName()) ?></a></h3>
+                        <?php echo $this->getPriceHtml($_product, true) ?>                    
+                    
+                        <?php if($_product->isSaleable()): ?>
+                            <button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="button btn-cart" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button>
+                        <?php else: ?>
+                            <p class="availability out-of-stock"><span><?php echo $this->__('Out of stock') ?></span></p>
+                        <?php endif; ?>
+                        <div style="clear: both;"></div>
+                    </div>                    
+                </li>
+            <?php endforeach; ?>
+        </ul>
+    </div>
+    <div style="clear: both;"></div>
+    <?php if($_products->getSize() > 4): ?>
+        <script type="text/javascript">
+			jQuery("#mycarousel").touchCarousel({					
+				pagingNav: false,
+				snapToItems: false,
+				itemsPerMove: 1,				
+				scrollToLast: false,
+				loopItems: false,
+				scrollbar: false
+		    });	  
+        </script>   
+    <?php endif; ?>
+<?php endif; ?>
