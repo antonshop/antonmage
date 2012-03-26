@@ -1,2 +1,8 @@
 
 /media/catalog/product/cache/1
+/var/backups
+/var/cache
+/var/connect
+/var/import
+/var/importexport
+/var/locks
