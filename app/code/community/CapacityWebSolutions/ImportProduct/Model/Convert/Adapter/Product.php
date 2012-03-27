@@ -1,7 +1,7 @@
 <?php
 /**
  * Import Multiple Images during Product Import
- * Copyright © 2011 Web Design by Capacity Web Solutions Pvt. Ltd. All Rights Reserved.
+ * Copyright ?2011 Web Design by Capacity Web Solutions Pvt. Ltd. All Rights Reserved.
  * http://www.capacitywebsolutions.com
  */
  
@@ -440,6 +440,7 @@ class CapacityWebSolutions_ImportProduct_Model_Convert_Adapter_Product extends M
                         ->setPath($path)
                         ->setName($catName)
                         ->setIsActive(1)
+						->setIsAnchor(1)
                         ->save();
                     $cache[$namePath] = $cat;
                 }
