@@ -155,6 +155,7 @@ class CapacityWebSolutions_ImportProduct_Model_Convert_Adapter_Product extends M
 						 'sort_order'=>$sort_order,
 						 'values'=>array()
 					  );
+					  $i=1;
 					  foreach($values as $v) {
 						 $parts = explode(':',$v);
 						 $title = $parts[0];
@@ -176,8 +177,9 @@ class CapacityWebSolutions_ImportProduct_Model_Convert_Adapter_Product extends M
 						 if(count($parts)>4) {
 							$sort_order = $parts[4];
 						 } else {
-							$sort_order = 0;
+							$sort_order = $i;
 						 }
+						 $i++;
 						 switch($type) {
 							case 'file':
 							     break;
@@ -353,7 +355,7 @@ class CapacityWebSolutions_ImportProduct_Model_Convert_Adapter_Product extends M
 					 * @param false = not excluded from the front end gallery
 					 */
 	                {
-	                        $product->addImageToMediaGallery(Mage::getBaseDir('media') . DS . 'import' . $gallery_img, null, false, false);
+	                        $product->addImageToMediaGallery(Mage::getBaseDir('media') . DS . 'import' . $gallery_img, null, false, false, 'image label');
 	                }
 	            }
 	        catch (Exception $e) {}        

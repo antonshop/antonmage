@@ -268,9 +268,10 @@ function get_item_value($product, $currency, $country, $currency_rate, $key, $it
 			}else{
 				$content .=  SEP;
 			}
-		}else if($item['value'] == 'desc'){
-			$content .= substr($product->$item['method'](), 0, 999) . SEP;
-		}else if($item['value'] == 'url'){
+		}/*else if($item['value'] == 'desc'){
+			//echo '<textarea>'.strip_tags($product->$item['method']()).'</textarea>';
+			$content .= substr(strip_tags($product->$item['method']()), 0, 1000) . SEP;
+		}*/else if($item['value'] == 'url'){
 			$content .= str_replace('/'.basename(__FILE__), '/index.php', $product->$item['method']()) . SEP;
 		}else if($item['value'] == 'fl'){
 			$content .= number_format($product->$item['method'](), 2, '.', '') . SEP;
@@ -325,7 +326,7 @@ function check_error($filename){
 	}
 	if(!empty($errinfo)){
 		file_put_contents("error.txt", $errinfo);
-		unlink($filename);
+		rmdir($filename);
 	}
 }
 
