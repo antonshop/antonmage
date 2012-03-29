@@ -9,17 +9,12 @@ Mage::app();
 $product = Mage::getModel('catalog/product');
 $product->setTypeId('simple');
 $product->setTaxClassId(0); //none
-//$product->setWebsiteIds(array(1));  // store id
 $product->setAttributeSetId(4); //Videos Attribute Set
-/*	<option value="6">dvd</option>7
-<option value="5">vhs</option> */
-//$product->setMediaFormat(6);  //DVD video
-//$product->setLanguage(9); //English
-$product->setSku(ereg_replace("\n","","videoTest2.d8"));
-$product->setName(ereg_replace("\n","","videoTest2.12"));
-$product->setDescription("videoTest2");
-$product->setInDepth("video test");    
-$product->setPrice("139.95");
+$product->setSku(ereg_replace("\n","","test3"));
+$product->setName(ereg_replace("\n","",""));
+$product->setDescription("testtesttest3");
+$product->setInDepth("test");    
+$product->setPrice("324");
 $product->setData("gb",'google category xx');
 $product->setData("color",'3');
 $product->setShortDescription(ereg_replace("\n","","videoTest2.1"));
@@ -29,14 +24,15 @@ $product->setVisibility(4); //nowhere
 $product->setMetaDescription(ereg_replace("\n","","videoTest2.1"));
 $product->setMetaTitle(ereg_replace("\n","","videotest2"));
 $product->setMetaKeywords("video test");
+
 try{
 $product->save();
 	$productId = $product->getId();
-echo $product->getId() . ", $price, $itemNum added\n";
+	echo $product->getId() . ", $price, $itemNum added\n";
 }
 catch (Exception $e){ 		
-echo "$price, $itemNum not added\n";
-echo "exception:$e";
+	echo "$price, $itemNum not added\n";
+	echo "exception:$e";
 } 
 
 		

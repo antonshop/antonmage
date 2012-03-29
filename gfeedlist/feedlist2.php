@@ -171,33 +171,6 @@ function put_feedlist($filename, $pids, $list_item, $google_list_item_attr){
 			$i=1;
 			foreach($options as $value){
 				foreach($list_item as $key=>$item){
-					/*if($item['title'] == 'id'){
-						$content .= $product->$item['method']()."_".$country."_".$i.SEP;
-					}else if(!empty($item['value'])){
-						if($item['value'] == 'type'){
-							$cate = $product->getCategoryids();
-							
-							if(isset($cate[0]) && $cate[0]){
-								$cate_id = $cate[0];
-								$content .= Mage::getModel('catalog/category')->load($cate[0])->getName() . SEP;
-							}else{
-								$content .=  SEP;
-							}
-						}else if($item['value'] == 'url'){
-							$content .= str_replace('/'.basename(__FILE__), '/index.php', $product->$item['method']()) . SEP;
-						}else if($item['value'] == 'fl'){
-							$content .= number_format($product->$item['method'](), 2, '.', '') . SEP;
-						}else if($item['value'] == 'pr'){
-							//** price changed
-							$temp_price = floatval($value['price'])+floatval($product->$item['method']());
-							//** currency 
-							$content .= number_format($temp_price * floatval($currency_rate[$currency]),2,'.','') . $currency . SEP;
-						}else{
-							$content .= number_format($product->$item['method'](), 2, '.', ''). $currency . SEP;
-						}
-					}else{
-						$content .= str_replace($replace_foundarr,$replace_arr,$product->$item['method']()) . SEP;
-					}*/
 					$content .= get_item_value($product, $currency, $country, $currency_rate, $key, $item, $i);
 				}
 				$content .= feedlist_fixinfo($country);
@@ -218,32 +191,6 @@ function put_feedlist($filename, $pids, $list_item, $google_list_item_attr){
 		}else{/* no custom options */
 			$i=1;
 			foreach($list_item as $key=>$item){
-				/*if($item['title'] == 'id'){
-					$content .= $product->$item['method']()."_".$country."_".$i.SEP;
-				}else if(!empty($item['value'])){
-					//* category name 
-					if($item['value'] == 'type'){
-						$cate = $product->getCategoryids();
-						if(isset($cate[0]) && $cate[0]){
-							$cate_id = $cate[0];
-							$content .= Mage::getModel('catalog/category')->load($cate_id)->getName() . SEP;
-						}else{
-							$content .=  SEP;
-						}
-					}else if($item['value'] == 'url'){
-						$content .= str_replace('/'.basename(__FILE__), '/index.php', $product->$item['method']()) . SEP;
-					}else if($item['value'] == 'fl'){
-						$content .= number_format($product->$item['method'](), 2, '.', '') . SEP;
-					}else if($item['value'] == 'pr'){
-							//* price changed
-							$temp_price = floatval($value['price'])+floatval($product->$item['method']());
-							$content .= number_format($temp_price * floatval($currency_rate[$currency]),2,".","") . $currency . SEP;
-					}else{
-						$content .= number_format($product->$item['method'](), 2, '.', ''). $currency . SEP;
-					}
-				}else{
-					$content .= str_replace($replace_foundarr,$replace_arr,$product->$item['method']()) . SEP;
-				}*/
 				$content .= get_item_value($product, $currency, $country, $currency_rate, $key, $item, $i);
 				$i++;
 			}
@@ -321,6 +268,8 @@ function get_item_value($product, $currency, $country, $currency_rate, $key, $it
 			}else{
 				$content .=  SEP;
 			}
+		}else if($item['value'] == 'desc'){
+			$content .= substr($product->$item['method'](), 0, 999) . SEP;
 		}else if($item['value'] == 'url'){
 			$content .= str_replace('/'.basename(__FILE__), '/index.php', $product->$item['method']()) . SEP;
 		}else if($item['value'] == 'fl'){
@@ -349,19 +298,27 @@ function check_error($filename){
 	$errinfo = '';
 	$tmpid = '';
 
-	foreach($content as $item){
+	foreach($content as $itemstr){
+		$item = explode("\t", $itemstr);
 		
-		if(preg_match("/\t\t/", $item)){
-			if($tmpid == substr($item, 0, strpos($item, "_"))){
+		if(preg_match("/\t\t/", $itemstr) || strlen($item[1])>=70){
+			if($tmpid == substr($itemstr, 0, strpos($itemstr, "_"))){
 				continue;
 			}
-			$tmpid = substr($item, 0, strpos($item, "_"));
-			$item = explode("\t", $item);
+			$tmpid = substr($itemstr, 0, strpos($itemstr, "_"));
 			$errinfo .= $item[0].', ';
+			
 			foreach($item as $key=>$value){
 				if(!$value){
 					$errinfo .= $title[$key].", ";
 				}
+			}
+			if(strlen($item[1])>=70){
+				$errinfo .= 'name('. strlen($item[1]) .'), ';
+			}
+
+			if($item[1] == strtoupper($item[1])){
+				$errinfo .= 'nameuppercase, ';
 			}
 			$errinfo .= "\n";
 		}
