@@ -355,7 +355,7 @@ class CapacityWebSolutions_ImportProduct_Model_Convert_Adapter_Product extends M
 					 * @param false = not excluded from the front end gallery
 					 */
 	                {
-	                        $product->addImageToMediaGallery(Mage::getBaseDir('media') . DS . 'import' . $gallery_img, null, false, false, 'image label');
+	                        $product->addImageToMediaGallery(Mage::getBaseDir('media') . DS . 'import' . $gallery_img, null, false, false);
 	                }
 	            }
 	        catch (Exception $e) {}        
