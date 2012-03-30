@@ -260,7 +260,7 @@ class Mage_Catalog_Model_Product_Attribute_Backend_Media extends Mage_Eav_Model_
      * @return string
      */
     public function addImage(Mage_Catalog_Model_Product $product, $file,
-        $mediaAttribute = null, $move = false, $exclude = true)
+        $mediaAttribute = null, $move = false, $exclude = true, $label=null)
     {
         $file = realpath($file);
 
@@ -327,7 +327,7 @@ class Mage_Catalog_Model_Product_Attribute_Backend_Media extends Mage_Eav_Model_
         $mediaGalleryData['images'][] = array(
             'file'     => $fileName,
             'position' => $position,
-            'label'    => '',
+            'label'    => $label,
             'disabled' => (int) $exclude
         );
 
