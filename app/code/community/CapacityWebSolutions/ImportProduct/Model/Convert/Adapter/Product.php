@@ -346,7 +346,10 @@ class CapacityWebSolutions_ImportProduct_Model_Convert_Adapter_Product extends M
 		 * each image with a semi-colon.
 		 */
 	        try {
+	        		$gallerylabelData = explode(';',$importData["gallery_labels"]);
 	                $galleryData = explode(';',$importData["gallery"]);
+	                $i = 0;
+	                
 	                foreach($galleryData as $gallery_img)
 					/**
 					 * @param directory where import image resides
@@ -355,7 +358,8 @@ class CapacityWebSolutions_ImportProduct_Model_Convert_Adapter_Product extends M
 					 * @param false = not excluded from the front end gallery
 					 */
 	                {
-	                        $product->addImageToMediaGallery(Mage::getBaseDir('media') . DS . 'import' . $gallery_img, null, false, false);
+	                        $product->addImageToMediaGallery(Mage::getBaseDir('media') . DS . 'import' . $gallery_img, null, false, false, $gallerylabelData[$i]);
+	                		$i++;
 	                }
 	            }
 	        catch (Exception $e) {}        
