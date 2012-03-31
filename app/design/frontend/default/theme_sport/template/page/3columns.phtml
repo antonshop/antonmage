@@ -19,8 +19,8 @@
  * needs please refer to http://www.magentocommerce.com for more information.
  *
  * @category    design
- * @package     base_default
- * @copyright   Copyright (c) 2011 Magento Inc. (http://www.magentocommerce.com)
+ * @package     default_modern
+ * @copyright   Copyright (c) 2009 Irubin Consulting Inc. DBA Varien (http://www.varien.com)
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
 ?>
@@ -37,24 +37,27 @@
 <body<?php echo $this->getBodyClass()?' class="'.$this->getBodyClass().'"':'' ?>>
 <?php echo $this->getChildHtml('after_body_start') ?>
 <div class="wrapper">
+<div class="inner-wrapper">
     <?php echo $this->getChildHtml('global_notices') ?>
     <div class="page">
         <?php echo $this->getChildHtml('header') ?>
         <div class="main-container col3-layout">
             <div class="main">
                 <?php echo $this->getChildHtml('breadcrumbs') ?>
-                <div class="col-wrapper">
+                <?php /*<div class="col-wrapper">*/ ?>
+                 <div class="col-left sidebar"><?php echo $this->getChildHtml('left') ?></div>
                     <div class="col-main">
                         <?php echo $this->getChildHtml('global_messages') ?>
                         <?php echo $this->getChildHtml('content') ?>
                     </div>
-                    <div class="col-left sidebar"><?php echo $this->getChildHtml('left') ?></div>
+                    <div class="col-right sidebar"><?php echo $this->getChildHtml('right') ?></div>
                 </div>
-                <div class="col-right sidebar"><?php echo $this->getChildHtml('right') ?></div>
-            </div>
+                <?php /*<div class="col-right sidebar"><?php echo $this->getChildHtml('right') ?></div>*/ ?>
+            <?php /*</div>*/ ?>
         </div>
         <?php echo $this->getChildHtml('footer') ?>
         <?php echo $this->getChildHtml('before_body_end') ?>
+    </div>
     </div>
 </div>
 <?php echo $this->getAbsoluteFooter() ?>

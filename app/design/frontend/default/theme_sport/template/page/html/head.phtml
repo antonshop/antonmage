@@ -20,36 +20,25 @@
  *
  * @category    design
  * @package     base_default
- * @copyright   Copyright (c) 2011 Magento Inc. (http://www.magentocommerce.com)
+ * @copyright   Copyright (c) 2009 Irubin Consulting Inc. DBA Varien (http://www.varien.com)
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
 ?>
+<title><?php echo ($this->getMyTitle()) ? Mage::getStoreConfig('design/head/title_prefix').' '.$this->getMyTitle().' '.Mage::getStoreConfig('design/head/title_suffix') : $this->getTitle(); ?></title>
 <meta http-equiv="Content-Type" content="<?php echo $this->getContentType() ?>" />
-<title><?php echo $this->getTitle() ?></title>
 <meta name="description" content="<?php echo htmlspecialchars($this->getDescription()) ?>" />
 <meta name="keywords" content="<?php echo htmlspecialchars($this->getKeywords()) ?>" />
 <meta name="robots" content="<?php echo htmlspecialchars($this->getRobots()) ?>" />
-<link rel="icon" href="<?php echo $this->getFaviconFile(); ?>" type="image/x-icon" />
-<link rel="shortcut icon" href="<?php echo $this->getFaviconFile(); ?>" type="image/x-icon" />
-<script type="text/javascript" src="<?php echo $this->getSkinUrl('js/jquery-1.7.min.js'); ?>"></script>
-<script type="text/javascript" src="<?php echo $this->getSkinUrl('js/sidebar_menu.js'); ?>"></script>
-<script type="text/javascript" src="<?php echo $this->getSkinUrl('js/scripts.js'); ?>"></script>
-<script type="text/javascript" src="<?php echo $this->getSkinUrl('js/jquery.prettyPhoto.js'); ?>"></script>
-<script type="text/javascript" src="<?php echo $this->getSkinUrl('js/jquery.color.js'); ?>"></script>
-<script type="text/javascript" src="<?php echo $this->getSkinUrl('js/jquery.easing.1.3.js'); ?>"></script>
-<script type="text/javascript" src="<?php echo $this->getSkinUrl('js/jscript_zjquery.anythingslider.js'); ?>"></script>
-<script type="text/javascript" src="<?php echo $this->getSkinUrl('js/jscript_zslider.js'); ?>"></script>
-<script type="text/javascript" src="<?php echo $this->getSkinUrl('js/jquery.nivo.slider.js'); ?>"></script>
-<script type="text/javascript" src="<?php echo $this->getSkinUrl('js/jquery.cycle.all.js'); ?>"></script>
-
-<!--[if lt IE 7]>
+<meta name="Designer" content="WebAndPeople Magento design - http://webandpeople.com" />
+<link rel="icon" href="<?php echo $this->getSkinUrl('favicon.ico') ?>" type="image/x-icon" />
+<link rel="shortcut icon" href="<?php echo $this->getSkinUrl('favicon.ico') ?>" type="image/x-icon" />
 <script type="text/javascript">
 //<![CDATA[
     var BLANK_URL = '<?php echo $this->helper('core/js')->getJsUrl('blank.html') ?>';
     var BLANK_IMG = '<?php echo $this->helper('core/js')->getJsUrl('spacer.gif') ?>';
+	var SKIN_URL = '<?php echo $this->helper('core/js')->getJsSkinUrl('') ?>';
 //]]>
 </script>
-<![endif]-->
 <?php echo $this->getCssJsHtml() ?>
 <?php echo $this->getChildHtml() ?>
 <?php echo $this->helper('core/js')->getTranslatorScript() ?>

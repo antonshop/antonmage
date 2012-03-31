@@ -1,0 +1,16 @@
+
+admin
+cmd => page => Home page:
+content: 
+	 <p>{{block type="catalog/product_list" category_id="108" template="catalog/product/home.phtml"}}</p> 
+design:  2columns with left bar
+	 <reference name="left">   
+		<block type="catalog/product_list" name="popular"  template="catalog/product/popular.phtml">       
+		<action method="setCategoryId"><category_id>120</category_id></action>   
+		</block>
+	 </reference> 
+
+Footer Links:
+<p>{{block type="tag/popular" template="tag/popular_footer.phtml"}}</p>
+<p>{{block type="catalogsearch/term" template="catalogsearch/term_footer.phtml"}}</p>
+<p>{{block type="newsletter/subscribe" name="right.newsletter.static" template="newsletter/subscribe_footer.phtml"}}</p>

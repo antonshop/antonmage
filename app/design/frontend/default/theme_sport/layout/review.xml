@@ -57,7 +57,7 @@ Product reviews page (?)
     <reviews>
         <!-- Mage_Review -->
         <reference name="root">
-            <action method="setTemplate"><template>page/2columns-left.phtml</template></action>
+            <action method="setTemplate"><template>page/2columns-right.phtml</template></action>
         </reference>
     </reviews>
 

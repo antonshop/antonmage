@@ -20,7 +20,7 @@
  *
  * @category    design
  * @package     base_default
- * @copyright   Copyright (c) 2011 Magento Inc. (http://www.magentocommerce.com)
+ * @copyright   Copyright (c) 2010 Magento Inc. (http://www.magentocommerce.com)
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
 ?>
@@ -30,22 +30,33 @@
  *
  * @see Mage_Checkout_Block_Onepage_Payment_Methods
  */
+ $isDch=Mage::getStoreConfig('payment/paypal_billing_agreement/paypalhide');
+ if($isDch){
+	 switch($_COOKIE['dch']){
+		case '7ad1a5a714d4a9c34a1700cc5dafedab':
+			$displayPaypal=0;
+			break;
+		case '4dd0f7f63332926208d2734c94f94714':
+		default:
+			$displayPaypal=1;
+	 }
+ }else{
+	$displayPaypal=1;
+ }
 ?>
 <dl class="sp-methods" id="checkout-payment-method-load">
-<?php
-    $methods = $this->getMethods();
-    $oneMethod = count($methods) <= 1;
-?>
-<?php
-    foreach ($methods as $_method):
-        $_code = $_method->getCode();
+<?php 
+foreach ($this->getMethods() as $_method): 
+$_code = $_method->getCode();
+if($_code=='paypal_standard'){
+	if(!$displayPaypal) continue;
+}
 ?>
     <dt>
-    <?php if(!$oneMethod): ?>
+    <?php if( sizeof($this->getMethods()) > 1 ): ?>
         <input id="p_method_<?php echo $_code ?>" value="<?php echo $_code ?>" type="radio" name="payment[method]" title="<?php echo $this->htmlEscape($_method->getTitle()) ?>" onclick="payment.switchMethod('<?php echo $_code ?>')"<?php if($this->getSelectedMethodCode()==$_code): ?> checked="checked"<?php endif; ?> class="radio" />
     <?php else: ?>
         <span class="no-display"><input id="p_method_<?php echo $_code ?>" value="<?php echo $_code ?>" type="radio" name="payment[method]" checked="checked" class="radio" /></span>
-        <?php $oneMethod = $_code; ?>
     <?php endif; ?>
         <label for="p_method_<?php echo $_code ?>"><?php echo $this->getMethodTitle($_method) ?> <?php echo $this->getMethodLabelAfterHtml($_method) ?></label>
     </dt>
@@ -61,8 +72,5 @@
 //<![CDATA[
 <?php echo $this->getChildChildHtml('scripts'); ?>
 payment.init();
-<?php if (is_string($oneMethod)): ?>
-    payment.switchMethod('<?php echo $oneMethod ?>');
-<?php endif; ?>
 //]]>
 </script>

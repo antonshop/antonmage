@@ -20,37 +20,33 @@
  *
  * @category    design
  * @package     base_default
- * @copyright   Copyright (c) 2011 Magento Inc. (http://www.magentocommerce.com)
+ * @copyright   Copyright (c) 2009 Irubin Consulting Inc. DBA Varien (http://www.varien.com)
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
- */
-/**
- * @var Mage_Page_Block_Html_Header $this
  */
 ?>
 <div class="header-container">
     <div class="header">
-    	<div class="quick-access">
-            <div class="header-select-container">
-				<div class="block block-currency">			    
-				    <?php echo $this->getChildHtml('store_language') ?>
-				    
-				</div>
-			</div>
-			<p class="welcome-msg"><?php echo $this->getWelcome() ?> <?php echo $this->getAdditionalHtml() ?></p>
-            <?php echo $this->getChildHtml('topLinks') ?>
-            <div class="block-cart-header">
-        <!--<h3>Shopping Cart</h3>-->
-    <div class="block-content">
-        <p class="empty">0 items.</p>
-        <!--<p class="empty"></p>-->
+        <?php if ($this->getIsHomePage()):?>
+        <h2 class="logo"><strong><?php echo $this->getLogoAlt() ?></strong><a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo"><img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" /></a></h2>
+        <?php else:?>
+        <a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo"><strong><?php echo $this->getLogoAlt() ?></strong><img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" /></a>
+        <?php endif?>
+        <div class="quick-access">
+			<!--<div style=" float:left;line-height:30px; margin-left:120px; margin-top:-5px; ">
+				<span class="welcome-msg"><?php echo $this->getWelcome()?></span>
+			</div>-->
+			<?php echo $this->getChildHtml('topLinks') ?>
+            
         </div>
-
+        <div style="clear:both;"></div>
+        <?php echo $this->getChildHtml('topContainer'); ?>
+        <div class="nav-container">
+        	<?php echo $this->getChildHtml('topMenu') ?>
+        	<div class="nav_search"><?php echo $this->getChildHtml('topSearch') ?></div>
+		</div>
+    </div>
 </div>
-            <div class="clear"></div> 
-        </div>
-			<div class="top-row">
-				<h1 class="logo"><strong>Magento Commerce</strong><a href="<?php echo $this->getBaseUrl();?>" title="Magento Commerce" class="logo"><img src="<?php echo $this->getSkinUrl('images/logo.gif');?>" alt="Magento Commerce" /></a></h1>   
-				<?php echo $this->getChildHtml('topMenu') ?>   	      
-				</div> 
-            </div>
-<?php echo $this->getChildHtml('leftSearch') ?>
+
+<div class="home_page_header_block">
+<?php echo $this->getChildHtml('home_page_header_block'); ?>
+</div>

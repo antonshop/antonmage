@@ -114,13 +114,14 @@
     </form>
     <div class="cart-collaterals">
         <div class="col2-set">
-            <div class="col-1">
-                <?php echo $this->getChildHtml('crosssell') ?>
-            </div>
-            <div class="col-2">
+        	<div class="col-2">
                 <?php echo $this->getChildHtml('coupon') ?>
                 <?php if (!$this->getIsVirtual()): echo $this->getChildHtml('shipping'); endif; ?>
             </div>
+            <div class="col-1">
+                <?php echo $this->getChildHtml('crosssell') ?>
+            </div>
+            
         </div>
         <div class="totals">
             <?php echo $this->getChildHtml('totals'); ?>
