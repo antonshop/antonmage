@@ -1,4 +1,0 @@
-3_US_1, google product category, gtin, 
-5_US_1, gender, gtin, 
-6_US_1, gender, gtin, 
-7_US_1, gender, gtin, 

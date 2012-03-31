@@ -20,6 +20,7 @@ mkdir(EXPORTCSV);
 //echo dirname(__FILE__) . EXPORTIMG;exit;
 
 $visibility = Mage::getModel('catalog/product_visibility')->getOptionArray();
+$status = Mage::getModel('catalog/product_status')->getOptionArray();
 
 $read = Mage::getSingleton('core/resource')->getConnection('core_read');  
 //make connection  
@@ -63,7 +64,6 @@ foreach($products as $value){
 	$cate_list = substr($cate_list,0,-1);
 
 	$stock      = Mage::getModel('cataloginventory/stock_item')->loadByProduct($product);
-
 	$exports = array(
 		"store" 			=> Mage::app()->getStore()->getCode(),
 		"websites"			=> 'base',
@@ -97,7 +97,7 @@ foreach($products as $value){
 		"special_price" 	=> $product->getData('special_price'),
 		"weight" 			=> $product->getData('weight'),
 		"msrp" 				=> $product->getData('msrp'),
-		"status" 			=> $product->getData('status'),
+		"status" 			=> $status[$product->getStatus()],
 		"is_recurring" 		=> $product->getData('is_recurring'),
 		"enable_googlecheckout" => $product->getData('enable_googlecheckout'),
 		"tax_class_id" 		=> $product->getData('tax_class_id'),
