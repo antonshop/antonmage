@@ -7,6 +7,9 @@ Mage::app('default');
 define('SEP',"\t");
 
 
+$str = 'e leather a particularly soft and velvety feel.<a href="http://www.mbtsale6.com">MBT Shoes</a> is th';
+echo preg_replace('/<a[\s]+[^>]*?href[\s]?=[\s\"\']+(.*?)[\"\']+.*?>([^<]+|.*?)?<\/a>/', '\2', $str);
+exit;
 $product = Mage::getModel("catalog/product")->load(1);
 echo "<pre>";
 print_r($product->getData('gb'));
