@@ -590,7 +590,7 @@ div.wp-custom-menu-popup {
 }
 div.wp-custom-menu-popup {
 	font-size:11px;
-    padding:0;
+    padding:5px 0;
 	color:#8e8c8c;
 	text-transform:uppercase;
 	background: #313131;;
@@ -608,16 +608,12 @@ div.wp-custom-menu-popup a.level1 {}
 div.wp-custom-menu-popup a.actParent { color: #cc450f;}
 div.wp-custom-menu-popup a.act { color: #cc450f; font-weight:bold; }
 div.column {
-    float:left;
-    width:160px; /* column width */
-    padding:5px;
+    padding:5px 12px;
 	margin-right:25px;
 }
 div.itemSubMenu { padding:0; text-transform:none;}
 .clearBoth { clear:both;}
-.block1 {padding:0px 20px; min-height:170px;}
-.block1 .column {padding:20px 0 0 0;}
-.block2 {width:163px; height:150px; position:absolute; right:10px; top:9px;}
+
 /********** Navigation > */
 /* ======================================================================================= */
 

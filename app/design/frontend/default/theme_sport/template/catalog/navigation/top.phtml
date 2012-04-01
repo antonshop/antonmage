@@ -36,11 +36,18 @@
     <?php $_menu .= $this->drawItem($_category) ?>
 <?php endforeach ?>
 <?php if ($_menu): ?>
-
-    <ul id="nav">
-        <li><a href="<?php echo $this->getUrl('') ?>"><?php echo $this->__('Home'); ?></a></li>
+<script type="text/javascript">
+//<![CDATA[
+var CUSTOMMENU_POPUP_WIDTH = 0<?php //echo (int)Mage::getStoreConfig('custom_menu/popup/width')?>;
+var CUSTOMMENU_POPUP_TOP_OFFSET = 31<?php //echo (int)Mage::getStoreConfig('custom_menu/popup/top_offset')?>;
+var CUSTOMMENU_POPUP_RIGHT_OFFSET_MIN = 48<?php //echo (int)Mage::getStoreConfig('custom_menu/popup/right_offset_min')?>;
+//]]>
+</script>
+    <div id="custommenu">
+        <div class="menu menu-item<?php if($this->getIsHomePage())echo ' active';?>"><div class="parentMenu"><a href="<?php echo $this->getUrl('') ?>"><span><?php echo $this->__('Home'); ?></span></a></div></div>
         <?php echo $_menu; ?>
-    </ul>
+        <div style="clear:both;"></div>
+    </div>
 
 <?php endif; ?>
 
