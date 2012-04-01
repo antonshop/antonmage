@@ -26,45 +26,53 @@
 ?>
 <div class="footer-container">
     <div class="footer">
-		<div class="footer_block">
-			   <ul>
-					<li class="heading">Company Info</li>
+		<div class="wrapper">
+			<div class="col-1">
+				<h3>Company Info</h3>
+			    <ul>
 					<li><a href="<?php echo Mage::getBaseUrl('web');?>about-us" target="_blank">About Us</a></li>
 					<li><a href="<?php echo Mage::getBaseUrl('web');?>our-guarantee" target="_blank">Our Guarantee</a></li>
 					<li><a href="<?php echo Mage::getBaseUrl('web');?>rss" target="_blank">RSS</a></li>
 					<li><a href="<?php echo Mage::getBaseUrl('web');?>catalog/seo_sitemap/category/" target="_blank">Sitemap</a></li>
-			   </ul>
+			    </ul>
+			</div>
+			<div class="col-2">
+				<h3>Customer Service</h3>
 			   <ul>
-					<li class="heading">Customer Service</li>
 					<li><a href="<?php echo Mage::getBaseUrl('web');?>contact-us" target="_blank">Contact Us</a></li>
 					<li><a href="http://settings.messenger.live.com/Conversation/IMMe.aspx?invitee=shopping.west@hotmail.com" target="_blank">Live Help</a></li>
 					<li><a href="<?php echo Mage::getBaseUrl('web');?>size-help" target="_blank">Size Help</a></li>
 					<li><a href="<?php echo Mage::getBaseUrl('web');?>catalogsearch/term/popular/" target="_blank">Search Terms</a></li>
 			   </ul>
+			</div>
+			<div class="col-3">
+				<h3>Payment & Shipping</h3>
 			   <ul>
-					<li class="heading">Payment & Shipping</li>
 					<li><a href="<?php echo Mage::getBaseUrl('web');?>payment-methods" target="_blank">Payment Methods</a></li>
 					<li><a href="<?php echo Mage::getBaseUrl('web');?>shipping-guide" target="_blank">Shipping Guide</a></li>
 					<li><a href="<?php echo Mage::getBaseUrl('web');?>locations-we-ship-to" target="_blank">Locations We Ship To</a></li>
 					<li><a href="<?php echo Mage::getBaseUrl('web');?>return-policy" target="_blank">Return Policy</a></li>
 			   </ul>
+			</div>
+			<div class="col-4">
+				<h3>Company Policies</h3>
 			   <ul>
-					<li class="heading">Company Policies</li>
 					<li><a href="<?php echo Mage::getBaseUrl('web');?>privacy-policy" target="_blank">Privacy Policy </a></li>
 					<li><a href="<?php echo Mage::getBaseUrl('web');?>term-of-use-intellectual" target="_blank">Terms of Use Intellectual </a></li>
 					<li><a href="<?php echo Mage::getBaseUrl('web');?>intellectual-property-policy" target="_blank">Intellectual Property Policy</a></li>
 					<li><a href="<?php echo Mage::getBaseUrl('web');?>membership-policy" target="_blank">Membership Policy</a></li>
 			   </ul>
-			   <div class="footersocial">
+			</div>
+			<div class="col-5">
 				<h3>JOIN OUR COMMUNITY:</h3>
-				<ul class="clearfix">
-					<li><a href="<?php echo Mage::getBaseUrl('web');?>" target="_blank"><img src="<?php echo Mage::getBaseUrl('media');?>myblog.png" alt="My Blog"></a></li>
+				<ul class="list-icon">
+					<li><a href="<?php echo Mage::getBaseUrl('web');?>" target="_blank"><img src="<?php echo Mage::getBaseUrl('media');?>blogger.png" alt="My Blog"></a></li>
 					<li><a href="<?php echo Mage::getBaseUrl('web');?>" target="_blank"><img src="<?php echo Mage::getBaseUrl('media');?>twitter.png" alt="My Twitter"></a></li>
 					<li><a href="http://www.facebook.com" target="_blank"><img src="<?php echo Mage::getBaseUrl('media');?>facebook.png" alt="My Facebook"></a></li>
 					<li><a href="http://www.youtube.com" target="_blank"><img src="<?php echo Mage::getBaseUrl('media');?>youtube.png" alt="My YouTube"></a></li>
 				</ul>
-				</div>
-				<div class="clear"></div>
+			</div>
+			<div class="clear"></div>
 		</div>
        <div class="tag-footer">
 	   		 <?php echo $this->getChildHtml('cms_footer_links') ?>

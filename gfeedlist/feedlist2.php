@@ -261,13 +261,25 @@ function get_item_value($product, $currency, $country, $currency_rate, $key, $it
 	}else if(!empty($item['value'])){
 		/* category name */
 		if($item['value'] == 'type'){
-			$cate = $product->getCategoryids();
-			if(isset($cate[0]) && $cate[0]){
+			$catCollection = $product->getCategoryCollection();
+			$categs = $catCollection->exportToArray();
+			$categs = end($categs);
+			$cate_list = '';
+			$cate_arr = explode('/',$categs['path']);
+			array_shift($cate_arr);
+			array_shift($cate_arr);
+			
+			foreach($cate_arr as $value){
+				$cate_list .= Mage::getModel('catalog/category')->load($value)->getName().'>';
+			}
+			$content .= substr($cate_list,0,-1).SEP;
+			
+			/*if(isset($cate[0]) && $cate[0]){
 				$cate_id = $cate[0];
 				$content .= Mage::getModel('catalog/category')->load($cate_id)->getName() . SEP;
 			}else{
 				$content .=  SEP;
-			}
+			}*/
 		}/*else if($item['value'] == 'desc'){
 			//echo '<textarea>'.strip_tags($product->$item['method']()).'</textarea>';
 			$content .= substr(strip_tags($product->$item['method']()), 0, 1000) . SEP;

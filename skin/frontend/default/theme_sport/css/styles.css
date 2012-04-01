@@ -593,8 +593,7 @@ div.wp-custom-menu-popup {
     padding:0;
 	color:#8e8c8c;
 	text-transform:uppercase;
-	background:url("../images/wp-custom-menu-popup.png") repeat-x center top;
-	width:100%;
+	background: #313131;;
 	border-radius:0 0 6px 6px;
 	font-weight:600;
 }
@@ -603,7 +602,6 @@ div.wp-custom-menu-popup a {
     display:block;
 	color:#8e8c8c;
 	line-height:23px;
-	background:url("../images/wp-custom-menu-popup-line.png") repeat-x center top;
 }
 div.wp-custom-menu-popup a:first-child {background:none}
 div.wp-custom-menu-popup a.level1 {}
@@ -2135,12 +2133,13 @@ div.itemSubMenu { padding:0; text-transform:none;}
 .footer .col-1,
 .footer .col-2,
 .footer .col-3,
-.footer .col-4 {float:left; border-left:1px solid #d7d7d6; padding-left:20px; width:219px; min-height:145px;}
+.footer .col-4,
+.footer .col-5 {float:left; border-left:1px solid #d7d7d6; padding-left:20px; width:175px; min-height:125px;}
 .footer .col-1 {border:none;}
-.footer .col-4 {width:222px; padding-top:5px;}
+.footer .col-5 {width:170px; padding-top:5px;}
 
 .footer .list-icon li {float:left; display:inline-block; width:auto; padding:0 5px 0 1px;}
-.footer .list-icon li a {display:block; width:24px; height:24px; background:url("../images/list-icon.png") no-repeat left top;}
+.footer .list-icon li a {display:block; }
 .footer .list-icon li.n-2 a {background-position:-30px 0;}
 h3.icon-title {margin-bottom:6px;}
 /* ======================================================================================= */
@@ -2209,3 +2208,5 @@ h3.icon-title {margin-bottom:6px;}
 .gift-messages-form .item:after,
 .send-friend .form-list li p:after { display:block; content:"."; clear:both; font-size:0; line-height:0; height:0; overflow:hidden; }
 /* ======================================================================================= */
+
+
