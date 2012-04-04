@@ -32,11 +32,9 @@
  */
 ?>
 <?php if($this->getCollection()->getSize()): ?>
-<div class="toolbar"><!--
+<div class="toolbar">
     <div class="pager">
-    </div>-->
-    <div class="sorter">
-    	<p class="amount">
+        <p class="amount">
             <?php if($this->getLastPageNum()>1): ?>
                 <?php echo $this->__('Items %s to %s of %s total', $this->getFirstNum(), $this->getLastNum(), $this->getTotalNum()) ?>
             <?php else: ?>
@@ -56,8 +54,11 @@
         </div>
 
         <?php echo $this->getPagerHtml() ?>
-    
-    	<?php if( $this->isExpanded() ): ?>
+
+    </div>
+
+    <?php if( $this->isExpanded() ): ?>
+    <div class="sorter">
         <?php if( $this->isEnabledViewSwitcher() ): ?>
         <p class="view-mode">
             <?php $_modes = $this->getModes(); ?>
@@ -89,8 +90,7 @@
                 <a href="<?php echo $this->getOrderUrl(null, 'desc') ?>" title="<?php echo $this->__('Set Descending Direction') ?>"><img src="<?php echo $this->getSkinUrl('images/i_asc_arrow.gif') ?>" alt="<?php echo $this->__('Set Descending Direction') ?>" class="v-middle" /></a>
             <?php endif; ?>
         </div>
-        <?php endif; ?>
     </div>
-    
+    <?php endif; ?>
 </div>
 <?php endif ?>
