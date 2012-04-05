@@ -36,7 +36,7 @@ Default layout, loads most of the pages
 
             <block type="page/html_head" name="head" as="head">
                 <action method="addJs"><script>prototype/prototype.js</script></action>
-				<action method="addItem"><type>skin_js</type><name>js/jquery.min.js</name></action>
+				<action method="addItem"><type>skin_js</type><name>js/jquery-1.7.min.js</name></action>
                 <action method="addItem"><type>skin_js</type><name>js/jquery.noConflict.min.js</name></action>
                 <action method="addItem"><type>skin_js</type><name>js/coin-slider.min.js</name></action>
                 <action method="addItem"><type>skin_js</type><name>js/custommenu.js</name></action>

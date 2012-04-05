@@ -1,4 +1,4 @@
-<div class="fban">
+<!--<div class="fban">
 	<div id="slider">
 	    <div class="coin-slider" id="coin-slider-coin-slider">
 	    <div id="coin-slider" style="width: 660px; height: 320px; position: relative; background-position: 0% 0%; ">
@@ -13,14 +13,14 @@
 	</div>
 </div>
 
-<?php $_productCollection=$this->getLoadedProductCollection() ?>
+--><?php $_productCollection=$this->getLoadedProductCollection() ?>
 <?php if(!$_productCollection->count()): ?>
 <p class="note-msg"><?php echo $this->__('There are no products matching the selection.') ?></p>
 <?php else: ?>
 <div class="category-products">
 
     <?php // Grid Mode ?>
-	<h2 class="subtitle clstitle"><?php echo $this->__('New Products') ?></h2>
+	<!--<h2 class="subtitle clstitle"><?php echo $this->__('New Products') ?></h2>-->
     <?php $_collectionSize = $_productCollection->count() ?>
     <?php $_columnCount = $this->getColumnCount(); ?>
     <?php $i=0; foreach ($_productCollection as $_product): ?>
