@@ -214,8 +214,8 @@ class Mage_Catalog_Block_Navigation extends Mage_Core_Block_Template
         $classes = array();
         $navid = null;
         $cate_id = $category->getId();
+        $navid = 'menu'.$cate_id;
         if($level == 0){
-       		$navid = 'menu'.$cate_id;
         	$classes[] = 'menu';
         }else{
         	$classes[] = 'column';
@@ -251,7 +251,7 @@ class Mage_Catalog_Block_Navigation extends Mage_Core_Block_Template
         	$attributes['id'] = $navid;
         }
         if ($hasActiveChildren && !$noEventAttributes) {
-             $attributes['onmouseover'] = 'wpShowMenuPopup(this ,\'popup'.$cate_id.'\')';
+             $attributes['onmouseover'] = 'wpShowMenuPopup(this ,\'popup'.$cate_id.'\','.$level.')';
              $attributes['onmouseout'] = 'wpHideMenuPopup(this,event,\'popup'.$cate_id.'\',\'menu'.$cate_id.'\')';
         }
 

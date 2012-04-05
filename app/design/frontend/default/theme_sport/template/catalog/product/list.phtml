@@ -45,7 +45,7 @@
         <li class="item<?php if( ++$_iterator == sizeof($_productCollection) ): ?> last<?php endif; ?>">
             <?php // Product Image ?>
             <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->htmlEscape($this->getImageLabel($_product, 'small_image')) ?>" class="product-image" target="_blank">
-				<img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(166, 166); ?>" width="166" alt="<?php echo $this->htmlEscape($this->getImageLabel($_product, 'small_image')) ?>" />
+				<img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(160, 160); ?>" width="160" alt="<?php echo $this->htmlEscape($this->getImageLabel($_product, 'small_image')) ?>" />
 			</a>
             <?php // Product description ?>
             <div class="product-shop">
@@ -87,12 +87,12 @@
     <?php $_columnCount = $this->getColumnCount(); 
     ?>
     <?php $i=0; foreach ($_productCollection as $_product): ?>
-        <?php if ($i++%3==0): ?>
+        <?php if ($i++%4==0): ?>
         <ul class="products-grid">
         <?php endif ?>
-            <li class="item<?php if(($i-1)%3==0): ?> first<?php elseif($i%3==0): ?> last<?php endif; ?>">
+            <li class="item<?php if(($i-1)%4==0): ?> first<?php elseif($i%4==0): ?> last<?php endif; ?>">
 				<a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->htmlEscape($this->getImageLabel($_product, 'small_image')) ?>" class="product-image"  target="_blank">
-					<img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(166, 166); ?>" width="166" height="166" alt="<?php echo $this->htmlEscape($this->getImageLabel($_product, 'small_image')) ?>" />
+					<img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(160, 160); ?>" width="160" height="160" alt="<?php echo $this->htmlEscape($this->getImageLabel($_product, 'small_image')) ?>" />
 			    </a>
                 <h2 class="product-name"><a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->htmlEscape($_product->getName()) ?>"  target="_blank"><?php echo $this->htmlEscape($_product->getName()) ?></a></h2>
                 <?php if($_product->getRatingSummary()): ?>
@@ -110,7 +110,7 @@
                     
                 </div>
             --></li>
-        <?php if ($i%3==0 || $i==$_collectionSize): ?>
+        <?php if ($i%4==0 || $i==$_collectionSize): ?>
         </ul>
         <?php endif ?>
         <?php endforeach ?>

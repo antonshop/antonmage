@@ -766,10 +766,10 @@ div.itemSubMenu { padding:0; text-transform:none;}
 /* View Type: Grid */
 .products-grid {position:relative; }
 .products-grid.last { border-bottom:0; padding-bottom:20px;}
-.products-grid li.item { float:left; width:219px; padding:20px 0px 20px 0; margin-right:20px; background:url("../images/products-grid.gif") repeat-x center bottom #fff; }
+.products-grid li.item { float:left; width:165px; padding:20px 0px 20px 0; margin-right:13px; background:url("../images/products-grid.gif") repeat-x center bottom #fff; }
 .products-grid li.last {margin:0px;}
-.products-grid .product-image { display:block; width:217px; height:166px; margin:0 0 14px; border:1px solid #eaeae6; text-align:center; background:#fff;}
-.products-grid .product-name { margin:0 0px 6px 0px; font-weight:700; font-size:11px; text-transform:uppercase; line-height:normal; }
+.products-grid .product-image { display:block; width:98%; height:166px; margin:0 0 14px; border:1px solid #eaeae6; text-align:center; background:#fff;}
+.products-grid .product-name { text-align:center; margin:0 0px 6px 0px; font-weight:700; font-size:11px; text-transform:uppercase; line-height:normal; }
 .products-grid-bottom {padding:0 13px 0 15px; overflow:hidden;}
 .products-grid .product-name a {text-decoration:none;}
 .products-grid .ratings {margin:0 auto 5px; text-align:center;}
@@ -777,7 +777,7 @@ div.itemSubMenu { padding:0; text-transform:none;}
 .products-grid .ratings .amount {display:inline-block; overflow:hidden;}
 .products-grid .availability { line-height:21px; }
 .products-grid .actions { float:right;}
-.products-grid .price-box { margin:0px 0 5px; float:left;}
+.products-grid .price-box { margin:0px 0 5px; float:left; text-align:center; width:100%;}
 .products-grid .regular-price .price,
 .products-grid .old-price .price {font-size:20px; line-height:normal; color:#434343; font-family:'Open Sans',sans-serif; font-weight:600;}
 .products-grid .old-price {display:block;}
@@ -1502,7 +1502,7 @@ div.itemSubMenu { padding:0; text-transform:none;}
 .cms-home  .products-grid .product-image {margin-bottom:12px;}
 .cms-home .products-grid .product-name {margin-bottom:0px;}
 .cms-home .products-grid .product-name a {color:#464646;}
-.cms-home .products-grid .price-box {float:none; margin-bottom:9px;}
+.cms-home .products-grid .price-box {float:none; margin-bottom:9px; text-align:center;}
 .cms-home .products-grid .actions {float:none; position:absolute; left:0px; bottom:0px;}
 .cms-home .products-grid li em {display:block; position:absolute; width:70px; height:70px; background:url("../images/top-img.png") no-repeat left top; left:-11px; top:-14px;}
 .button-details {

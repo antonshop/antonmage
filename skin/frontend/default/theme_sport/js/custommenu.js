@@ -1,14 +1,21 @@
-function wpShowMenuPopup(objMenu, popupId)
+function wpShowMenuPopup(objMenu, popupId, level)
 {
     objMenu = $(objMenu.id); var popup = $(popupId); if (!popup) return;
     popup.style.display = 'block';
     objMenu.addClassName('active');
-	
-    var popupWidth = CUSTOMMENU_POPUP_WIDTH;
+    var popupWidth = CUSTOMMENU_POPUP_WIDTH ;
     if (!popupWidth) popupWidth = popup.getWidth();
     var pos = wpPopupPos(objMenu, popupWidth);
-    popup.style.top = pos.top + 'px';
-    popup.style.left = pos.left + 'px';
+    
+	//if(level > 0) alert(pos.left+'&&'+level * popupWidth +'**'+ (parseInt(pos.left) + (level * popupWidth)));
+	if(level>0){
+		popup.style.top = parseInt(pos.top) * (0.35 / level) + 'px';
+		popup.style.left = parseInt(pos.left) * (0.45 / level) + 'px';
+	}else{
+		popup.style.top = pos.top + 'px';
+		popup.style.left = pos.left + 'px';
+	}
+	
     if (CUSTOMMENU_POPUP_WIDTH) popup.style.width = CUSTOMMENU_POPUP_WIDTH + 'px';
 }
 
