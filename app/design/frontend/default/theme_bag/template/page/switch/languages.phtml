@@ -20,26 +20,25 @@
  *
  * @category    design
  * @package     base_default
- * @copyright   Copyright (c) 2010 Magento Inc. (http://www.magentocommerce.com)
+ * @copyright   Copyright (c) 2011 Magento Inc. (http://www.magentocommerce.com)
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
 ?>
 <?php
 /**
- * Currency switcher
+ * Language switcher template
  *
- * @see Mage_Directory_Block_Currency
+ * @see Mage_Page_Block_Switch
  */
 ?>
-<?php if($this->getCurrencyCount()>1): ?>
-<div class="form-currency">
-	<label><?php echo $this->__('Select Your Currency: ') ?></label>
-        <select name="currency" title="<?php echo $this->__('Select Your Currency:') ?>" onchange="setLocation(this.value)">
-        <?php foreach ($this->getCurrencies() as $_code => $_name): ?>
-            <option value="<?php echo $this->getSwitchCurrencyUrl($_code) ?>"<?php if($_code==$this->getCurrentCurrencyCode()): ?> selected="selected"<?php endif; ?>>
-                <?php echo $_name ?> - <?php echo $_code ?>
-            </option>
-        <?php endforeach; ?>
-        </select>
+<?php if(count($this->getStores())>1): ?>
+<div class="form-language">
+    <label for="select-language"><?php echo $this->__('Your Language:') ?></label>
+    <select id="select-language" title="<?php echo $this->__('Your Language') ?>" onchange="window.location.href=this.value">
+    <?php foreach ($this->getStores() as $_lang): ?>
+        <?php $_selected = ($_lang->getId() == $this->getCurrentStoreId()) ? ' selected="selected"' : '' ?>
+        <option value="<?php echo $_lang->getCurrentUrl() ?>"<?php echo $_selected ?>><?php echo $this->htmlEscape($_lang->getName()) ?></option>
+    <?php endforeach; ?>
+    </select>
 </div>
 <?php endif; ?>

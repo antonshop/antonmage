@@ -26,27 +26,36 @@
 ?>
 <div class="header-container">
     <div class="header">
-        <?php if ($this->getIsHomePage()):?>
-        <h2 class="logo"><strong><?php echo $this->getLogoAlt() ?></strong><a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo"><img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" /></a></h2>
-        <?php else:?>
-        <a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo"><strong><?php echo $this->getLogoAlt() ?></strong><img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" /></a>
-        <?php endif?>
-        <div class="quick-access">
-			<!--<div style=" float:left;line-height:30px; margin-left:120px; margin-top:-5px; ">
-				<span class="welcome-msg"><?php echo $this->getWelcome()?></span>
-			</div>-->
-			<?php echo $this->getChildHtml('topLinks') ?>
-            
-        </div>
-        <div style="clear:both;"></div>
-        <?php echo $this->getChildHtml('topContainer'); ?>
-        <div class="nav-container">
-        	<?php echo $this->getChildHtml('topMenu') ?>
-        	<div class="nav_search"><?php echo $this->getChildHtml('topSearch') ?></div>
+    	<div class="navigation">
+    		<p class="welcome-msg">&nbsp;<?php echo $this->getWelcome()?></p>
+    		<div class="navigation-col">
+    			<?php echo $this->getChildHtml('currency_top') ?>
+    			<?php echo $this->getChildHtml('store_language') ?>
+    		</div>
+    	</div>
+    	<div class="header-row">
+    		<div class="logo-block">
+    			<div class="logo-block-2">
+    				<?php if ($this->getIsHomePage()):?>
+			        <h1 class="logo"><strong><?php echo $this->getLogoAlt() ?></strong><a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo"><img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" /></a></h1>
+			        <?php else:?>
+			        <a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo"><strong><?php echo $this->getLogoAlt() ?></strong><img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" /></a>
+			        <?php endif?>
+    			</div>
+			</div>
+			<div class="navigation-2">
+				<?php echo $this->getChildHtml('topSearch') ?>
+				<?php echo $this->getChildHtml('topLinks') ?>
+			</div>
+			<div class="clear-block"></div>
+    	</div>
+    	<div class="menu">
+			<div class="bg-menu">
+				<div class="nav-container">
+				    <?php echo $this->getChildHtml('topMenu'); ?>
+				</div>
+			</div>
 		</div>
     </div>
 </div>
 
-<div class="home_page_header_block">
-<?php echo $this->getChildHtml('home_page_header_block'); ?>
-</div>
