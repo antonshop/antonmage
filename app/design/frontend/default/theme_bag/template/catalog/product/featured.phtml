@@ -47,16 +47,28 @@ $_productCollection = Mage::getResourceModel('catalog/product_collection')
 <?php else: ?>
 
 <?php // Grid Mode ?>
+<script type="text/javascript">
+	jQuery(document).ready(function(){
+		jQuery('#slider-stage').carousel('#previous', '#next');
+		jQuery('#viewport').carousel('#simplePrevious', '#simpleNext');  
+	});
+</script>
+<div class="scroller">
+	<div class="scroller_place">
+		<a href="javascript:void(0);" class="prev" id="simplePrevious"></a>
+		<a href="javascript:void(0);" class="next" id="simpleNext"></a>
+			<div id="viewport">
+				<ul>
+				<?php $_collectionSize = $_productCollection->count() ?>
+    				<?php $i=0; foreach ($_productCollection as $_product): ?>
+					<li><div class="pr_img"><a class="preview" rel="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(300, 300); ?>" href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->htmlEscape($_product->getName()) ?>" target="_blank">
+	                	<img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(185, 185); ?>" width="185" height="185" alt="<?php echo $this->htmlEscape($_product->getName()) ?>" /></a>
+	                </li>
+	                <?php endforeach ?>
+				</ul>
+		</div>
+	</div>
+</div>
 
-<ul id="featured" class="jcarousel-skin-tango">
 
-<?php $_collectionSize = $_productCollection->count() ?>
-    <?php $i=0; foreach ($_productCollection as $_product): ?>
-			
-             <li><a class="preview" rel="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(300, 300); ?>" href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->htmlEscape($_product->getName()) ?>" target="_blank">
-                <img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(185, 185); ?>" width="185" height="185" alt="<?php echo $this->htmlEscape($_product->getName()) ?>" />
-              </a> </li>
-		
-    <?php endforeach ?>
-</ul>
 <?php endif; ?>

@@ -1683,7 +1683,7 @@ td.cart-buttons .btn-continue{ float:left;}
 	HOMEPAGE LAYOUT
 =============================================== */
 
-
+.wired-home{ padding:10px;}
 .wired-home .slider { float: left; width: 674px; height: 328px; position:relative; }
 
 .wired-home .promo-right { float: right; width: 265px; }
@@ -1696,7 +1696,7 @@ td.cart-buttons .btn-continue{ float:left;}
 .wired-home .subpromo .offers { float: left; }
 .wired-home .subpromo .offers img { margin-right: 20px; float: left;white-space: pre-wrap; }
 
-.wired-home .featured-social { margin-top: 10px;  background-color: #FAFAFA;  border: 1px solid #CCCCCC;}
+.wired-home .featured-social { margin-top: 10px;  background-color: #FAFAFA;  border: 1px solid #E5EFEE;}
 .wired-home .subscribe { min-height: 110px;width: 235px; -moz-border-radius: 10px; -webkit-border-radius: 10px; float: right;background: #f4f4f4 url(../images/background/featured_product_bg.gif) repeat-x; padding: 10px 15px; }
 .wired-home .subscribe strong { font-size: 16px; }
 .wired-home .form-subscribe { margin:8px 0; background:url(../images/background/subscribe_bg.png) no-repeat; width: 233px; height: 33px;position:relative; }
@@ -1710,3 +1710,25 @@ td.cart-buttons .btn-continue{ float:left;}
 .wired-home .form-subscribe button.button { position:absolute; float: right; top: 10px;}
 .wired-home .form-subscribe button.button span { text-indent: -9999px; height:13px;width: 12px; background: transparent url(../images/buttons/subscribe_btn.gif) no-repeat top left; line-height:13px; }
 .wired-home .form-subscribe button.button span span { background: none !important; color: #444 !important; text-shadow: 0px 1px #fff !important; }
+
+/* ================= scroll =======================*/
+.std{ padding-left:3px;}
+.scroller {  /*background:url(../images/bg_slider.gif) no-repeat 0% 0%;*/ padding:0 10px 0 13px; height:210px; margin-bottom:20px; }
+.scroller h2 { font-size:14px; font-weight:bold; color:#3B3B3B; text-transform:uppercase; padding:17px 0 16px 20px; }
+
+.scroller_place { padding:20px 0 0 32px; }
+
+#viewport {	width:835px;  overflow:hidden; z-index:100; position:absolute; }
+#viewport ul {	position: relative;	padding: 0 5px; z-index:1; }
+#viewport li {	float:left; /*background:url(../images/bg_item.png) no-repeat;*/ width:185px; height:185px; padding:4px 10px 0 10px; }
+#viewport li:hover { /*background:url(../images/bg_item.png) no-repeat 0 -172px;*/ }
+#viewport li .pr_img { width:152px; height:113px; border:solid 1px #F0F0F0; }
+#viewport li h3 { font-size:12px; font-weight:normal; padding:4px 0 0 7px; line-height:17px; }
+#viewport li h3 a { color:#9D9D9D; text-decoration:none; }
+#viewport li h3 a:hover, #viewport li:hover h3 a { color:#fff; }
+
+.scroller_place .prev { background:url(../images/prev.gif) no-repeat; position:absolute; margin: -6px 0 0 -28px; width:27px; height:204px; display:block; }
+.scroller_place .next { background:url(../images/next.gif) no-repeat; position:absolute; margin:-6px 0 0 835px; width:27px; height:204px; display:block; }
+.scroller_place .prev:hover { background:url(../images/prev.gif) no-repeat 0 -204px; }
+.scroller_place .next:hover { background:url(../images/next.gif) no-repeat 0 -204px; }
+/* ======================= scroll ======================= */
