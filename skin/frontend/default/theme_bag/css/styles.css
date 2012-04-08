@@ -492,7 +492,7 @@ tr.summary-details-excluded { font-style:italic; }
 .logo-block-2 { position:absolute; z-index:999; margin:0 0 0 -30px;}
 
 @-moz-document url-prefix() {
-  .logo-block-2 { margin:0 0 0 -31px;}
+  .logo-block-2 { margin:0 0 0 0px;}
 }
 
 
@@ -550,7 +550,7 @@ tr.summary-details-excluded { font-style:italic; }
 /* 0 Level */
 #nav li { float:left; padding:14px 5px 14px 13px; }
 #nav li.active a { color:#EF3C5A; }
-#nav a { float:left; padding:4px 27px 3px 27px; font-size:21px; color:#5F5F5F; font-weight:normal; text-transform:uppercase; background:#FFFFFF; }
+#nav a { float:left; padding:4px 17px 3px 17px; font-size:18px; color:#5F5F5F; font-weight:normal; background:#FFFFFF; }
 #nav li.over a,
 #nav a:hover { color:#EF3C5A; }
 
@@ -945,7 +945,7 @@ tr.summary-details-excluded { font-style:italic; }
 .add-to-box { padding:0 0 22px 0;}
 .add-to-box .add-to-cart { float:left; }
 .add-to-box .or { padding:4px 0 0 0; float:left; margin:0 14px; font-weight:normal; color:#858F8E; font-size:11px; font-family:Arial, Helvetica, sans-serif;}
-.add-to-box .add-to-links { float:left; position:relative; margin:-8px 0 0 0; }
+.add-to-box .add-to-links { clear:both; position:relative; margin:-8px 0 0 0; }
 
 
 .product-view { padding:0 18px 28px 18px;}
