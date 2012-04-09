@@ -53,3 +53,6 @@ Block Title£ºfoot_links  Identifier£ºfoot_links
 </ul>
 </div>
 </div>
+
+server responded connection closed by remote host
+The connection to the remote host was lost. This usually means that network connection has terminated or that the remote host computer was rebooted Most network outages are shotr so trying again may help.
