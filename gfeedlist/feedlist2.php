@@ -235,7 +235,7 @@ function put_feedlist($filename, $pids, $list_item, $google_list_item_attr){
 
 	//header("Content-Disposition: attachment; filename=". $filename .".zip");
 	//header("Content-Type: application/unknown");
-	$zip->zip(dirname(__FILE__)."/temp", $filename.".zip");
+	$zip->zip(dirname(__FILE__)."/temp", $filename.".zip", true);
 	
 	check_error("temp/" . $filename . ".txt");
 	//die($zip->file());
