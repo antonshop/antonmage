@@ -232,12 +232,13 @@ function put_feedlist($filename, $pids, $list_item, $google_list_item_attr){
 	$zip = new PHPZip;
 	//$zip->add_file($titles  . $content, 'temp/'.$filename.".txt");
 	
-
+	check_error("temp/" . $filename . ".txt");
+	
 	//header("Content-Disposition: attachment; filename=". $filename .".zip");
 	//header("Content-Type: application/unknown");
 	$zip->zip(dirname(__FILE__)."/temp", $filename.".zip", true);
 	
-	check_error("temp/" . $filename . ".txt");
+	
 	//die($zip->file());
 }
 /* fix information */
@@ -338,7 +339,7 @@ function check_error($filename){
 	}
 	if(!empty($errinfo)){
 		file_put_contents("error.txt", $errinfo);
-		rmdir($filename);
+		//rmdir($filename);
 	}
 }
 

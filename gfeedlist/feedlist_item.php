@@ -87,7 +87,7 @@ $google_list_item_attr['gender'] = array(
 );	
 $google_list_item_attr['gtin'] = array(
 	'title' => 'gtin',
-	'value' => 'mpn',
+	'value' => 'upc',
 	'type'  => 'txt'
 );	
 
