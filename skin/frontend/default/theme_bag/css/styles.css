@@ -1546,7 +1546,7 @@ padding:0 0 0 0;
 
 .cms-home .products-grid { position:relative; }
 .cms-home .products-grid.last {}
-.cms-home .products-grid li.item { float:left; width:210px; border:1px solid #E5EFEE; padding:18px 5px 20px 5px; margin:0 11px 11px 0; text-align:center;}
+.cms-home .products-grid li.item { float:left; width:208px; border:1px solid #E5EFEE; padding:18px 5px 20px 5px; margin:0 11px 11px 0; text-align:center;}
 .cms-home .products-grid li.item.last { margin:0 0 11px 0;}
 .cms-home .products-grid .product-image { display:block; width:208px; height:205px; margin:0 auto; }
 .cms-home .products-grid .product-name { margin:10px 0 0 0; font-weight:bold; font-size:13px; text-align:center; padding:0 0 3px 0px; }
@@ -1683,7 +1683,7 @@ td.cart-buttons .btn-continue{ float:left;}
 	HOMEPAGE LAYOUT
 =============================================== */
 
-.wired-home{ padding:10px;}
+.wired-home{ padding:0 8px 0 6px;}
 .wired-home .slider { float: left; width: 674px; height: 328px; position:relative; }
 
 .wired-home .promo-right { float: right; width: 265px; }
@@ -1696,7 +1696,7 @@ td.cart-buttons .btn-continue{ float:left;}
 .wired-home .subpromo .offers { float: left; }
 .wired-home .subpromo .offers img { margin-right: 20px; float: left;white-space: pre-wrap; }
 
-.wired-home .featured-social { margin-top: 10px;  background-color: #FAFAFA;  border: 1px solid #E5EFEE;}
+.wired-home .featured-social { margin-top: 10px; padding-top:10px;}
 .wired-home .subscribe { min-height: 110px;width: 235px; -moz-border-radius: 10px; -webkit-border-radius: 10px; float: right;background: #f4f4f4 url(../images/background/featured_product_bg.gif) repeat-x; padding: 10px 15px; }
 .wired-home .subscribe strong { font-size: 16px; }
 .wired-home .form-subscribe { margin:8px 0; background:url(../images/background/subscribe_bg.png) no-repeat; width: 233px; height: 33px;position:relative; }
@@ -1712,7 +1712,7 @@ td.cart-buttons .btn-continue{ float:left;}
 .wired-home .form-subscribe button.button span span { background: none !important; color: #444 !important; text-shadow: 0px 1px #fff !important; }
 
 /* ================= scroll =======================*/
-.std{ padding-left:3px;}
+.std{ }
 .scroller {  /*background:url(../images/bg_slider.gif) no-repeat 0% 0%;*/ padding:0 10px 0 13px; height:210px; margin-bottom:20px; }
 .scroller h2 { font-size:14px; font-weight:bold; color:#3B3B3B; text-transform:uppercase; padding:17px 0 16px 20px; }
 

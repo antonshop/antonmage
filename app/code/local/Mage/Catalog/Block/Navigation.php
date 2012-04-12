@@ -212,8 +212,17 @@ class Mage_Catalog_Block_Navigation extends Mage_Core_Block_Template
 
         // prepare list item html classes
         $classes = array();
-        $classes[] = 'level' . $level;
-        $classes[] = 'nav-' . $this->_getItemPosition($level);
+        $navid = null;
+        $cate_id = $category->getId();
+        $navid = 'menu'.$cate_id;
+        if($level == 0){
+        	$classes[] = 'menu';
+        }else{
+        	$classes[] = 'column';
+        }
+        
+       	//$classes[] = 'menu level' . $level;
+        //$classes[] = 'nav-' . $this->_getItemPosition($level);
         if ($this->isCategoryActive($category)) {
             $classes[] = 'active';
         }
@@ -238,13 +247,16 @@ class Mage_Catalog_Block_Navigation extends Mage_Core_Block_Template
         if (count($classes) > 0) {
             $attributes['class'] = implode(' ', $classes);
         }
+        if ($navid){
+        	$attributes['id'] = $navid;
+        }
         if ($hasActiveChildren && !$noEventAttributes) {
-             $attributes['onmouseover'] = 'toggleMenu(this,1)';
-             $attributes['onmouseout'] = 'toggleMenu(this,0)';
+             $attributes['onmouseover'] = 'wpShowMenuPopup(this ,\'popup'.$cate_id.'\','.$level.')';
+             $attributes['onmouseout'] = 'wpHideMenuPopup(this,event,\'popup'.$cate_id.'\',\'menu'.$cate_id.'\')';
         }
 
         // assemble list item with attributes
-        $htmlLi = '<li';
+        $htmlLi = '<div';
         foreach ($attributes as $attrName => $attrValue) {
             $htmlLi .= ' ' . $attrName . '="' . str_replace('"', '\"', $attrValue) . '"';
         }
@@ -272,6 +284,7 @@ class Mage_Catalog_Block_Navigation extends Mage_Core_Block_Template
             $j++;
             $columns++;
         }
+        $html[] = '</div>';
         if (!empty($htmlChildren)) {
             if ($childrenWrapClass) {
                 $html[] = '<div class="' . $childrenWrapClass . '">';
@@ -279,16 +292,15 @@ class Mage_Catalog_Block_Navigation extends Mage_Core_Block_Template
             if($level == 0){
                 $chield = ' chield chield'.$columns;
             }
-            $html[] = '<ul class="level' . $level . ''.$chield.'">';
+            $html[] = '<div id="popup'.$cate_id.'" class="wp-custom-menu-popup" onmouseout="wpHideMenuPopup(this,event,\'popup'.$cate_id.'\',\'menu'.$cate_id.'\')"><div class="block'.($j-1).'">';
             $html[] = $htmlChildren;
-            $html[] = '</ul>';
+            $html[] = '</div></div>';
             if ($childrenWrapClass) {
                 $html[] = '</div>';
             }
         }
 
-        $html[] = '</li>';
-
+        
         $html = implode("\n", $html);
         return $html;
     }
