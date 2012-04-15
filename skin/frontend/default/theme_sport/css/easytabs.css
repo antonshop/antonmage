@@ -19,11 +19,30 @@
 #one-column-tr .product-shop { width:585px; float:right; padding:0px;}
 #one-column-tr .product-shop .product-collateral{}
 #one-column-tr .product-shop .padder{ }
-#one-column-tr .one-product-info{ border:1px solid #ddd;padding:5px 5px 0 10px;}
-#one-column-tr .one-right-price{ width:180px; float:right;border:1px solid #ddd;}
-#one-column-tr .one-product-img{ width:352px;border:1px solid #ddd; float:left;margin:0px; padding:0px;}
+#one-column-tr .one-product-info{ padding:5px 5px 0 10px; background:#fff; width:380px; float:left;}
+#one-column-tr .one-right-price{ width:180px; float:right; padding:10px 0px 0 5px;}
+#one-column-tr .one-right-price .add-to-cart{ line-height:30px; vertical-align: middle;}
+#one-column-tr .add-to-cart button.button { margin:0px;}
+#one-column-tr .one-product-up{ background:#eee; width:585px; border:1px solid #ddd;}
+#one-column-tr .one-product-img{ width:352px; float:left;margin:0px; padding:0px;}
 #one-column-tr .one-product-img .product-img-box { width:350px;}
 #one-column-tr .one-product-img .one-relate-product { width:350px;}
 #one-column-tr .one-product-img .one-relate-product h3{ background:#ddd; height:30px; width:100%;}
 #one-column-tr .one-product-img .one-relate-product ul{ padding:10px;}
-#one-column-tr .one-product-img .one-relate-product li{ float:left; width:100px;}
+#one-column-tr .one-product-img .one-relate-product li{ float:left; width:102px;}
+#one-column-tr .product-options-bottom{ padding:10px 10px 0;}
+.product-view #qty { height:15px;}
+.block-related{ padding:0px;}
+.block-related .block-title{ padding:5px 0 5px 10px; font-weight:normal; background:#ddd;}
+.block-related .product{ margin-left:0px; clear:both;}
+.block-related .block-content{ padding-top:10px;}
+.block-related .mini-products-list .product-details { margin:0px; clear:both;}
+#block-related .item{ padding:0 2px 10px; margin:0 1px 0 6px; border:1px solid #ddd;}
+#block-related .product-details{ text-align:center;}
+.product-view .price-box { margin:0px;}
+#block-related .price{ font-size:14px; font-weight:normal;}
+
+
+
+
+

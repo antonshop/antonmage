@@ -207,6 +207,10 @@ Product view
                     <action method="setColumnCount"><columns>4</columns></action>
                     <action method="setItemLimit"><type>upsell</type><limit>8</limit></action>
                 </block>
+                
+                <block type="catalog/product_list_related" name="catalog.product.related"  as="related_products" template="catalog/product/list/related-new.phtml">
+                	<action method="setColumnCount"><columns>4</columns></action>
+                </block>
 
                 <block type="catalog/product_view_additional" name="product.info.additional" as="product_additional_data" />
                 <block type="catalog/product_view_description" name="product.description" as="description" template="catalog/product/view/description.phtml">
@@ -251,14 +255,14 @@ Product view
                     <action method="setDataByKey"><key>alias_in_layout</key><value>container2</value></action>
                     <action method="setDataByKeyFromRegistry"><key>options_container</key><key_in_registry>product</key_in_registry></action>
                     <action method="append"><block>product.info.options.wrapper</block></action>
-                    <action method="append"><block>product.info.options.wrapper.bottom</block></action>
-                </block>
+                    <!--<action method="append"><block>product.info.options.wrapper.bottom</block></action>
+                --></block>
                 <action method="unsetCallChild"><child>container1</child><call>ifEquals</call><if>0</if><key>alias_in_layout</key><key>options_container</key></action>
                 <action method="unsetCallChild"><child>container2</child><call>ifEquals</call><if>0</if><key>alias_in_layout</key><key>options_container</key></action>
             </block>
         </reference>
         <reference name="left">
-            <block type="catalog/product_list_related" name="catalog.product.related" after="-" template="catalog/product/list/related.phtml"/>
+            
             <block type="catalog/product_compare_sidebar" after="cart" name="catalog.compare.sidebar" template="catalog/product/compare/sidebar.phtml"/>
 		</reference>
     </catalog_product_view>
