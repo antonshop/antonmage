@@ -24,14 +24,42 @@
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
 ?>
-<?php if($this->getItems()->getSize()): ?>
+<?php 
+
+//$collection = Mage::getResourceModel('catalog/product_collection');
+//Mage::getModel('catalog/layer')->prepareProductCollection($collection);
+//$collection->setPageSize(3)->getSelect()->order(3);
+//$collection->addStoreFilter();
+//foreach($collection->getItems() as $item){
+//	echo $item->getName().'**<br>';
+//}exit;
+
+
+$_productCollection=$this->getLoadedProductCollection();
+$categoryID = $this->category_id;
+//$categoryID = $this->getCategoryId();
+if($categoryID){
+	$category = new Mage_Catalog_Model_Category();
+	$category->load($categoryID); // this is category id
+	$collection = $category->getProductCollection();
+} else{
+	$collection = Mage::getResourceModel('catalog/product_collection');
+}
+Mage::getModel('catalog/layer')->prepareProductCollection($collection);
+$collection->getSelect()->order('rand()');
+$collection->addStoreFilter();
+$collection->setPageSize(3)->getSelect()->order(3);
+$_productCollection = $this->_productCollection = $collection;
+?>
+
+<?php //if($this->getItems()->getSize()): ?>
 <div class="block-related">
     <div class="block-title">
         <span><?php echo $this->__('Related Products') ?></span>
     </div>
     <div class="block-content">
         <ol class="mini-products-list" id="block-related">
-        <?php foreach($this->getItems() as $_item): ?>
+        <?php foreach($this->_productCollection as $_item): ?>
             <li class="item">
                 <div class="product">
                     <a href="<?php echo $_item->getProductUrl() ?>" title="<?php echo $this->htmlEscape($_item->getName()) ?>" class="product-image"><img src="<?php echo $this->helper('catalog/image')->init($_item, 'thumbnail')->resize(100) ?>" width="100" height="100" alt="<?php echo $this->htmlEscape($_item->getName()) ?>" /></a>
@@ -47,4 +75,4 @@
     </div>
    
 </div> <div class="clearer"></div>
-<?php endif ?>
+<?php //endif ?>
