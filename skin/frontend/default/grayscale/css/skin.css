@@ -1,3 +1,4 @@
+@charset "utf-8";
 /* Reset ================================================================================= */
 * {
 	margin:0;
@@ -134,7 +135,7 @@ p {
 .col1-layout .col-main {
 	float:none;
 	width:auto;
-	margin:0 20px;
+	margin:0 0 0 10px;
 }
 /* 2 Columns Layout */
 .col2-left-layout {
@@ -746,7 +747,7 @@ button.button:hover span span, button.buttonHover span span {
 .products-list .product-shop {
 	margin-left:175px;
 }
-/*νΰηβΰνθε*/
+/*η£¬η®ε›—ζ΅Ά*/
 .products-list .product-name, .products-list .product-name a {
 	color:#030000;
 	font-size:11px;
@@ -766,7 +767,7 @@ button.button:hover span span, button.buttonHover span span {
 .products-list .product-name a:hover, .products-grid .product-name a:hover {
 	text-decoration: underline;
 }
-/*ξοθρΰνθε*/
+/*ι“’ζ΅‰ε›—ζ΅Ά*/
 .products-list .desc {
 	font:11px Arial, Helvetica, sans-serif;
 	line-height: 130%;
@@ -796,7 +797,7 @@ button.button:hover span span, button.buttonHover span span {
 	font-weight: bold !important;
 	font:11px Tahoma, Helvetica, sans-serif;
 }
-.block-related .price-box .price, .block-popular .price-box .price{ text-align:left !important; color:#FA5400 !important;}
+.block-related .price-box .price, .block-popular .price-box .price{ color:#FA5400 !important;}
 
 div.product-shop .regular-price .price, div.product-shop .price-box .price {
 	font:15px Tahoma, Helvetica, sans-serif;
@@ -968,6 +969,7 @@ div.toolbar-bottom .limiter {
 }
 .product-view .product-img-box .product-image {
 	margin-bottom: 5px;
+	border:1px solid #ddd;
 }
 .product-view .product-img-box .zoom #track {
 	background:#dadada;

@@ -20,13 +20,13 @@
 #one-column-tr .product-shop .product-collateral{}
 #one-column-tr .product-shop .padder{ }
 #one-column-tr .one-product-info{ padding:5px 5px 0 10px; background:#fff; width:380px; float:left;}
-#one-column-tr .one-right-price{ width:180px; float:right; padding:10px 0px 0 5px;}
+#one-column-tr .one-right-price{ width:170px; float:right; padding:10px 0px 0 5px;}
 #one-column-tr .one-right-price .add-to-cart{ line-height:30px; vertical-align: middle;}
 #one-column-tr .add-to-cart button.button { margin:0px;}
-#one-column-tr .one-product-up{ background:#eee; width:585px; border:1px solid #ddd;}
+#one-column-tr .one-product-up{ background:#eee; width:100%; border:1px solid #ddd;}
 #one-column-tr .one-product-img{ width:352px; float:left;margin:0px; padding:0px;}
-#one-column-tr .one-product-img .product-img-box { width:350px;}
-#one-column-tr .one-product-img .one-relate-product { width:350px;}
+#one-column-tr .one-product-img .product-img-box { width:100%;}
+#one-column-tr .one-product-img .one-relate-product { width:100%;}
 #one-column-tr .one-product-img .one-relate-product h3{ background:#ddd; height:30px; width:100%;}
 #one-column-tr .one-product-img .one-relate-product ul{ padding:10px;}
 #one-column-tr .one-product-img .one-relate-product li{ float:left; width:102px;}
@@ -41,7 +41,9 @@
 #block-related .product-details{ text-align:center;}
 .product-view .price-box { margin:0px;}
 #block-related .price{ font-size:14px; font-weight:normal;}
-
+.product-options {background:none; border:none;}
+.one-right-price .add-to-links{ margin:0px; clear:both; padding-left:10px;}
+.one-right-price .add-to-links li{ line-height:24px;}
 
 
 
