@@ -32,6 +32,7 @@
         <a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo"><strong><?php echo $this->getLogoAlt() ?></strong><img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" /></a>
         <?php endif?>
         <div class="quick-access">
+        	<?php echo $this->getChildHtml('currency_top') ?>
 			<!--<div style=" float:left;line-height:30px; margin-left:120px; margin-top:-5px; ">
 				<span class="welcome-msg"><?php echo $this->getWelcome()?></span>
 			</div>-->

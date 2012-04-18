@@ -1564,7 +1564,9 @@ line-height: 18px;}
 .product-shop .product-options-bottom .add-to-cart { float:right; margin:8px 0px 0px; line-height:28px;}
 .product-shop .product-options-bottom .add-to-cart input{ padding:6px;}
 
-
+.block-currency{ clear:both; float:none; padding-bottom: 20px;}
+.block-currency .block-title{ float:right; text-align:right; padding:5px 10px 0 0;}
+.block-currency .block-content{ float:right;}
 
 
 

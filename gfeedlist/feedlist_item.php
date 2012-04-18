@@ -12,7 +12,7 @@ $google_list_item['name'] = array(
 $google_list_item['description'] = array(
 	'title' => 'description',
 	'method' => 'getDescription',
-	'value' => '',
+	'value' => 'desc',
 );
 $google_list_item['link'] = array(
 	'title' => 'link',

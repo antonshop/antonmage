@@ -68,7 +68,6 @@ $_productCollection = $this->_productCollection = $collection;
                      <p class="product-name"><a href="<?php echo $_item->getProductUrl() ?>"><?php echo $this->htmlEscape($_item->getName()) ?></a></p>
                      <?php echo $this->getPriceHtml($_item, true, '-related') ?>
                 </div>
-               
             </li>
         <?php endforeach ?>
         </ol>
