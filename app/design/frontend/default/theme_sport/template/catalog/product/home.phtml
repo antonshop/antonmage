@@ -10,16 +10,19 @@
 	</div>
 	<div class="rbanner">
 		<?php 
-		$showblock = Mage::getModel('catalog/layer_state');
-		//print_r($showblock);exit;
-		$basefilter = $showblock->getLayer();
-		$activefilter = $showblock->getActiveFilters();
-		foreach($basefilter as $item){
-			print_r($item);
-		}
-		foreach($activefilter as $item){
-			print_r($item->getName());
-		}exit;
+//		$showblock = Mage::getBlockSingleton('catalog/layer_view');
+//		//print_r($showblock);exit;
+//		$collection = Mage::getModel('catalog/category')->getCollection();
+//		$basefilter = $showblock->getLayer();
+//		$activefilter = $showblock->getLayer()->getFilterableAttributes($collection);
+//		foreach($basefilter as $item){
+//			print_r($item);
+//		}
+//print_r($activefilter);
+////		foreach($activefilter as $item){
+////			print_r($item->getName());
+////		}
+//		exit;
 		?>
 		<?php //echo $this->getChildHtml('catalog_filter') ?>
 		

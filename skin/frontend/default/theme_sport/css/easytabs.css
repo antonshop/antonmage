@@ -14,6 +14,17 @@
 #product_tabs_related_tabbed_contents ol	{ clear: both;}
 .product-collateral:after { content:"."; display:block; clear:both; font-size:0; line-height:0; height:0; overflow:hidden; zoom: 1}
 
+/* home tabs*/
+.hp_tabs { margin: 15px 0px; overflow:hidden; border-bottom:1px solid #666;  zoom: 1;}
+.hp_tabs li                { float:left; line-height:18px; border-right:1px solid #ffffff; border-left:1px solid #fff; font-size:13px; background: #f2f2f2; }
+.hp_tabs li.first          { border-left:0; }
+.hp_tabs li.last           { border-right:0; }
+.hp_tabs a                 { display:block; padding:6px 10px; color:#444; text-decoration: none;}
+.hp_tabs a:hover           { background-color:#ddd; text-decoration:none; color:#444; ; text-decoration: none;}
+.hp_tabs li.active a,
+.hp_tabs li.active a:hover { background:#666;  font-weight:bold; color:#fff; }
+
+
 /* modify column */
 .main{ padding:0 8px;}
 #one-column-tr .product-shop { width:585px; float:right; padding:0px;}

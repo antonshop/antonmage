@@ -72,7 +72,7 @@ Varien.Tabs.prototype = {
       if ($(el.parentNode).hasClassName('active')) {
         this.showContent(el);
       }
-      el.observe('click', this.showContent.bind(this, el));
+      el.observe('mouseover', this.showContent.bind(this, el));
   },
 
   showContent: function(a) {
