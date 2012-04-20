@@ -26,35 +26,30 @@
 ?>
 <div class="header-container">
     <div class="header">
-    	<div class="navigation">
-    		<p class="welcome-msg">&nbsp;<?php echo $this->getWelcome()?></p>
+    	<div class="logo-block">
+    		<div class="logo-block-2">
+    			<?php if ($this->getIsHomePage()):?>
+	        <h1 class="logo"><strong><?php echo $this->getLogoAlt() ?></strong><a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo"><img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" /></a></h1>
+	        <?php else:?>
+	        	<a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo"><strong><?php echo $this->getLogoAlt() ?></strong><img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" /></a>
+	        <?php endif?>
+    		</div>
+		</div>
+    	<div class="quick-access">
     		<div class="navigation-col">
     			<?php echo $this->getChildHtml('currency_top') ?>
     			<?php echo $this->getChildHtml('store_language') ?>
     		</div>
+    		<?php echo $this->getChildHtml('topSearch') ?>
+    		<br class="clear">
+    		
+    		<?php echo $this->getChildHtml('topLinks') ?>
     	</div>
-    	<div class="header-row">
-    		<div class="logo-block">
-    			<div class="logo-block-2">
-    				<?php if ($this->getIsHomePage()):?>
-			        <h1 class="logo"><strong><?php echo $this->getLogoAlt() ?></strong><a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo"><img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" /></a></h1>
-			        <?php else:?>
-			        <a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo"><strong><?php echo $this->getLogoAlt() ?></strong><img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" /></a>
-			        <?php endif?>
-    			</div>
-			</div>
-			<div class="navigation-2">
-				<?php echo $this->getChildHtml('topSearch') ?>
-				<?php echo $this->getChildHtml('topLinks') ?>
-			</div>
-			<div class="clear-block"></div>
-    	</div>
-    	<div class="menu">
-			<div class="bg-menu">
-				<div class="nav-container">
-				    <?php echo $this->getChildHtml('topMenu'); ?>
-				</div>
-			</div>
+    	
+		<div class="nav-container">
+			<div class="corner-left-menu">&nbsp;</div>
+			<div class="corner-right-menu">&nbsp;</div>
+		    <?php echo $this->getChildHtml('topMenu'); ?>
 		</div>
     </div>
 </div>
