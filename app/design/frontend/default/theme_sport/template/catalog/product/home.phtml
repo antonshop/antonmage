@@ -1,4 +1,4 @@
-<!--<div class="fban">
+<div class="fban">
 	<div id="slider">
 	    <div class="coin-slider" id="coin-slider-coin-slider">
 	    <div id="coin-slider" style="width: 660px; height: 320px; position: relative; background-position: 0% 0%; ">
@@ -9,11 +9,28 @@
 		</div>
 	</div>
 	<div class="rbanner">
+		<?php 
+//		$showblock = Mage::getBlockSingleton('catalog/layer_view');
+//		//print_r($showblock);exit;
+//		$collection = Mage::getModel('catalog/category')->getCollection();
+//		$basefilter = $showblock->getLayer();
+//		$activefilter = $showblock->getLayer()->getFilterableAttributes($collection);
+//		foreach($basefilter as $item){
+//			print_r($item);
+//		}
+//print_r($activefilter);
+////		foreach($activefilter as $item){
+////			print_r($item->getName());
+////		}
+//		exit;
+		?>
+		<?php //echo $this->getChildHtml('catalog_filter') ?>
+		
 		<img src="<?php echo $this->getSkinUrl('images/r-banner.jpg')?>">
 	</div>
 </div>
 <div style="clear:both;"></div>
--->
+
 <?php $_productCollection=$this->getLoadedProductCollection() ?>
 <?php if(!$_productCollection->count()): ?>
 <p class="note-msg"><?php echo $this->__('There are no products matching the selection.') ?></p>

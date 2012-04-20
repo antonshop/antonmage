@@ -6,13 +6,7 @@
         </Magazento_Homepage>
     </modules>
     <frontend>
-        <layout>
-            <updates>
-                <homepage>
-                    <file>magazento_homepage.xml</file>
-                </homepage>
-            </updates>
-        </layout>
+        
         <translate>
             <modules>
                 <Magazento_Homepage>

@@ -1,0 +1,66 @@
+<?php $_productCollection=$this->getLoadedProductCollection() ?>
+<?php if(!$_productCollection->count()): ?>
+<p class="note-msg"><?php echo $this->__('There are no products matching the selection.') ?></p>
+<?php else: ?>
+<script type="text/javascript" src="<?php echo $this->getSkinUrl();?>js/jquery-1.3.2.min.js"></script>
+<script type="text/javascript" src="<?php echo $this->getSkinUrl();?>js/slider.js"></script>
+<script type="text/javascript">
+	jQuery.noConflict();
+	jQuery(window).bind('load', function(){
+		jQuery().prepare_slider(); 
+		jQuery('#slider_list li').over();
+				
+		if (jQuery('#slider_list').length > 0){
+			jQuery('.left-top').css("background","none")
+			jQuery('.right-top').css("background","none")
+			jQuery('.left-bot').css("background","none")
+			jQuery('.right-bot').css("background","none")
+		}
+		
+		jQuery(".box-left").hover(
+			  function () {
+				jQuery(this).addClass('box-left-hover');
+			  }, 
+			  function () {
+				jQuery(this).removeClass('box-left-hover');
+			  }
+			);
+			
+		jQuery(".box-right").hover(
+			  function () {
+				jQuery(this).addClass('box-right-hover');
+			  }, 
+			  function () {
+				jQuery(this).removeClass('box-right-hover');
+			  }
+			);
+
+	});	
+</script>
+    <div class="arr-slider">
+        <div class="box-left-2">
+            <div class="box-left" id="left_but">&nbsp;</div>  
+            <div class="box-right" id="right_but">&nbsp;</div>
+        </div>
+    </div>
+
+    <div class="box-top">
+    <div class="box-top-2">
+    <ul class="products-grid" id="slider_list">
+    	<?php $_collectionSize = $_productCollection->count() ?>
+	    <?php $_columnCount = $this->getColumnCount(); ?>
+	    <?php $i=0; foreach ($_productCollection as $_product): ?>
+        <li class="coll item">
+            <h3 class="product-name"><a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->htmlEscape($_product->getName()) ?>"><?php echo $this->htmlEscape($_product->getName()) ?></a></h3>
+            <!--<div class="desc"><?php echo $this->getPriceHtml($_product) ?></div>
+            --><a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->htmlEscape($_product->getName()) ?>" class="product-image"><img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(215,215); ?>" alt="<?php echo $this->htmlEscape($_product->getName()) ?>" /></a>
+        </li>
+        <?php endforeach;?>
+    </ul>
+</div>
+</div>
+
+<?php endif; ?>
+
+
+

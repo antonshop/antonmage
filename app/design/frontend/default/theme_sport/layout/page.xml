@@ -70,7 +70,7 @@ Default layout, loads most of the pages
             <block type="core/text_list" name="after_body_start" as="after_body_start" translate="label">
                 <label>Page Top</label>
             </block>
-
+			<block type="catalog/layer_view" name="catalog_filter" as="catalog_filter" template="catalog/layer/view.phtml" />
             <block type="page/html_notices" name="global_notices" as="global_notices" template="page/html/notices.phtml" />
 
             <block type="page/html_header" name="header" as="header">

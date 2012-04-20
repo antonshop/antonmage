@@ -33,9 +33,6 @@
 ?>
 <?php if($this->getCurrencyCount()>1): ?>
 <div class="block block-currency">
-    <div class="block-title">
-        <strong><span><?php echo $this->__('Select Your Currency: ') ?></span></strong>
-    </div>
     <div class="block-content">
         <select name="currency" title="<?php echo $this->__('Select Your Currency:') ?>" onchange="setLocation(this.value)">
         <?php foreach ($this->getCurrencies() as $_code => $_name): ?>
@@ -45,5 +42,9 @@
         <?php endforeach; ?>
         </select>
     </div>
+    <div class="block-title">
+        <span><?php echo $this->__('Select Your Currency: ') ?></span>
+    </div>
 </div>
+<div class="clearer"></div>
 <?php endif; ?>

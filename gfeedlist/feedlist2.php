@@ -281,10 +281,11 @@ function get_item_value($product, $currency, $country, $currency_rate, $key, $it
 			}else{
 				$content .=  SEP;
 			}*/
-		}/*else if($item['value'] == 'desc'){
+		}else if($item['value'] == 'desc'){
 			//echo '<textarea>'.strip_tags($product->$item['method']()).'</textarea>';
-			$content .= substr(strip_tags($product->$item['method']()), 0, 1000) . SEP;
-		}*/else if($item['value'] == 'url'){
+			$content .= str_replace($replace_foundarr,$replace_arr,substr(strip_tags($product->$item['method']()), 0, 1000)) . SEP;
+			//exit;
+		}else if($item['value'] == 'url'){
 			$content .= str_replace('/'.basename(__FILE__), '/index.php', $product->$item['method']()) . SEP;
 		}else if($item['value'] == 'fl'){
 			$content .= number_format($product->$item['method'](), 2, '.', '') . SEP;

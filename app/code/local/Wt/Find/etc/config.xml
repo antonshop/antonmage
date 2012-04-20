@@ -33,7 +33,7 @@
         </args>
         </news>
         </routers>
-    </admin>
+    </admin><!--
     <adminhtml>
         <menu>
         <find module="find">
@@ -56,7 +56,7 @@
         </updates>
     </layout>
     </adminhtml>   
-    <global>
+    --><global>
         <models>
             <find>
                 <class>Wt_Find_Model</class>

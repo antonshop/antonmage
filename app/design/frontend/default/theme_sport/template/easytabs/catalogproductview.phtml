@@ -47,7 +47,17 @@
 	            <input type="hidden" name="product" value="<?php echo $_product->getId() ?>" />
 	            <input type="hidden" name="related_product" id="related-products-field" value="" />
 	        </div>
-			
+	        
+			<div class="one-product-img">
+		        <div class="product-img-box">
+		            <?php echo $this->getChildHtml('media') ?>
+		        </div>
+	        	<div class="clearer"></div>
+	        	<div class="one-relate-product">
+	        		<?php echo $this->getChildHtml('related_products');?>
+	        	</div>
+	        </div>
+	        
 	        <div class="product-shop">
 	        	<div class="one-product-up">
 	        	<div class="one-right-price">
@@ -135,15 +145,7 @@
 			        <?php echo $this->getChildHtml('product_additional_data') ?>
 			    </div>
 	        </div>
-			<div class="one-product-img">
-		        <div class="product-img-box">
-		            <?php echo $this->getChildHtml('media') ?>
-		        </div>
-	        	<div class="clearer"></div>
-	        	<div class="one-relate-product">
-	        		<?php echo $this->getChildHtml('related_products');?>
-	        	</div>
-	        </div>
+			
 	        
 	    </div>
 	
