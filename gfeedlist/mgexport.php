@@ -24,7 +24,12 @@ $status = Mage::getModel('catalog/product_status')->getOptionArray();
 
 $read = Mage::getSingleton('core/resource')->getConnection('core_read');  
 //make connection  
-$qry = "select * FROM ".Mage::getSingleton('core/resource')->getTableName('catalog_product_entity'); 
+if(isset($_GET['from']) && isset($_GET['to'])){
+	$where = " where entity_id between " . $_GET['from'] . " and " .$_GET['to'];
+} else {
+	$where = " ";
+}
+$qry = "select * FROM ".Mage::getSingleton('core/resource')->getTableName('catalog_product_entity') . $where; 
 $products = $read->fetchAll($qry);
 
 $sql = "select attribute_code FROM ".Mage::getSingleton('core/resource')->getTableName('eav_attribute')." WHERE is_user_defined = 1"; 

@@ -7,3 +7,8 @@
 /var/importexport
 /var/locks
 /media/import
+/app/code/community/OpenBiz/LICENSE.txt
+/app/code/community/OpenBiz/RandomRelatedProducts/Block/Related.php
+/app/code/community/OpenBiz/RandomRelatedProducts/etc/config.xml
+/app/code/community/OpenBiz/RandomRelatedProducts/etc/system.xml
+/app/etc/modules/OpenBiz_RandomRelatedProducts.xml
