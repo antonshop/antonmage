@@ -482,13 +482,13 @@ tr.tax-details-first td { border-top:1px solid #d2d8db; }
 #left, #right{ cursor:pointer}	
 
 .box-top-2 { margin-left:-479px; left:50%; zoom:1; position:relative;}
-.box-top { margin:0; padding:0; z-index:1; position:relative;}
+.box-top { margin:0; padding:0; z-index:0; position:relative;}
 .box-top ul.products-grid { list-style:none; padding:0; margin:0; position:relative; z-index:1; text-align:left; border:none;}
 .box-top ul.products-grid li {  width:225px; padding:0 0 0 0; margin:0; text-align:left; display:inline-block; float:left !important; text-align:center;}	
 #slider_list{ padding-left:35px;}
 
-.box-left { background:url("../images/prev.png") 0 0 no-repeat; position:absolute; z-index:999; width:21px; height:43px; padding:0 0 0 0; margin:0 0 0 0; text-align:center; font-size:0; left:-36px; top:129px; line-height:0; cursor:pointer;}
-.box-right { background:url("../images/next.png") 0 0 no-repeat; position:absolute; z-index:999; width:21px; height:43px; padding:0 0 0 0; margin:0 0 0 0; text-align:center; font-size:0; right:54px; top:129px; line-height:0; cursor:pointer;}	
+.box-left { background:url("../images/prev.png") 0 0 no-repeat; position:absolute; z-index:999; width:21px; height:43px; padding:0 0 0 0; margin:0 0 0 0; text-align:center; font-size:0; left:-36px; top:139px; line-height:0; cursor:pointer;}
+.box-right { background:url("../images/next.png") 0 0 no-repeat; position:absolute; z-index:999; width:21px; height:43px; padding:0 0 0 0; margin:0 0 0 0; text-align:center; font-size:0; right:54px; top:139px; line-height:0; cursor:pointer;}	
 
 
 .box-left-hover { background:url("../images/prev_hover.png") 0 0 no-repeat;}
