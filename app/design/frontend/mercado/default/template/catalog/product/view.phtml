@@ -70,14 +70,12 @@
             <?php endif; ?>   
             
             <?php echo $this->getChildHtml('other');?>
-
+			<?php if ($_product->isSaleable() && $this->hasOptions()):?>
+	            <div id="container2"><?php echo $this->getChildChildHtml('container2', '', true, true) ?></div>
+	        <?php endif;?>
         </div>
-
-
         <div class="clearer"></div>
-        <?php if ($_product->isSaleable() && $this->hasOptions()):?>
-            <div id="container2"><?php echo $this->getChildChildHtml('container2', '', true, true) ?></div>
-        <?php endif;?>
+        
     </form>
     <script type="text/javascript">
     //<![CDATA[

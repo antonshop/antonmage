@@ -37,8 +37,8 @@ Category default layout
         </reference>
         <reference name="left">
             <block type="catalog/navigation" name="catalog.leftnav" after="catalog.leftnav2" template="catalog/navigation/left.phtml"/>
-            <block type="catalog/leftnavigation" name="catalog.leftnav2" before="currency" template="catalog/navigation/leftnav.phtml"/>
-       </reference>
+            <!--<block type="catalog/leftnavigation" name="catalog.leftnav2" before="currency" template="catalog/navigation/leftnav.phtml"/>
+       --></reference>
         <reference name="content">
             <block type="catalog/category_view" name="category.products" template="catalog/category/view.phtml">
                 <block type="catalog/product_list" name="product_list" template="catalog/product/list.phtml">
@@ -81,7 +81,7 @@ Category layered navigation layout
         </reference>
         <reference name="left">
             <block type="catalog/layer_view" name="catalog.leftnav" after="catalog.leftnav2" template="catalog/layer/view.phtml"/>
-            <block type="catalog/leftnavigation" name="catalog.leftnav2" before="currency" template="catalog/navigation/leftnav.phtml"/>
+            <!--<block type="catalog/leftnavigation" name="catalog.leftnav2" before="currency" template="catalog/navigation/leftnav.phtml"/>-->
         </reference> 
         <reference name="content">
             <block type="catalog/category_view" name="category.products" template="catalog/category/view.phtml">
