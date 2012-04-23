@@ -1,10 +1,6 @@
 cms => page homepage
 content:
-<div class="wired-home">
-<div class="featured-social">{{block type="catalog/product_list" category_id="31" template="catalog/product/featured.phtml"}}</div>
-</div>
 <p>{{block type="catalog/product_list" category_id="57" template="catalog/product/home.phtml"}}</p>
-
 desgin: empty
 1 column
 
