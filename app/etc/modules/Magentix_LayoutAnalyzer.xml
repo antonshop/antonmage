@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Magentix_LayoutAnalyzer>
+            <active>true</active>
+            <codePool>community</codePool>
+        </Magentix_LayoutAnalyzer>
+    </modules>
+</config> 
