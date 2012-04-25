@@ -2269,4 +2269,7 @@ h3.icon-title {margin-bottom:6px;}
 	display:none;
 }
 .rbanner{ float:left; width:260px;} 
+#upsell-product-table{ width:590px;}
+#upsell-product-table td { padding:10px 5px 0px;}
+#upsell-product-table .product-image{ width:125px;}
 
