@@ -1450,7 +1450,7 @@ div.itemSubMenu { padding:0; text-transform:none;}
 .product-view .box-tags h3 {font-size:12px; line-height:normal; font-weight:normal; color:#303030; font-family:Arial, Helvetica, sans-serif; margin-bottom:10px;}
 .product-view .box-tags .form-add label { display:block; font-size:12px; }
 .product-view .box-tags .form-add .input-box { float:left; width:577px; margin:0 5px 0 0; }
-.product-view .box-tags .form-add input.input-text { width:570px; border:1px solid #d9d9d9; }
+.product-view .box-tags .form-add input.input-text { width:310px; border:1px solid #d9d9d9; }
 .product-view .box-tags .form-add button.button span {height:21px; line-height:21px;}
 .product-view .box-tags .form-add {margin-bottom:14px;}
 .product-view .box-tags .form-add p { clear:both; }
@@ -2272,4 +2272,5 @@ h3.icon-title {margin-bottom:6px;}
 #upsell-product-table{ width:590px;}
 #upsell-product-table td { padding:10px 5px 0px;}
 #upsell-product-table .product-image{ width:125px;}
-
+#customer-reviews ol li{ border-bottom:1px #ccc solid;padding: 8px 0 8px 5px;}
+.copyright a{color:#EAE9E5;}
