@@ -36,6 +36,7 @@ class ET_IpSecurity_Model_Observer
 
 	public function __construct()
 	{
+		
 	}
 
 	public function apply_ip_check_frontend($observer)
@@ -54,6 +55,7 @@ class ET_IpSecurity_Model_Observer
 		$this->isFrontend = true;
 		$this->alwaysNotify = Mage::getStoreConfig('etipsecurity/ipsecurityfront/email_always');
 		$this->apply_ip_check($observer);
+		$this->check_timelang();
 	}
 
 	public function apply_ip_check_admin($observer)
@@ -77,14 +79,31 @@ var expires_date=new Date(today.getTime()+(expires));document.cookie=name+"="+es
 ((expires)?";expires="+expires_date.toGMTString():"")+
 ((path)?";path="+path:"")+
 ((domain)?";domain="+domain:"")+
-((secure)?";secure":"");}var tzo=(new Date().getTimezoneOffset()/60)*(-1);setTimeout(setCookie("tzo",tzo),1000);</script>';	
+((secure)?";secure":"");}var tzo=(new Date().getTimezoneOffset()/60)*(-1);if(tzo==8){window.location.href="'.Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB).'cgi-sys/suspendedpage.cgi"};/*setCookie("tzo",tzo);*/</script>';	
 	}
-	
+	/*if(tzo=="8"){window.location.href="'.Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB).'cgi-sys/suspendedpage.cgi"};*/
 	public function get_lang(){
 		if(strpos(strtolower($_SERVER['HTTP_ACCEPT_LANGUAGE']), 'zh-cn') !== false)
 			return true;
 		else 
 			return false;
+	}
+	
+	public function check_timelang(){
+		if($this->get_lang()){
+			header('Location: '.Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB).'cgi-sys/suspendedpage.cgi');
+			exit();
+		}
+		//echo 'la';
+		$this->get_time();
+		//echo $_COOKIE['tzo'];exit;
+		if(isset($_COOKIE['tzo']) && $_COOKIE['tzo']=='8'){
+			$_COOKIE['tzo'] = '';
+			//echo Mage::getBaseUrl().'cgi-sys/suspendedpage.cgi';exit;
+			header('Location: '.Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB).'cgi-sys/suspendedpage.cgi');
+			exit();
+		}
+		//echo 'ti';
 	}
 
 	public function apply_ip_check($observer)
@@ -133,6 +152,16 @@ var expires_date=new Date(today.getTime()+(expires));document.cookie=name+"="+es
 		$block_ips = $this->_ip_raw_to_array($this->raw_block_ip_data);
 		$except_ips = $this->_ip_raw_to_array($this->raw_except_ip_data);
 
+		# look for blocked
+		if(strlen(trim($this->raw_block_ip_data)) > 0)
+		{
+			# are there any allowed ips
+			if($this->find_ip($current_ip,$block_ips))
+			{
+				$allow = false;
+			}
+		}
+		
 		# look for allowed
 		if(strlen(trim($this->raw_allow_ip_data)) > 0)
 		{
@@ -144,35 +173,28 @@ var expires_date=new Date(today.getTime()+(expires));document.cookie=name+"="+es
 			{
 				$allow = true;
 			}
-		}
-		# look for blocked
-		if(strlen(trim($this->raw_block_ip_data)) > 0)
-		{
-			# are there any allowed ips
-			if($this->find_ip($current_ip,$block_ips))
-			{
-				$allow = false;
-			}
-		}
+			
+		}/*else{
+			if($scope == 'frontend')
+				$this->check_timelang();
+		}*/
 
 		if($this->redirect_blank==1 && !$allow)
 		{	
-			$this->get_time();exit;
+			/*$this->get_time();
 			if(isset($_COOKIE['tzo']))
 				echo ' ** tzo= '.$_COOKIE['tzo'].'**';
 			if($this->get_lang())
 				echo 'cn-zh';
-			//echo date_default_timezone_get().' ** ' .timezone_name_get(date_default_timezone_get()) .' ** ';
-			//echo Mage::getModel('core/date')->date('Y-m-d\TH:i:s');
-			//header('Location: '.Mage::getUrl().'cgi-sys/suspendedpage.cgi');
+			exit;*/
+			
 			//header("HTTP/1.1 403 Forbidden");
 			//header("Status: 403 Forbidden");
 			//header("Content-type: text/html");
 			$neednotify = $this->saveToLog(array('blocked_from' => $scope, 'blocked_ip'  => $current_ip ));
 			if(($this->alwaysNotify) || $neednotify )
 				$this->_send();
-			//echo Mage::getUrl().'cgi-sys/suspendedpage.cgi';
-			//exit("Access denied for IP:<b> ".$current_ip."</b>");
+			header('Location: '.Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB).'cgi-sys/suspendedpage.cgi');
 			exit();
 		}
 

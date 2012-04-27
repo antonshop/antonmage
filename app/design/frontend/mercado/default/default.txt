@@ -36,6 +36,7 @@ cms => pages =>  homepage
 <div class="clear">{{block type="catalog/product_new" name="home.catalog.product.new" alias="product_homepage"  template="catalog/product/new.phtml"}}</div>
 <p>{{block type="catalog/product_list" category_id="57" template="catalog/product/home.phtml"}}</p>
 
+
 =====================================================================================================
 cms => Static Blocks
 footer_shipping:
@@ -77,6 +78,7 @@ footer_shipping:
 </ul>
 </div>
 </div>
+
 
 verifi:
 <div style="padding-top: 2px;"><img src="{{media url="wysiwyg/mercado/paypal.png"}}" alt="paypal" />&nbsp;&nbsp; &nbsp;<img src="{{media url="wysiwyg/mercado/discover.png"}}" alt="discover" />&nbsp; &nbsp;&nbsp;<img src="{{media url="wysiwyg/mercado/visa_straight.png"}}" alt="visa_straight" />&nbsp; &nbsp;&nbsp;<img src="{{media url="wysiwyg/mercado/aex.png"}}" alt="aex" />&nbsp; &nbsp;&nbsp;<img src="{{media url="wysiwyg/mercado/mastercard.png"}}" alt="mastercard" />&nbsp;&nbsp; &nbsp;<img src="{{media url="wysiwyg/mercado/maestro.png"}}" alt="maestro" /></div>
