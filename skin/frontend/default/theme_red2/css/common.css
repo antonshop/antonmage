@@ -278,7 +278,7 @@ p.control input.radio { margin-right:6px; }
 
 /* 2nd Level */
 #nav ul,
-#nav div { position:absolute; width:15em; top:60px; left:-10000px; border:1px solid #980202;z-index:5000; }
+#nav div { position:absolute; width:15em; top:45px; left:-10000px; border:1px solid #980202;z-index:5000; }
 #nav div ul { position:static; width:auto; border:none; }
 
 /* 3rd+ Level */

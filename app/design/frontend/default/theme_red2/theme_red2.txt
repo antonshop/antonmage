@@ -6,10 +6,51 @@ content:
 desgin: empty
 1 column
 
+Block Title£ºfooter_shipping  Identifier£ºfooter_shipping
+
+   <ul>
+	<li class="heading">Company Info</li>
+	<li><a href="{{store direct_url="about-us"}}" target="_blank">About Us</a></li>
+	<li><a href="{{store direct_url="our-guarantee"}}" target="_blank">Our Guarantee</a></li>
+	<li><a href="{{store direct_url="rss"}}" target="_blank">RSS</a></li>
+	<li><a href="{{store direct_url="catalog/seo_sitemap/category/"}}" target="_blank">Sitemap</a></li>
+   </ul>
+   <ul>
+	<li class="heading">Customer Service</li>
+	<li><a href="{{store direct_url="contact-us"}}" target="_blank">Contact Us</a></li>
+	<li><a href="http://settings.messenger.live.com/Conversation/IMMe.aspx?invitee=shopping.west@hotmail.com" target="_blank">Live Help</a></li>
+	<li><a href="{{store direct_url="size-help"}}" target="_blank">Size Help</a></li>
+	<li><a href="{{store direct_url="catalogsearch/term/popular/"}}" target="_blank">Search Terms</a></li>
+   </ul>
+   <ul>
+	<li class="heading">Payment & Shipping</li>
+	<li><a href="{{store direct_url=payment-method""}}s" target="_blank">Payment Methods</a></li>
+	<li><a href="{{store direct_url="shipping-guide"}}" target="_blank">Shipping Guide</a></li>
+	<li><a href="{{store direct_url="locations-we-ship-to"}}" target="_blank">Locations We Ship To</a></li>
+	<li><a href="{{store direct_url="return-policy"}}" target="_blank">Return Policy</a></li>
+   </ul>
+   <ul>
+	<li class="heading">Company Policies</li>
+	<li><a href="{{store direct_url="privacy-policy"}}" target="_blank">Privacy Policy </a></li>
+	<li><a href="{{store direct_url="term-of-use-intellectual"}}" target="_blank">Terms of Use Intellectual </a></li>
+	<li><a href="{{store direct_url="intellectual-property-policy"}}" target="_blank">Intellectual Property Policy</a></li>
+	<li><a href="{{store direct_url="membership-policy"}}" target="_blank">Membership Policy</a></li>
+   </ul>
+   <div class="footersocial">
+	<h3>JOIN OUR COMMUNITY:</h3>
+	<ul class="clearfix">
+		<li><a href="{{store direct_url="web"}}" target="_blank"><img src="{{media url='blogger.png'}}" alt="My Blog"></a></li>
+		<li><a href="{{store direct_url="web"}}" target="_blank"><img src="{{media url='twitter.png'}}" alt="My Twitter"></a></li>
+		<li><a href="http://www.facebook.com" target="_blank"><img src="{{media url='facebook.png'}}" alt="My Facebook"></a></li>
+		<li><a href="http://www.youtube.com" target="_blank"><img src="{{media url='youtube.png'}}" alt="My YouTube"></a></li>
+	</ul>
+	</div>
+	<div class="clear"></div>
 
 
 
 Block Title£ºfoot_links  Identifier£ºfoot_links
+display
 
 {{block type="tag/popular" template="tag/popular_footer.phtml"}}
 {{block type="catalogsearch/term" template="catalogsearch/term_footer.phtml"}}

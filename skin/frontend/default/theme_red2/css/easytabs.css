@@ -30,7 +30,7 @@
 #one-column-tr .one-product-img .one-relate-product h3{ background:#ddd; height:30px; width:100%;}
 #one-column-tr .one-product-img .one-relate-product ul{ padding:10px;}
 #one-column-tr .one-product-img .one-relate-product li{ float:left; width:102px;}
-#one-column-tr .product-options-bottom{ padding:10px 10px 0;}
+#one-column-tr .product-options-bottom{ padding:0px 10px 0;}
 .product-view #qty { height:15px;}
 .block-related{ padding:0px;}
 .block-related .block-title{ padding:5px 0 5px 10px; font-weight:normal; background:#ddd;}
