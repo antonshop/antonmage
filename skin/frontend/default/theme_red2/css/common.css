@@ -176,7 +176,7 @@ p.control input.radio { margin-right:6px; }
 .header .quick-access { float:right; width:600px; padding:28px 10px 0 0; }
 .header .welcome-msg { margin:0; color:#fff; text-align:right; }
 .header .welcome-msg a { color:#ebbc58; }
-.header .form-search {  width:200px;float:left; height:30px;  padding:0px;margin:15px 0 0 15px; }
+.header .form-search {  width:200px;float:left; height:30px;  padding:0px;margin:8px 0 0 15px; }
 .header .form-search label { float:left; width:24px; height:21px; text-align:left; text-indent:-999em; overflow:hidden; display:none;}
 .header .form-search input.input-text { float:left; background: url("../images/searchtextbg.jpg") 0 0 no-repeat;padding:9px 5px; width:156px; margin:0px;border:none; }
 .header .form-search button.button { float:left; }
@@ -243,7 +243,7 @@ p.control input.radio { margin-right:6px; }
 .special-price .price { font-size:13px; font-weight:bold;  }
 
 /********** < Navigation */
-.nav-container { float:left;background: url("../images/sprite_nav.png") 0 0 no-repeat;width:1000px;height:60px;}
+.nav-container { float:left;background: url("../images/sprite_nav.png") 0 0 no-repeat;width:1000px;height:45px;}
 #nav { width:770px; float:left; font-size:13px; }
 .nav_search{ float:left; width:195px; text-align:left;}
 
@@ -259,7 +259,7 @@ p.control input.radio { margin-right:6px; }
 #nav ul li.parent li a { background-image:none; }
 
 /* 0 Level */
-#nav li { float:left;padding: 14px 10px; position:relative; background: url("../images/menudivider.jpg") no-repeat top right;}
+#nav li { float:left;padding: 5px 10px; position:relative; background: url("../images/menudivider.jpg") no-repeat top right;}
 #nav li.active a {  }
 #nav a { float:left; padding:5px 12px 6px 8px; color:#fff;font-size: 18px; font-weight:normal;font-family: 'georgia', serif;text-transform: capitalize; }
 #nav li.over a,
