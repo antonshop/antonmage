@@ -877,7 +877,7 @@ CREATE TABLE `hy_catalog_product_entity` (
 
 /*Data for the table `hy_catalog_product_entity` */
 
-insert  into `hy_catalog_product_entity`(`entity_id`,`entity_type_id`,`attribute_set_id`,`type_id`,`sku`,`has_options`,`required_options`,`created_at`,`updated_at`) values (1,4,4,'simple','CLPP120',1,0,'2012-05-02 09:58:13','2012-05-02 09:58:13');
+insert  into `hy_catalog_product_entity`(`entity_id`,`entity_type_id`,`attribute_set_id`,`type_id`,`sku`,`has_options`,`required_options`,`created_at`,`updated_at`) values (1,4,4,'simple','CLPP120',1,1,'2012-05-02 09:58:13','2012-05-02 10:00:33');
 
 /*Table structure for table `hy_catalog_product_entity_datetime` */
 
@@ -976,7 +976,7 @@ CREATE TABLE `hy_catalog_product_entity_int` (
 
 /*Data for the table `hy_catalog_product_entity_int` */
 
-insert  into `hy_catalog_product_entity_int`(`value_id`,`entity_type_id`,`attribute_id`,`store_id`,`entity_id`,`value`) values (1,4,89,0,1,1),(2,4,93,0,1,NULL),(3,4,114,0,1,NULL),(4,4,115,0,1,NULL),(5,4,95,0,1,4),(6,4,75,0,1,NULL),(7,4,85,0,1,NULL);
+insert  into `hy_catalog_product_entity_int`(`value_id`,`entity_type_id`,`attribute_id`,`store_id`,`entity_id`,`value`) values (1,4,89,0,1,1),(2,4,93,0,1,0),(3,4,114,0,1,0),(4,4,115,0,1,0),(5,4,95,0,1,4),(6,4,75,0,1,NULL),(7,4,85,0,1,NULL);
 
 /*Table structure for table `hy_catalog_product_entity_media_gallery` */
 
@@ -1041,7 +1041,7 @@ CREATE TABLE `hy_catalog_product_entity_text` (
 
 /*Data for the table `hy_catalog_product_entity_text` */
 
-insert  into `hy_catalog_product_entity_text`(`value_id`,`entity_type_id`,`attribute_id`,`store_id`,`entity_id`,`value`) values (1,4,66,0,1,'<p><span><span>Christian Louboutin Pigalle Plato 120mm Patent Leather Pumps features:</span><br />\nA perfectly simple, perfectly lovely pump in gleaming patent leather with a graceful pointed toe.</span></p>\n<ul>\n    <li>Self-covered heel, 4&frac34;&quot; (120mm)</li>\n    <li>Covered platform, &frac12;&quot; (15mm)</li>\n    <li>Compares to a 4&frac14;&quot; heel (110mm)</li>\n    <li>Leather lining</li>\n    <li>Padded insole</li>\n    <li>Signature red leather sole</li>\n    <li>Made in Italy&nbsp;</li>\n</ul>\n<p>View more <a href=\"http://www.clpumpsmall.com/christian-louboutin-pumps\">Christian Louboutin shoes</a> on our<a href=\"http://www.clpumpsmall.com\"> christian louboutin sale store</a></p>'),(2,4,67,0,1,NULL),(3,4,77,0,1,'Christian Louboutin Pigalle Plato 120mm Patent Leather Pumps - Pink'),(4,4,99,0,1,NULL);
+insert  into `hy_catalog_product_entity_text`(`value_id`,`entity_type_id`,`attribute_id`,`store_id`,`entity_id`,`value`) values (1,4,66,0,1,'<p><span><span>Christian Louboutin Pigalle Plato 120mm Patent Leather Pumps features:</span><br />\r\nA perfectly simple, perfectly lovely pump in gleaming patent leather with a graceful pointed toe.</span></p>\r\n<ul>\r\n    <li>Self-covered heel, 4&frac34;&quot; (120mm)</li>\r\n    <li>Covered platform, &frac12;&quot; (15mm)</li>\r\n    <li>Compares to a 4&frac14;&quot; heel (110mm)</li>\r\n    <li>Leather lining</li>\r\n    <li>Padded insole</li>\r\n    <li>Signature red leather sole</li>\r\n    <li>Made in Italy&nbsp;</li>\r\n</ul>\r\n<p>View more <a href=\"http://www.clpumpsmall.com/christian-louboutin-pumps\">Christian Louboutin shoes</a> on our<a href=\"http://www.clpumpsmall.com\"> christian louboutin sale store</a></p>'),(2,4,67,0,1,'christian-louboutin-alfie-high-top-sneakers'),(3,4,77,0,1,'Christian Louboutin Pigalle Plato 120mm Patent Leather Pumps - Pink'),(4,4,99,0,1,NULL);
 
 /*Table structure for table `hy_catalog_product_entity_tier_price` */
 
@@ -1090,7 +1090,7 @@ CREATE TABLE `hy_catalog_product_entity_varchar` (
 
 /*Data for the table `hy_catalog_product_entity_varchar` */
 
-insert  into `hy_catalog_product_entity_varchar`(`value_id`,`entity_type_id`,`attribute_id`,`store_id`,`entity_id`,`value`) values (1,4,65,0,1,'Christian Louboutin Pigalle Plato 120mm Pumps - Pink'),(2,4,76,0,1,'Christian Louboutin Pigalle Plato 120mm Patent Leather Pumps - Pink'),(3,4,78,0,1,'Christian Louboutin Pigalle Plato 120mm Patent Leather Pumps on sale $186'),(4,4,79,0,1,'/c/h/christian-louboutin-pigalle-plato-120mm-patent-leather-pumps-hot-pink_1__14.jpg'),(5,4,80,0,1,'/c/h/christian-louboutin-pigalle-plato-120mm-patent-leather-pumps-hot-pink_1__14.jpg'),(6,4,81,0,1,'/c/h/christian-louboutin-pigalle-plato-120mm-patent-leather-pumps-hot-pink_1__14.jpg'),(7,4,90,0,1,'christian-louboutin-pigalle-plato-pumps'),(8,4,91,0,1,'christian-louboutin-pigalle-plato-pumps.html'),(9,4,96,0,1,NULL),(10,4,100,0,1,NULL),(11,4,102,0,1,NULL),(12,4,105,0,1,'Christian Louboutin Pigalle Plato 120mm Patent Leather Pumps - Pink'),(13,4,106,0,1,'Christian Louboutin Pigalle Plato 120mm Patent Leather Pumps - Pink'),(14,4,107,0,1,'Christian Louboutin Pigalle Plato 120mm Patent Leather Pumps - Pink'),(15,4,110,0,1,NULL),(16,4,111,0,1,NULL),(17,4,112,0,1,NULL),(18,4,116,0,1,NULL),(19,4,88,0,1,'/exportimg/christian-louboutin-pigalle-plato-120mm-patent-leather-pumps-hot-pink_2_.jpg;/exportimg/christian-louboutin-pigalle-plato-120mm-patent-leather-pumps-hot-pink.jpg;/exportimg/christian-louboutin-pigalle-plato-120mm-patent-leather-pumps-hot-pink_3'),(20,4,91,1,1,'christian-louboutin-pigalle-plato-pumps.html');
+insert  into `hy_catalog_product_entity_varchar`(`value_id`,`entity_type_id`,`attribute_id`,`store_id`,`entity_id`,`value`) values (1,4,65,0,1,'Christian Louboutin Pigalle Plato 120mm Pumps - Pink'),(2,4,76,0,1,'Christian Louboutin Pigalle Plato 120mm Patent Leather Pumps - Pink'),(3,4,78,0,1,'Christian Louboutin Pigalle Plato 120mm Patent Leather Pumps on sale $186'),(4,4,79,0,1,'/c/h/christian-louboutin-pigalle-plato-120mm-patent-leather-pumps-hot-pink_1__14.jpg'),(5,4,80,0,1,'/c/h/christian-louboutin-pigalle-plato-120mm-patent-leather-pumps-hot-pink_1__14.jpg'),(6,4,81,0,1,'/c/h/christian-louboutin-pigalle-plato-120mm-patent-leather-pumps-hot-pink_1__14.jpg'),(7,4,90,0,1,'christian-louboutin-pigalle-plato-pumps'),(8,4,91,0,1,'christian-louboutin-pigalle-plato-pumps.html'),(9,4,96,0,1,NULL),(10,4,100,0,1,NULL),(11,4,102,0,1,'container1'),(12,4,105,0,1,'Christian Louboutin Pigalle Plato 120mm Patent Leather Pumps - Pink'),(13,4,106,0,1,'Christian Louboutin Pigalle Plato 120mm Patent Leather Pumps - Pink'),(14,4,107,0,1,'Christian Louboutin Pigalle Plato 120mm Patent Leather Pumps - Pink'),(15,4,110,0,1,NULL),(16,4,111,0,1,'2'),(17,4,112,0,1,'4'),(18,4,116,0,1,NULL),(19,4,88,0,1,'/exportimg/christian-louboutin-pigalle-plato-120mm-patent-leather-pumps-hot-pink_2_.jpg;/exportimg/christian-louboutin-pigalle-plato-120mm-patent-leather-pumps-hot-pink.jpg;/exportimg/christian-louboutin-pigalle-plato-120mm-patent-leather-pumps-hot-pink_3'),(20,4,91,1,1,'christian-louboutin-pigalle-plato-pumps.html');
 
 /*Table structure for table `hy_catalog_product_flat_1` */
 
@@ -1149,7 +1149,7 @@ CREATE TABLE `hy_catalog_product_flat_1` (
 
 /*Data for the table `hy_catalog_product_flat_1` */
 
-insert  into `hy_catalog_product_flat_1`(`entity_id`,`attribute_set_id`,`type_id`,`cost`,`created_at`,`enable_googlecheckout`,`gift_message_available`,`has_options`,`image_label`,`is_recurring`,`links_exist`,`links_purchased_separately`,`links_title`,`msrp`,`msrp_display_actual_price_type`,`msrp_enabled`,`name`,`news_from_date`,`news_to_date`,`price`,`price_type`,`price_view`,`recurring_profile`,`required_options`,`shipment_type`,`short_description`,`sku`,`sku_type`,`small_image`,`small_image_label`,`special_from_date`,`special_price`,`special_to_date`,`tax_class_id`,`thumbnail`,`thumbnail_label`,`updated_at`,`url_key`,`url_path`,`visibility`,`weight`,`weight_type`) values (1,4,'simple',NULL,'2012-05-02 09:58:13',NULL,NULL,1,'Christian Louboutin Pigalle Plato 120mm Patent Leather Pumps - Pink',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Christian Louboutin Pigalle Plato 120mm Pumps - Pink',NULL,NULL,'186.0000',NULL,NULL,NULL,0,NULL,NULL,'CLPP120',NULL,'/c/h/christian-louboutin-pigalle-plato-120mm-patent-leather-pumps-hot-pink_1__14.jpg','Christian Louboutin Pigalle Plato 120mm Patent Leather Pumps - Pink',NULL,NULL,NULL,NULL,'/c/h/christian-louboutin-pigalle-plato-120mm-patent-leather-pumps-hot-pink_1__14.jpg','Christian Louboutin Pigalle Plato 120mm Patent Leather Pumps - Pink','2012-05-02 09:58:13','christian-louboutin-pigalle-plato-pumps','christian-louboutin-pigalle-plato-pumps.html',4,'1.5000',NULL);
+insert  into `hy_catalog_product_flat_1`(`entity_id`,`attribute_set_id`,`type_id`,`cost`,`created_at`,`enable_googlecheckout`,`gift_message_available`,`has_options`,`image_label`,`is_recurring`,`links_exist`,`links_purchased_separately`,`links_title`,`msrp`,`msrp_display_actual_price_type`,`msrp_enabled`,`name`,`news_from_date`,`news_to_date`,`price`,`price_type`,`price_view`,`recurring_profile`,`required_options`,`shipment_type`,`short_description`,`sku`,`sku_type`,`small_image`,`small_image_label`,`special_from_date`,`special_price`,`special_to_date`,`tax_class_id`,`thumbnail`,`thumbnail_label`,`updated_at`,`url_key`,`url_path`,`visibility`,`weight`,`weight_type`) values (1,4,'simple',NULL,'2012-05-02 09:58:13',0,NULL,1,'Christian Louboutin Pigalle Plato 120mm Patent Leather Pumps - Pink',0,NULL,NULL,NULL,NULL,'4',2,'Christian Louboutin Pigalle Plato 120mm Pumps - Pink',NULL,NULL,'186.0000',NULL,NULL,NULL,1,NULL,'christian-louboutin-alfie-high-top-sneakers','CLPP120',NULL,'/c/h/christian-louboutin-pigalle-plato-120mm-patent-leather-pumps-hot-pink_1__14.jpg','Christian Louboutin Pigalle Plato 120mm Patent Leather Pumps - Pink',NULL,NULL,NULL,0,'/c/h/christian-louboutin-pigalle-plato-120mm-patent-leather-pumps-hot-pink_1__14.jpg','Christian Louboutin Pigalle Plato 120mm Patent Leather Pumps - Pink','2012-05-02 10:00:33','christian-louboutin-pigalle-plato-pumps','christian-louboutin-pigalle-plato-pumps.html',4,'1.5000',NULL);
 
 /*Table structure for table `hy_catalog_product_index_eav` */
 
@@ -1171,6 +1171,8 @@ CREATE TABLE `hy_catalog_product_index_eav` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Catalog Product EAV Index Table';
 
 /*Data for the table `hy_catalog_product_index_eav` */
+
+insert  into `hy_catalog_product_index_eav`(`entity_id`,`attribute_id`,`store_id`,`value`) values (1,115,1,0);
 
 /*Table structure for table `hy_catalog_product_index_eav_decimal` */
 
@@ -1265,6 +1267,8 @@ CREATE TABLE `hy_catalog_product_index_eav_tmp` (
 
 /*Data for the table `hy_catalog_product_index_eav_tmp` */
 
+insert  into `hy_catalog_product_index_eav_tmp`(`entity_id`,`attribute_id`,`store_id`,`value`) values (1,115,1,0);
+
 /*Table structure for table `hy_catalog_product_index_price` */
 
 DROP TABLE IF EXISTS `hy_catalog_product_index_price`;
@@ -1290,7 +1294,7 @@ CREATE TABLE `hy_catalog_product_index_price` (
 
 /*Data for the table `hy_catalog_product_index_price` */
 
-insert  into `hy_catalog_product_index_price`(`entity_id`,`customer_group_id`,`website_id`,`tax_class_id`,`price`,`final_price`,`min_price`,`max_price`,`tier_price`) values (1,0,1,NULL,'186.0000','186.0000','186.0000','186.0000',NULL),(1,1,1,NULL,'186.0000','186.0000','186.0000','186.0000',NULL),(1,2,1,NULL,'186.0000','186.0000','186.0000','186.0000',NULL),(1,3,1,NULL,'186.0000','186.0000','186.0000','186.0000',NULL);
+insert  into `hy_catalog_product_index_price`(`entity_id`,`customer_group_id`,`website_id`,`tax_class_id`,`price`,`final_price`,`min_price`,`max_price`,`tier_price`) values (1,0,1,0,'186.0000','186.0000','186.0000','186.0000',NULL),(1,1,1,0,'186.0000','186.0000','186.0000','186.0000',NULL),(1,2,1,0,'186.0000','186.0000','186.0000','186.0000',NULL),(1,3,1,0,'186.0000','186.0000','186.0000','186.0000',NULL);
 
 /*Table structure for table `hy_catalog_product_index_price_bundle_idx` */
 
@@ -1660,7 +1664,7 @@ CREATE TABLE `hy_catalog_product_index_price_tmp` (
 
 /*Data for the table `hy_catalog_product_index_price_tmp` */
 
-insert  into `hy_catalog_product_index_price_tmp`(`entity_id`,`customer_group_id`,`website_id`,`tax_class_id`,`price`,`final_price`,`min_price`,`max_price`,`tier_price`) values (1,0,1,NULL,'186.0000','186.0000','186.0000','186.0000',NULL),(1,1,1,NULL,'186.0000','186.0000','186.0000','186.0000',NULL),(1,2,1,NULL,'186.0000','186.0000','186.0000','186.0000',NULL),(1,3,1,NULL,'186.0000','186.0000','186.0000','186.0000',NULL);
+insert  into `hy_catalog_product_index_price_tmp`(`entity_id`,`customer_group_id`,`website_id`,`tax_class_id`,`price`,`final_price`,`min_price`,`max_price`,`tier_price`) values (1,0,1,0,'186.0000','186.0000','186.0000','186.0000',NULL),(1,1,1,0,'186.0000','186.0000','186.0000','186.0000',NULL),(1,2,1,0,'186.0000','186.0000','186.0000','186.0000',NULL),(1,3,1,0,'186.0000','186.0000','186.0000','186.0000',NULL);
 
 /*Table structure for table `hy_catalog_product_index_tier_price` */
 
@@ -2282,11 +2286,11 @@ CREATE TABLE `hy_catalogsearch_fulltext` (
   PRIMARY KEY  (`fulltext_id`),
   UNIQUE KEY `UNQ_HY_CATALOGSEARCH_FULLTEXT_PRODUCT_ID_STORE_ID` (`product_id`,`store_id`),
   FULLTEXT KEY `FTI_HY_CATALOGSEARCH_FULLTEXT_DATA_INDEX` (`data_index`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='Catalog search result table';
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='Catalog search result table';
 
 /*Data for the table `hy_catalogsearch_fulltext` */
 
-insert  into `hy_catalogsearch_fulltext`(`fulltext_id`,`product_id`,`store_id`,`data_index`) values (2,1,1,'CLPP120|Enabled|Christian Louboutin Pigalle Plato 120mm Pumps - Pink|Christian Louboutin Pigalle Plato 120mm Patent Leather Pumps features: A perfectly simple, perfectly lovely pump in gleaming patent leather with a graceful pointed toe. Self-covered heel, 4&frac34;&quot; (120mm) Covered platform, &frac12;&quot; (15mm) Compares to a 4&frac14;&quot; heel (110mm) Leather lining Padded insole Signature red leather sole Made in Italy&nbsp; View more Christian Louboutin shoes on our christian louboutin sale store||186|1');
+insert  into `hy_catalogsearch_fulltext`(`fulltext_id`,`product_id`,`store_id`,`data_index`) values (3,1,1,'CLPP120|Enabled|None|Christian Louboutin Pigalle Plato 120mm Pumps - Pink|Christian Louboutin Pigalle Plato 120mm Patent Leather Pumps features: A perfectly simple, perfectly lovely pump in gleaming patent leather with a graceful pointed toe. Self-covered heel, 4&frac34;&quot; (120mm) Covered platform, &frac12;&quot; (15mm) Compares to a 4&frac14;&quot; heel (110mm) Leather lining Padded insole Signature red leather sole Made in Italy&nbsp; View more Christian Louboutin shoes on our christian louboutin sale store|christian-louboutin-alfie-high-top-sneakers|186|1');
 
 /*Table structure for table `hy_catalogsearch_query` */
 
@@ -4099,11 +4103,11 @@ CREATE TABLE `hy_index_event` (
   `new_data` mediumtext COMMENT 'New Data',
   PRIMARY KEY  (`event_id`),
   UNIQUE KEY `UNQ_HY_INDEX_EVENT_TYPE_ENTITY_ENTITY_PK` (`type`,`entity`,`entity_pk`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COMMENT='Index Event';
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COMMENT='Index Event';
 
 /*Data for the table `hy_index_event` */
 
-insert  into `hy_index_event`(`event_id`,`type`,`entity`,`entity_pk`,`created_at`,`old_data`,`new_data`) values (1,'save','catalog_category',1,'2012-05-02 09:56:01',NULL,'a:5:{s:35:\"cataloginventory_stock_match_result\";b:0;s:34:\"catalog_product_price_match_result\";b:0;s:24:\"catalog_url_match_result\";b:1;s:37:\"catalog_category_product_match_result\";b:1;s:35:\"catalogsearch_fulltext_match_result\";b:1;}'),(2,'save','catalog_category',2,'2012-05-02 09:56:03',NULL,'a:5:{s:35:\"cataloginventory_stock_match_result\";b:0;s:34:\"catalog_product_price_match_result\";b:0;s:24:\"catalog_url_match_result\";b:1;s:37:\"catalog_category_product_match_result\";b:1;s:35:\"catalogsearch_fulltext_match_result\";b:1;}'),(3,'save','catalog_category',3,'2012-05-02 09:58:10',NULL,'a:6:{s:35:\"cataloginventory_stock_match_result\";b:0;s:34:\"catalog_product_price_match_result\";b:0;s:24:\"catalog_url_match_result\";b:1;s:33:\"catalog_product_flat_match_result\";b:0;s:37:\"catalog_category_product_match_result\";b:1;s:35:\"catalogsearch_fulltext_match_result\";b:1;}'),(4,'save','cataloginventory_stock_item',1,'2012-05-02 09:58:15',NULL,'a:6:{s:35:\"cataloginventory_stock_match_result\";b:1;s:34:\"catalog_product_price_match_result\";b:0;s:24:\"catalog_url_match_result\";b:0;s:33:\"catalog_product_flat_match_result\";b:0;s:37:\"catalog_category_product_match_result\";b:0;s:35:\"catalogsearch_fulltext_match_result\";b:0;}'),(5,'save','catalog_product',1,'2012-05-02 09:58:15',NULL,'a:6:{s:35:\"cataloginventory_stock_match_result\";b:1;s:34:\"catalog_product_price_match_result\";b:1;s:24:\"catalog_url_match_result\";b:1;s:33:\"catalog_product_flat_match_result\";b:1;s:37:\"catalog_category_product_match_result\";b:1;s:35:\"catalogsearch_fulltext_match_result\";b:1;}'),(6,'save','catalog_product_import',NULL,'2012-05-02 09:58:39',NULL,'a:6:{s:35:\"cataloginventory_stock_match_result\";b:1;s:34:\"catalog_product_price_match_result\";b:1;s:24:\"catalog_url_match_result\";b:1;s:33:\"catalog_product_flat_match_result\";b:1;s:37:\"catalog_category_product_match_result\";b:1;s:35:\"catalogsearch_fulltext_match_result\";b:1;}');
+insert  into `hy_index_event`(`event_id`,`type`,`entity`,`entity_pk`,`created_at`,`old_data`,`new_data`) values (1,'save','catalog_category',1,'2012-05-02 09:56:01',NULL,'a:5:{s:35:\"cataloginventory_stock_match_result\";b:0;s:34:\"catalog_product_price_match_result\";b:0;s:24:\"catalog_url_match_result\";b:1;s:37:\"catalog_category_product_match_result\";b:1;s:35:\"catalogsearch_fulltext_match_result\";b:1;}'),(2,'save','catalog_category',2,'2012-05-02 09:56:03',NULL,'a:5:{s:35:\"cataloginventory_stock_match_result\";b:0;s:34:\"catalog_product_price_match_result\";b:0;s:24:\"catalog_url_match_result\";b:1;s:37:\"catalog_category_product_match_result\";b:1;s:35:\"catalogsearch_fulltext_match_result\";b:1;}'),(3,'save','catalog_category',3,'2012-05-02 09:58:10',NULL,'a:6:{s:35:\"cataloginventory_stock_match_result\";b:0;s:34:\"catalog_product_price_match_result\";b:0;s:24:\"catalog_url_match_result\";b:1;s:33:\"catalog_product_flat_match_result\";b:0;s:37:\"catalog_category_product_match_result\";b:1;s:35:\"catalogsearch_fulltext_match_result\";b:1;}'),(4,'save','cataloginventory_stock_item',1,'2012-05-02 09:58:15',NULL,'a:6:{s:35:\"cataloginventory_stock_match_result\";b:1;s:34:\"catalog_product_price_match_result\";b:0;s:24:\"catalog_url_match_result\";b:0;s:33:\"catalog_product_flat_match_result\";b:0;s:37:\"catalog_category_product_match_result\";b:0;s:35:\"catalogsearch_fulltext_match_result\";b:0;}'),(5,'save','catalog_product',1,'2012-05-02 09:58:15',NULL,'a:6:{s:35:\"cataloginventory_stock_match_result\";b:1;s:34:\"catalog_product_price_match_result\";b:1;s:24:\"catalog_url_match_result\";b:1;s:33:\"catalog_product_flat_match_result\";b:1;s:37:\"catalog_category_product_match_result\";b:1;s:35:\"catalogsearch_fulltext_match_result\";b:1;}'),(6,'save','catalog_product_import',NULL,'2012-05-02 09:58:39',NULL,'a:6:{s:35:\"cataloginventory_stock_match_result\";b:1;s:34:\"catalog_product_price_match_result\";b:1;s:24:\"catalog_url_match_result\";b:1;s:33:\"catalog_product_flat_match_result\";b:1;s:37:\"catalog_category_product_match_result\";b:1;s:35:\"catalogsearch_fulltext_match_result\";b:1;}'),(7,'catalog_reindex_price','catalog_product',1,'2012-05-02 10:00:36',NULL,'a:6:{s:35:\"cataloginventory_stock_match_result\";b:0;s:34:\"catalog_product_price_match_result\";b:1;s:24:\"catalog_url_match_result\";b:0;s:33:\"catalog_product_flat_match_result\";b:0;s:37:\"catalog_category_product_match_result\";b:0;s:35:\"catalogsearch_fulltext_match_result\";b:0;}');
 
 /*Table structure for table `hy_index_process` */
 
@@ -4122,7 +4126,7 @@ CREATE TABLE `hy_index_process` (
 
 /*Data for the table `hy_index_process` */
 
-insert  into `hy_index_process`(`process_id`,`indexer_code`,`status`,`started_at`,`ended_at`,`mode`) values (1,'catalog_product_attribute','pending','2012-05-02 09:58:31','2012-05-02 09:58:31','real_time'),(2,'catalog_product_price','pending','2012-05-02 09:58:31','2012-05-02 09:58:31','real_time'),(3,'catalog_url','pending','2012-05-02 09:58:31','2012-05-02 09:58:31','real_time'),(4,'catalog_product_flat','pending','2012-05-02 09:58:31','2012-05-02 09:58:39','real_time'),(5,'catalog_category_flat','pending','2012-05-02 09:57:23','2012-05-02 09:57:23','real_time'),(6,'catalog_category_product','pending','2012-05-02 09:58:39','2012-05-02 09:58:39','real_time'),(7,'catalogsearch_fulltext','pending','2012-05-02 09:58:39','2012-05-02 09:58:39','real_time'),(8,'cataloginventory_stock','pending','2012-05-02 09:58:31','2012-05-02 09:58:31','real_time'),(9,'tag_summary','pending','2012-05-02 09:58:15','2012-05-02 09:58:15','real_time');
+insert  into `hy_index_process`(`process_id`,`indexer_code`,`status`,`started_at`,`ended_at`,`mode`) values (1,'catalog_product_attribute','pending','2012-05-02 10:00:36','2012-05-02 10:00:36','real_time'),(2,'catalog_product_price','pending','2012-05-02 10:00:36','2012-05-02 10:00:36','real_time'),(3,'catalog_url','pending','2012-05-02 10:00:36','2012-05-02 10:00:36','real_time'),(4,'catalog_product_flat','pending','2012-05-02 10:00:36','2012-05-02 10:00:36','real_time'),(5,'catalog_category_flat','pending','2012-05-02 09:57:23','2012-05-02 09:57:23','real_time'),(6,'catalog_category_product','pending','2012-05-02 10:00:36','2012-05-02 10:00:36','real_time'),(7,'catalogsearch_fulltext','pending','2012-05-02 10:00:36','2012-05-02 10:00:36','real_time'),(8,'cataloginventory_stock','pending','2012-05-02 10:00:36','2012-05-02 10:00:36','real_time'),(9,'tag_summary','pending','2012-05-02 10:00:36','2012-05-02 10:00:36','real_time');
 
 /*Table structure for table `hy_index_process_event` */
 
@@ -4217,7 +4221,7 @@ CREATE TABLE `hy_log_url` (
 
 /*Data for the table `hy_log_url` */
 
-insert  into `hy_log_url`(`url_id`,`visitor_id`,`visit_time`) values (1,1,'2012-05-02 09:56:41'),(2,1,'2012-05-02 09:58:55'),(3,1,'2012-05-02 09:58:58'),(4,1,'2012-05-02 09:59:03');
+insert  into `hy_log_url`(`url_id`,`visitor_id`,`visit_time`) values (1,1,'2012-05-02 09:56:41'),(2,1,'2012-05-02 09:58:55'),(3,1,'2012-05-02 09:58:58'),(4,1,'2012-05-02 09:59:03'),(5,1,'2012-05-02 10:00:44');
 
 /*Table structure for table `hy_log_url_info` */
 
@@ -4228,11 +4232,11 @@ CREATE TABLE `hy_log_url_info` (
   `url` varchar(255) NOT NULL default '' COMMENT 'URL',
   `referer` varchar(255) default NULL COMMENT 'Referrer',
   PRIMARY KEY  (`url_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COMMENT='Log URL Info Table';
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COMMENT='Log URL Info Table';
 
 /*Data for the table `hy_log_url_info` */
 
-insert  into `hy_log_url_info`(`url_id`,`url`,`referer`) values (1,'http://localhost/antonmage/index.php/','http://localhost/antonmage/index.php/install/wizard/end/'),(2,'http://localhost/antonmage/index.php/','http://localhost/antonmage/index.php/'),(3,'http://localhost/antonmage/index.php/catalog/category/view/id/3','http://localhost/antonmage/index.php/'),(4,'http://localhost/antonmage/index.php/catalog/product/view/id/1/category/3','http://localhost/antonmage/index.php/pumps.html');
+insert  into `hy_log_url_info`(`url_id`,`url`,`referer`) values (1,'http://localhost/antonmage/index.php/','http://localhost/antonmage/index.php/install/wizard/end/'),(2,'http://localhost/antonmage/index.php/','http://localhost/antonmage/index.php/'),(3,'http://localhost/antonmage/index.php/catalog/category/view/id/3','http://localhost/antonmage/index.php/'),(4,'http://localhost/antonmage/index.php/catalog/product/view/id/1/category/3','http://localhost/antonmage/index.php/pumps.html'),(5,'http://localhost/antonmage/index.php/catalog/product/view/id/1/category/3','http://localhost/antonmage/index.php/pumps.html');
 
 /*Table structure for table `hy_log_visitor` */
 
@@ -4250,7 +4254,7 @@ CREATE TABLE `hy_log_visitor` (
 
 /*Data for the table `hy_log_visitor` */
 
-insert  into `hy_log_visitor`(`visitor_id`,`session_id`,`first_visit_at`,`last_visit_at`,`last_url_id`,`store_id`) values (1,'v0j7kqd0g4evg6pvt371hqnr13','2012-05-02 09:56:40','2012-05-02 09:59:03',4,1);
+insert  into `hy_log_visitor`(`visitor_id`,`session_id`,`first_visit_at`,`last_visit_at`,`last_url_id`,`store_id`) values (1,'v0j7kqd0g4evg6pvt371hqnr13','2012-05-02 09:56:40','2012-05-02 10:00:44',5,1);
 
 /*Table structure for table `hy_log_visitor_info` */
 
@@ -4811,11 +4815,11 @@ CREATE TABLE `hy_report_event` (
   KEY `IDX_HY_REPORT_EVENT_STORE_ID` (`store_id`),
   CONSTRAINT `FK_HY_REPORT_EVENT_STORE_ID_HY_CORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `hy_core_store` (`store_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK_13083233BFA6B4FEC3CE61AE9FCCEA5F` FOREIGN KEY (`event_type_id`) REFERENCES `hy_report_event_types` (`event_type_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='Reports Event Table';
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='Reports Event Table';
 
 /*Data for the table `hy_report_event` */
 
-insert  into `hy_report_event`(`event_id`,`logged_at`,`event_type_id`,`object_id`,`subject_id`,`subtype`,`store_id`) values (1,'2012-05-02 09:59:01',1,1,1,1,1);
+insert  into `hy_report_event`(`event_id`,`logged_at`,`event_type_id`,`object_id`,`subject_id`,`subtype`,`store_id`) values (1,'2012-05-02 09:59:01',1,1,1,1,1),(2,'2012-05-02 10:00:42',1,1,1,1,1);
 
 /*Table structure for table `hy_report_event_types` */
 
@@ -4856,7 +4860,7 @@ CREATE TABLE `hy_report_viewed_product_index` (
 
 /*Data for the table `hy_report_viewed_product_index` */
 
-insert  into `hy_report_viewed_product_index`(`index_id`,`visitor_id`,`customer_id`,`product_id`,`store_id`,`added_at`) values (1,1,NULL,1,1,'2012-05-02 09:59:01');
+insert  into `hy_report_viewed_product_index`(`index_id`,`visitor_id`,`customer_id`,`product_id`,`store_id`,`added_at`) values (1,1,NULL,1,1,'2012-05-02 10:00:42');
 
 /*Table structure for table `hy_review` */
 

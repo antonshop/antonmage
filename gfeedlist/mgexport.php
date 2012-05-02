@@ -77,6 +77,7 @@ foreach($products as $value){
 		"categories" 		=> $cate_list,
 		"sku" 				=> $product->getData('sku'),
 		"has_options" 		=> $product->getData('has_options'),
+		"required_options"  => $product->getData('required_options'),
 		"name" 				=> $product->getName(),
 		"meta_title" 		=> $product->getData('meta_title'),
 		"meta_description" 	=> $product->getData('meta_description'),
@@ -106,7 +107,7 @@ foreach($products as $value){
 		"is_recurring" 		=> $product->getData('is_recurring'),
 		"enable_googlecheckout" => $product->getData('enable_googlecheckout'),
 		"tax_class_id" 		=> $product->getData('tax_class_id'),
-		
+		"is_in_stock"		=> $product->getData('is_in_stock'),
 		"rw_google_base_skip_submi" => $product->getData('rw_google_base_skip_submi'),
 		"description" 		=> $product->getData('description'),
 		"short_description" => $product->getData('short_description'),

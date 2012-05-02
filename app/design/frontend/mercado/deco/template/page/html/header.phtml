@@ -1,6 +1,12 @@
 <div id="top"></div>
 <div class="header-container">
     <div class="header">
+    	<div class="header-top">
+    		<?php echo $this->getChildHtml('store_language') ?>
+    		<div class="minicart">
+                <?php echo $this->getChildHtml('top_cart') ?>
+            </div> 
+    	</div>
         <div class="header-left">
             <div style="min-height: 35px;">
                 <?php echo $this->getChildHtml('store_language') ?>
@@ -18,9 +24,7 @@
             <?php echo $this->getChildHtml('topBar') ?>   
         </div>        
         <div class="header-right">
-            <div class="minicart">
-                <?php echo $this->getChildHtml('top_cart') ?>
-            </div>  
+             
             <?php echo $this->getChildHtml('currency') ?>  
             <div class="clear"></div> 
             <span class="welcome-msg"><?php echo $this->getWelcome() ?></span>

@@ -23,7 +23,7 @@
 <config>
 	<modules>
 		<ET_IpSecurity>
-			<active>true</active>
+			<active>false</active>
 			<codePool>community</codePool>
 		</ET_IpSecurity>
 	</modules>
