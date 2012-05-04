@@ -67,6 +67,7 @@ foreach($products as $value){
 		$cate_list = substr($cate_list,0,-1).',';
 	}
 	$cate_list = substr($cate_list,0,-1);
+	$tax_class = array(0=>"None",2=>"Taxable Goods",4=>"Shipping");
 
 	$stock      = Mage::getModel('cataloginventory/stock_item')->loadByProduct($product);
 	$exports = array(
@@ -88,7 +89,7 @@ foreach($products as $value){
 		"url_path" 			=> $product->getData('url_path'),
 		"custom_design" 	=> $product->getData('custom_design'),
 		"page_layout" 		=> $product->getData('page_layout'),
-		"options_container" => $product->getData('options_container'),
+		//"options_container" => $product->getData('options_container'),
 		"image_label" 		=> $product->getData('image_label'),
 		"small_image_label" => $product->getData('small_image_label'),
 		"thumbnail_label" 	=> $product->getData('thumbnail_label'),
@@ -106,7 +107,7 @@ foreach($products as $value){
 		"status" 			=> $status[$product->getStatus()],
 		"is_recurring" 		=> $product->getData('is_recurring'),
 		"enable_googlecheckout" => $product->getData('enable_googlecheckout'),
-		"tax_class_id" 		=> $product->getData('tax_class_id'),
+		"tax_class_id" 		=> $tax_class[$product->getData('tax_class_id')],
 		"is_in_stock"		=> $product->getData('is_in_stock'),
 		"rw_google_base_skip_submi" => $product->getData('rw_google_base_skip_submi'),
 		"description" 		=> $product->getData('description'),

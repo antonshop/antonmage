@@ -38,7 +38,7 @@
                 <div class="addtocont">
                     
                     <?php if($_product->getTypeId() != 'bundle'): ?>
-                        <span class="product-code"><?php echo $this->__('Product code:').' <strong>'.$_product->getId().'</strong>'; ?></span>
+                        <!--<span class="product-code"><?php echo $this->__('Product code:').' <strong>'.$_product->getId().'</strong>'; ?></span>-->
                         <?php echo $this->getChildHtml('product_type_data') ?>
                     <?php endif;?>
                     <?php //echo $this->getLayout()->createBlock('cms/block')->setBlockId('productview')->toHtml(); ?>

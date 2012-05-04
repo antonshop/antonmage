@@ -56,3 +56,6 @@ Block Title£ºfoot_links  Identifier£ºfoot_links
 </ul>
 </div>
 </div>
+
+
+UPDATE `hy_catalog_product_index_price` SET  `price`=`price`-20,`final_price`=`final_price`-20,`min_price`=`min_price`-20,`max_price`=`max_price`-20  WHERE price > 180

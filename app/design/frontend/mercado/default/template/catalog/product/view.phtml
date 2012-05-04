@@ -31,14 +31,14 @@
                 <?php if($_product->getTypeId() != 'bundle'): ?>
                     <?php echo $this->getPriceHtml($_product) ?>
                 <?php else: ?>
-                    <?php echo $this->__('Product code:').'<strong>'.$_product->getId().'</strong>'; ?>
+                    <?php //echo $this->__('Product code:').'<strong>'.$_product->getId().'</strong>'; ?>
                     <?php echo $this->getChildHtml('product_type_data') ?>
                 <?php endif;?>
                 
                 <div class="addtocont">
                     
                     <?php if($_product->getTypeId() != 'bundle'): ?>
-                        <span class="product-code"><?php echo $this->__('Product code:').' <strong>'.$_product->getId().'</strong>'; ?></span>
+                        <!--<span class="product-code"><?php echo $this->__('Product code:').' <strong>'.$_product->getId().'</strong>'; ?></span>-->
                         <?php echo $this->getChildHtml('product_type_data') ?>
                     <?php endif;?>
                     <?php //echo $this->getLayout()->createBlock('cms/block')->setBlockId('productview')->toHtml(); ?>

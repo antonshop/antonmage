@@ -631,7 +631,7 @@ span.currency-code { background-position: bottom center; }
 .block-cart-header .summary { background:none; text-align:left; position:relative; z-index:450; }
 .block-cart-header .summary table td { vertical-align: middle; text-align: right; padding: 0 10px 0; }
 .block-cart-header .amount { margin:0; }
-.block-cart-header .empty { text-align: center; margin-top:5px; }
+.block-cart-header .empty { text-align: center; }
 .block-cart-header .amount a { font-weight:bold; }
 .block-cart-header .block-content li.item { border-bottom:1px solid #d7c7b6; }
 .block-cart-header .subtotal { background:url(../images/bkg_subtotal.gif) no-repeat 50% 0; margin:5px 0 0; line-height:23px; }
@@ -749,7 +749,7 @@ span.currency-code { background-position: bottom center; }
 .products-grid li.item.last {  margin:40px 0 25px 0; }
 .products-grid li .moreinfo { padding:10px 0 15px; }
 .products-grid li.last .product-image { border-right:0; }
-.products-grid .product-name { font-size:14px; text-align: center; margin:0 0 5px; text-transform: uppercase; }
+.products-grid .product-name { font-size:14px; text-align: center; margin:0 0 5px; }
 .products-grid .product-name a { color:#555555; text-decoration:none; }
 .products-grid .price-box { margin:3px 0; float: left; text-align: center; width: 95px; }
 .products-grid .availability { line-height:21px; }
@@ -1895,3 +1895,38 @@ span.currency-code { background-position: bottom center; }
     #nav > li > a > span,
     .product-tabs li a,
     .block .block-title strong                                       { font-family: Ebrima, Tahoma;}
+.ahome-products .products-grid { width: 100%;}
+a:hover, .block-cart-header .view_all, .form-language .lang, .currency span, #nav ul li.over > a > span, .opc .allow.active .step-title h2, .regular-price .price, .price-box .price, .bottom-container a, #nav > li.over > a > span, #nav > li:hover > a > span, .product-tabs li.active a, a.link-learn, .pages .current, .pages li a:hover, .block-cart-header .price, .cart .totals tfoot th strong, .cart .totals tfoot td strong, .product-tabs li.active a:hover, #nav ul li.active > a > span {
+    color: #00A1DC;
+}
+.category-overlay #added, .category-overlay #added img, .product-view #added, .product-view #added .image-popup {
+    border-color: #00A1DC;
+}
+button.button span, #added a.button, .touchcarousel.grey-blue .arrow-holder.right, .touchcarousel.grey-blue .arrow-holder.left, .phones div, .etheme_cp_btn_show, .back-to, #banner-rotator .tintButton, .jcarousel-next-horizontal, .jcarousel-prev-horizontal, #message a, .view-mode strong, .btn-remove, .block-progress dt, .btn-remove2, .newproduct_grid {
+    background-color: #009DDA;
+}
+button.button:hover span, #added a.button:hover, .back-to:hover, #message a:hover, .etheme_cp_btn_show:hover, #banner-rotator .tintButton:hover, .btn-remove2:hover, .touchcarousel.grey-blue .arrow-holder.right:hover, .touchcarousel.grey-blue .arrow-holder.left:hover, .touchcarousel.grey-blue .arrow-holder.right:active, .touchcarousel.grey-blue .arrow-holder.left:active, .jcarousel-next-horizontal:hover, .jcarousel-prev-horizontal:hover {
+    background-color: #FF7A13 !important;
+}
+#nav > li > ul ul > li, #nav > li > ul > li ul > li, .left-categorys-container a, .button-show, .btn-edit, .block-progress dt.complete, button.btn-checkout span, button.button.btn-cart span, .block-cart-header button.checkout span {
+    background-color: #FF7A13;
+}
+#nav > li > ul ul > li:hover, #nav > li > ul > li ul > li:hover, .left-categorys-container a:hover, .lang-container.active div, .lang-container:hover div, button.btn-checkout span:hover, button.button.btn-cart:hover span, .block-cart-header button.checkout:hover span {
+    background-color: #009DDA !important;
+}
+.nav-container, .footer2, .header .logo img, .etheme_cp .etheme_cp_head {
+    background-color: #FF7A13;
+}
+#nav .chield, .etheme_cp, .block-cart-header #header-items {
+    border-color: #FF7A13;
+}
+.fieldset .legend, .dashboard .box .box-title, .data-table thead, .data-table thead tr {
+    background-color: #DFDFDF;
+}
+#nav > li.active > a > span {
+    color: #FF7A13;
+}
+h1, h2, h3, h4, h5, h6, #nav > li > a > span, .product-tabs li a, .block .block-title strong {
+    font-family: Ebrima,Tahoma;
+}
+#added a{ background:#009DDA; color:#fff; padding:6px 15px;}

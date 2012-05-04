@@ -45,36 +45,36 @@ footer_shipping:
 <h4 style="font-weight: none !important;">Company Info</h4>
 <ul class="policy">
 <li><a href="{{store direct_url="about-us"}}" target="_blank">About Us</a></li>
-<li><a href="{{store direct_url="our-guarantee"}}" target="_blank">Our Guarantee</a></li>
-<li><a href="{{store direct_url="rss"}}" target="_blank">RSS</a></li>
-<li><a href="{{store direct_url="catalog/seo_sitemap/category/"}}" target="_blank">Sitemap</a></li>
+<li><a rel="nofollow" href="{{store direct_url="our-guarantee"}}" target="_blank">Our Guarantee</a></li>
+<li><a rel="nofollow" href="{{store direct_url="rss"}}" target="_blank">RSS</a></li>
+<li><a rel="nofollow" href="{{store direct_url="catalog/seo_sitemap/category/"}}" target="_blank">Sitemap</a></li>
 </ul>
 </div>
 <div class="shippingpolicy" style="width: 150px; float: left;">
 <h4 style="font-weight: none !important;">Customer Service</h4>
 <ul class="policy">
-<li><a href="{{store direct_url="contact-us"}}" target="_blank">Contact Us</a></li>
-<li><a href="http://settings.messenger.live.com/Conversation/IMMe.aspx?invitee=shopping.west@hotmail.com" target="_blank">Live Help</a></li>
-<li><a href="{{store direct_url="size-help"}}" target="_blank">Size Help</a></li>
-<li><a href="{{store direct_url="catalogsearch/term/popular/"}}" target="_blank">Search Terms</a></li>
+<li><a rel="nofollow" href="{{store direct_url="contact-us"}}" target="_blank">Contact Us</a></li>
+<li><a rel="nofollow" href="http://settings.messenger.live.com/Conversation/IMMe.aspx?invitee=shopping.west@hotmail.com" target="_blank">Live Help</a></li>
+<li><a rel="nofollow" href="{{store direct_url="size-help"}}" target="_blank">Size Help</a></li>
+<li><a rel="nofollow" href="{{store direct_url="catalogsearch/term/popular/"}}" target="_blank">Search Terms</a></li>
 </ul>
 </div>
 <div class="shippingpolicy" style="width: 160px; float: left;">
 <h4 style="font-weight: none !important;">Payment &amp; Shipping</h4>
 <ul class="policy">
-<li><a href="{{store direct_url="payment-methods"}}" target="_blank">Payment Methods</a></li>
-<li><a href="{{store direct_url="shipping-guide"}}" target="_blank">Shipping Guide</a></li>
-<li><a href="{{store direct_url="locations-we-ship-to"}}" target="_blank">Locations We Ship To</a></li>
-<li><a href="{{store direct_url="return-policy"}}" target="_blank">Return Policy</a></li>
+<li><a rel="nofollow" href="{{store direct_url="payment-methods"}}" target="_blank">Payment Methods</a></li>
+<li><a rel="nofollow" href="{{store direct_url="shipping-guide"}}" target="_blank">Shipping Guide</a></li>
+<li><a rel="nofollow" href="{{store direct_url="locations-we-ship-to"}}" target="_blank">Locations We Ship To</a></li>
+<li><a rel="nofollow" href="{{store direct_url="return-policy"}}" target="_blank">Return Policy</a></li>
 </ul>
 </div>
 <div class="shippingpolicy" style="width: 170px; float: left;">
 <h4 style="font-weight: none !important;">Company Policies</h4>
 <ul class="policy">
-<li><a href="{{store direct_url="privacy-policy"}}" target="_blank">Privacy Policy </a></li>
-<li><a href="{{store direct_url="term-of-use-intellectual"}}" target="_blank">Terms of Use Intellectual </a></li>
-<li><a href="{{store direct_url="intellectual-property-policy"}}" target="_blank">Intellectual Property Policy</a></li>
-<li><a href="{{store direct_url="membership-policy"}}" target="_blank">Membership Policy</a></li>
+<li><a rel="nofollow" href="{{store direct_url="privacy-policy"}}" target="_blank">Privacy Policy </a></li>
+<li><a rel="nofollow" href="{{store direct_url="term-of-use-intellectual"}}" target="_blank">Terms of Use Intellectual </a></li>
+<li><a rel="nofollow" href="{{store direct_url="intellectual-property-policy"}}" target="_blank">Intellectual Property Policy</a></li>
+<li><a rel="nofollow" href="{{store direct_url="membership-policy"}}" target="_blank">Membership Policy</a></li>
 </ul>
 </div>
 </div>
@@ -90,3 +90,16 @@ url="wysiwyg/mercado/twitter.png"}}" alt="twitter" /></a></div>
 url="wysiwyg/mercado/facebook.png"}}" alt="facebook" /></a></div> 
 <div class="facebook"><a href=" http://feedburner.com"><img style="float: left; margin-left: 15px; margin-bottom: 5px; margin-top: 5px;" src="{{media 
 url="wysiwyg/mercado/rss.png"}}" alt="rss" /></a></div> 
+
+
+
+	US6.5=UK5.5=EU39=24.5cm
+	US7=UK6=EU40=25cm
+	US8=UK7=EU41=26cm
+	US8.5=UK7.5=EU42=26.5cm
+	US9.5=UK8.5=EU43=27.5cm
+	US10=UK9=EU44=28cm
+	US11=UK10=EU45=29cm
+	UPDATE hy_catalog_product_option_type_title SET store_id = store_id+2 WHERE title = 'US7=UK6=EU40=25cm'
+
+	UPDATE hy_catalog_product_option_type_title tt, hy_catalog_product_option_type_value tv SET tv.sort_order = 1 WHERE tt.option_type_id = tv.option_type_id AND tt.title = ''
