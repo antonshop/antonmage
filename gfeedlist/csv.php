@@ -3,9 +3,7 @@ set_time_limit(0);
 ini_set('memory_limit', '-1');
 define('SPIDERIMG', 'spiderimg/');
 define('SPIDERCSV', 'spidercsv/');
-define('FILENAME',SPIDERCSV . "spider.csv");
-
-$handle=fopen('a.csv','r');
+define('FILENAME', SPIDERCSV . "spider.csv");
 
 $pageurl = "http://www.onlinenikenfljerseys.com/nike-nfl-denver-broncos-youth-customized-game-team-color-orange-jersey-p-681.html";
 
@@ -17,44 +15,50 @@ $list = array(
 	'type'				=> 'simple',
 	'name'				=> '',
 	'categories'		=> '',
+	'sku'		=> '',
 	'has_options'		=> '1',
 	'required_options'	=> '1',
 	'image'				=> '',
 	'small_image'		=> '',
+	'manage_stock'		=> '0',
+	'use_config_manage_stock' => '0',
 	'thumbnail'			=> '',
 	'url_key'			=> '',
 	'image_label'		=> '',
 	'price'				=> '',
-	'status'			=> '1',
+	'status'			=> 'Enabled',
+	'weight'			=> rand(1,2),
 	'tax_class_id'		=> 'None',
 	'is_in_stock'		=> '1',
 	'description'		=> '',
+	'short_description'		=> '',
 	'visibility'		=> 'Catalog, Search',
 	'qty'				=> rand(600,1000),
 	'Size:drop_down:1'	=> ''
 );
 
+$handle=fopen('a.csv','r');
 $url = "http://www.onlinenikenfljerseys.com/images/";
 $folder = SPIDERIMG;
 /*$imgname = "Nike-NFL-Arizona-Cardinals-11-Larry-Fitzgerald-Elite-Team-Color-Red-Jersey.jpg";
 echo getFile($url, $folder, $imgname);*/
 
 if(file_exists(FILENAME))unlink(FILENAME);
-if(!is_dir(FILENAME))mkdir(SPIDERCSV);
-if(!is_dir(FILENAME))mkdir(SPIDERIMG);
+if(!is_dir(SPIDERCSV))mkdir(SPIDERCSV);
+if(!is_dir(SPIDERIMG))mkdir(SPIDERIMG);
 $spider = new spider();
 $spider->fwriteTitle($list);
 $i=0;
 while($data = fgetcsv($handle,"\t"))   
-{   print_r($data);exit;
-	$info  = file_get_contents('info.txt');
-	if($i>3) break;
+{   //print_r($data);exit;
+	$info  = file_get_contents($data[11]);
+	//if($i>3) break;
 	$i++;
 	$downinfo = $list;
 	$downinfo['name'] = $spider->getData($info, '<h1 class="pro_name">', '</h1>');
 	$downinfo['image_label'] = $spider->getData($info, '<h1 class="pro_name">', '</h1>');
 	//$downinfo['spider']->getData($info, '<title>', '</title>')."<br>";
-	//$downinfo['model'] = $spider->getData($info, '<div>Model:', '</div>');
+	$downinfo['sku'] = $spider->getData($info, '<div>Model:', '</div>');
 	$downinfo['Size:drop_down:1'] = $spider->getOptionList($spider->clearHtml($spider->getData($info, '--Select Size--</option>', '</select>')));
 	$downinfo['description'] = $spider->getData($info, '<p><strong>Description</strong>:</p>', '</div>');
 	$downinfo['categories'] = $spider->getData($info, '<span class="category-subs-selected">', '</span>');
@@ -65,13 +69,15 @@ while($data = fgetcsv($handle,"\t"))
 	//file_put_contents('imginfo.txt', $imginfo);
 	
 	$img_name = basename($spider->getData($imginfo, '<img src="', '" alt='));
-	$downinfo['image'] = $img_name;
-	$downinfo['small_image'] = $img_name;
-	$downinfo['thumbnail'] = $img_name;
+	$downinfo['image'] = "/".SPIDERIMG.$img_name;
+	$downinfo['small_image'] = "/".SPIDERIMG.$img_name;
+	$downinfo['thumbnail'] = "/".SPIDERIMG.$img_name;
 	$spider->fwriteFile($downinfo);
-	echo getFile($url, $folder, $img_name);
+	//print_r($downinfo);
+	getFile($url, $folder, $img_name);
 	//print_r($downinfo);
 }
+file_put_contents("number.txt",$i);
 
 
 class spider{
@@ -138,6 +144,7 @@ class spider{
 	
 	public function getOptionList($options){
 		$content = '';
+		$options = str_replace(array('-', '  '),array('', ''),$options);
 		$options = explode(" ",$options);
 		foreach($options as $value){
 			$value = trim($value);
@@ -184,7 +191,7 @@ function getFile($url, $folder, $imgname){
     }     
 }  
 
-exit;
+/*exit;
 
 
 echo "<pre>";
@@ -204,7 +211,7 @@ while($data = fgetcsv($handle,"\t"))
 	exit;   
    
 }
-echo "</pre>";
+echo "</pre>";*/
 
 
 ?>

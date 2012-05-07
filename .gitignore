@@ -12,3 +12,7 @@
 /app/code/community/OpenBiz/RandomRelatedProducts/etc/config.xml
 /app/code/community/OpenBiz/RandomRelatedProducts/etc/system.xml
 /app/etc/modules/OpenBiz_RandomRelatedProducts.xml
+/gfeedlist/exportimg
+/gfeedlist/spidercsv
+/gfeedlist/spiderimg
+/gfeedlist/temp
