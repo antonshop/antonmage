@@ -5,9 +5,7 @@ define('SPIDERIMG', 'spiderimg/');
 define('SPIDERCSV', 'spidercsv/');
 define('FILENAME', SPIDERCSV . "spider.csv");
 
-$pageurl = "http://www.onlinenikenfljerseys.com/nike-nfl-denver-broncos-youth-customized-game-team-color-orange-jersey-p-681.html";
 
-//file_put_contents('info.txt', $info);
 $list = array(
 	'store'				=> 'default',
 	'websites'			=> 'base',
@@ -15,7 +13,7 @@ $list = array(
 	'type'				=> 'simple',
 	'name'				=> '',
 	'categories'		=> '',
-	'sku'		=> '',
+	'sku'				=> '',
 	'has_options'		=> '1',
 	'required_options'	=> '1',
 	'image'				=> '',
