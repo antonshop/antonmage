@@ -197,8 +197,8 @@
 \******************************************************/
 
 /* IE and Opera use "move", FF uses -moz-grab */
-.touchcarousel .grab-cursor{ cursor:url("../images/cursors/grab.png"/*tpa=http://8theme.com/demo/decostore/skin/frontend/decostore/default/images/cursors/grab.png*/) 8 8, move; }
-.touchcarousel .grabbing-cursor{ cursor:url("../images/cursors/grabbing.png"/*tpa=http://8theme.com/demo/decostore/skin/frontend/decostore/default/images/cursors/grabbing.png*/) 8 8, move; }
+.touchcarousel .grab-cursor{ cursor:url("../images/cursors/grab.png") 8 8, move; }
+.touchcarousel .grabbing-cursor{ cursor:url("../images/cursors/grabbing.png") 8 8, move; }
 
 /* Cursor that used when mouse drag is disabled */
 .touchcarousel .auto-cursor{ cursor:auto; }
@@ -226,115 +226,117 @@
 
 
 
-.touchcarousel.grey-blue .arrow-holder.right {
+ .arrow-holder.right {
     position: absolute;
     top: 135px;
     right: -16px;
     width: 32px;
     height: 46px;
     cursor: pointer;
-    background: transparent url("../images/next-horizontal.png"/*tpa=http://8theme.com/demo/decostore/skin/frontend/decostore/default/images/next-horizontal.png*/) no-repeat 0 0;
+    background: transparent url("../images/next-horizontal.png") no-repeat 0 0;
 }
 
-.touchcarousel.grey-blue .arrow-holder.right:hover,
-.touchcarousel.grey-blue .arrow-holder.right:focus {
+ .arrow-holder.right:hover,
+ .arrow-holder.right:focus {
     background-position: -32px 0;
 }
 
-.touchcarousel.grey-blue .arrow-holder.right:active {
+ .arrow-holder.right:active {
     background-position: -64px 0;
 }
 
-.touchcarousel.grey-blue .arrow-holder.disabled,
-.touchcarousel.grey-blue .arrow-holder.disabled:hover,
-.touchcarousel.grey-blue .arrow-holder.disabled:focus,
-.touchcarousel.grey-blue .arrow-holder.disabled:active {
+ .arrow-holder.disabled,
+ .arrow-holder.disabled:hover,
+ .arrow-holder.disabled:focus,
+ .arrow-holder.disabled:active {
     cursor: default;
     background-position: -64px 0;
 }
 
-.touchcarousel.grey-blue .arrow-holder.left {
+ .arrow-holder.left {
     position: absolute;
     top: 135px;
     left: -16px;
     width: 32px;
     height: 46px;
     cursor: pointer;
-    background: transparent url("../images/prev-horizontal.png"/*tpa=http://8theme.com/demo/decostore/skin/frontend/decostore/default/images/prev-horizontal.png*/) no-repeat 0 0;
+    background: transparent url("../images/prev-horizontal.png") no-repeat 0 0;
 }
 
-.touchcarousel.grey-blue .arrow-holder.left:hover, 
-.touchcarousel.grey-blue .arrow-holder.left:focus {
+ .arrow-holder.left:hover, 
+ .arrow-holder.left:focus {
     background-position: -32px 0;
 }
 
-.touchcarousel.grey-blue .arrow-holder.left:active {
+ .arrow-holder.left:active {
     background-position: -64px 0;
 }
 
-.touchcarousel.grey-blue .arrow-holder.disabled,
-.touchcarousel.grey-blue .arrow-holder.disabled:hover,
-.touchcarousel.grey-blue .arrow-holder.disabled:focus,
-.touchcarousel.grey-blue .arrow-holder.disabled:active {
+ .arrow-holder.disabled,
+ .arrow-holder.disabled:hover,
+ .arrow-holder.disabled:focus,
+ .arrow-holder.disabled:active {
     cursor: default;
     background-position: -64px 0;
 }
 
 /********************** Media More Views ****************/
 
-.touchcarousel.grey-blue.more-views .arrow-holder.right {
+.more-views .arrow-holder.right {
     position: absolute;
-    top: 25px;
+    top: 415px;
     right: -10px;
     width: 15px;
     height: 26px;
     cursor: pointer;
     background-repeat: no-repeat;
     background-position: 0 0;
-    background-image: url("../images/product_next.png"/*tpa=http://8theme.com/demo/decostore/skin/frontend/decostore/default/images/product_next.png*/);
+    background-image: url("../images/product_next.png");
+	border:1px solid red;
 }
 
-.touchcarousel.grey-blue.more-views .arrow-holder.right:hover,
-.touchcarousel.grey-blue.more-views .arrow-holder.right:focus {
+.more-views .arrow-holder.right:hover,
+.more-views .arrow-holder.right:focus {
     background-position: -15px 0;
 }
 
-.touchcarousel.grey-blue.more-views .arrow-holder.right:active {
+.more-views .arrow-holder.right:active {
     background-position: -30px 0;
 }
 
-.touchcarousel.grey-blue.more-views .arrow-holder.disabled,
-.touchcarousel.grey-blue.more-views .arrow-holder.disabled:hover,
-.touchcarousel.grey-blue.more-views .arrow-holder.disabled:focus,
-.touchcarousel.grey-blue.more-views .arrow-holder.disabled:active {
+.more-views .arrow-holder.disabled,
+.more-views .arrow-holder.disabled:hover,
+.more-views .arrow-holder.disabled:focus,
+.more-views .arrow-holder.disabled:active {
     cursor: default;
     background-position: -30px 0;
 }
-.touchcarousel.grey-blue.more-views .arrow-holder.left {
+.more-views .arrow-holder.left {
     position: absolute;
-    top: 25px;
+    top: 415px;
     left: -10px;
     width: 15px;
     height: 26px;
     cursor: pointer;
     background-repeat: no-repeat;
     background-position: 0 0;
-    background-image: url("../images/product_prew.png"/*tpa=http://8theme.com/demo/decostore/skin/frontend/decostore/default/images/product_prew.png*/);
+    background-image: url("../images/product_prew.png");
+	border:1px solid red;
 }
 
-.touchcarousel.grey-blue.more-views .arrow-holder.left:hover, 
-.touchcarousel.grey-blue.more-views .arrow-holder.left:focus {
+.more-views .arrow-holder.left:hover, 
+.more-views .arrow-holder.left:focus {
     background-position: -15px 0;
 }
 
-.touchcarousel.grey-blue.more-views .arrow-holder.left:active {
+.more-views .arrow-holder.left:active {
     background-position: -30px 0;
 }
 
-.touchcarousel.grey-blue.more-views .arrow-holder.disabled,
-.touchcarousel.grey-blue.more-views .arrow-holder.disabled:hover,
-.touchcarousel.grey-blue.more-views .arrow-holder.disabled:focus,
-.touchcarousel.grey-blue.more-views .arrow-holder.disabled:active {
+.more-views .arrow-holder.disabled,
+.more-views .arrow-holder.disabled:hover,
+.more-views .arrow-holder.disabled:focus,
+.more-views .arrow-holder.disabled:active {
     cursor: default;
     background-position: -30px 0;
 }
@@ -345,8 +347,8 @@
 *
 \******************************************************/
 
-.touchcarousel.grey-blue .tc-paging-item {
-	background: url("../images/sprite.png"/*tpa=http://8theme.com/demo/decostore/skin/frontend/decostore/default/images/sprite.png*/) no-repeat -95px -4px;
+ .tc-paging-item {
+	background: url("../images/sprite.png") no-repeat -95px -4px;
 	
 	width: 16px;
 	height: 16px;	
@@ -355,10 +357,10 @@
 	-webkit-opacity: 0.8;	
 	opacity: 0.8;	
 }
-.touchcarousel.grey-blue .tc-paging-item.current {
-	background: url("../images/sprite.png"/*tpa=http://8theme.com/demo/decostore/skin/frontend/decostore/default/images/sprite.png*/) no-repeat -95px -22px;
+ .tc-paging-item.current {
+	background: url("../images/sprite.png") no-repeat -95px -22px;
 }
-.touchcarousel.grey-blue .tc-paging-item:hover {		
+ .tc-paging-item:hover {		
 	-moz-opacity: 1;	
 	-webkit-opacity: 1;	
 	opacity: 1;		

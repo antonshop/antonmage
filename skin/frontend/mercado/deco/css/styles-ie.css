@@ -31,11 +31,11 @@
 .block-poll li,
 .opc li.section { vertical-align:top; }
 
-* html button.button span { background-image:url("../images/bkg_btn.gif"/*tpa=http://8theme.com/demo/decostore/skin/frontend/decostore/default/images/bkg_btn.gif*/); }
+* html button.button span { background-image:url("../images/bkg_btn.gif"); }
 * html .form-search button.button span,
 * html .block button.button span,
 * html .product-view .box-tags .form-add button.button span,
-* html .footer .form-subscribe button.button span { background-image:url("../images/bkg_btn-small.gif"/*tpa=http://8theme.com/demo/decostore/skin/frontend/decostore/default/images/bkg_btn-small.gif*/); }
+* html .footer .form-subscribe button.button span { background-image:url("../images/bkg_btn-small.gif"); }
 * html .window-overlay { background:#ccc; filter:alpha(opacity=50); }
 
 /* Doubled Margin Fixes */

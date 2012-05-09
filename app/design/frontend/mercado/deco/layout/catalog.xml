@@ -162,7 +162,7 @@ Product view
             <action method="addItem"><type>js</type><name>calendar/calendar.js</name><!--<params/><if/><condition>can_load_calendar_js</condition>--></action>
             <action method="addItem"><type>js</type><name>calendar/calendar-setup.js</name><!--<params/><if/><condition>can_load_calendar_js</condition>--></action>
             <action method="addItem"><type>js</type><name>lightbox/jquery.lightbox-0.5.min.js</name></action>
-            <action method="addJs"><script>jcarousel/jquery.jcarousel.min.js</script></action>
+      
         </reference>
         <reference name="content">
             <block type="catalog/product_view" name="product.info" template="catalog/product/view.phtml">
@@ -181,8 +181,11 @@ Product view
                 <block type="catalog/product_view_tabs" name="product.info.tabs" as="info_tabs" template="catalog/product/view/tabs.phtml" >
                     <action method="addTab" translate="title" module="catalog"><alias>description</alias><title>Product Description</title><block>catalog/product_view_description</block><template>catalog/product/view/description.phtml</template></action>
                     <action method="addTab" translate="title" module="catalog"><alias>additional</alias><title>Additional Information</title><block>catalog/product_view_attributes</block><template>catalog/product/view/attributes.phtml</template></action>
-                    <action method="addTab" translate="title" module="catalog"><alias>related_products</alias><title>Related Products</title><block>catalog/product_list_related</block><template>catalog/product/list/related.phtml</template></action>      
+                    <!--<action method="addTab" translate="title" module="catalog"><alias>related_products</alias><title>Related Products</title><block>catalog/product_list_related</block><template>catalog/product/list/related.phtml</template></action>-->      
                     <action method="addTab" translate="title" module="review"><alias>product_review</alias><title>Reviews</title><block>review/product_view_list</block><template>review/product/view/list.phtml</template></action>                
+                </block>
+                <block type="catalog/product_list_related" name="catalog.product.related"  as="related_products" template="catalog/product/list/related-new.phtml">
+                	<action method="setColumnCount"><columns>4</columns></action>
                 </block>
                 <block type="catalog/product_view_additional" name="product.info.additional" as="product_additional_data" />
                 <block type="catalog/product_view" name="product.info.addto" as="addto" template="catalog/product/view/addto.phtml"/>
@@ -228,7 +231,7 @@ Product view
                     <action method="setDataByKey"><key>alias_in_layout</key><value>container2</value></action>
                     <action method="setDataByKeyFromRegistry"><key>options_container</key><key_in_registry>product</key_in_registry></action>
                     <action method="append"><block>product.info.options.wrapper</block></action>
-                    <action method="append"><block>product.info.options.wrapper.bottom</block></action>
+                    <!--<action method="append"><block>product.info.options.wrapper.bottom</block></action>-->
                 </block>
                 
                 <block type="catalog/product_list_upsell" name="upsell_products" template="catalog/product/list/upsell.phtml">

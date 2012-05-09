@@ -26,7 +26,7 @@ Default layout, loads most of the pages
                 <action method="addJs"><script>mage/cookies.js</script></action>
                 <action method="addJs"><script>jqforms/jquery.jqtransform.js</script></action>
                 <action method="addJs"><script>functions.js</script></action>
-                <action method="addJs"><script>jcarousel/jquery.jcarousel.min.js</script></action>
+                
                 <action method="addJs"><script>functions/functions.js</script></action>
                 <action method="addJs"><script>easing/jquery.easing.1.3.min.js</script></action>
                 <action method="addJs"><script>slideshow/royal-slider-8.1.min.js</script></action>

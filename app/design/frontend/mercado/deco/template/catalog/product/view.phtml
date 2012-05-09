@@ -17,9 +17,19 @@
 
         <div class="product-img-box">
             <?php echo $this->getChildHtml('media') ?>
+            <div class="clearer"></div>
+        	<div class="one-relate-product">
+        		<?php echo $this->getChildHtml('related_products');?>
+        	</div>
         </div>
         
-        <div class="product-shop">
+        <div id="one-product-up">
+          <div class="product-shop">
+          	<div class="one-right-price">
+          		<?php echo $this->getChildHtml('product_options_wrapper_bottom');?>
+          	</div>
+          	
+          	<div class="one-product-info">
             <div class="white-back">
                 <div class="product-name">
                     <h2><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></h2>
@@ -28,12 +38,7 @@
                 <?php echo $this->getReviewsSummaryHtml($_product, false, true)?>
                 <?php echo $this->getChildHtml('alert_urls') ?>
                 <?php echo $this->getChildHtml('extrahint') ?>
-                <?php if($_product->getTypeId() != 'bundle'): ?>
-                    <?php echo $this->getPriceHtml($_product) ?>
-                <?php else: ?>
-                    <?php echo $this->__('Product code:').'<strong>'.$_product->getId().'</strong>'; ?>
-                    <?php echo $this->getChildHtml('product_type_data') ?>
-                <?php endif;?>
+                
                 
                 <div class="addtocont">
                     
@@ -69,14 +74,34 @@
                 </div>
             <?php endif; ?>   
             
+            <div id="google_translate_element"></div>
+            <script>
+				function googleTranslateElementInit() {
+				  new google.translate.TranslateElement({
+					pageLanguage: 'auto',
+					autoDisplay: false,
+					layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL
+				  }, 'google_translate_element');
+				}
+		</script>
+			<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+            
             <?php echo $this->getChildHtml('other');?>
-			<?php if ($_product->isSaleable() && $this->hasOptions()):?>
-	            <div id="container2"><?php echo $this->getChildChildHtml('container2', '', true, true) ?></div>
-	        <?php endif;?>
+		<?php if ($_product->isSaleable() && $this->hasOptions()):?>
+            <div id="container2"><?php echo $this->getChildChildHtml('container2', '', true, true) ?></div>
+        <?php endif;?>
+          </div>
+          </div>
+          <div class="product-collateral">
+		       <?php echo $this->getChildHtml('info_tabs') ?>
+		       <?php echo $this->getChildHtml('product_additional_data') ?>
+		  </div>
+    		<?php echo $this->getChildHtml('upsell_products') ?>
         </div>
         <div class="clearer"></div>
         
     </form>
+    
     <script type="text/javascript">
     //<![CDATA[
         var productAddToCartForm = new VarienForm('product_addtocart_form');
@@ -183,9 +208,5 @@
     </script>
     </div>
 
-    <div class="product-collateral">
-        <?php echo $this->getChildHtml('info_tabs') ?>
-        <?php echo $this->getChildHtml('product_additional_data') ?>
-    </div>
-        <?php echo $this->getChildHtml('upsell_products') ?>
+    
 </div>

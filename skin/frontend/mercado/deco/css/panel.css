@@ -19,7 +19,7 @@
 }
 
 .etheme_cp_btn_show {
-    background: url("../images/etheme_cp_btn_show.png"/*tpa=http://8theme.com/demo/decostore/skin/frontend/decostore/default/images/etheme_cp_btn_show.png*/) no-repeat center center;
+    background: url("../images/etheme_cp_btn_show.png") no-repeat center center;
     width:50px;
     height:50px;
     position: fixed;
@@ -34,7 +34,7 @@
 }
 
 .etheme_cp .etheme_cp_head .etheme_cp_btn_close{
-    background: url("../images/etheme_remove.png"/*tpa=http://8theme.com/demo/decostore/skin/frontend/decostore/default/images/etheme_remove.png*/) no-repeat center center;
+    background: url("../images/etheme_remove.png") no-repeat center center;
     width:14px;
     height:14px;
     float:right;

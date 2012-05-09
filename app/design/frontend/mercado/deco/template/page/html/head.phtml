@@ -91,12 +91,7 @@ function themeOptions ($themeOption) {
 <?php endif; ?>
 
 <!-- CUFON -->
-<?php $use_cufon = themeOptions('use_cufon'); ?>
-<?php $use_slideshow = themeOptions('use_slideshow'); ?>
-<?php if($use_cufon): ?>
-    <script type="text/javascript" src="<?php echo $this->getJsUrl('cufon/cufon-yui.js'); ?>"></script>
-    <script type="text/javascript" src="<?php echo $this->getJsUrl('cufon/Century_Gothic_400.font.js'); ?>"></script>
-<?php endif; ?>
+
 
 <?php if($use_slideshow): ?>
 <?php $speed = themeOptions('speed'); ?>

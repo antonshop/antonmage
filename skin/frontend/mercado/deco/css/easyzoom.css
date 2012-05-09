@@ -16,7 +16,7 @@
     z-index: 100;
 	height:400px;
 	overflow:hidden;
-	background:#fff url("../images/loading.gif"/*tpa=http://8theme.com/demo/decostore/skin/frontend/decostore/default/images/loading.gif*/) no-repeat center center;
+	background:#fff url("../images/loading.gif") no-repeat center center;
 	-webkit-box-shadow:0 0 10px #888;
 	   -moz-box-shadow:0 0 10px #888;
 	        box-shadow:0 0 10px #888;
@@ -34,7 +34,7 @@
 			margin-left:0;
 		}
 		.thumbnail-loading {
-			background:#fff url("../images/loading.gif"/*tpa=http://8theme.com/demo/decostore/skin/frontend/decostore/default/images/loading.gif*/) no-repeat center center;
+			background:#fff url("../images/loading.gif") no-repeat center center;
 		}
 			.thumbnail-loading img {
 				opacity:0.5;

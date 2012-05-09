@@ -1,6 +1,6 @@
 <?php
 /**
- * Magento
+ * WDCA
  *
  * NOTICE OF LICENSE
  *
@@ -12,18 +12,18 @@
  * obtain it through the world-wide-web, please send an email
  * to license@magentocommerce.com so we can send you a copy immediately.
  *
- * @category   Mage
- * @package    TBT_MassRelater
- * @copyright  Copyright (c) 2008 Irubin Consulting Inc. DBA Varien (http://www.varien.com)
+ * @category   WDCA
+ * @package    TBT_Enhancedgrid
+ * @copyright  Copyright (c) 2008-2010 WDCA (http://www.wdca.ca)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
 /**
  * Grid checkbox column renderer
  *
- * @category   Mage
- * @package    TBT_MassRelater
- * @author      Magento Core Team <core@magentocommerce.com>
+ * @category   WDCA
+ * @package    TBT_Enhancedgrid
+ * @author      WDCA <contact@wdca.ca>
  */
 class TBT_Enhancedgrid_Block_Widget_Grid_Column_Renderer_Image extends Mage_Adminhtml_Block_Widget_Grid_Column_Renderer_Abstract
 {
@@ -73,8 +73,9 @@ class TBT_Enhancedgrid_Block_Widget_Grid_Column_Renderer_Image extends Mage_Admi
             $val = $row->$getter();
         }
         $val = $val2 = $row->getData($this->getColumn()->getIndex());
+        $val = str_replace("no_selection", "", $val);
+        $val2 = str_replace("no_selection", "", $val2);
         $url = Mage::helper('enhancedgrid')->getImageUrl($val);
-        
         
         if(!Mage::helper('enhancedgrid')->getFileExists($val)) {
           $dored =true;
@@ -92,14 +93,21 @@ class TBT_Enhancedgrid_Block_Widget_Grid_Column_Renderer_Image extends Mage_Admi
           $val = "<span>". $filename ."</span>";
         }
         
-        $out = $val. '<center><a href="#" onclick="window.open(\''. $url .'\', \''. $val2 .'\')"'.
-        'title="'. $val2 .'" '. ' url="'.$url.'" id="imageurl">';
-        
-        if(self::$showByDefault) {
-            $out .= "<img src=". $url ." width='". self::$width ."' ";
-            $out .= "height='". self::$height ."' /> ";
+        if(empty($val2) ) {
+            $out = "<center>" . $this->__("(no image)") . "</center>";
+        } else {
+            $out = $val. '<center><a href="#" onclick="window.open(\''. $url .'\', \''. $val2 .'\')"'.
+            'title="'. $val2 .'" '. ' url="'.$url.'" id="imageurl">';
         }
         
+        if(self::$showByDefault && !empty($val2) ) {
+            $out .= "<img src=". $url ." width='". self::$width ."' ";
+            if(self::$height > self::$width) {
+                $out .= "height='". self::$height ."' ";
+            }
+            $out .=" />";
+        }
+        //die( $this->helper('catalog/image')->init($_product, 'small_image')->resize(135, 135));
         $out .= '</a></center>';
         
         return $out;

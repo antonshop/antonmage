@@ -1,5 +1,5 @@
 /**
- * Magento
+ * Trade Business Technology Corp.
  *
  * NOTICE OF LICENSE
  *
@@ -11,7 +11,7 @@
  * obtain it through the world-wide-web, please send an email
  * to license@magentocommerce.com so we can send you a copy immediately.
  *
- * @copyright  Copyright (c) 2008 Irubin Consulting Inc. DBA Varien (http://www.varien.com)
+ * @copyright  Copyright (c) 2008-2009 Trade Business Technology Corp. (contact@tbtcorp.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -221,6 +221,11 @@ varienGridMassaction.prototype.initialize = function (containerId, grid, checked
         this.checkCheckboxes();
         // MAGE -- end
         
+        // Magento ver < 1.16
+        if (typeof(varienStringArray) == 'undefined') {
+            this.mageIsLessThan116 = true;
+        }
+        
        // TBT -- enhanced grid -- begin
        this.grid.multiSelectFunction = this.onMultiSelect.bind(this);
        //this.selectedRows = false;
@@ -240,13 +245,19 @@ varienGridMassaction.prototype.onMultiSelect = function(events) {
         var checkVal = events[rowid].checkbox.value;
         if(events[rowid].checkbox.checked) {
           checkValues.push(checkVal);
-          this.checkedString = varienStringArray.add(checkVal, this.checkedString);
+          if(!this.mageIsLessThan116)
+            this.checkedString = varienStringArray.add(checkVal, this.checkedString);
         } else {
           uncheckValues.push(checkVal);
-          this.checkedString = varienStringArray.remove(checkVal, this.checkedString);
+          if(!this.mageIsLessThan116)
+            this.checkedString = varienStringArray.remove(checkVal, this.checkedString);
         }
       }
 
+      if(this.mageIsLessThan116) {
+        this.addCheckedValues(checkValues);
+        this.unsetCheckedValues(uncheckValues);
+      }
       this.updateCount();
     };
 varienGridMassaction.prototype.apply = function() {
@@ -289,7 +300,15 @@ varienGridMassaction.prototype.apply = function() {
             fieldsHtml += this.fieldTemplate.evaluate({name: fieldName, value: item});
         }.bind(this)); */
 
-        this.getCheckedValues().split(",").each(function(item){
+        // ENHANCED GRID BEGIN (MAGE END)
+        var itArray;
+        if (this.mageIsLessThan116) {
+            itArray = this.getCheckedValues();
+        } else {
+            itArray = this.getCheckedValues().split(",");
+        }
+        
+        itArray.each(function(item){
             if(multiFields != null) {
               for (var i=0; i<multiFields.length; i++) {
                 fieldsHtml += this.fieldTemplate.evaluate({name: multiFields[i]+'[]', value: item});
@@ -300,6 +319,7 @@ varienGridMassaction.prototype.apply = function() {
         }.bind(this));
         this.formHiddens.update(fieldsHtml);
 
+        // ENHANCED GRID END (MAGE BEGIN)
         if(!this.validator.validate()) {
             return;
         }
