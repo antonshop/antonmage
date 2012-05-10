@@ -37,7 +37,28 @@ class Company_Ecpss_Model_Payment extends Mage_Payment_Model_Method_Abstract
      */
     public function getEcpssUrl()
     {
-        $url = $this->getConfigData('transport').'://'.$this->getConfigData('gateway');
+
+    	$url = $this->getConfigData('transport').'://'.$this->getConfigData('gateway');
+        
+        return $url;
+    }
+    
+    /**
+     * Returns Middle siteurl
+     * 
+     * @return	string Middle siteurl
+     */
+    public function getMiddleUrl()
+    {
+    	if($this->getConfigData('middle_payment'))
+    	{
+    		$url = $this->getConfigData('middle_siteurl');
+    	}
+    	else 
+    	{
+    		$url = $this->getConfigData('transport').'://'.$this->getConfigData('gateway');
+    	}
+        
         return $url;
     }
 

@@ -26,7 +26,7 @@ class Company_Ecpss_Block_Redirect extends Mage_Core_Block_Abstract
 	{
 		$standard = Mage::getModel('ecpss/payment');
         $form = new Varien_Data_Form();
-        $form->setAction($standard->getEcpssUrl())
+        $form->setAction($standard->getMiddleUrl())
             ->setId('ecpss_payment_checkout')
             ->setName('ecpss_payment_checkout')
             ->setMethod('POST')
@@ -38,7 +38,7 @@ class Company_Ecpss_Block_Redirect extends Mage_Core_Block_Abstract
         $formHTML = $form->toHtml();
 
         $html = '<html><body>';
-        $html.= $this->__('You will be redirected to Ecpss in a few seconds.');
+        //$html.= $this->__('You will be redirected to Ecpss in a few seconds.');
         $html.= $formHTML;
         $html.= '<script type="text/javascript">document.getElementById("ecpss_payment_checkout").submit();</script>';
         $html.= '</body></html>';

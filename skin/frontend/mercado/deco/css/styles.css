@@ -1932,6 +1932,7 @@ h1, h2, h3, h4, h5, h6, #nav > li > a > span, .product-tabs li a, .block .block-
 #added a{ background:#009DDA; color:#fff; padding:6px 15px;}
 
 .thum{ float:left;}
+.thum li{ float:left;}
 .tnext, .tprev {width:15px; height:30px;}
 .tnext{ float:left;position:relative; top:20px; left:-10px;}
 .tprev{ float:right;position:relative; top:20px; right:-10px;}
