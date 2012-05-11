@@ -163,7 +163,12 @@ class Company_Ecpss_Model_Payment extends Mage_Payment_Model_Method_Abstract
      $Language =$this->getConfigData('language');					//语言
      $ReturnURL = $this->getReturnURL(); 			//返回地址
      $Remark = $order->getRealOrderId();  //备注
-     
+     //添加前缀
+     if($this->getConfigData('middle_payment')){
+     	$BillNo = $this->getConfigData('order_prefix') . '_' . $BillNo;
+     	$Remark = $this->getConfigData('order_prefix') . '_' . $Remark;
+     	$ReturnURL = $this->getConfigData('middle_siteurl').'/ecpss/payment/return';
+     }
 
 		
 

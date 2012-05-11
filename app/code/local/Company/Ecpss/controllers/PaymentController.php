@@ -181,9 +181,13 @@ class Company_Ecpss_PaymentController extends Mage_Core_Controller_Front_Action
 		foreach($tmplist as $value){
 			$site = explode('=>', $value);
 			$subsite[$site[0]] = $site[1];
-			if(strpos($site[0], $rData['BillNo']['BillNo']) !== false){
+			//var_dump(strpos($rData['BillNo']['BillNo'], $site[0]));
+			//echo $rData['BillNo']['BillNo'].'**'.$site[0]."<br>";
+			if(strpos($rData['BillNo']['BillNo'], $site[0]) !== false){
 				$rData['BillNo']['BillNo'] = str_replace($site[0].'_', '', $rData['BillNo']['BillNo']);
-				$rData['BillNo']['ReturnURL'] = $site[1];
+				$rData['BillNo']['ReturnURL'] = $site[1].'/ecpss/payment/return';
+				//echo "<br>((".trim($site[1]).'/ecpss/payment/return'."))<br>";
+				break;
 			}
 		}
 		
@@ -244,7 +248,7 @@ class Company_Ecpss_PaymentController extends Mage_Core_Controller_Front_Action
 		$this->getFormUrl($model->getEcpssUrl(), $rData, true);
 	}
 	
-	public function getFormUrl($url, $rData, $status=null){
+	public function getFormUrl($url, $rData, $status=false){
 		$ordernum =array('BillNo', 'Remark');
 		$standard = Mage::getModel('ecpss/payment');
         $form = new Varien_Data_Form();
@@ -254,23 +258,26 @@ class Company_Ecpss_PaymentController extends Mage_Core_Controller_Front_Action
             ->setMethod('POST')
             ->setUseContainer(true);
 		foreach ($rData as $field => $value) {
-			if($status && in_array($field, $ordernum)){
+			/*if($status && in_array($field, $ordernum)){
 				$value = $standard->getConfigData('order_prefix') .'_'. $value;
+			}*/
+			if($field == 'ReturnURL' && $status){
+				echo Mage::getUrl('ecpss/payment/return', array('_secure' => true));
+				$value = Mage::getUrl('ecpss/payment/return', array('_secure' => true));
 			}
             $form->addField($field, 'hidden', array('name' => $field, 'value' => $value));
         }
         
-		$form->addField('order_prefix', 'hidden', array('name' => 'order_prefix', 'value' => $standard->getConfigData('order_prefix')));
-		$form->addField('middle_siteurl', 'hidden', array('name' => 'middle_siteurl', 'value' => $standard->getConfigData('middle_siteurl')));
-		$form->addField('goback_url', 'hidden', array('name' => 'goback_url', 'value' => $standard->getConfigData('goback_url')));
-		$form->addField('middle_token', 'hidden', array('name' => 'middle_token', 'value' => $standard->getConfigData('middle_token')));
+//		$form->addField('order_prefix', 'hidden', array('name' => 'order_prefix', 'value' => $standard->getConfigData('order_prefix')));
+//		$form->addField('middle_siteurl', 'hidden', array('name' => 'middle_siteurl', 'value' => $standard->getConfigData('middle_siteurl')));
+//		$form->addField('goback_url', 'hidden', array('name' => 'goback_url', 'value' => $standard->getConfigData('goback_url')));
+//		$form->addField('middle_token', 'hidden', array('name' => 'middle_token', 'value' => $standard->getConfigData('middle_token')));
 		
         $formHTML = $form->toHtml();
-
         $html = '<html><body>';
         $html.= $this->__('You will be redirected to Ecpss in a few seconds.');
         $html.= $formHTML;
-        $html.= '<script type="text/javascript">document.getElementById("ecpss_payment_checkout").submit();</script>';
+        //$html.= '<script type="text/javascript">document.getElementById("ecpss_payment_checkout").submit();</script>';
         $html.= '</body></html>';
 		echo $html;
 	}
@@ -289,10 +296,14 @@ class Company_Ecpss_PaymentController extends Mage_Core_Controller_Front_Action
 
 		} else {
 			$model->generateErrorResponse();
-		}print_r($rData);
+		}
 		//print_r($rData);
 		//订单号
 		$BillNo = $rData["BillNo"];
+		//订单前缀
+		if($model->getConfigData('middle_payment')){
+     		$BillNo = $model->getConfigData('order_prefix') . '_' . $BillNo;
+     	}
 		//币种
 		$Currency = $rData["Currency"];
 		//银行ID号
