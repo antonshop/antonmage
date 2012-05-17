@@ -76,7 +76,7 @@
 		            <div class="product-name">
 		                <h1><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></h1>
 		            </div>
-		
+					<?php echo $this->getLayout()->createBlock('core/template')->setTemplate('socialshare/socialbar.phtml')->toHtml();?>
 		            <?php if ($this->canEmailToFriend()): ?>
 		                <p class="email-friend"><a href="<?php echo $this->helper('catalog/product')->getEmailToFriendUrl($_product) ?>"><?php echo $this->__('Email to a Friend') ?></a></p>
 		            <?php endif; ?>

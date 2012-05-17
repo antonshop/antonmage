@@ -1,5 +1,40 @@
 cms => pages =>  homepage
-
+<div id="banner-rotator" class="royalSlider default">
+<ul class="royalSlidesContainer">
+<li class="royalSlide"> <img class="royalImage" src="{{media url="wysiwyg/mercado/slid.png"}}" alt="" />
+<div class="royalCaption" style="left: 68%; top: 50px; width: 300px; color: #eaeaed;">
+<div class="royalCaptionItem " style="right: 20px;"><img src="{{media url="wysiwyg/mercado/new_in.png"}}" alt="" /></div>
+<div class="royalCaptionItem sgMidText" style="left: -27px; top: 60px;"><img src="{{media url="wysiwyg/mercado/text.png"}}" alt="" /></div>
+<div class="royalCaptionItem sgSmallText " style="left: 67px; top: 104px;"><a class="tintButton non-draggable" href="javascript:void()">Button  Example</a></div>
+</div>
+</li>
+<li class="royalSlide"> <img class="royalImage" src="{{media url="wysiwyg/mercado/slid.png"}}" alt="" />
+<div class="royalCaption" style="left: 68%; top: 50px; width: 300px; color: #eaeaed;">
+<div class="royalCaptionItem " style="right: 20px;"><img src="{{media url="wysiwyg/mercado/new_in.png"}}" alt="" /></div>
+<div class="royalCaptionItem sgMidText" style="left: -27px; top: 60px;"><img src="{{media url="wysiwyg/mercado/text.png"}}" alt="" /></div>
+<div class="royalCaptionItem sgSmallText " style="left: 67px; top: 104px;"><a class="tintButton non-draggable" href="javascript:void()">Button  Example</a></div>
+</div>
+</li>
+<li class="royalSlide"> <img class="royalImage" src="{{media url="wysiwyg/mercado/slid.png"}}" alt="" />
+<div class="royalCaption" style="left: 68%; top: 50px; width: 300px; color: #eaeaed;">
+<div class="royalCaptionItem " style="right: 20px;"><img src="{{media url="wysiwyg/mercado/new_in.png"}}" alt="" /></div>
+<div class="royalCaptionItem sgMidText" style="left: -27px; top: 60px;"><img src="{{media url="wysiwyg/mercado/text.png"}}" alt="" /></div>
+<div class="royalCaptionItem sgSmallText " style="left: 67px; top: 104px;"><a class="tintButton non-draggable" href="javascript:void()">Button  Example</a></div>
+</div>
+</li>
+<li class="royalSlide"> <img class="royalImage" src="{{media url="wysiwyg/mercado/slid.png"}}" alt="" />
+<div class="royalCaption" style="left: 68%; top: 50px; width: 300px; color: #eaeaed;">
+<div class="royalCaptionItem " style="right: 20px;"><img src="{{media url="wysiwyg/mercado/new_in.png"}}" alt="" /></div>
+<div class="royalCaptionItem sgMidText" style="left: -27px; top: 60px;"><img src="{{media url="wysiwyg/mercado/text.png"}}" alt="" /></div>
+<div class="royalCaptionItem sgSmallText " style="left: 67px; top: 104px;"><a class="tintButton non-draggable" href="javascript:void()">Button  Example</a></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="home-text"><img src="{{media url="wysiwyg/mercado/b1.jpg"}}" alt="" /><a class="readmore" href="#">Shop Now</a></div>
+<div class="home-text last"><img src="{{media url="wysiwyg/mercado/b2.jpg"}}" alt="" /><a class="readmore" href="#">Shop Now</a></div>
+<div class="clear">{{block type="catalog/product_new" name="home.catalog.product.new" alias="product_homepage"  template="catalog/product/new.phtml"}}</div>
+<p>{{block type="catalog/product_list" category_id="8" template="catalog/product/home.phtml"}}</p>
 
 
 =====================================================================================================

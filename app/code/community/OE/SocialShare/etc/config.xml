@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <OE_SocialShare>
+            <version>1.0</version>
+        </OE_SocialShare>
+    </modules>
+
+    <frontend>
+        <layout>
+            <updates>
+                <SocialShare>
+                    <file>SocialShare.xml</file>
+                </SocialShare>
+            </updates>
+        </layout>
+        
+    </frontend>
+
+    <adminhtml>
+        <translate>
+            <modules>
+                <OE_SocialShare>
+                    <files>
+                        <default>OE_SocialShare.csv</default>
+                    </files>
+                </OE_SocialShare>
+            </modules>
+        </translate>
+		<acl>
+			<resources>
+				<admin>
+					<children>
+						<system>
+							<children>
+								<config>
+									<children>
+										<socialshare translate="title" module="socialshare">
+											<title>Social Share Button</title>
+										</socialshare>
+									</children>
+								</config>
+							</children>
+						</system>
+					</children>
+				</admin>
+			</resources>
+		</acl>		
+    </adminhtml>
+
+    <global>
+        <resources>
+            <SocialShare_setup>
+                <setup>
+                    <module>OE_SocialShare</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </SocialShare_setup>
+            <SocialShare_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </SocialShare_write>
+            <SocialShare_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </SocialShare_read>
+        </resources>
+        <blocks>
+            <SocialShare>
+                <class>OE_SocialShare_Block</class>
+            </SocialShare>
+        </blocks>
+        <helpers>
+            <socialshare>
+                <class>OE_SocialShare_Helper</class>
+            </socialshare>
+        </helpers>
+    </global>
+
+    <default>
+        <socialshare>
+            <general>
+                <enabled>0</enabled>
+				<!--
+                <layout>button_count</layout>
+                <showfaces>false</showfaces>
+                <width>450</width>
+                <height>30</height>
+                <verb>like</verb>
+                <font></font>
+                <color>light</color>
+				-->
+            </general>
+            <opengraph>
+                <enabled_op>0</enabled_op>
+            </opengraph>
+        </socialshare>
+    </default>
+</config>

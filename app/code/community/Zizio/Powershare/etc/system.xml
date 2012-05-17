@@ -1,0 +1,217 @@
+<?xml version="1.0"?>
+<config>
+
+	<tabs>
+		<zizio translate="label" module="powershare">
+			<label>Zizio</label>
+			<sort_order>300</sort_order>
+		</zizio>
+	</tabs>
+	
+    <!-- 
+       when creating a new config field:
+       (1) add <backend_model>Zizio_Powershare_Model_System_Config_Data</backend_model>
+       (2) add <frontend_model>Zizio_Powershare_Model_System_Config_Field</frontend_model>
+       (3) add map to Zizio_Powershare_Model_System_Config_Data::$xml2alias
+    -->
+	
+	<sections>
+		<powershare translate="label" module="powershare">
+			<label>Power Share</label>
+			<tab>zizio</tab>
+			<sort_order>20</sort_order>
+			<show_in_default>1</show_in_default>
+			<show_in_website>1</show_in_website>
+			<show_in_store>1</show_in_store>
+			<groups>
+                <hint>
+                    <frontend_model>Zizio_Powershare_Model_System_Config_Header</frontend_model>
+                    <comment><![CDATA[
+                        The Zizio Power Share controls will appear in Product Pages and in the Checkout Success page (when a customer successfuly checks out).<br/>
+                        Below you can enable or disable the controls, specify the text that appears in the Share button and tweak the location of the controls in your pages, by specifying an "Anchor element" in your page.<br/>
+                        <br/>
+                        <b>Our Tips:</b><br/>
+                        &bull; We always recommend to use a 2 Power Share bars configuration.<br/>
+                        &bull; One bar should include the following buttons: Like, Tweet, Mail, Google +1, Pin It (but not the Facebook share button). Place this bar below the product image or above the product description.<br/>
+                        &bull; The second bar should only include the Facebook share button. We recommend to place it right under the "Add to Cart" button.<br/>
+                    ]]></comment>
+                    <sort_order>0</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                </hint>
+                <widget_decoration>
+                    <label>Widget Decoration</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>5</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <expanded>1</expanded>
+                    <fields>
+                        <decoration translate="label">
+                            <label>Decoration</label>
+                            <config_path>zizio/powershare/settings/deco</config_path>
+                            <comment>Set widget decoration</comment>
+                            <frontend_type>text</frontend_type>
+                            <backend_model>Zizio_Powershare_Model_System_Config_DecorationData</backend_model>
+                            <frontend_model>Zizio_Powershare_Model_System_Config_DecorationField</frontend_model>                            
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </decoration>
+                    </fields>
+                </widget_decoration>
+				<product_page translate="label">
+					<label>Product Page</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>10</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+                    <expanded>1</expanded>
+					<fields>
+						<enabled translate="label">
+	                        <label>Enabled</label>		
+	                        <config_path>zizio/powershare/settings/product_page/enabled</config_path>
+                            <comment>Show Power Share on catalog product page</comment>
+							<frontend_type>select</frontend_type>
+							<frontend_model>Zizio_Powershare_Model_System_Config_Field</frontend_model>
+                            <backend_model>Zizio_Powershare_Model_System_Config_Data</backend_model>
+                            <source_model>Zizio_Powershare_Model_System_Config_EnabledDisabled</source_model>
+							<sort_order>10</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>							
+						</enabled>
+                        <hr translate="label">
+                            <frontend_model>Zizio_Powershare_Model_Form_Element_Hr</frontend_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>                            
+                        </hr>
+                        <powershare_bars translate="label">
+                            <label>Custom Power Share Bars</label>  
+                            <config_path>zizio/powershare/settings/product_page/powershare_bars</config_path>
+                            <backend_model>Zizio_Powershare_Model_System_Config_PowerShareBarsData</backend_model>
+                            <frontend_model>Zizio_Powershare_Model_System_Config_PowerShareBars</frontend_model>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>                            
+                        </powershare_bars>
+					</fields>
+				</product_page>
+				<success_page translate="label">
+					<label>Success Page</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>20</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+                    <expanded>1</expanded>
+					<fields>
+						<enabled translate="label">
+	                        <label>Enabled</label>
+	                        <config_path>zizio/powershare/settings/success_page/enabled</config_path>
+                            <comment>Show Power Share on checkout success page</comment>
+							<frontend_type>select</frontend_type>
+							<frontend_model>Zizio_Powershare_Model_System_Config_Field</frontend_model>
+                            <backend_model>Zizio_Powershare_Model_System_Config_Data</backend_model>
+                            <source_model>Zizio_Powershare_Model_System_Config_EnabledDisabled</source_model>
+							<sort_order>10</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>							
+						</enabled>
+                        <cont_caption translate="label">
+                            <label>Share Container Caption</label>
+                            <config_path>zizio/powershare/settings/success_page/cont_caption</config_path>
+                            <comment>Set a heading to the container that encapsulates the Power Share bars</comment>
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>Zizio_Powershare_Model_System_Config_Field</frontend_model>
+                            <backend_model>Zizio_Powershare_Model_System_Config_Data</backend_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends><enabled>1</enabled></depends>
+                        </cont_caption>
+                        <share_caption translate="label">
+                            <label>Share Button Caption</label>
+                            <config_path>zizio/powershare/settings/success_page/share_caption</config_path>
+                            <comment>This value may be overridden by a Power Share Incentive if one exists</comment>
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>Zizio_Powershare_Model_System_Config_Field</frontend_model>
+                            <backend_model>Zizio_Powershare_Model_System_Config_Data</backend_model>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends><enabled>1</enabled></depends>
+                        </share_caption>
+                        <heading_position translate="label">
+                            <label>Positioning</label>
+                            <frontend_model>Zizio_Powershare_Model_System_Config_Heading</frontend_model>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                        </heading_position>
+						<css_selector translate="label">
+	                        <label>Anchor Element</label>
+	                        <config_path>zizio/powershare/settings/success_page/css_selector</config_path>
+                            <comment>CSS Selector for the HTML element to position by (e.g. ".product-shop")</comment>
+							<frontend_type>text</frontend_type>
+							<frontend_model>Zizio_Powershare_Model_System_Config_Field</frontend_model>
+							<backend_model>Zizio_Powershare_Model_System_Config_Data</backend_model>
+                            <sort_order>50</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<depends><enabled>1</enabled></depends>
+						</css_selector>
+                        <position translate="label">
+                            <label>Position Relative to Anchor</label>
+                            <config_path>zizio/powershare/settings/success_page/position</config_path>
+                            <frontend_type>select</frontend_type>
+                            <frontend_model>Zizio_Powershare_Model_System_Config_Field</frontend_model>
+                            <backend_model>Zizio_Powershare_Model_System_Config_Data</backend_model>
+                            <source_model>Zizio_Powershare_Model_Form_Element_Position</source_model>
+                            <sort_order>60</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends><enabled>1</enabled></depends>
+                        </position>
+                        <buttons translate="label">
+                            <label>Show and Arrange</label>
+                            <config_path>zizio/powershare/settings/success_page/buttons</config_path>
+                            <backend_model>Zizio_Powershare_Model_System_Config_Data</backend_model>
+                            <frontend_model>Zizio_Powershare_Model_System_Config_PowerShareButtons</frontend_model>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>70</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends><enabled>1</enabled></depends>                     
+                        </buttons>
+					</fields>
+				</success_page>
+                <tools>
+                    <label>Additional Management</label>
+                    <frontend_model>Zizio_Powershare_Model_System_Config_Tools</frontend_model>
+                    <frontend_type>text</frontend_type>
+                    <expanded>1</expanded>
+                    <sort_order>100</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                </tools>
+			</groups>
+		</powershare>
+	</sections>
+	
+</config>

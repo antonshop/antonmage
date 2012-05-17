@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+
+<layout version="0.1.0">
+    
+    <powershare_adminhtml_powershare_edit>
+	    <reference name="head">
+	        <action method="addJs"><js>extjs/ext-tree.js</js></action>
+	        <action method="addJs"><js>extjs/ext-tree-checkbox.js</js></action>
+	        <action method="addItem"><type>js</type><name>extjs/ext-tree.js</name></action>
+	        <action method="addItem"><type>js</type><name>extjs/ext-tree-checkbox.js</name></action>
+	        <action method="addItem"><type>js_css</type><name>extjs/resources/css/ext-all.css</name></action>
+	        <action method="addItem"><type>js_css</type><name>extjs/resources/css/ytheme-magento.css</name></action>
+	    </reference>
+    </powershare_adminhtml_powershare_edit>
+
+</layout>

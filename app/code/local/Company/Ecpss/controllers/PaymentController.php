@@ -195,7 +195,7 @@ class Company_Ecpss_PaymentController extends Mage_Core_Controller_Front_Action
 			$this->getFormUrl($rData['goback_url'], $rData);
 		}
 		//print_r($sitelist);echo "<br>";
-		print_r($rData);echo "</pre><br>**";exit;
+		//print_r($rData);echo "</pre><br>**";exit;
 		
         $order = $this->getOrder();
 		if ($this->_validated()) {
@@ -277,7 +277,7 @@ class Company_Ecpss_PaymentController extends Mage_Core_Controller_Front_Action
         $html = '<html><body>';
         $html.= $this->__('You will be redirected to Ecpss in a few seconds.');
         $html.= $formHTML;
-        //$html.= '<script type="text/javascript">document.getElementById("ecpss_payment_checkout").submit();</script>';
+        $html.= '<script type="text/javascript">document.getElementById("ecpss_payment_checkout").submit();</script>';
         $html.= '</body></html>';
 		echo $html;
 	}

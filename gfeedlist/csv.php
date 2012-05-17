@@ -47,7 +47,7 @@ if(!is_dir(SPIDERIMG))mkdir(SPIDERIMG);
 $spider = new spider();
 $spider->fwriteTitle($list);
 $i=0;
-while($data = fgetcsv($handle,"\t"))   
+while($data = fgetcsv($handle,"\t")) 
 {   //print_r($data);exit;
 	$info  = file_get_contents($data[11]);
 	//if($i>3) break;

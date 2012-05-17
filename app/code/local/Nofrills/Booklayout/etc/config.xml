@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<modules>
+		<Nofrills_Booklayout>
+			<version>0.1.0</version>
+		</Nofrills_Booklayout>
+	</modules>
+	<frontend>
+		<routers>
+			<nofrills_booklayout>
+				<use>standard</use>
+				<args>
+					<module>Nofrills_Booklayout</module>
+					<frontName>nofrills_booklayout</frontName>
+				</args>
+			</nofrills_booklayout>
+		</routers>
+	</frontend>
+	<global>
+		<blocks>
+			<nofrills_booklayout>
+				<class>Nofrills_Booklayout_Block</class>
+			</nofrills_booklayout>
+		</blocks>
+		<models>
+			<nofrills_booklayout>
+				<class>Nofrills_Booklayout_Model</class>
+			</nofrills_booklayout>
+		</models>
+		<helpers>
+			<nofrills_booklayout>
+				<class>Nofrills_Booklayout_Helper</class>
+			</nofrills_booklayout>
+		</helpers>
+	</global>
+</config>

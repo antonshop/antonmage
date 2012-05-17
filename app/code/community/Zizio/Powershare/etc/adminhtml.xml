@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <menu>
+        <promo>
+            <children>
+                <powershare translate="title" module="powershare">
+                    <title>Zizio Power Share</title>
+                    <sort_order>90</sort_order>
+                    <action>powershare/adminhtml_powershare</action>
+                </powershare>
+            </children>
+        </promo>
+    </menu> 
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <powershare translate="title" module="powershare">
+                                        <title>Zizio Power Share Settings</title>
+                                        <sort_order>10</sort_order>
+                                    </powershare>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                    <promo>
+                        <children>
+                            <powershare translate="title" module="powershare">
+                                <title>Zizio Power Share</title>
+                            </powershare>
+                        </children>
+                    </promo>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>
