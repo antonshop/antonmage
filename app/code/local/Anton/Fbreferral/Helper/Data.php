@@ -9,7 +9,7 @@
  * @Creation Date:  December 01 2011
  *
  * */
-class Apptha_Fbreferral_Helper_Data extends Mage_Core_Helper_Abstract
+class Anton_Fbreferral_Helper_Data extends Mage_Core_Helper_Abstract
 {
  public function fbreferralconfigurl()
     {

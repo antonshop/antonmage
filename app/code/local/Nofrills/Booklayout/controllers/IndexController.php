@@ -42,7 +42,6 @@ class Nofrills_Booklayout_IndexController  extends Mage_Core_Controller_Front_Ac
 		
 		$block_1->setText('Wait, I want this text instead.');
 		echo $main_block->toHtml();	
-
 	}
 	
 	public function helloblockAction()
