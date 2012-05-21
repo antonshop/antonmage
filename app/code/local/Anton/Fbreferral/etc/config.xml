@@ -58,6 +58,11 @@
     </adminhtml> 
     <global>
         <models>
+			<salesrule>
+                <rewrite>
+                    <quote_discount>Anton_Fbreferral_Model_Discount</quote_discount>
+                </rewrite>
+            </salesrule> 
             <fbreferral>
                 <class>Anton_Fbreferral_Model</class>
                 <resourceModel>fbreferral_mysql4</resourceModel>
@@ -101,5 +106,16 @@
                 <class>Anton_Fbreferral_Helper</class>
             </fbreferral>
         </helpers>
+		<events>
+            <checkout_onepage_controller_success_action>
+                <observers>
+                    <fbreferral>
+                        <type>singleton</type>
+                        <class>Anton_Fbreferral_Model_Observer</class>
+                        <method>processUpdateDiscount</method>
+                  </fbreferral>
+                </observers>
+            </checkout_onepage_controller_success_action>
+        </events>
     </global>
 </config>
