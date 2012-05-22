@@ -18,7 +18,7 @@ class Anton_Fbreferral_Block_Fbreferral extends Mage_Core_Block_Template
 
     /*Get Facebook Response Url*/
     public function getResponseUrl(){
-    	return Mage::getUrl('fbreferral/index/response');
+    	return Mage::getUrl('fbreferral/index/fbrespond');
     }
     
 }

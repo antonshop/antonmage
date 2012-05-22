@@ -103,7 +103,7 @@ class Anton_Fbreferral_Model_Discount extends Mage_SalesRule_Model_Quote_Discoun
 
 		$basediscount_amount = $discount_amount;
 		$discount_amount = Mage::helper('core')->currency($discount_amount, false, false);
-		$fetchstatus = Mage::getModel('fbreferral/fbreferral')->getFacebookuser($user);
+		$fetchstatus = Mage::getModel('fbreferral/fbreferral')->getReferraluser($user);
 		$referral = $fetchstatus[0]['status'];
 		
 		/* get the cart subtotal */
@@ -135,7 +135,7 @@ class Anton_Fbreferral_Model_Discount extends Mage_SalesRule_Model_Quote_Discoun
 	public function fetch(Mage_Sales_Model_Quote_Address $address) {
 		$amount = $address->getDiscountAmount();
 		$cartItems = Mage::helper('checkout/cart')->getCart()->getItemsCount();
-		$discountAmount = Mage::getStoreConfig('fbreferral/general/discount_amount');
+		$discountAmount = Mage::getModel('fbreferral')->getFbDiscountamount();
 
 		if ($amount != 0) {
 

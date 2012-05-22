@@ -35,8 +35,10 @@ class Anton_Fbreferral_Model_Fbreferral extends Mage_Core_Model_Abstract
    		return Mage::getStoreConfig('fbreferral/general/fb_feed_message');
     }
     
-    public function  getFbCartshowmassage(){
-   		return Mage::getStoreConfig('fbreferral/general/fb_cartshow_message');
+    public function  getFbCartmassage(){
+    	$message = Mage::getStoreConfig('fbreferral/general/fb_cartshow_message');
+  		$message = str_replace('{money}',self::getFbDiscountamount(), $message);
+   		return $message;
     }
     
 	public function getFacebook()
@@ -58,30 +60,30 @@ class Anton_Fbreferral_Model_Fbreferral extends Mage_Core_Model_Abstract
     	return $facebook->getLoginUrl(
     		array(
     			'scope'         => 'email, user_location, offline_access, user_birthday, user_about_me, user_hometown, publish_stream',
-                'redirect_uri'  => Mage::getBaseUrl().'fbreferral/index/response'
+                'redirect_uri'  => Mage::getBaseUrl().'fbreferral/index/fbrespond'
     		)
     	);
     }
     
     /* updatae facebook user log */
-    public function setFacebookuser($fbuser){
+    public function setReferraluser($fbuser, $type=1){
    		$write = Mage::getSingleton('core/resource')->getConnection('core_write');
    		$fbreferral = Mage::getSingleton('core/resource')->getTableName('fbreferral');
-   		$sql = "insert into $fbreferral (fbuser,content,status) values ( $fbuser ,1,1)";
+   		$sql = "insert into $fbreferral (`fbuser`, `content`, `status`, `type`) values ( $fbuser ,1 ,1, $type)";
 		$res = $write->query($sql);
     }
     
     /* get facebook user */
-    public function getFacebookuser($fbuser){
+    public function getReferraluser($fbuser, $type=1){
    		$read = Mage::getSingleton('core/resource')->getConnection('core_read');
    		$fbreferral = Mage::getSingleton('core/resource')->getTableName('fbreferral');
-		$sql = "select * from $fbreferral where fbuser = $fbuser";
+		$sql = "select * from $fbreferral where fbuser = $fbuser and type = $type";
 		return $read->fetchAll($sql);
     }
     
 	/* updatae facebook user count */
-    public function getFacebookuserCount($fbuser){
-		return count(self::getFacebookuser($fbuser));
+    public function getReferraluserCount($fbuser){
+		return count(self::getReferraluser($fbuser));
     }
 }
 

@@ -14,13 +14,17 @@ $cartItems = Mage::helper('checkout/cart')->getCart()->getItemsCount();
 $facebook = $this->getFacebook();
 $fbuser = $facebook->getUser();
 
-$content = '<div style=" margin-bottom:15px;width:100%; height:40px; text-align:right;">&nbsp;';
-if($fbuser){
-	$content .= '<a href="' . $this->getResponseUrl() . '"><img src="'. $this->getSkinUrl("images/fb-recommend.png").'"></a>';
-}else{
-	$content .= '<a href="' . $this->getFacebookLoginUrl() . '"><img src="'. $this->getSkinUrl("images/fb-recommend.png").'"></a>';
+if($cartItems){
+	$content = '<div style=" margin-bottom:15px;width:100%; height:40px; text-align:right;">&nbsp;';
+	$content .= '<span style="color:#333; font-weight:bold;font-size:12px; line-height:30px; margin-right:20px;">'.Mage::getModel('fbreferral/fbreferral')->getFbCartmassage().'</span>';
+	$img = '<img src="'. $this->getSkinUrl("images/facebook_button.png").'">';
+	if($fbuser){
+		$content .= '<a href="' . $this->getResponseUrl() . '">' . $img . '</a>';
+	}else{
+		$content .= '<a href="' . $this->getFacebookLoginUrl() . '">' . $img . '</a>';
+	}
+	$content .= '</div>';
+	
+	echo $content;
 }
-$content .= '</div>';
-
-echo $content;
 ?>

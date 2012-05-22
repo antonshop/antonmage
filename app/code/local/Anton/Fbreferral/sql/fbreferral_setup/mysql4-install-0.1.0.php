@@ -12,6 +12,7 @@ CREATE TABLE {$this->getTable('fbreferral')} (
   `fbuser` varchar(255) NOT NULL default '',
   `content` varchar(255) NOT NULL default '',
   `status` smallint(6) NOT NULL default '0',
+  `type` smallint(6) NOT NULL default '0',
   PRIMARY KEY (`fbreferral_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 

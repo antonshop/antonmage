@@ -11,14 +11,11 @@
  * */
 class Anton_Fbreferral_Model_Observer {
 
-    protected $_discount;
 
    
     public function processUpdateDiscount($observer) {
-        $resource = Mage::getSingleton('core/resource');
-        $read = $resource->getConnection('read');
-        $tPrefix = (string) Mage::getConfig()->getTablePrefix();
-        $quoteItemTable = $tPrefix . 'sales_flat_quote_item';
+        $read = Mage::getSingleton('core/resource')->getConnection('read');
+        $quoteItemTable = Mage::getSingleton('core/resource')->getTableName('sales_flat_quote_item');
 
         $quoteId = Mage::getSingleton('checkout/session')->getLastQuoteId();
         $selectQuote = $read->select()
@@ -29,18 +26,18 @@ class Anton_Fbreferral_Model_Observer {
 
         $session = Mage::getSingleton('customer/session');
         $resource = Mage::getSingleton('core/resource');
-        $read = $resource->getConnection('write');
-        $tPrefix = (string) Mage::getConfig()->getTablePrefix();
-        $fbstatusTable = $tPrefix . 'fbreferral_status';
+        $write = Mage::getSingleton('core/resource')->getConnection('write');
 
-        $facebook = Mage::getModel('fbreferral/fbreferral')->getfbuser();
+        $fbreferral = Mage::getSingleton('core/resource')->getTableName('fbreferral');
         
-        $user = $facebook->getUser();
-        if($user)
+        $facebook = Mage::getModel('fbreferral/fbreferral')->getFacebook();
+        $fbuser = $facebook->getUser();
+        
+        if($fbuser)
         {
-        $update = $read->query("DELETE from $fbstatusTable  WHERE fbuser =" . $user);
+        	$update = $write->query("DELETE from $fbreferral WHERE fbuser =" . $fbuser);
         }
-
+//echo $fbuser;exit;
         return $this;
     }
 
