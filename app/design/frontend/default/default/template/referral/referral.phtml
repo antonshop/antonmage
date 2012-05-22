@@ -1,0 +1,30 @@
+<?php
+/**
+ * @name         :  Apptha FB Referral
+ * @version      :  1.2
+ * @since        :  Magento 1.5
+ * @author       :  Apptha - http://www.apptha.com
+ * @copyright    :  Copyright (C) 2011 Powered by Apptha
+ * @license      :  http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ * @Creation Date:  December 01 2011
+ *
+ * */
+$cartItems = Mage::helper('checkout/cart')->getCart()->getItemsCount();
+
+$facebook = $this->getFacebook();
+$fbuser = $facebook->getUser();
+
+if($cartItems){
+	$content = '<div style=" margin-bottom:15px;width:100%; height:40px; text-align:right;">&nbsp;';
+	$content .= '<span style="color:#333; font-weight:bold;font-size:12px; line-height:30px; margin-right:20px;">'.Mage::getModel('referral/referral')->getFbCartmassage().'</span>';
+	$img = '<img src="'. $this->getSkinUrl("images/facebook_button.png").'">';
+	if($fbuser){
+		$content .= '<a href="' . $this->getResponseUrl() . '">' . $img . '</a>';
+	}else{
+		$content .= '<a href="' . $this->getFacebookLoginUrl() . '">' . $img . '</a>';
+	}
+	$content .= '</div>';
+	
+	echo $content;
+}
+?>
