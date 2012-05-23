@@ -10,27 +10,7 @@ class Anton_Referral_Model_Referral extends Mage_Core_Model_Abstract
         $this->_init('referral/referral');
     }
     
-	/*get facebook referral config*/
-    public function  getFbStatus(){
-   		return Mage::getStoreConfig('referral/general/fb_status');
-    }
-    
-    public function  getFbAppid(){
-   		return Mage::getStoreConfig('referral/general/fb_app_id');
-    }
-    
-    public function  getFbAppsecret(){
-   		return Mage::getStoreConfig('referral/general/fb_app_secret');
-    }
-    
-    public function  getFbDiscountamount(){
-   		return Mage::getStoreConfig('referral/general/fb_discount_amount');
-    }
-    
-    public function  getFbOrderamount(){
-   		return Mage::getStoreConfig('referral/general/fb_order_amount');
-    }
-    
+	/* get referral general config */
     public function  getFbFeedmassage(){
    		return Mage::getStoreConfig('referral/general/fb_feed_message');
     }
@@ -40,6 +20,45 @@ class Anton_Referral_Model_Referral extends Mage_Core_Model_Abstract
   		$message = str_replace('{money}',self::getFbDiscountamount(), $message);
    		return $message;
     }
+    
+    public function  getFbDiscountamount(){
+   		return Mage::getStoreConfig('referral/referral/discount_amount');
+    }
+    
+    public function  getFbOrderamount(){
+   		return Mage::getStoreConfig('referral/referral/order_amount');
+    }
+
+    /* get referral facebook config */
+    public function  getFbStatus(){
+   		return Mage::getStoreConfig('referral/facebook/fb_status');
+    }
+    
+    public function  getFbAppid(){
+   		return Mage::getStoreConfig('referral/facebook/fb_app_id');
+    }
+    
+    public function  getFbAppsecret(){
+   		return Mage::getStoreConfig('referral/facebook/fb_app_secret');
+    }
+    
+    /* get referral twitter config */
+	public function  getTwStatus(){
+   		return Mage::getStoreConfig('referral/twitter/tw_status');
+    }
+    
+	public function  getTwConsumerkey(){
+   		return Mage::getStoreConfig('referral/twitter/tw_consumer_key');
+    }
+    
+	public function  getTwConsumersecret(){
+   		return Mage::getStoreConfig('referral/twitter/tw_consumer_secret');
+    }
+    
+	public function  getTwCallbackurl(){
+   		return Mage::getStoreConfig('referral/twitter/tw_callback_url');
+    }
+    
     
 	public function getFacebook()
     {

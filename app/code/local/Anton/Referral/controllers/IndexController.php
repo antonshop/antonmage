@@ -32,6 +32,10 @@ class Anton_Referral_IndexController extends Mage_Core_Controller_Front_Action
 		return $subTotal = $customerQuote->getSubtotal();
     }
     
+    public function twredirectAction(){
+    	echo 'twitter';
+    }
+    
 	public function fbrespondAction(){
 		
 		/* get facebook */
@@ -39,8 +43,8 @@ class Anton_Referral_IndexController extends Mage_Core_Controller_Front_Action
 		$fbuser = $facebook->getUser();
 		
 		/* get facebook configuration discount */
-		$fb_discount_amount = Mage::getStoreConfig('referral/general/fb_discount_amount');
-		$fb_order_amount = Mage::getStoreConfig('referral/general/fb_order_amount');
+		$fb_discount_amount = Mage::getModel('referral/referral')->getFbDiscountamount();
+		$fb_order_amount = Mage::getModel('referral/referral')->getFbOrderamount();
 		$basemin_order_amount = Mage::helper('core')->currency($fb_order_amount, true, true);
 		$basediscount_amount = $fb_discount_amount;
 		$fb_discount_amount = Mage::helper('core')->currency($fb_discount_amount, false, false);

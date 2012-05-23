@@ -16,9 +16,17 @@ class Anton_Referral_Block_Referral extends Mage_Core_Block_Template
     	return Mage::getModel('referral/referral')->getFacebookLoginUrl();
     }
 
-    /*Get Facebook Response Url*/
-    public function getResponseUrl(){
-    	return Mage::getUrl('referral/index/fbrespond');
+    /*Get Response Url*/
+    public function getResponseUrl($name){
+    	switch ($name){
+    		case 'fb':
+    			$url = Mage::getUrl('referral/index/fbrespond');
+    		case 'tw':
+    			$url = Mage::getUrl('referral/index/twrespond');
+    		default:
+    			$url = Mage::getUrl('referral/index/gprespond');
+    	}
+    	return $url;
     }
     
 }
