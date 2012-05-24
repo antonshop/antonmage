@@ -1,6 +1,7 @@
 <?php
 
 require  'facebook.php';
+require_once 'twitteroauth/twitteroauth.php';
 
 class Anton_Referral_Model_Referral extends Mage_Core_Model_Abstract
 {
@@ -15,18 +16,18 @@ class Anton_Referral_Model_Referral extends Mage_Core_Model_Abstract
    		return Mage::getStoreConfig('referral/general/fb_feed_message');
     }
     
-    public function  getFbCartmassage(){
+    public function  getFbCartmessage(){
     	$message = Mage::getStoreConfig('referral/general/fb_cartshow_message');
-  		$message = str_replace('{money}',self::getFbDiscountamount(), $message);
+  		$message = str_replace('{money}','$'.self::getFbDiscountamount(), $message);
    		return $message;
     }
     
     public function  getFbDiscountamount(){
-   		return Mage::getStoreConfig('referral/referral/discount_amount');
+   		return Mage::getStoreConfig('referral/general/discount_amount');
     }
     
     public function  getFbOrderamount(){
-   		return Mage::getStoreConfig('referral/referral/order_amount');
+   		return Mage::getStoreConfig('referral/general/order_amount');
     }
 
     /* get referral facebook config */
@@ -88,7 +89,7 @@ class Anton_Referral_Model_Referral extends Mage_Core_Model_Abstract
     public function setReferraluser($fbuser, $type=1){
    		$write = Mage::getSingleton('core/resource')->getConnection('core_write');
    		$referral = Mage::getSingleton('core/resource')->getTableName('referral');
-   		$sql = "insert into $referral (`fbuser`, `content`, `status`, `type`) values ( $fbuser ,1 ,1, $type)";
+   		$sql = "insert into $referral (`fbuser`, `content`, `status`, `type`) values ( $fbuser , 1, 1, $type)";
 		$res = $write->query($sql);
     }
     
@@ -104,6 +105,38 @@ class Anton_Referral_Model_Referral extends Mage_Core_Model_Abstract
     public function getReferraluserCount($fbuser){
 		return count(self::getReferraluser($fbuser));
     }
+    
+    /* get twitter oauth */
+    public function getTwitterOauth(){
+    	
+    	/* Build TwitterOAuth object with client credentials. */
+		$connection = new TwitterOAuth($this->getTwConsumerkey(), $this->getTwConsumersecret());
+		 
+		/* Get temporary credentials. */
+		//$request_token = $connection->getRequestToken(Mage::getBlockSingleton('referral/referral')->getResponseUrl('tw'));
+//echo Mage::getBlockSingleton('referral/referral')->getResponseUrl('tw');exit;
+		
+		/* Save temporary credentials to session. */
+//		$_SESSION['oauth_token'] = $request_token['oauth_token'];
+//		$_SESSION['oauth_token_secret'] = $request_token['oauth_token_secret'];
+		
+		return $connection;
+    }
+    
+    public function getUserTwitterOauth(){
+    	/* Create TwitteroAuth object with app key/secret and token key/secret from default phase */
+    	//$config = array();
+//print_r($config);exit;
+		return new TwitterOAuth($this->getTwConsumerkey(), $this->getTwConsumersecret(), $_SESSION['oauth_token'], $_SESSION['oauth_token_secret']);
+    }
+	
+    /* get twitter url */
+    public function getTwUrl(){
+    	if(isset($_SESSION['oauth_token'])){
+    		return $this->getTwitterOauth()->getAuthorizeURL($_SESSION['oauth_token']);
+    	} 
+    }
+    
 }
 
 

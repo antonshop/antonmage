@@ -127,7 +127,7 @@
 	                	<tw_consumer_key translate="label">
 	                           <label>Twitter Consumer key</label>
 	                           <frontend_type>text</frontend_type>
-	                           <sort_order>5</sort_order>
+	                           <sort_order>1</sort_order>
 	                           <show_in_default>1</show_in_default>
 	                           <show_in_website>1</show_in_website>
 	                           <show_in_store>1</show_in_store>
@@ -137,14 +137,14 @@
 	                   	<tw_consumer_secret translate="label">
 	                           <label>Twitter Consumer secret</label>
 	                           <frontend_type>text</frontend_type>
-	                           <sort_order>5</sort_order>
+	                           <sort_order>2</sort_order>
 	                           <show_in_default>1</show_in_default>
 	                           <show_in_website>1</show_in_website>
 	                           <show_in_store>1</show_in_store>
 	                           <validate>required-entry</validate>
 	                           <comment>Please enter twitter consumer secret</comment>
 	                   	</tw_consumer_secret>
-	                   	<tw_callback_url translate="label">
+	                   	<!--<tw_callback_url translate="label">
 	                           <label>Twitter Callback URL</label>
 	                           <frontend_type>text</frontend_type>
 	                           <sort_order>5</sort_order>
@@ -153,7 +153,7 @@
 	                           <show_in_store>1</show_in_store>
 	                           <validate>required-entry</validate>
 	                           <comment>Please enter twitter callback url</comment>
-	                   	</tw_callback_url>
+	                   	</tw_callback_url>-->
                    	</fields>
                 </twitter>
             </groups>

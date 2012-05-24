@@ -76,7 +76,6 @@ class Anton_Referral_Model_Discount extends Mage_SalesRule_Model_Quote_Discount 
 	 */
 	protected function _aggregateItemDiscount($item)
 	{
-			
 
 		/*Database connectivity*/
 		$resource = Mage::getSingleton('core/resource');

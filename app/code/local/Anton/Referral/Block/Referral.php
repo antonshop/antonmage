@@ -11,22 +11,45 @@ class Anton_Referral_Block_Referral extends Mage_Core_Block_Template
    		return Mage::getModel('referral/referral')->getFacebook();
     }
     
-    /*Get Facebook Url*/
+    /* get facebook url*/
     public function getFacebookLoginUrl(){
     	return Mage::getModel('referral/referral')->getFacebookLoginUrl();
     }
 
-    /*Get Response Url*/
+    /* get response url*/
     public function getResponseUrl($name){
     	switch ($name){
     		case 'fb':
     			$url = Mage::getUrl('referral/index/fbrespond');
+    			break;
     		case 'tw':
     			$url = Mage::getUrl('referral/index/twrespond');
+    			break;
     		default:
     			$url = Mage::getUrl('referral/index/gprespond');
     	}
     	return $url;
     }
     
+    /* get twitter redirect url */
+    public function getTwRedirecturl(){
+    	return Mage::getUrl('referral/index/twredirect');
+    } 
+    
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
