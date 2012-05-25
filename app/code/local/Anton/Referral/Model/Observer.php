@@ -21,11 +21,17 @@ class Anton_Referral_Model_Observer {
         
         $facebook = Mage::getModel('referral/referral')->getFacebook();
         $fbuser = $facebook->getUser();
-        
+
+//echo "<pre>";print_r($fbuser);print_r($_SESSION['access_token']);echo "</pre>";exit;
         if($fbuser)
         {
-        	$update = $write->query("DELETE from $referral WHERE fbuser =" . $fbuser);
+        	$update = $write->query("DELETE from $referral WHERE fbuser = '" . $fbuser."' and type = 1");
         }
+        if(isset($_SESSION['access_token']['user_id'])){
+        	$update = $write->query("DELETE from $referral WHERE fbuser ='" . $_SESSION['access_token']['user_id'] ."' and type = 2");
+        	unset($_SESSION['access_token']);
+        }
+				
 //echo $fbuser;exit;
         return $this;
     }

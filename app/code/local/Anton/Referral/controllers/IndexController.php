@@ -43,7 +43,6 @@ class Anton_Referral_IndexController extends Mage_Core_Controller_Front_Action
 
     	if($twitter->http_code == 200){
     		$url = Mage::getModel('referral/referral')->getTwUrl();
-    		//echo $url;exit;
 		    return $this->_redirectUrl($url);
     	} else {
     		Mage::getSingleton('core/session')->addError($this->__('Could not connect to Twitter. Refresh the page or try again later.'));
@@ -52,12 +51,7 @@ class Anton_Referral_IndexController extends Mage_Core_Controller_Front_Action
     }
 	
 	public function twrespondAction(){
-		/*if (isset($_REQUEST['oauth_token']) && $_SESSION['oauth_token'] !== $_REQUEST['oauth_token']) {
-		  $_SESSION['oauth_status'] = 'oldtoken';
-		  echo 'error**'.$_REQUEST['oauth_token'];
-		  print_r($_SESSION);
-		  exit;
-		}*/
+
 		$twitter = Mage::getModel('referral/referral')->getUserTwitterOauth();
 		$access_token = $twitter->getAccessToken($_REQUEST['oauth_verifier']);;
 		$_SESSION['access_token'] = $access_token;
@@ -72,26 +66,34 @@ class Anton_Referral_IndexController extends Mage_Core_Controller_Front_Action
 		$subTotal = $this->getSubtotal();
 		if(isset($_SESSION['oauth_token']))unset($_SESSION['oauth_token']);
 		if(isset($_SESSION['oauth_token_secret']))unset($_SESSION['oauth_token_secret']);
-//print_r($twitter);
-//echo $twitter->http_code.'##';
-//echo $twitter->http_code . "**" .$fb_discount_amount.'**subTotal=>'.$subTotal.'##order_amount=>'.$fb_order_amount;exit;
-		if (200 == $twitter->http_code && $subTotal >= $fb_discount_amount && $subTotal >= $fb_order_amount) {
-			/*set the twitter user status*/
 
-			Mage::getModel('referral/referral')->setReferraluser($access_token['user_id']);
+		if (200 == $twitter->http_code && $subTotal >= $fb_discount_amount && $subTotal >= $fb_order_amount) {
+			
+			/*set the twitter user status*/
+			Mage::getModel('referral/referral')->setReferraluser($access_token['user_id'],2);
 			
 			/* The user has been verified and the access tokens can be saved for future use */
 			//$_SESSION['status'] = 'verified';
-			$twitter->post('statuses/update', array('status' => Mage::getModel('referral/referral')->getFbFeedmassage().date(DATE_RFC822)));
+			$getproductId = self::getProductsIds();
+			foreach($getproductId as $pid){
+				$product = Mage::getModel('catalog/product')->load($pid);
+				$message = str_replace('{product_name}', $product->getName(), Mage::getModel('referral/referral')->getFbFeedmassage());
+				$twitter->post('statuses/update', array('status' => $message));
+			}
 			
-			Mage::getSingleton('core/session')->addSuccess($this->__('Congratulations! You have redeemed ' . ' ' . Mage::helper('core')->currency($basediscount_amount, true, true) . ' ' . ' for sharing product(s) to your friends.'));
+			$status = Mage::getModel('referral/referral')->getReferraluserCount($access_token['user_id'],2);
+			$this->successMessage($status, $basediscount_amount);
+			//Mage::getSingleton('core/session')->addSuccess($this->__('Congratulations! You have redeemed ' . ' ' . Mage::helper('core')->currency($basediscount_amount, true, true) . ' ' . ' for sharing product(s) to your friends.'));
 	
 			return $this->_redirectUrl($this->getrUrl());
 		} else if($subTotal < $fb_order_amount) {
+			
 			/*Error message on cart page*/
 			Mage::getSingleton('core/session')->addError($this->__('Your order amount should be minimum' . ' ' . $basemin_order_amount . ' ' . 'to get Referral discount!'));
 			return $this->_redirectUrl($this->getrUrl());
+		
 		} else {
+			
 			/*Error message on cart page*/
 			Mage::getSingleton('core/session')->addError($this->__('Could not connect to Twitter. Refresh the page or try again later.'));
 			return $this->_redirectUrl($this->getrUrl());
@@ -119,8 +121,9 @@ class Anton_Referral_IndexController extends Mage_Core_Controller_Front_Action
 			try {
 				foreach($getproductId as $pid){
 					$product = Mage::getModel('catalog/product')->load($pid);
+					$message = str_replace('{product_name}', $product->getName(),Mage::getModel('referral/referral')->getFbFeedmassage());
 					$feedinfo = array(
-						'message'		=> Mage::getModel('referral/referral')->getFbFeedmassage(),
+						'message'		=> $message,
 						'name'			=> $product->getName(),
 						'link'			=> $product->getProductUrl(),
 						'picture'		=> $product->getImageUrl(),
@@ -141,23 +144,26 @@ class Anton_Referral_IndexController extends Mage_Core_Controller_Front_Action
 			/*get the facebook user status*/
 			$status = Mage::getModel('referral/referral')->getReferraluserCount($fbuser);
 			
-			
-			if ($status <= 1) {
-				/* success message first time */
-				Mage::getSingleton('core/session')->addSuccess($this->__('Congratulations! You have redeemed ' . ' ' . Mage::helper('core')->currency($basediscount_amount, true, true) . ' ' . ' for sharing product(s) to your friends.'));
-
-				return $this->_redirectUrl($this->getrUrl());
-			} else {
-				/* success message more time */
-				Mage::getSingleton('core/session')->addSuccess($this->__('Thanks for sharing product(s) to your friends.'));
-
-				return $this->_redirectUrl($this->getrUrl());
-			}
+			$this->successMessage($status, $basediscount_amount);
 			
 			return $this->_redirectUrl($this->getrUrl());
 		} else {
 			/*Error message on cart page*/
 			Mage::getSingleton('core/session')->addError($this->__('Your order amount should be minimum' . ' ' . $basemin_order_amount . ' ' . 'to get Referral discount!'));
+			return $this->_redirectUrl($this->getrUrl());
+		}
+	}
+	
+	public function successMessage($status, $amount){
+		if ($status <= 1) {
+			/* success message first time */
+			Mage::getSingleton('core/session')->addSuccess($this->__('Congratulations! You have got ' . ' ' . Mage::helper('core')->currency($amount, true, true) . ' ' . ' discount for sharing our products with your friends.'));
+
+			return $this->_redirectUrl($this->getrUrl());
+		} else {
+			/* success message more time */
+			Mage::getSingleton('core/session')->addSuccess($this->__('Thank you for sharing products with your friends.'));
+
 			return $this->_redirectUrl($this->getrUrl());
 		}
 	}

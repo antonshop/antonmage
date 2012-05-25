@@ -13,11 +13,11 @@ class Anton_Referral_Model_Referral extends Mage_Core_Model_Abstract
     
 	/* get referral general config */
     public function  getFbFeedmassage(){
-   		return Mage::getStoreConfig('referral/general/fb_feed_message');
+   		return Mage::getStoreConfig('referral/general/feed_message');
     }
     
     public function  getFbCartmessage(){
-    	$message = Mage::getStoreConfig('referral/general/fb_cartshow_message');
+    	$message = Mage::getStoreConfig('referral/general/cartshow_message');
   		$message = str_replace('{money}','$'.self::getFbDiscountamount(), $message);
    		return $message;
     }
@@ -97,13 +97,13 @@ class Anton_Referral_Model_Referral extends Mage_Core_Model_Abstract
     public function getReferraluser($fbuser, $type=1){
    		$read = Mage::getSingleton('core/resource')->getConnection('core_read');
    		$referral = Mage::getSingleton('core/resource')->getTableName('referral');
-		$sql = "select * from $referral where fbuser = $fbuser and type = $type";
+		$sql = "select * from $referral where fbuser = '".$fbuser."' and type = $type";
 		return $read->fetchAll($sql);
     }
     
 	/* updatae facebook user count */
-    public function getReferraluserCount($fbuser){
-		return count(self::getReferraluser($fbuser));
+    public function getReferraluserCount($fbuser, $type=1){
+		return count(self::getReferraluser($fbuser, $type));
     }
     
     /* get twitter oauth */

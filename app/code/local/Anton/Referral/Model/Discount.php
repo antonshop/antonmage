@@ -77,14 +77,36 @@ class Anton_Referral_Model_Discount extends Mage_SalesRule_Model_Quote_Discount 
 	protected function _aggregateItemDiscount($item)
 	{
 
-		/*Database connectivity*/
-		$resource = Mage::getSingleton('core/resource');
-		$read = $resource->getConnection('write');
-		/*Getting table prefix*/
-		$tPrefix = (string) Mage::getConfig()->getTablePrefix();
-		$facebook = Mage::getModel('referral/referral')->getFacebook();
-
-		$user = $facebook->getUser();
+		/* Database connectivity */
+//		$resource = Mage::getSingleton('core/resource');
+//		$read = $resource->getConnection('write');
+//		/* get table prefix */
+//		$tPrefix = (string) Mage::getConfig()->getTablePrefix();
+		
+		/* get referral config */
+		$enables = array();
+		$referrals = array();
+		$users = array();
+		$fbenable = Mage::getModel('referral/referral')->getFbStatus();
+		if($fbenable){
+			$enables[1] = $fbenable;
+			$facebook = Mage::getModel('referral/referral')->getFacebook();
+			$users[1] = $facebook->getUser();
+		}
+		$twenable = Mage::getModel('referral/referral')->getTwStatus();
+		if($twenable){
+			$enables[2] = $twenable;
+			if(isset($_SESSION['access_token']['user_id']))
+				$users[2] = $_SESSION['access_token']['user_id'];
+		}
+		if(!empty($users)){
+			foreach ($users as $key=>$value){
+				$fetchstatus = Mage::getModel('referral/referral')->getReferraluser($value,$key);
+				if($fetchstatus[0]['status'])
+					$referrals[$key] = $fetchstatus[0]['status'];
+			}
+		}
+		
 
 		$discount_amount = Mage::getModel('referral/referral')->getFbDiscountamount();
 		$min_order_amount = Mage::getModel('referral/referral')->getFbOrderamount();
@@ -93,15 +115,13 @@ class Anton_Referral_Model_Discount extends Mage_SalesRule_Model_Quote_Discount 
 
 		$basediscount_amount = $discount_amount;
 		$discount_amount = Mage::helper('core')->currency($discount_amount, false, false);
-		$fetchstatus = Mage::getModel('referral/referral')->getReferraluser($user);
-		$referral = $fetchstatus[0]['status'];
 		
 		/* get the cart subtotal */
 		$lastQid = Mage::getSingleton('checkout/session')->getQuoteId();
 		$customerQuote = Mage::getModel('sales/quote')->load($lastQid);
 		$subTotal = $customerQuote->getSubtotal();
 		$cartItems = Mage::helper('checkout/cart')->getCart()->getItemsCount();
-		if ($subTotal >= $discount_amount && $referral == 1 && $enabled == 1 && $subTotal >= $min_order_amount) {
+		if ($subTotal >= $discount_amount && !empty($enables) && !empty($referrals) && $subTotal >= $min_order_amount) {
 
 			/**
 			 * Process Referral discount
@@ -136,7 +156,7 @@ class Anton_Referral_Model_Discount extends Mage_SalesRule_Model_Quote_Discount 
 				$description = $address->getDiscountDescription();
 				$title = Mage::helper('sales')->__('Discount (%s)', $description);
 			} else {
-				$address->setDiscountDescription('for Referral');
+				$address->setDiscountDescription('Referral');
 				$description = $address->getDiscountDescription();
 				$title = Mage::helper('sales')->__('Discount (%s)', $description);
 			}
