@@ -25,38 +25,38 @@
     </frontend>
     <admin>
         <routers>
-        <news>
-            <use>admin</use>
-        <args>
-            <module>LC_News</module>
-             <frontName>news</frontName>
-        </args>
-        </news>
+			<find>
+				<use>admin</use>
+				<args>
+					<module>Wt_Find</module>
+					<frontName>find</frontName>
+				</args>
+			</find>
         </routers>
-    </admin><!--
-    <adminhtml>
-        <menu>
-        <find module="find">
-            <title>Find</title>
-        <sort_order>71</sort_order>               
-            <children>
-                <items module="find">
-                <title>Manage Items</title>
-                <sort_order>0</sort_order>
-                <action>find/adminhtml_find</action>
-            </items>
-            </children>
-        </find>
-    </menu>
-    <layout>
-        <updates>
-         <find>
-             <file>find.xml</file>
-        </find>
-        </updates>
-    </layout>
-    </adminhtml>   
-    --><global>
+    </admin>
+   <adminhtml>
+        <!--<menu>
+			<find module="find">
+				<title>Find</title>
+			<sort_order>71</sort_order>               
+				<children>
+					<items module="find">
+					<title>Manage Items</title>
+					<sort_order>0</sort_order>
+					<action>find/adminhtml_find</action>
+				</items>
+				</children>
+			</find>
+		</menu>-->
+		<layout>
+			<updates>
+			 <find>
+				 <file>find.xml</file>
+			</find>
+			</updates>
+		</layout>
+    </adminhtml> 
+    <global>
         <models>
             <find>
                 <class>Wt_Find_Model</class>
@@ -98,7 +98,7 @@
         </blocks>
         <helpers>
             <find>
-                <class>Wt_Find_Block</class>
+                <class>Wt_Find_Helper</class>
             </find>
         </helpers>
     </global>

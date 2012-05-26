@@ -1,0 +1,162 @@
+<?xml version="1.0"?>
+<config>
+    <tabs>
+        <Anton translate="label" module="referral">
+            <label>Anton</label>
+            <sort_order>100</sort_order>
+        </Anton>
+    </tabs>  
+    <sections>
+        <referral translate="label" module="referral">
+            <label>Referral</label>
+            <tab>Anton</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>120</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+            	<general>
+            		<label>General Configuration</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>1</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+            		<fields>
+            			<discount_amount translate="label">
+                            <label>Discount Amount</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <validate>required-entry</validate>
+                            <comment>Please enter discount amount should be less than minimum order amount</comment>
+                    	</discount_amount>
+                    	<order_amount translate="label">
+                            <label>Minimum Order Amount</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>4</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <validate>required-entry</validate>
+                            <comment>Please enter minimum order amount should be greater than discount amount</comment>
+                   	 	</order_amount>
+            			<feed_message translate="label">
+                            <label>Feed Message</label>
+                            <frontend_type>textarea</frontend_type>
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <validate>required-entry</validate>
+                            <comment>Please enter facebook feed message</comment>
+                    	</feed_message>
+                    	<cartshow_message translate="label">
+                            <label>Cart Message</label>
+                            <frontend_type>textarea</frontend_type>
+                            <sort_order>6</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <validate>required-entry</validate>
+                            <comment>Please enter cart message for customer</comment>
+                    	</cartshow_message>
+            		</fields>
+            	</general>
+                <facebook translate="label" module="referral">
+                    <label>Facebook Configuration</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>1</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                     	<fb_status translate="label">
+                            <label>Enable Referral Facebook</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Enable Referral</comment>
+                        </fb_status>
+                        <fb_app_id translate="label">
+                            <label>Facebook App Id</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <validate>required-entry</validate>
+                            <comment>Please enter facebook app id</comment>
+                    	</fb_app_id>
+                    	<fb_app_secret translate="label">
+                            <label>Facebook App Secret Key</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <validate>required-entry</validate>
+                            <comment>Please enter facebook app secret key</comment>
+                    	</fb_app_secret>
+                   </fields> 
+                </facebook>
+                <twitter translate="label">
+                	<label>twitter Configuration</label>
+                    <frontend_type>text</frontend_type>
+                    <show_in_default>1</show_in_default>
+                    <sort_order>2</sort_order>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                    	<tw_status translate="label">
+                            <label>Enable Referral Twitter</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Enable Referral</comment>
+                        </tw_status>
+	                	<tw_consumer_key translate="label">
+	                           <label>Twitter Consumer key</label>
+	                           <frontend_type>text</frontend_type>
+	                           <sort_order>1</sort_order>
+	                           <show_in_default>1</show_in_default>
+	                           <show_in_website>1</show_in_website>
+	                           <show_in_store>1</show_in_store>
+	                           <validate>required-entry</validate>
+	                           <comment>Please enter twitter consumer key</comment>
+	                   	</tw_consumer_key>
+	                   	<tw_consumer_secret translate="label">
+	                           <label>Twitter Consumer secret</label>
+	                           <frontend_type>text</frontend_type>
+	                           <sort_order>2</sort_order>
+	                           <show_in_default>1</show_in_default>
+	                           <show_in_website>1</show_in_website>
+	                           <show_in_store>1</show_in_store>
+	                           <validate>required-entry</validate>
+	                           <comment>Please enter twitter consumer secret</comment>
+	                   	</tw_consumer_secret>
+	                   	<!--<tw_callback_url translate="label">
+	                           <label>Twitter Callback URL</label>
+	                           <frontend_type>text</frontend_type>
+	                           <sort_order>5</sort_order>
+	                           <show_in_default>1</show_in_default>
+	                           <show_in_website>1</show_in_website>
+	                           <show_in_store>1</show_in_store>
+	                           <validate>required-entry</validate>
+	                           <comment>Please enter twitter callback url</comment>
+	                   	</tw_callback_url>-->
+                   	</fields>
+                </twitter>
+            </groups>
+        </referral>
+    </sections>
+</config>

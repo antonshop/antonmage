@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <default>
+    </default>
+    <find_index_index>
+        <reference name="content">
+            <block type="core/template" name="find" template="find/find.phtml" />
+        </reference>
+    </find_index_index>
+</layout> 

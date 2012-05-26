@@ -34,7 +34,7 @@
 class Mage_Adminhtml_Block_Page_Header extends Mage_Adminhtml_Block_Template
 {
     public function __construct()
-    {
+    {	
         parent::__construct();
         $this->setTemplate('page/header.phtml');
     }
