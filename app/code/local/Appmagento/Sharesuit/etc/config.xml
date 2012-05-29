@@ -1,0 +1,130 @@
+<?xml version="1.0"?>
+<!-- 
+/**
+ * Appmagento
+ *
+ * @category    Appmagento
+ * @package     Appmagento_Sharesuit
+ * @copyright   Copyright (c) 2011 http://www.appmagento.com
+ */
+-->
+<config>
+    <modules>
+        <Appmagento_Sharesuit>
+            <version>0.1.0</version>
+        </Appmagento_Sharesuit>
+    </modules>
+    <frontend>
+        <routers>
+            <sharesuit>
+                <use>standard</use>
+                <args>
+                    <module>Appmagento_Sharesuit</module>
+                    <frontName>sharesuit</frontName>
+                </args>
+            </sharesuit>
+        </routers>
+        <layout>
+            <updates>
+                <sharesuit>
+                    <file>sharesuit.xml</file>
+                </sharesuit>
+            </updates>
+        </layout>
+    </frontend>
+    <admin>
+        <routers>
+			<sharesuit>
+				<use>admin</use>
+				<args>
+					<module>Appmagento_Sharesuit</module>
+					<frontName>sharesuit</frontName>
+				</args>
+			</sharesuit>
+        </routers>
+    </admin>
+   <adminhtml>
+        <!--<menu>
+			<sharesuit module="sharesuit">
+				<title>Sharesuit</title>
+			<sort_order>71</sort_order>               
+				<children>
+					<items module="sharesuit">
+					<title>Manage Items</title>
+					<sort_order>0</sort_order>
+					<action>sharesuit/adminhtml_sharesuit</action>
+				</items>
+				</children>
+			</sharesuit>
+		</menu>-->
+		<layout>
+			<updates>
+			 <sharesuit>
+				 <file>sharesuit.xml</file>
+			</sharesuit>
+			</updates>
+		</layout>
+    </adminhtml> 
+    <global>
+        <models>
+			<salesrule>
+                <rewrite>
+                    <quote_discount>Appmagento_Sharesuit_Model_Discount</quote_discount>
+                </rewrite>
+            </salesrule> 
+            <sharesuit>
+                <class>Appmagento_Sharesuit_Model</class>
+                <resourceModel>sharesuit_mysql4</resourceModel>
+            </sharesuit>
+            <sharesuit_mysql4>
+                <class>Appmagento_Sharesuit_Model_Mysql4</class>
+                <entities>
+                    <sharesuit>
+                        <table>sharesuit</table>
+                    </sharesuit>
+                </entities>
+            </sharesuit_mysql4>
+        </models>
+        <resources>
+            <sharesuit_setup>
+                <setup>
+                    <module>Appmagento_Sharesuit</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </sharesuit_setup>
+            <sharesuit_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </sharesuit_write>
+            <sharesuit_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </sharesuit_read>
+        </resources>
+        <blocks>
+            <sharesuit>
+                <class>Appmagento_Sharesuit_Block</class>
+            </sharesuit>
+        </blocks>
+        <helpers>
+            <sharesuit>
+                <class>Appmagento_Sharesuit_Helper</class>
+            </sharesuit>
+        </helpers>
+		<events>
+            <checkout_onepage_controller_success_action>
+                <observers>
+                    <sharesuit>
+                        <type>singleton</type>
+                        <class>Appmagento_Sharesuit_Model_Observer</class>
+                        <method>processUpdateDiscount</method>
+                  </sharesuit>
+                </observers>
+            </checkout_onepage_controller_success_action>
+        </events>
+    </global>
+</config>
