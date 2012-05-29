@@ -1,0 +1,34 @@
+<?php
+/**
+ * Appmagento
+ *
+ * @category    Appmagento
+ * @package     Appmagento_Sharesuit
+ * @copyright   Copyright (c) 2011 http://www.appmagento.com
+ */
+$cartItems = Mage::helper('checkout/cart')->getCart()->getItemsCount();
+
+$facebook = $this->getFacebook();
+$fbuser = $facebook->getUser();
+
+if($cartItems){
+	$content = '<div style=" margin-bottom:15px;width:100%; height:40px; text-align:right;">&nbsp;';
+	$content .= '<span style="color:#333; font-weight:bold;font-size:12px; line-height:30px; margin-right:20px;">'.Mage::getModel('sharesuit/sharesuit')->getFbCartmessage().'</span>';
+	if(Mage::getModel('sharesuit/sharesuit')->getFbStatus()){
+		
+		$img = '<img style="margin-left:15px;" src="'. $this->getSkinUrl("images/facebook_button.png").'">';
+		if($fbuser){
+			$content .= '<a href="' . $this->getResponseUrl('fb') . '">' . $img . '</a>';
+		}else{
+			$content .= '<a href="' . $this->getFacebookLoginUrl() . '">' . $img . '</a>';
+		}
+	}
+	
+	if(Mage::getModel('sharesuit/sharesuit')->getTwStatus()){
+		$content .= '<a style="margin-left:15px;" href="' . $this->getTwRedirecturl() . '"><img src="'. $this->getSkinUrl("images/twitter_button.png").'"></a>';
+	}
+	
+	$content .= '</div>';
+	echo $content;
+}
+?>

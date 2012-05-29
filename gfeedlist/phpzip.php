@@ -2,7 +2,7 @@
 
 /**
  * PHP ZIP 类
- * Author: Anton
+ * Author: Appmagento
  * Id: phpzip.php  2011-6-24
 */
 

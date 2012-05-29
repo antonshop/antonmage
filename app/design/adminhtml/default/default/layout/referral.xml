@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <layout version="0.1.0">
-    <referral_adminhtml_referral_index>
+    <sharesuit_adminhtml_sharesuit_index>
         <reference name="content">
-            <block type="referral/adminhtml_referral" name="referral" />
+            <block type="sharesuit/adminhtml_sharesuit" name="sharesuit" />
         </reference>
-    </referral_adminhtml_referral_index>
+    </sharesuit_adminhtml_sharesuit_index>
 </layout>

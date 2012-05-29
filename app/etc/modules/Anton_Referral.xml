@@ -1,9 +1,0 @@
-<?xml version="1.0"?>
-<config>
-    <modules>
-        <Anton_Referral>
-            <active>true</active>
-            <codePool>local</codePool>
-        </Anton_Referral>
-    </modules>
-</config> 
