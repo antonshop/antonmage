@@ -24,7 +24,7 @@ CREATE TABLE {$this->getTable('sharesuit')} (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 CREATE TABLE {$this->getTable('sharesuit_customer')} (
   `customer_id` int(11) unsigned NOT NULL auto_increment,
-  `user` varchar(255) NOT NULL default '',
+  `fbuser` varchar(255) NOT NULL default '',
   `status` smallint(6) NOT NULL default '0',
   `type` smallint(6) NOT NULL default '0',
   PRIMARY KEY (`customer_id`)
