@@ -1,14 +1,18 @@
 <?xml version="1.0"?>
 <layout version="0.1.0">
-
+	<default>
+		<reference name="top.links">
+	        <action method="setTemplate">
+	            <template>sharesuit/links.phtml</template>
+	        </action>
+	    </reference>
+    </default>
     <checkout_cart_index>
          <reference name="content">
          <block type="sharesuit/sharesuit"  before="cart_sidebar" name="sharesuit" template="sharesuit/sharesuit.phtml" />
           <action method="setTemplate"><value>checkout/cart.phtml</value></action>
          </reference>
     </checkout_cart_index>
-    <default>
-    </default>
     <sharesuit_index_index>
         <reference name="content">
             <block type="sharesuit/sharesuit" name="sharesuit" template="sharesuit/sharesuit.phtml" />

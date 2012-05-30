@@ -44,6 +44,7 @@ class Appmagento_Sharesuit_Block_Sharesuit extends Mage_Core_Block_Template
     	return Mage::getUrl('sharesuit/index/twredirect');
     } 
     
+    
 }
 
 

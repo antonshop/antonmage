@@ -64,6 +64,14 @@ class Appmagento_Sharesuit_IndexController extends Mage_Core_Controller_Front_Ac
 		$access_token = $twitter->getAccessToken($_REQUEST['oauth_verifier']);;
 		$_SESSION['access_token'] = $access_token;
 		
+		/* login use twitter */
+		if(isset($_SESSION['oauth_twitter_login']) && $_SESSION['oauth_twitter_login'] == 1){
+			$_SESSION['oauth_twitter_httpcode'] = $twitter->http_code;
+			$_SESSION['oauth_twitter_content'] = $twitter->get('account/verify_credentials');
+//print_r($twitter->get('account/verify_credentials'));exit;
+			return $this->_redirectUrl(Mage::getBaseUrl() . "sharesuit/customer/twlogin");
+		}
+		
 		/* get facebook configuration discount */
 		$fb_discount_amount = Mage::getModel('sharesuit/sharesuit')->getFbDiscountamount();
 		$fb_order_amount = Mage::getModel('sharesuit/sharesuit')->getFbOrderamount();
@@ -165,7 +173,7 @@ class Appmagento_Sharesuit_IndexController extends Mage_Core_Controller_Front_Ac
 	public function successMessage($status, $amount){
 		if ($status <= 1) {
 			/* success message first time */
-			Mage::getSingleton('core/session')->addSuccess($this->__('Congratulations! You have got ' . ' ' . Mage::helper('core')->currency($amount, true, true) . ' ' . ' discount for sharing our products with your friends.'));
+			Mage::getSingleton('core/session')->addSuccess($this->__('Thank you for sharing products with your friends. You have got ' . ' ' . Mage::helper('core')->currency($amount, true, true) . ' ' . ' discount '));
 
 			return $this->_redirectUrl($this->getrUrl());
 		} else {

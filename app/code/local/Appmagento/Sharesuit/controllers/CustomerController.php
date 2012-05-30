@@ -7,19 +7,21 @@
  * @copyright   Copyright (c) 2011 http://www.appmagento.com
  */
 
-class Appmagento_Sharesuit_IndexController extends Mage_Core_Controller_Front_Action
+class Appmagento_Sharesuit_CustomerController extends Mage_Core_Controller_Front_Action
 {
 	
-public function LoginAction()
+	public function FbloginAction()
     {
-
         $me = null;
-
         $cookie = $this->get_facebook_cookie(Mage::getModel('sharesuit/sharesuit')->getFbAppid(), Mage::getModel('sharesuit/sharesuit')->getFbAppsecret());
 
         $me = json_decode($this->getFbData('https://graph.facebook.com/me?access_token=' . $cookie['access_token']));
+        
+        $this->checklogin($me);
+    }
 
-        if (!is_null($me)) {
+    public function checklogin($me){
+    	if ($me) {
 			$me = (array)$me;
             $session = Mage::getSingleton('customer/session');
 
@@ -45,7 +47,8 @@ public function LoginAction()
                 if ($r) {
                     $db_write = Mage::getSingleton('core/resource')->getConnection('write');
                     $sql = 'INSERT INTO `' . $tablePrefix . 'sharesuit_customer`
-                                                    VALUES (' . $r['entity_id'] . ', ' . $me['id'] . ')';
+                                                    VALUES (' . $r['entity_id'] . ', ' . $me['id'] . ', 1, 1)';
+                    
                     $db_write->query($sql);
                     $session->loginById($r['entity_id']);
                 } else {
@@ -55,14 +58,47 @@ public function LoginAction()
             $this->_loginPostRedirect($session);
         }
     }
-
-    public function LogoutAction()
+    
+    public function FblogoutAction()
     {
         $session = Mage::getSingleton('customer/session');
         $session->logout()
                 ->setBeforeAuthUrl(Mage::getUrl());
 
         $this->_redirect('customer/account/logoutSuccess');
+    }
+    
+    public function twloginAction(){
+    	print_r($_SESSION);
+    	if(isset($_SESSION['oauth_twitter_httpcode']) && $_SESSION['oauth_twitter_httpcode']==200 && $_SESSION['oauth_twitter_content']){
+    		$data = array(
+    			'id' => '',
+    			'firstname' => '',
+    			'lastname' => '',
+    			'email' => '',
+    			'is_active' => '',
+    		);
+    		$this->checklogin($me);
+    	}
+    }
+    
+	public function twloginredirectAction(){
+    	
+    	$twitter = Mage::getModel('sharesuit/sharesuit')->getTwitterOauth();
+		$request_token = $twitter->getRequestToken(Mage::getBlockSingleton('sharesuit/sharesuit')->getResponseUrl('tw'));
+		
+		/* Save temporary credentials to session. */
+		$_SESSION['oauth_token'] = $request_token['oauth_token'];
+		$_SESSION['oauth_token_secret'] = $request_token['oauth_token_secret'];
+		$_SESSION['oauth_twitter_login'] = 1;
+
+    	if($twitter->http_code == 200){
+    		$url = Mage::getModel('sharesuit/sharesuit')->getTwUrl();
+		    return $this->_redirectUrl($url);
+    	} else {
+    		Mage::getSingleton('core/session')->addError($this->__('Could not connect to Twitter. Refresh the page or try again later.'));
+			return $this->_redirectUrl($this->getrUrl());
+    	}
     }
 
     private function _registerCustomer($data, &$session)
@@ -85,7 +121,7 @@ public function LoginAction()
         $db_write = Mage::getSingleton('core/resource')->getConnection('write');
         $tablePrefix = (string) Mage::getConfig()->getTablePrefix();
         $sql = 'INSERT INTO `' . $tablePrefix . 'sharesuit_customer`
-				VALUES (' . $customer_id . ', ' . $data['id'] . ')';
+				VALUES (' . $customer_id . ', ' . $data['id'] . ' ,1, 1)';
         $db_write->query($sql);
     }
 
