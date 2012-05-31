@@ -1,4 +1,6 @@
 <div class="social_buttons">
+	<!-- Facebook like -->
+	<?php if(Mage::getModel('sharesuit/sharesuit')->getFbLike()) : ?>
     <div id="fb-root"></div>
     <script>
     window.fbAsyncInit = function() {
@@ -16,25 +18,36 @@
         document.getElementById('fb-root').appendChild(e);
     }());
     </script>
-    <span class="facebook" style="vertical-align: text-bottom;">
+    <div class="facebook" style="float:left; width:130px;">
       <fb:like send="true" layout="button_count" width="60" show_faces="false" expr:href='<?php echo Mage::helper('core/url')->getCurrentUrl(); ?>' />
-    </span>
-    <!-- Twitter -->
-      <span class="twitter">
-	  	<a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="<?php echo Mage::getModel('sharesuit/sharesuti')->getTwAccount(); ?>">Tweet</a>
-      </span>
-      
-	  <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>    
+    </div>
+    <?php endif ?>
+    
+     <!-- Twitter share -->
+    <?php if(Mage::getModel('sharesuit/sharesuit')->getTwShare()) : ?>
+      <div class="twitter" style="float:left; width:130px;">
+	  	<a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="<?php echo Mage::getModel('sharesuit/sharesuit')->getTwAccount(); ?>">Tweet</a>
+      </div>
+     
+	  <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+	<?php endif ?>
+	
 	<!-- Google +1 -->
-    <script type="text/javascript">
-      (function() {
-	var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-	po.src = 'https://apis.google.com/js/plusone.js';
-	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-      })();
-    </script>
-    <!-- Place this tag where you want the +1 button to render -->
-	<span class="google">
-	    <g:plusone size="medium"></g:plusone>
-    </span>
+	<?php if(Mage::getModel('sharesuit/sharesuit')->getTwShare()) : ?>
+	 	<!-- Place this tag where you want the share button to render. -->
+	    <div class="google" style="float:left; width:120px;"><div class="g-plus" data-action="share" data-annotation="bubble"></div></div>
+		
+		<!-- Place this tag after the last share tag. -->
+		<script type="text/javascript">
+		  (function() {
+		    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+		    po.src = 'https://apis.google.com/js/plusone.js';
+		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+		  })();
+		</script>
+    <?php endif ?>
+    <?php if(Mage::getModel('sharesuit/sharesuit')->getPinterest()) : ?>
+    
+    <?php endif ?>
+    <div style="clear:both;"></div>
 </div>

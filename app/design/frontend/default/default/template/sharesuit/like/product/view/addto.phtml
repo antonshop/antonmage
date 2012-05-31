@@ -34,19 +34,32 @@
 	
 	<!-- Google +1 -->
 	<?php if(Mage::getModel('sharesuit/sharesuit')->getTwShare()) : ?>
- 	<!-- Place this tag where you want the share button to render. -->
-    <div class="google" style="float:left; width:120px;"><div class="g-plus" data-action="share" data-annotation="bubble"></div></div>
+	 	<!-- Place this tag where you want the share button to render. -->
+	    <div class="google" style="float:left; width:120px;"><div class="g-plus" data-action="share" data-annotation="bubble"></div></div>
+		
+		<!-- Place this tag after the last share tag. -->
+		<script type="text/javascript">
+		  (function() {
+		    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+		    po.src = 'https://apis.google.com/js/plusone.js';
+		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+		  })();
+		</script>
+    <?php endif ?>
+    <?php if(Mage::getModel('sharesuit/sharesuit')->getPinterest()) : ?>
+	<?php 
+	$this->product = Mage::registry('current_product');
+	//echo $this->product->getName();
+	$pin = array(
+		'url' => $this->product->getProductUrl(),
+		'media' => $this->product->getImageUrl(),
+		'description' => $this->product->getDescription(),
+		'count_layout' => Mage::getModel('sharesuit/sharesuit')->getPinLayout()
+	);//print_r($pin);
 
-   
-	
-	<!-- Place this tag after the last share tag. -->
-	<script type="text/javascript">
-	  (function() {
-	    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-	    po.src = 'https://apis.google.com/js/plusone.js';
-	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-	  })();
-	</script>
+	?>
+    <a href="http://pinterest.com/pin/create/button/?url=<?php echo $pin['url']?>&media=<?php echo $pin['media']?>&description=<?php echo $pin['description']?>" class="pin-it-button" count-layout="<?php echo $pin['count_layout']?>">Pin It</a>
+	<script type="text/javascript" src="http://assets.pinterest.com/js/pinit.js"></script>
     <?php endif ?>
     <div style="clear:both;"></div>
 </div>
