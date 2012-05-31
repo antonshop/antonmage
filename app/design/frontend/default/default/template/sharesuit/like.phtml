@@ -1,0 +1,40 @@
+<div class="social_buttons">
+    <div id="fb-root"></div>
+    <script>
+    window.fbAsyncInit = function() {
+        FB.init({
+          appId  : <?php echo Mage::getModel('sharesuit/sharesuit')->getFbAppid(); ?>,
+          status : true,
+          cookie : true,
+          xfbml  : true
+        });
+    };
+    (function() {
+        var e = document.createElement('script');
+        e.src = document.location.protocol + '//connect.facebook.net/en_US/all.js';
+        e.async = true;
+        document.getElementById('fb-root').appendChild(e);
+    }());
+    </script>
+    <span class="facebook" style="vertical-align: text-bottom;">
+      <fb:like send="true" layout="button_count" width="60" show_faces="false" expr:href='<?php echo Mage::helper('core/url')->getCurrentUrl(); ?>' />
+    </span>
+    <!-- Twitter -->
+      <span class="twitter">
+	  	<a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="<?php echo Mage::getModel('sharesuit/sharesuti')->getTwAccount(); ?>">Tweet</a>
+      </span>
+      
+	  <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>    
+	<!-- Google +1 -->
+    <script type="text/javascript">
+      (function() {
+	var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+	po.src = 'https://apis.google.com/js/plusone.js';
+	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+      })();
+    </script>
+    <!-- Place this tag where you want the +1 button to render -->
+	<span class="google">
+	    <g:plusone size="medium"></g:plusone>
+    </span>
+</div>

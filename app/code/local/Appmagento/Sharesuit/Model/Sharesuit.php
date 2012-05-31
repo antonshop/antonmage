@@ -42,6 +42,10 @@ class Appmagento_Sharesuit_Model_Sharesuit extends Mage_Core_Model_Abstract
    		return Mage::getStoreConfig('sharesuit/facebook/fb_login');
     }
     
+	public function  getFbLike(){
+   		return Mage::getStoreConfig('sharesuit/facebook/fb_like');
+    }
+    
 	public function  getFbStatus(){
    		return Mage::getStoreConfig('sharesuit/facebook/fb_status');
     }
@@ -57,6 +61,14 @@ class Appmagento_Sharesuit_Model_Sharesuit extends Mage_Core_Model_Abstract
     /* get sharesuit twitter config */
     public function  getTwLogin(){
    		return Mage::getStoreConfig('sharesuit/twitter/tw_login');
+    }
+    
+	public function  getTwShare(){
+   		return Mage::getStoreConfig('sharesuit/twitter/tw_share_button');
+    }
+    
+	public function  getTwAccount(){
+   		return Mage::getStoreConfig('sharesuit/twitter/tw_account');
     }
     
 	public function  getTwStatus(){
@@ -80,6 +92,9 @@ class Appmagento_Sharesuit_Model_Sharesuit extends Mage_Core_Model_Abstract
    		return Mage::getStoreConfig('sharesuit/google/gp_login');
     }
     
+	public function  getGpPlusone(){
+   		return Mage::getStoreConfig('sharesuit/google/gp_plusone');
+    }
     
 	public function getFacebook()
     {

@@ -1,0 +1,52 @@
+<div class="social_buttons">
+	<!-- Facebook like -->
+	<?php if(Mage::getModel('sharesuit/sharesuit')->getFbLike()) : ?>
+    <div id="fb-root"></div>
+    <script>
+    window.fbAsyncInit = function() {
+        FB.init({
+          appId  : <?php echo Mage::getModel('sharesuit/sharesuit')->getFbAppid(); ?>,
+          status : true,
+          cookie : true,
+          xfbml  : true
+        });
+    };
+    (function() {
+        var e = document.createElement('script');
+        e.src = document.location.protocol + '//connect.facebook.net/en_US/all.js';
+        e.async = true;
+        document.getElementById('fb-root').appendChild(e);
+    }());
+    </script>
+    <div class="facebook" style="float:left; width:130px;">
+      <fb:like send="true" layout="button_count" width="60" show_faces="false" expr:href='<?php echo Mage::helper('core/url')->getCurrentUrl(); ?>' />
+    </div>
+    <?php endif ?>
+    
+     <!-- Twitter share -->
+    <?php if(Mage::getModel('sharesuit/sharesuit')->getTwShare()) : ?>
+      <div class="twitter" style="float:left; width:130px;">
+	  	<a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="<?php echo Mage::getModel('sharesuit/sharesuit')->getTwAccount(); ?>">Tweet</a>
+      </div>
+     
+	  <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+	<?php endif ?>
+	
+	<!-- Google +1 -->
+	<?php if(Mage::getModel('sharesuit/sharesuit')->getTwShare()) : ?>
+ 	<!-- Place this tag where you want the share button to render. -->
+    <div class="google" style="float:left; width:120px;"><div class="g-plus" data-action="share" data-annotation="bubble"></div></div>
+
+   
+	
+	<!-- Place this tag after the last share tag. -->
+	<script type="text/javascript">
+	  (function() {
+	    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+	    po.src = 'https://apis.google.com/js/plusone.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+	  })();
+	</script>
+    <?php endif ?>
+    <div style="clear:both;"></div>
+</div>
