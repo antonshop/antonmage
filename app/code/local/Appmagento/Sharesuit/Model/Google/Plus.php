@@ -44,8 +44,8 @@ class Appmagento_Sharesuit_Model_Google_Plus extends Mage_Core_Model_Abstract
     
     public function getAuthUrl(){
     	$client = self::getApiClient();
-    	$plus = self::getApiPlus($client);
-		$oauth2 = self::getApiOauth2($client);
+    	$plus = self::getApiPlus();
+		$oauth2 = self::getApiOauth2();
     	
     	$client->setClientId(self::getGpClientId());
 		$client->setClientSecret(self::getGpClientSecret());
