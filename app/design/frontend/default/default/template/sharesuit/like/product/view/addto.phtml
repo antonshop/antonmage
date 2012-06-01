@@ -32,8 +32,8 @@
 	  <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
 	<?php endif ?>
 	
-	<!-- Google +1 -->
-	<?php if(Mage::getModel('sharesuit/sharesuit')->getTwShare()) : ?>
+	<!-- Google+ Share -->
+	<?php if(Mage::getModel('sharesuit/google_plus')->getGpPlusone()) : ?>
 	 	<!-- Place this tag where you want the share button to render. -->
 	    <div class="google" style="float:left; width:110px;"><div class="g-plus" data-action="share" data-annotation="bubble"></div></div>
 		
@@ -46,6 +46,8 @@
 		  })();
 		</script>
     <?php endif ?>
+    
+    <!-- Pinterest Share -->
     <?php if(Mage::getModel('sharesuit/pinterest_pinterest')->getPinterest()) : ?>
 	<?php 
 	$this->product = Mage::registry('current_product');

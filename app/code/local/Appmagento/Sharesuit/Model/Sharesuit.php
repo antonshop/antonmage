@@ -85,17 +85,7 @@ class Appmagento_Sharesuit_Model_Sharesuit extends Mage_Core_Model_Abstract
     
 	public function  getTwCallbackurl(){
    		return Mage::getStoreConfig('sharesuit/twitter/tw_callback_url');
-    }
-    
-	/* get sharesuit google plus config */
-    public function  getGpLogin(){
-   		return Mage::getStoreConfig('sharesuit/google/gp_login');
-    }
-    
-	public function  getGpPlusone(){
-   		return Mage::getStoreConfig('sharesuit/google/gp_plusone');
-    }
-    
+    }    
     
 	public function getFacebook()
     {

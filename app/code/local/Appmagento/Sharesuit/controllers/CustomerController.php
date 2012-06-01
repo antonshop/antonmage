@@ -14,9 +14,7 @@ class Appmagento_Sharesuit_CustomerController extends Mage_Core_Controller_Front
     {
         $me = null;
         $cookie = $this->get_facebook_cookie(Mage::getModel('sharesuit/sharesuit')->getFbAppid(), Mage::getModel('sharesuit/sharesuit')->getFbAppsecret());
-
         $me = json_decode($this->getFbData('https://graph.facebook.com/me?access_token=' . $cookie['access_token']));
-        
         $this->checklogin($me);
     }
 
@@ -66,6 +64,38 @@ class Appmagento_Sharesuit_CustomerController extends Mage_Core_Controller_Front
                 ->setBeforeAuthUrl(Mage::getUrl());
 
         $this->_redirect('customer/account/logoutSuccess');
+    }
+    
+    public function gploginAction(){
+    	$client = Mage::getModel('sharesuit/google_plus')->getApiClient();
+    	$plus = Mage::getModel('sharesuit/google_plus')->getApiPlus();
+		$oauth2 = Mage::getModel('sharesuit/google_plus')->getApiOauth2();
+		
+    	if (isset(Mage::app()->getRequest()->getParam('logout'))) {
+			unset($_SESSION['access_token']);
+		}
+		
+		if (isset(Mage::app()->getRequest()->getGet('code'))) {
+		  $client->authenticate();
+		  $_SESSION['token'] = $client->getAccessToken();
+		  $redirect = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF'];
+		  //print_r($redirect);exit;
+		  header('Location: ' . filter_var($redirect, FILTER_SANITIZE_URL));
+		}
+		
+		if (isset($_SESSION['access_token'])) {
+		  $client->setAccessToken($_SESSION['access_token']);
+		}
+		
+		if ($client->getAccessToken()) {
+		  	$me = $plus->people->get('me');
+		  	$user = $oauth2->userinfo->get();
+echo "<pre>";
+print_r($me);
+print_r($user);
+echo "</pre>";
+exit;
+	    }
     }
     
     public function twloginAction(){
