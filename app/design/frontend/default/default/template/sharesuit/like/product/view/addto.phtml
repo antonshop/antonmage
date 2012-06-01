@@ -18,14 +18,14 @@
         document.getElementById('fb-root').appendChild(e);
     }());
     </script>
-    <div class="facebook" style="float:left; width:130px;">
+    <div class="facebook" style="float:left; width:110px;">
       <fb:like send="true" layout="button_count" width="60" show_faces="false" expr:href='<?php echo Mage::helper('core/url')->getCurrentUrl(); ?>' />
     </div>
     <?php endif ?>
     
      <!-- Twitter share -->
     <?php if(Mage::getModel('sharesuit/sharesuit')->getTwShare()) : ?>
-      <div class="twitter" style="float:left; width:130px;">
+      <div class="twitter" style="float:left; width:110px;">
 	  	<a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="<?php echo Mage::getModel('sharesuit/sharesuit')->getTwAccount(); ?>">Tweet</a>
       </div>
      
@@ -35,7 +35,7 @@
 	<!-- Google +1 -->
 	<?php if(Mage::getModel('sharesuit/sharesuit')->getTwShare()) : ?>
 	 	<!-- Place this tag where you want the share button to render. -->
-	    <div class="google" style="float:left; width:120px;"><div class="g-plus" data-action="share" data-annotation="bubble"></div></div>
+	    <div class="google" style="float:left; width:110px;"><div class="g-plus" data-action="share" data-annotation="bubble"></div></div>
 		
 		<!-- Place this tag after the last share tag. -->
 		<script type="text/javascript">
@@ -46,19 +46,20 @@
 		  })();
 		</script>
     <?php endif ?>
-    <?php if(Mage::getModel('sharesuit/sharesuit')->getPinterest()) : ?>
+    <?php if(Mage::getModel('sharesuit/pinterest_pinterest')->getPinterest()) : ?>
 	<?php 
 	$this->product = Mage::registry('current_product');
 	//echo $this->product->getName();
 	$pin = array(
 		'url' => $this->product->getProductUrl(),
+		'price' => $this->product->getPrice(),
 		'media' => $this->product->getImageUrl(),
-		'description' => $this->product->getDescription(),
+		'description' => substr($this->product->getDescription(),0,300),
 		'count_layout' => Mage::getModel('sharesuit/sharesuit')->getPinLayout()
-	);//print_r($pin);
+	);
 
 	?>
-    <a href="http://pinterest.com/pin/create/button/?url=<?php echo $pin['url']?>&media=<?php echo $pin['media']?>&description=<?php echo $pin['description']?>" class="pin-it-button" count-layout="<?php echo $pin['count_layout']?>">Pin It</a>
+    <a href="http://pinterest.com/pin/create/button/?url=<?php echo $pin['url']?>&media=<?php echo $pin['media']?>&description=<?php echo $pin['description']?><?php if(Mage::getModel('sharesuit/pinterest_pinterest')->getPinPrice())echo ' - $'.number_format($pin['price'],2)?>" class="pin-it-button" count-layout="<?php echo $pin['count_layout']?>">Pin It</a>
 	<script type="text/javascript" src="http://assets.pinterest.com/js/pinit.js"></script>
     <?php endif ?>
     <div style="clear:both;"></div>

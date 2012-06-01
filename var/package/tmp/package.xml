@@ -1,34 +1,18 @@
 <?xml version="1.0"?>
 <package>
-    <name>Moii_Pinterest</name>
-    <version>1.0.2</version>
+    <name>Janrain_Engage_Plugin</name>
+    <version>1.2.0</version>
     <stability>stable</stability>
-    <license uri="http://www.opensource.org/licenses/osl-3.0.php">OSL v3.0</license>
+    <license>ASL</license>
     <channel>community</channel>
     <extends/>
-    <summary>This extension is the easiest way to add a Pinterest Pin it button to your product page! &#xD;
-Pinterest is becoming a significant source of traffic for retailers, more than Google+ </summary>
-    <description>This extension is the easiest way to add a Pinterest Pin it button to your product page! &#xD;
-Pinterest is becoming a significant source of traffic for retailers, more than Google+ &#xD;
-Features:&#xD;
-&#xD;
-&#xD;
-Enable/Disable Extension&#xD;
-Horizontal, vertical pin count or button only&#xD;
-Display Price for pinterest gifts&#xD;
-Uses Products Description for the Pin Description&#xD;
-Uses the Products Base Image for the Pin image&#xD;
-Pin the Product URL&#xD;
-Show with other social network buttons</description>
-    <notes>- Fixed some bugs.&#xD;
-- Added support for Magento Connect 1&#xD;
-- Added the possibility to have the price only when the item is on special price.&#xD;
-- If no description is on the product, only the product name will appear.&#xD;
-- Fixed a bug where the image was not working on all Magento version.</notes>
-    <authors><author><name>Fr&#xE9;d&#xE9;rick Lebel</name><user>flebel</user><email>flebel@moii.ca</email></author><author><name>Jean-Francois Parent</name><user>moii</user><email>magento@moii.ca</email></author></authors>
-    <date>2012-02-16</date>
-    <time>04:52:34</time>
-    <contents><target name="magecommunity"><dir name="Moii"><dir name="Pinterest"><dir name="Block"><file name="PinterestButton.php" hash="05dc27dd353048c703b5b1dbaec08590"/></dir><dir name="Helper"><file name="Data.php" hash="bf9533e3afd1f49fdd5fea12ecfa4073"/></dir><dir name="Model"><file name="Enable.php" hash="6f52f2cdf36bdf12b2011e815ea7c7c0"/><file name="Pincount.php" hash="9669113e6ffcc2abf02fe4771bec1753"/><file name="Price.php" hash="956dc4d897cff4cd197e0e0990efac04"/></dir><dir name="etc"><file name="config.xml" hash="e4bc53a7cdbc9adadf3a2c9dc12b1e5b"/><file name="system.xml" hash="57eaa253988973ee2dce137bf33122b9"/></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="Moii_Pinterest.xml" hash="a7c5113cba5d7d6478722a15cbf85715"/></dir></target><target name="magedesign"><dir name="frontend"><dir name="base"><dir name="default"><dir name="template"><dir name="moii"><file name="pinterest_button.phtml" hash="1d73fdaa064bae94e3002d6bfb20dc34"/></dir></dir><dir name="layout"><dir name="moii"><file name="pinterest.xml" hash="73674e831495740c4413953ce2fab753"/></dir></dir></dir></dir></dir></target></contents>
+    <summary>Social Login and Social Sharing</summary>
+    <description>Speed login and registration, drive referrals and engagement.</description>
+    <notes>Upgraded widgets to latest all-javascript versions, added seamless registration.</notes>
+    <authors><author><name>Janrain</name><user>auto-converted</user><email>magento@janrain.com</email></author><author><name>Bryce Hamrick</name><user>auto-converted</user><email>bryce@janrain.com</email></author></authors>
+    <date>2012-05-16</date>
+    <time>20:19:15</time>
+    <contents><target name="magecommunity"><dir name="Janrain"><dir name="Engage"><dir name="Block"><file name="Accountdata.php" hash="13d0a94f22fe6606140a7df0e3bf940f"/><file name="Auth.php" hash="ead05d0daac9aa2af02d207234f2b532"/><file name="Info.php" hash="83bc006b05eba79c576bd495c2e4b7da"/><file name="Share.php" hash="17c1a5dbaa91998d0ba5d4931ae06d75"/><file name="Xdcomm.php" hash="1cf135ad6c7ce1ce10d22d43ffb28ff4"/></dir><dir name="Helper"><file name="Data.php" hash="5fd11f0bb2142d05a854b06ded0350bf"/><file name="Identifiers.php" hash="82df0bf18a9065bb1b9b8e2d7d437f02"/><file name="Rpxcall.php" hash="33c0920753282bc10be42c268bdf66fb"/></dir><dir name="Model"><dir name="Mysql4"><dir name="Identifiers"><file name="Collection.php" hash="55b32ceef6b7264c62833d7ed25bad13"/></dir><file name="Identifiers.php" hash="0caed34306118b774a903df2feb51169"/></dir><dir name="Resource"><dir name="Eav"><dir name="Mysql4"><file name="Setup.php" hash="797bbf70f12b86487b1cda632e236cfb"/></dir></dir></dir><file name="Identifiers.php" hash="4e996d44faaa79db5cebd8e11b2e0583"/><file name="Observer.php" hash="9639e480dfc1f20f8ffb25035031b71f"/><file name="Session.php" hash="b95af8380dc2b6290fa9597e2ee47e4a"/></dir><dir name="controllers"><dir name="Adminhtml"><file name="LookupController.php" hash="e3c27cae9aa55ab4a8631296d99bc243"/></dir><file name="RpxController.php" hash="de41c3eac8fcbe4f4e0301f063b629e2"/><file name="XdcommController.php" hash="0ec06d387ca2fac28540901c0d2fff8d"/></dir><dir name="etc"><file name="config.xml" hash="8e3937e2ea8668df4a6583ab240c63e4"/><file name="system.xml" hash="fbb4521b0ac40230c882d567bae187f4"/><file name="widget.xml" hash="45f819c99605e20d3ebf09e2ac52d463"/></dir><dir name="sql"><dir name="engage_setup"><file name="mysql4-install-1.2.0.php" hash="2ce66b0568ed83142c04c2ff03f0db0c"/></dir></dir></dir></dir></target><target name="magedesign"><dir name="frontend"><dir name="base"><dir name="default"><dir name="template"><dir name="janrain"><dir name="engage"><file name="auth.phtml" hash="8e61ad42095e824e4adc5ca85616bed8"/><file name="dashboard.phtml" hash="9b793510890bc556f93ea7a5d32c2ac0"/><file name="duplicate.phtml" hash="771e6676b6d1f42283740deacafab4d8"/><file name="register.phtml" hash="9273f30fece25a7cc2503fdfd2d1b891"/><file name="scripts_dashboard.phtml" hash="cb39c9c75df2d30a6a739aa0072be045"/><file name="share.phtml" hash="a037fd0864641e925429057e74c9ce7f"/><file name="styles.phtml" hash="3be45ace87bbb5f498b23458fa6297a3"/></dir></dir></dir><dir name="layout"><file name="engage.xml" hash="5258f3bc17340a6c30818375ff886766"/></dir></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="Janrain_Engage.xml" hash="b13e55afe8a48e56ab57768870cfb7bc"/></dir></target><target name="magelocale"><dir name="en_US"><file name="Janrain_Engage.csv" hash="d41d8cd98f00b204e9800998ecf8427e"/></dir></target><target name="mageskin"><dir name="frontend"><dir name="janrain"><file name="jn-icons16.png" hash="b32bc05f1eeeed0b1859141df0d11506"/><file name="jn-icons32.png" hash="ccbef20afccb55f28a3fe2869a91a5f0"/><file name="stylesheet.css" hash="fd4b593c28a2dc87124ba7a488d7db5b"/></dir></dir></target></contents>
     <compatible/>
-    <dependencies><required><php><min>5.2.0</min><max>6.0.0</max></php></required></dependencies>
+    <dependencies/>
 </package>

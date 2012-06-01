@@ -96,18 +96,6 @@ class Appmagento_Sharesuit_Model_Sharesuit extends Mage_Core_Model_Abstract
    		return Mage::getStoreConfig('sharesuit/google/gp_plusone');
     }
     
-    /* get pinterest config */
-    public function getPinterest(){
-    	return Mage::getStoreConfig('sharesuit/pinterest/pin_enable');
-    }
-    
-	public function getPinLayout(){
-    	return Mage::getStoreConfig('sharesuit/pinterest/pin_count_layout');
-    }
-    
-	public function getPinPrice(){
-    	return Mage::getStoreConfig('sharesuit/pinterest/pin_price');
-    }
     
 	public function getFacebook()
     {
