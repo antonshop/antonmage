@@ -115,6 +115,11 @@
                 <class>Appmagento_Sharesuit_Helper</class>
             </sharesuit>
         </helpers>
+        <models>
+            <sharesuit>
+                <class>Appmagento_Sharesuit_Model</class>
+            </sharesuit>   
+        </models>
 		<events>
             <checkout_onepage_controller_success_action>
                 <observers>

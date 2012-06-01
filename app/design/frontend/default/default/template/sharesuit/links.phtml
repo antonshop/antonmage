@@ -9,7 +9,8 @@
 
 <?php if(!Mage::getSingleton('customer/session')->isLoggedIn()):?>
 	<div id="fb-root"></div>
-	<div><img src="<?php echo $this->getSkinUrl('images/sharesuit/login_with.jpg');?>">
+	<div><!--<img src="<?php echo $this->getSkinUrl('images/sharesuit/login_with.jpg');?>">-->
+	<!-- Facebook login -->
 	<?php if(Mage::getModel('sharesuit/sharesuit')->getFbLogin()):?>
 		<script language="JavaScript" type="text/javascript">
 	/*<![CDATA[*/
@@ -63,13 +64,16 @@
 	/*]]>*/
 	</script><a href="#" onclick="return fblogin();" class="fb_button_ps"><img src="<?php echo $this->getSkinUrl('images/sharesuit/login_facebook.jpg');?>" alt="<?php echo $this->__('Login with Facebook')?>" /></a>
 	<?php endif?>
+	
+	<!-- Twitter login -->
 	<?php if(Mage::getModel('sharesuit/sharesuit')->getTwLogin()):?>
 		
 		<a href="<?php echo Mage::helper('sharesuit')->getTwLoginurl();?>" class="fb_button_ps"><img src="<?php echo $this->getSkinUrl('images/sharesuit/login_twitter.jpg');?>" alt="<?php echo $this->__('Login with Twitter')?>" /></a>
 	<?php endif?>
-	<?php if(Mage::getModel('sharesuit/sharesuit')->getGpLogin()):?>
 	
-		<a href="#" class="fb_button_ps"><img src="<?php echo $this->getSkinUrl('images/sharesuit/login_googleplus.jpg');?>" alt="<?php echo $this->__('Login with Twitter')?>" /></a>
+	<!-- Google+ login -->
+	<?php if(Mage::getModel('sharesuit/google_plus')->getGpLogin()):?>
+		<a href="<?php echo Mage::getModel('sharesuit/google_plus')->getAuthUrl();?>" class="fb_button_ps"><img src="<?php echo $this->getSkinUrl('images/sharesuit/login_googleplus.jpg');?>" alt="<?php echo $this->__('Login with Twitter')?>" /></a>
 	<?php endif?>
 </div>
 <?php endif?>
