@@ -42,6 +42,36 @@ class Appmagento_Sharesuit_Model_Sharesuit extends Mage_Core_Model_Abstract
    		return Mage::getStoreConfig('sharesuit/facebook/fb_login');
     }
     
+    public function getFbLoginimg(){
+    	$img = Mage::getStoreConfig('sharesuit/facebook/fb_login_img');
+    	if(empty($img)) {
+            $img = Mage::getSkinUrl('images/sharesuit/login_facebook.jpg') ;
+        } else {
+            $img = Mage::getBaseUrl('media') . 'sharesuit/' . $img;
+        }
+        return $img;
+    }
+    
+    public function getFbShareimg(){
+    	$img = Mage::getStoreConfig('sharesuit/facebook/fb_share_img');
+    	if(empty($img)) {
+    		$img = Mage::getSkinUrl('images/sharesuit/facebook_button.jpg') ;
+    	} else {
+    		$img = Mage::getBaseUrl('media') . 'sharesuit/' . $img;
+    	}
+    	return $img;
+    }
+    
+    public function getTwShareimg(){
+    	$img = Mage::getStoreConfig('sharesuit/twitter/tw_share_img');
+    	if(empty($img)) {
+    		$img = Mage::getSkinUrl('images/sharesuit/twitter_button.png') ;
+    	} else {
+    		$img = Mage::getBaseUrl('media') . 'sharesuit/' . $img;
+    	}
+    	return $img;
+    }
+    
 	public function  getFbLike(){
    		return Mage::getStoreConfig('sharesuit/facebook/fb_like');
     }

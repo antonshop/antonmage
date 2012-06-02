@@ -14,9 +14,11 @@ $fbuser = $facebook->getUser();
 if($cartItems){
 	$content = '<div style=" margin-bottom:15px;width:100%; height:40px; text-align:right;">&nbsp;';
 	$content .= '<span style="color:#333; font-weight:bold;font-size:12px; line-height:30px; margin-right:20px;">'.Mage::getModel('sharesuit/sharesuit')->getFbCartmessage().'</span>';
+	
+	/* facebook share */
 	if(Mage::getModel('sharesuit/sharesuit')->getFbStatus()){
 		
-		$img = '<img style="margin-left:15px;" src="'. $this->getSkinUrl("images/sharesuit/facebook_button.png").'">';
+		$img = '<img style="margin-left:15px;" src="'. Mage::getModel('sharesuit/sharesuit')->getFbShareimg() .'">';
 		if($fbuser){
 			$content .= '<a href="' . $this->getResponseUrl('fb') . '">' . $img . '</a>';
 		}else{
@@ -24,8 +26,9 @@ if($cartItems){
 		}
 	}
 	
+	/* twitter share */
 	if(Mage::getModel('sharesuit/sharesuit')->getTwStatus()){
-		$content .= '<a style="margin-left:15px;" href="' . $this->getTwRedirecturl() . '"><img src="'. $this->getSkinUrl("images/sharesuit/twitter_button.png").'"></a>';
+		$content .= '<a style="margin-left:15px;" href="' . $this->getTwRedirecturl() . '"><img src="'. Mage::getModel('sharesuit/sharesuit')->getTwShareimg() .'"></a>';
 	}
 	
 	$content .= '</div>';

@@ -62,7 +62,8 @@
 	        return false;
 	    }
 	/*]]>*/
-	</script><a href="#" onclick="return fblogin();" class="fb_button_ps"><img src="<?php echo $this->getSkinUrl('images/sharesuit/login_facebook.jpg');?>" alt="<?php echo $this->__('Login with Facebook')?>" /></a>
+	</script>
+	<a href="#" onclick="return fblogin();" class="fb_button_ps"><img src="<?php echo Mage::getModel('sharesuit/sharesuit')->getFbLoginimg();?>" alt="<?php echo $this->__('Login with Facebook')?>" /></a>
 	<?php endif?>
 	
 	<!-- Twitter login -->
@@ -73,7 +74,7 @@
 	
 	<!-- Google+ login -->
 	<?php if(Mage::getModel('sharesuit/google_plus')->getGpLogin()):?>
-		<a href="<?php echo Mage::getModel('sharesuit/google_plus')->getAuthUrl();?>" class="fb_button_ps"><img src="<?php echo $this->getSkinUrl('images/sharesuit/login_googleplus.jpg');?>" alt="<?php echo $this->__('Login with Twitter')?>" /></a>
+		<a href="<?php echo Mage::getModel('sharesuit/google_plus')->getAuthUrl();?>" class="fb_button_ps"><img src="<?php echo Mage::getModel('sharesuit/google_plus')->getGpLoginimg();?>" alt="<?php echo $this->__('Login with Twitter')?>" /></a>
 	<?php endif?>
 </div>
 <?php endif?>

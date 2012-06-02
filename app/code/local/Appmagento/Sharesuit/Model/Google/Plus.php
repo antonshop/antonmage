@@ -34,6 +34,16 @@ class Appmagento_Sharesuit_Model_Google_Plus extends Mage_Core_Model_Abstract
     	return Mage::getBaseUrl() . "sharesuit/customer/gplogin";
     }
     
+    public function getGpLoginimg(){
+    	$img = Mage::getStoreConfig('sharesuit/google/gp_login_img');
+    	if(empty($img)) {
+    		$img = Mage::getSkinUrl('images/sharesuit/login_googleplus.png') ;
+    	} else {
+    		$img = Mage::getBaseUrl('media') . 'sharesuit/' . $img;
+    	}
+    	return $img;
+    }
+    
     public function getApiClient(){
     	$client = new apiClient();
     	$client->setClientId(self::getGpClientId());
