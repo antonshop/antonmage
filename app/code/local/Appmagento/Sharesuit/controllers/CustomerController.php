@@ -15,10 +15,10 @@ class Appmagento_Sharesuit_CustomerController extends Mage_Core_Controller_Front
         $me = null;
         $cookie = $this->get_facebook_cookie(Mage::getModel('sharesuit/sharesuit')->getFbAppid(), Mage::getModel('sharesuit/sharesuit')->getFbAppsecret());
         $me = json_decode($this->getFbData('https://graph.facebook.com/me?access_token=' . $cookie['access_token']));
-        $this->checklogin($me);
+        $this->checklogin($me, 1);
     }
 
-    public function checklogin($me){
+    public function checklogin($me, $type=1){
     	if ($me) {
 			$me = (array)$me;
             $session = Mage::getSingleton('customer/session');
@@ -27,31 +27,30 @@ class Appmagento_Sharesuit_CustomerController extends Mage_Core_Controller_Front
             $tablePrefix = (string) Mage::getConfig()->getTablePrefix();
             $sql = 'SELECT `customer_id`
 					FROM `' . $tablePrefix . 'sharesuit_customer`
-					WHERE `fbuser` = ' . $me['id'] . '
+					WHERE `user` = ' . $me['id'] . '
 					LIMIT 1';
             $data = $db_read->fetchRow($sql);
 
             if ($data) {
                 $session->loginById($data['customer_id']);
             } else {
-                $sql = 'SELECT `entity_id`
-						FROM `' . $tablePrefix . 'customer_entity`
-						WHERE email = "' . $me['email'] . '"
-						AND store_id = "'.Mage::app()->getStore()->getStoreId().'"
-						AND website_id = "'.Mage::getModel('core/store')->load(Mage::app()->getStore()->getStoreId())->getWebsiteId().'"
+            	$sql = 'SELECT `customer_id`, `type`
+						FROM `' . $tablePrefix . 'sharesuit_customer`
+						WHERE `email` = \'' . $me['email'] . '\'
 						LIMIT 1';
-                $r = $db_read->fetchRow($sql);
-
-                if ($r) {
-                    $db_write = Mage::getSingleton('core/resource')->getConnection('write');
-                    $sql = 'INSERT INTO `' . $tablePrefix . 'sharesuit_customer`
-                                                    VALUES (' . $r['entity_id'] . ', ' . $me['id'] . ', 1, 1)';
-                    
-                    $db_write->query($sql);
-                    $session->loginById($r['entity_id']);
-                } else {
-                    $this->_registerCustomer($me, $session);
-                }
+            	
+            	$cus = $db_read->fetchRow($sql);
+            	if($cus){
+            		$db_write = Mage::getSingleton('core/resource')->getConnection('write');
+            		$sql = 'INSERT INTO `' . $tablePrefix . 'sharesuit_customer` 
+            		(`customer_id`, `user`, `email`, `status`, `type`) 
+            		VALUES (' . $cus['customer_id'] . ', \'' . $me['id'] . '\', \''. $me['email'] .'\', 1, '. $type .')';
+            		
+            		$db_write->query($sql); 
+            		$session->loginById($cus['customer_id']);
+            	} else {
+            		$this->_registerCustomer($me, $session, $type);
+            	}
             }
             $this->_loginPostRedirect($session);
         }
@@ -68,33 +67,37 @@ class Appmagento_Sharesuit_CustomerController extends Mage_Core_Controller_Front
     
     public function gploginAction(){
     	$client = Mage::getModel('sharesuit/google_plus')->getApiClient();
-    	$plus = Mage::getModel('sharesuit/google_plus')->getApiPlus();
-		$oauth2 = Mage::getModel('sharesuit/google_plus')->getApiOauth2();
+    	$plus = Mage::getModel('sharesuit/google_plus')->getApiPlus($client);
+		$oauth2 = Mage::getModel('sharesuit/google_plus')->getApiOauth2($client);
 		
-    	if (isset(Mage::app()->getRequest()->getParam('logout'))) {
-			unset($_SESSION['access_token']);
+		$logout = Mage::app()->getRequest()->getParam('logout');
+    	if (isset($logout)) {
+			unset($_SESSION['gp_access_token']);
 		}
 		
-		if (isset(Mage::app()->getRequest()->getGet('code'))) {
+		$code = Mage::app()->getRequest()->getParam('code');
+		if (isset($code)) {
 		  $client->authenticate();
-		  $_SESSION['token'] = $client->getAccessToken();
-		  $redirect = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF'];
-		  //print_r($redirect);exit;
-		  header('Location: ' . filter_var($redirect, FILTER_SANITIZE_URL));
+		  $_SESSION['gp_token'] = $client->getAccessToken();
+		  $redirect = Mage::getModel('sharesuit/google_plus')->getRedirectUri();
+		  $this->_redirect($redirect);
 		}
 		
-		if (isset($_SESSION['access_token'])) {
-		  $client->setAccessToken($_SESSION['access_token']);
+		if (isset($_SESSION['gp_access_token'])) {
+		  $client->setAccessToken($_SESSION['gp_access_token']);
 		}
 		
 		if ($client->getAccessToken()) {
 		  	$me = $plus->people->get('me');
 		  	$user = $oauth2->userinfo->get();
-echo "<pre>";
-print_r($me);
-print_r($user);
-echo "</pre>";
-exit;
+		  	$data = array(
+		  			'id' => $user['id'],
+		  			'first_name' => $user['given_name'],
+		  			'last_name' => $user['family_name'],
+		  			'email' => $user['email'],
+		  			'is_active' => 1,
+		  	);
+		  	$this->checklogin($data, 2);
 	    }
     }
     
@@ -103,8 +106,8 @@ exit;
     	if(isset($_SESSION['oauth_twitter_httpcode']) && $_SESSION['oauth_twitter_httpcode']==200 && $_SESSION['oauth_twitter_content']){
     		$data = array(
     			'id' => '',
-    			'firstname' => '',
-    			'lastname' => '',
+    			'first_name' => '',
+    			'last_name' => '',
     			'email' => '',
     			'is_active' => '',
     		);
@@ -131,7 +134,7 @@ exit;
     	}
     }
 
-    private function _registerCustomer($data, &$session)
+    private function _registerCustomer($data, &$session, $type=1)
     {
         $customer = Mage::getModel('customer/customer')->setId(null);
         $customer->setData('firstname', $data['first_name']);
@@ -151,7 +154,8 @@ exit;
         $db_write = Mage::getSingleton('core/resource')->getConnection('write');
         $tablePrefix = (string) Mage::getConfig()->getTablePrefix();
         $sql = 'INSERT INTO `' . $tablePrefix . 'sharesuit_customer`
-				VALUES (' . $customer_id . ', ' . $data['id'] . ' ,1, 1)';
+        		(`customer_id`, `user`, `email`, `status`, `type`) 
+				VALUES (' . $customer_id . ', \'' . $data['id'] . '\', \''. $data['email'] .'\' ,1, '. $type .')';
         $db_write->query($sql);
     }
 

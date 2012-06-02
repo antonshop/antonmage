@@ -30,26 +30,33 @@ class Appmagento_Sharesuit_Model_Google_Plus extends Mage_Core_Model_Abstract
    		return Mage::getStoreConfig('sharesuit/google/gp_client_secret');
     }
     
+    public function getRedirectUri(){
+    	return Mage::getBaseUrl() . "sharesuit/customer/gplogin";
+    }
+    
     public function getApiClient(){
-    	return new apiClient();
+    	$client = new apiClient();
+    	$client->setClientId(self::getGpClientId());
+    	$client->setClientSecret(self::getGpClientSecret());
+    	$client->setRedirectUri(self::getRedirectUri());
+    	return $client;
     }
     
-    public function getApiPlus(){
-    	return new apiPlusService(self::getApiClient());
+    public function getApiPlus($client){
+    	return new apiPlusService($client);
     }
     
-    public function getApiOauth2(){
-    	return new apiOauth2Service(self::getApiClient());
+    public function getApiOauth2($client){
+    	return new apiOauth2Service($client);
     }
     
     public function getAuthUrl(){
     	$client = self::getApiClient();
-    	$plus = self::getApiPlus();
-		$oauth2 = self::getApiOauth2();
     	
-    	$client->setClientId(self::getGpClientId());
-		$client->setClientSecret(self::getGpClientSecret());
-		$client->setRedirectUri(Mage::getBaseUrl() . "sharesuit/index/gprespond");
+    	
+		
+		$plus = self::getApiPlus($client);
+		$oauth2 = self::getApiOauth2($client);
     	//$client->();
     	return $client->createAuthUrl();
     }
