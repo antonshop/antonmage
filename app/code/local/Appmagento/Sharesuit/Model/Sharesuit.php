@@ -45,7 +45,7 @@ class Appmagento_Sharesuit_Model_Sharesuit extends Mage_Core_Model_Abstract
     public function getFbLoginimg(){
     	$img = Mage::getStoreConfig('sharesuit/facebook/fb_login_img');
     	if(empty($img)) {
-            $img = Mage::getSkinUrl('images/sharesuit/login_facebook.jpg') ;
+            $img = Mage::getBaseUrl('skin').'frontend/default/default/images/sharesuit/login_facebook.jpg' ;
         } else {
             $img = Mage::getBaseUrl('media') . 'sharesuit/' . $img;
         }
@@ -55,7 +55,7 @@ class Appmagento_Sharesuit_Model_Sharesuit extends Mage_Core_Model_Abstract
     public function getFbShareimg(){
     	$img = Mage::getStoreConfig('sharesuit/facebook/fb_share_img');
     	if(empty($img)) {
-    		$img = Mage::getSkinUrl('images/sharesuit/facebook_button.jpg') ;
+    		$img = Mage::getBaseUrl('skin').'frontend/default/default/images/sharesuit/facebook_button.png' ;
     	} else {
     		$img = Mage::getBaseUrl('media') . 'sharesuit/' . $img;
     	}
@@ -65,7 +65,7 @@ class Appmagento_Sharesuit_Model_Sharesuit extends Mage_Core_Model_Abstract
     public function getTwShareimg(){
     	$img = Mage::getStoreConfig('sharesuit/twitter/tw_share_img');
     	if(empty($img)) {
-    		$img = Mage::getSkinUrl('images/sharesuit/twitter_button.png') ;
+    		$img = Mage::getBaseUrl('skin').'frontend/default/default/images/sharesuit/twitter_button.png';
     	} else {
     		$img = Mage::getBaseUrl('media') . 'sharesuit/' . $img;
     	}

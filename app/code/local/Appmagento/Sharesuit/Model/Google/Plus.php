@@ -37,7 +37,7 @@ class Appmagento_Sharesuit_Model_Google_Plus extends Mage_Core_Model_Abstract
     public function getGpLoginimg(){
     	$img = Mage::getStoreConfig('sharesuit/google/gp_login_img');
     	if(empty($img)) {
-    		$img = Mage::getSkinUrl('images/sharesuit/login_googleplus.png') ;
+    		$img = Mage::getBaseUrl('skin').'frontend/default/default/images/sharesuit/login_googleplus.jpg' ;
     	} else {
     		$img = Mage::getBaseUrl('media') . 'sharesuit/' . $img;
     	}
