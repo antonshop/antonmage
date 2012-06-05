@@ -1,0 +1,164 @@
+/* @override http://localhost/bxslider_v3_plugin/css/styles.css */
+
+/*
+ * To change the color scheme of slider change each 
+ * background property for each of the five styles below
+ */
+ 
+/* SLIDER ---------------------------------- */
+.bx-wrapper {
+  margin: 0 auto;
+  width: 960px;
+}
+
+.bx-window {
+    margin-left: -100px;
+    overflow: hidden;
+    padding: 0 100px;
+    position: relative;
+    width: 960px;
+}
+#slider1 {
+	padding: 0;
+	margin: 0 auto;
+	list-style: none;
+	overflow: hidden;
+	width: 1160px;
+	height: 322px;
+}
+
+#slider1 li {
+	padding: 0;
+	margin: 0;
+	zoom:1;
+	width: 960px;
+	height: 322px;
+	position: relative;
+}
+
+#slider1 li.pager a {
+    display: block;
+    height: 55px;
+    left: 7px;
+    position: absolute;
+    top: 232px;
+    width: 340px;
+}
+
+#slider1 li.pager a span{
+    display: none;
+}
+
+#slider1 p,
+#slider2 p {
+	width: 300px;
+	height: 50px;
+	position: absolute;
+	top: 200px;
+	left: 0px;
+	background: Blue;
+	z-index: 2;	
+}
+
+
+
+/*next button*/
+.bx-next {
+    background: url("../images/carousel_right.png") no-repeat scroll 0 -51px transparent;
+    height: 322px;
+    right: -101px;
+    position: absolute;
+    text-indent: -999999px;
+    top: 0;
+    width: 115px;
+    z-index: 99;
+}
+
+/*previous button*/
+.bx-prev {
+    background: url("../images/carousel_left.png") no-repeat scroll 0 -51px transparent;
+    height: 322px;
+    left: -101px;
+    position: absolute;
+    text-indent: -999999px;
+    top: 0;
+    width: 115px;
+    z-index: 99;
+}
+
+/*pager links*/
+.bx-pager a {
+	margin-right: 5px;
+	color: #fff;
+	padding: 3px 8px 3px 6px;
+	font-size: 12px;
+	zoom:1;
+	background-color: #555;
+}
+
+/*auto start button*/
+.bx-auto .start {
+	background: url(gray_auto.png) no-repeat 0 2px;
+	padding-left: 13px;
+}
+
+/*auto stop button*/
+.bx-auto .stop {
+	background: url(gray_auto.png) no-repeat 0 -14px;
+	padding-left: 13px;
+}
+
+/*
+ * End color scheme styles
+ */
+
+
+/*next/prev button hover state*/
+.bx-next:hover,
+.bx-prev:hover {
+	background-position: 0 -51px;
+}
+
+/*pager links hover and active states*/
+.bx-pager .pager-active,
+.bx-pager a:hover {
+	background-position: 0 -51px;
+}
+
+/*pager wrapper*/
+.bx-pager {
+	text-align:center;
+	padding-top: 7px;
+	font-size:12px;
+	color:#666;
+}
+
+/*captions*/
+.bx-captions {
+	text-align:center;
+	font-size: 12px;
+	padding: 7px 0;
+	color: #666;
+}
+
+/*auto controls*/
+.bx-auto {
+	text-align: center;
+	padding-top: 15px;
+}
+
+.bx-auto a {
+	color: #666;
+	font-size: 12px;
+}
+
+
+
+
+
+
+
+
+
+
+

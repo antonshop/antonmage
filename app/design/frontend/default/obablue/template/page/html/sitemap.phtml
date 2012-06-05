@@ -1,0 +1,103 @@
+<?php
+/*
+
+Creare Sitemap - gets CMS Pages - TLC's and SC's - and 10 best products per category
+
+*/
+
+function getCreareCMSPages(){
+
+ $cms = Mage::getModel('cms/page')->getCollection();
+ $html = "";
+ foreach($cms as $cmspage):
+ $page = $cmspage->getData();
+ if($page['identifier'] == "no-route" || $page['identifier'] == "enable-cookies" || $page['identifier'] == "empty"){ /* do nothing or something here */ } else {
+ if($page['identifier'] == "home"){
+$html .= "<li><a href=\"/\" title=\"".$page['title']."\">".$page['title']."</a></li>\n"; // this is for a nice local link to home
+ } else {
+ $html .= "<li><a href=\"".$page['identifier']."\" title=\"".$page['title']."\">".$page['title']."</a></li>\n";
+ }
+
+ }
+ endforeach;
+
+ return $html;
+}
+
+function getCrearePopularProducts(){
+
+ /* get the product id's from VCMS here */
+
+ $products = array('4138','4137','4136','4132','4131','4125','4124','4120','3938','3932');
+ $html = "";
+
+ foreach($products as $productId):
+ $product = Mage::getModel('catalog/product')->load($productId);
+$html .= "<li><a href=\"".$product->getUrlPath()."\" title=\"".$product->getName()."\">".$product->getName()."</a></li>\n";
+ endforeach;
+
+ return $html;
+
+}
+
+?>
+<mce:style type="text/css"><!--
+.siteul { margin: 5px; padding: 0 0 0 10px; }
+.siteul li { list-style:inside; font-size:1em!important; }
+.sitecatul { margin: 0 5px; padding: 0 0 0 10px; }
+.sitecatul li { list-style:none; font-size:1em!important; }
+.sitecatul li ul { margin: 0 5px; padding: 0 0 0 10px; }
+.sitecatul li ul li { list-style:inside; }
+.two-column { width: 50%; float: left; display: block; }
+--></mce:style><style type="text/css" mce_bogus="1">.siteul { margin: 5px; padding: 0 0 0 10px; }
+.siteul li { list-style:inside; font-size:1em!important; }
+.sitecatul { margin: 0 5px; padding: 0 0 0 10px; }
+.sitecatul li { list-style:none; font-size:1em!important; }
+.sitecatul li ul { margin: 0 5px; padding: 0 0 0 10px; }
+.sitecatul li ul li { list-style:inside; }
+.two-column { width: 50%; float: left; display: block; }</style>
+<div>
+<h2>Our Main Pages</h2>
+ <ul>
+ <?php echo getCreareCMSPages(); // prints out our cms pages ?>
+ <li><a href="/sitemap.xml" mce_href="sitemap.xml" title="XML Sitemap">XML Sitemap</a></li>
+ </ul>
+<h2>Our Most Popular Products</h2>
+ <?php getCrearePopularProducts(); ?>
+
+<?php if (count($_categories) > 0): ?>
+ <ul>
+ <?php foreach($_categories as $_category): ?>
+ <li>
+ <strong><?php echo $_category->getName() ?></strong>
+ <?php $_category = Mage::getModel('catalog/category')->load($_category->getId()) ?>
+ <?php $_subcategories = $_category->getChildrenCategories() ?>
+ <?php if (count($_subcategories) > 0): ?>
+ <ul>
+ <?php foreach($_subcategories as $_subcategory): ?>
+ <?php $_nextcategory = Mage::getModel('catalog/category')->load($_subcategory->getId()) ?>
+ <?php $_nextsubcategories = $_nextcategory->getChildrenCategories() ?>
+ <li>
+ <a href="<?php echo $_helper->getCategoryUrl($_subcategory) ?>" title="<?php echo $_subcategory->getName() ?>">
+ <?php echo $_subcategory->getName() ?>
+ </a>
+ <?php if (count($_nextsubcategories) > 0): ?>
+ <ul>
+ <?php foreach($_nextsubcategories as $_nextsubcat): ?>
+ <li>
+ <a href="<?php echo $_helper->getCategoryUrl($_nextsubcat) ?>" title="<?php echo $_subcategory->getName() ?> - <?php echo $_nextsubcat->getName() ?>">
+ <?php echo $_nextsubcat->getName() ?>
+ </a>
+ </li>
+ <?php endforeach; ?>
+ </ul>
+ <?php endif; ?>
+ </li>
+ <?php endforeach; ?>
+ </ul>
+ <?php endif; ?>
+ </li>
+ <?php endforeach; ?>
+ </ul>
+<?php endif; ?>
+</div>
