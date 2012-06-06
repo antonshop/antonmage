@@ -21,6 +21,7 @@ Class Magazento_Homepage_Model_Data {
         $product['todaydate'] = date($outputFormat, time());
         $product['startdate'] = date($outputFormat, time() - 60 * 60 * 24 * $days);
         return $product;
+
     }
 
     public function getCategory ($id){

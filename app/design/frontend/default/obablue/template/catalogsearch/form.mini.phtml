@@ -25,7 +25,7 @@
  */
 ?>
 <form id="search_mini_form" action="<?php echo $this->helper('catalogsearch')->getResultUrl() ?>" method="get">
-    <div class="form-search">
+    <div class="mini-search">
         <input id="search" type="text" name="<?php echo $this->helper('catalogsearch')->getQueryParamName() ?>" value="<?php echo $this->helper('catalogsearch')->getEscapedQueryText() ?>" class="search-input-text" />
         <button type="submit" title="<?php echo $this->__('Search') ?>" class="search"><span><span><?php echo $this->__('') ?></span></span></button>
         <div id="search_autocomplete" class="search-autocomplete"></div>
