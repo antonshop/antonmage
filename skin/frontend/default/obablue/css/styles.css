@@ -1452,6 +1452,7 @@ tr.summary-details-excluded {
 	margin: 0 auto;
     width: 940px;
     padding: 0 20px;
+	height:160px;
 }
 
 .header {
@@ -1460,6 +1461,7 @@ tr.summary-details-excluded {
 }
 
 .header .logo {
+	margin-top:5px;
 	float: left;
 	text-decoration: none !important;
 }
@@ -1488,7 +1490,7 @@ tr.summary-details-excluded {
 
 .header .links {
 	float: right;
-	margin: 23px 0px 0px 0px;
+	margin: 13px 0px 0px 0px;
 }
 
 .header .form-search {
@@ -1555,7 +1557,7 @@ a.home span{
 /********** < Navigation */
 
 .nav-container {
-	
+	margin-top:40px;
 }
 
 #nav {
@@ -5647,7 +5649,9 @@ small.license {
 
 .quick-access {
 	float: right;
-	margin-top: -6px;
+	margin-top: 3px;
+	width:400px;
+	font-size:12px;
 }
 
 .quick-access ul {
@@ -5694,8 +5698,12 @@ small.license {
 .stButton .chicklets {
 	display: none !important;
 }
-
-a.top-link-cart {
+.quick-access .block-currency select{width:auto;}
+.quick-access .block-content, .quick-access .block-title{ float:right; width:auto; color:#eee; padding:0px;}
+.quick-access .block-title{ padding:4px 10px 0px 0px;}
+.links li{ padding:0px 5px;}
+.links a{ color:#eee; font-weight:normal; font-size:12px;}
+/*a.top-link-cart {
  		transition: background-color 0.5s ease 0s;
  		-moz-transition: background-color 0.5s ease 0s;
  		-webkit-transition: background-color 0.5s ease 0s;
@@ -5709,7 +5717,6 @@ a.top-link-cart {
     font-family: 'Sentinel 7r','Sentinel A','Sentinel B',"jubilat",Georgia,serif;
     font-size: 18px;
     letter-spacing: 1px;
-    /*text-transform: uppercase;*/
     white-space: nowrap;
     border-radius: 5px 5px 5px 5px;
     float: none;
@@ -5723,12 +5730,10 @@ a.top-link-cart {
 a.top-link-cart:hover {
     font-weight: bold;
     background-color: #dc092c;
-}
+}*/
 
 
-div.top-form-search {
-
-}
+div.top-form-search { float:left; margin:10px 100px 0px 0px;}
 
 .catalog-product-view .products-grid{
 	display: none;
@@ -7444,3 +7449,5 @@ div.grid {
     margin-left: 19px;
 	}
 }
+.header-top{ margin-top:10px;}
+.nav-home{ margin-right:12px;}
