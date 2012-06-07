@@ -1,0 +1,17 @@
+<?php $posts = Mage::getBlockSingleton('blog/blog')->getPosts();?>
+<div class="homenews">
+	<div class="homenews-title">
+		<?php echo Mage::helper('blog')->__('News');?>
+	</div>
+	<?php foreach ($posts as $post): ?>
+	<div class="postWrapper">
+	    <div class="postTitle">
+	        <h3><a href="<?php echo $post->getAddress(); ?>" ><?php echo $post->getTitle();?></a></h3>
+	    </div>
+	    <div class="postContent"><?php echo $post->getPostContent(); ?></div>
+	    
+	    <?php echo $this->getBookmarkHtml($post) ?>
+	</div>
+	<?php endforeach; ?> 
+	<?php $this->getPages(); ?>
+</div>

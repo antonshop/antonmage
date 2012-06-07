@@ -52,7 +52,24 @@
         <reference name="head">
             <action method="addItem"><type>skin_css</type><name>aw_blog/css/style.css</name></action>
         </reference>
+        
     </default>
+    
+    <cms_index_index>
+    	<reference name="content">
+			<block type="blog/blog"  name="right.blog.bloghome" after="-">
+				<action method="setTemplate">
+               		<template>aw_blog/bloghome.phtml</template>
+          		</action>
+			</block>         	
+        </reference>
+    </cms_index_index>
+    <!--<cms_index_index translate="label">
+	    <reference name="content">
+	        <block type="blog/blog" name="home_blog" template="aw_blog/homepage_posts.phtml"/>
+	    </reference>
+	</cms_index_index>-->
+
 
     <blog_index_index>
         <reference name="footer" >

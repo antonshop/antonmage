@@ -350,7 +350,7 @@ p.required { font-size:10px; text-align:right; color:#f00; }
 .breadcrumbs { padding:6px 0px 0 0; margin:0 0 11px; font-size:12px; font-weight:bold; color:#df4b11; overflow:hidden;}
 .breadcrumbs li { display:inline; float:left; }
 .breadcrumbs li a {color:#393939; text-decoration:none;}
-.breadcrumbs li span {display:inline-block; text-indent:-5555px; background:url("../images/breadcrumbs.gif") no-repeat center 7px; width:6px; height:14px; margin:0 7px 0 4px;}
+.breadcrumbs li span {display:inline-block; text-indent:-5555px; background:url("../images/breadcrumbs.gif") no-repeat center 4px; width:6px; height:14px; margin:0 7px 0 4px;}
 
 /* Page Heading */
 .page-title { border-bottom:1px solid #f0f0f0; padding:0 0 5px; margin:0 0 10px; }

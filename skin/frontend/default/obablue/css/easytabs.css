@@ -58,7 +58,15 @@
 .one-right-price .add-to-links{ margin:0px; clear:both; padding-left:10px;}
 .one-right-price .add-to-links li{ line-height:24px;}
 
-
+.homepage5in1{ width:700px; float:left;}
+.homepage5in1 .products-grid{ width:700px;}
+.homenews{ width:230px; float:right;}
+.homenews-title{ background:#02466A; height:32px; color:#eee; font-size:16px; font-weight:bold; line-height:32px; padding-left:12px; margin-bottom:15px;}
+.homenews .postTitle h3{ font-size:12px;}
+.homenews .postTitle a{ text-decoration:none;}
+.homenews .postWrapper{ padding:0px 5px;}
+.chield span{ padding:0px 5px;}
+.postContent{line-height: 18px;}
 
 
 
