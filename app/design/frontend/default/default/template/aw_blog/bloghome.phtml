@@ -1,7 +1,7 @@
 <?php $posts = Mage::getBlockSingleton('blog/blog')->getPosts();?>
 <div class="homenews">
 	<div class="homenews-title">
-		<?php echo Mage::helper('blog')->__('News');?>
+		<a href="<?php echo Mage::getUrl(Mage::getStoreConfig('blog/blog/route'));?>"><?php echo Mage::getStoreConfig('blog/blog/title'); ?></a>
 	</div>
 	<?php foreach ($posts as $post): ?>
 	<div class="postWrapper">

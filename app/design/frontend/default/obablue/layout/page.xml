@@ -55,6 +55,7 @@ Default layout, loads most of the pages
                 <action method="addJs"><script>mage/translate.js</script></action>
                 <action method="addJs"><script>mage/cookies.js</script></action>
                 
+                
                 <block type="page/js_cookie" name="js_cookies" template="page/js/cookie.phtml"/>
 
 				<!--<action method="addCss"><stylesheet>css/common.css</stylesheet></action>
@@ -67,6 +68,7 @@ Default layout, loads most of the pages
 
                 <action method="addItem"><type>js</type><name>lib/ds-sleight.js</name><params/><if>lt IE 7</if></action>
                 <action method="addItem"><type>skin_js</type><name>js/ie6.js</name><params/><if>lt IE 7</if></action>
+                <action method="addCss"><script>https://ssl.typography.com/753298/72796/css/fonts.css</script></action>
             </block>
 
             <block type="core/text_list" name="after_body_start" as="after_body_start" translate="label">

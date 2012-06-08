@@ -34,7 +34,7 @@
 #one-column-tr .one-right-price{ width:170px; float:right; padding:10px 0px 0 5px;}
 #one-column-tr .one-right-price .add-to-cart{ line-height:30px; vertical-align: middle;}
 #one-column-tr .add-to-cart button.button { margin:0px;}
-#one-column-tr .one-product-up{ background:#eee; width:100%; border:1px solid #79b0cc;}
+#one-column-tr .one-product-up{ background:#eee; width:100%; border:1px solid #eee;}
 #one-column-tr .one-product-img{ width:352px; float:left;margin:0px; padding:0px;}
 #one-column-tr .one-product-img .product-img-box { width:100%;}
 #one-column-tr .one-product-img .one-relate-product { width:100%;}
@@ -62,6 +62,7 @@
 .homepage5in1 .products-grid{ width:700px;}
 .homenews{ width:230px; float:right;}
 .homenews-title{ background:#02466A; height:32px; color:#eee; font-size:16px; font-weight:bold; line-height:32px; padding-left:12px; margin-bottom:15px;}
+.homenews-title a{ color:#fff; text-decoration:none; font-weight:normal;}
 .homenews .postTitle h3{ font-size:12px;}
 .homenews .postTitle a{ text-decoration:none;}
 .homenews .postWrapper{ padding:0px 5px;}
