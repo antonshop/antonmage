@@ -25,10 +25,10 @@ class Appmagento_Sharesuit_CustomerController extends Mage_Core_Controller_Front
 
             $db_read = Mage::getSingleton('core/resource')->getConnection('read');
             $tablePrefix = (string) Mage::getConfig()->getTablePrefix();
-            $sql = 'SELECT `customer_id`
-					FROM `' . $tablePrefix . 'sharesuit_customer`
-					WHERE `user` = ' . $me['id'] . '
-					LIMIT 1';
+            $sql = "SELECT `customer_id`
+					FROM `" . $tablePrefix . "sharesuit_customer`
+					WHERE `user` = '" . $me['id'] . "'
+					LIMIT 1";
             $data = $db_read->fetchRow($sql);
 
             if ($data) {
