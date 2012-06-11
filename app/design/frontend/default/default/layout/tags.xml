@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <default>
+    </default>
+    <tags_index_index>
+    	<reference name="root">
+    		<action method="setTemplate"><template>page/1column.phtml</template></action>
+    	</reference>
+    </tags_index_index>
+    <tags_index_index>
+        <reference name="content">
+            <block type="core/template" name="tags" template="tags/tags.phtml" />
+        </reference>
+    </tags_index_index>
+</layout>
