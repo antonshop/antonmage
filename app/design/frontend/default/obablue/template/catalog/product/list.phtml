@@ -56,7 +56,7 @@
                     <?php endif; ?>
                     <?php echo $this->getPriceHtml($_product, true) ?>
                     <?php if($_product->isSaleable()): ?>
-                        <p><button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="button btn-cart" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button></p>
+                        <p><button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="button btn-cart" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>'')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button></p>
                     <?php else: ?>
                         <p class="availability out-of-stock"><span><?php echo $this->__('Out of stock') ?></span></p>
                     <?php endif; ?>
@@ -116,7 +116,84 @@
         <?php endforeach ?>
         <script type="text/javascript">decorateGeneric($$('ul.products-grid'), ['odd','even','first','last'])</script>
     <?php endif; ?>
-
+	<script type="text/javascript">
+        jQuery.noConflict();
+        jQuery('.fancybox').fancybox({
+            hideOnContentClick : true,
+            width: 582,
+            autoDimensions: true,
+            type : 'iframe',
+            showTitle: false,
+            scrolling: 'no',
+            onComplete: function(){ //Resize the iframe to correct size
+            jQuery('#fancybox-frame').load(function() { // wait for frame to load and then gets it's height
+                jQuery('#fancybox-content').height(jQuery(this).contents().find('body').height()+30);
+                jQuery.fancybox.resize();
+             });
+            
+            }
+        });        
+        function showOptions(id){
+            jQuery('#fancybox'+id).trigger('click');
+        }
+        function setAjaxData(data,iframe){
+            if(data.status == 'ERROR'){
+                alert(data.message);
+            }else{
+                if(jQuery('.block-cart')){
+                    jQuery('.block-cart').replaceWith(data.sidebar);
+                }
+                if(jQuery('.header .block-cart-header')){
+                    jQuery('.header .block-cart-header').replaceWith(data.topcart);
+                } 
+                jQuery.fancybox.close();
+            }
+        }
+        function setLocationAjax(url,id){
+            url += 'isAjax/1';
+            url = url.replace("checkout/cart","ajax/index");
+            var msgHtml;
+            var productImg = jQuery('#productimgover' + id).html();
+            var windowOver = jQuery('#addedoverlay');
+            var windowBox = jQuery('#added');
+            var titleForBox = jQuery('#productname' + id).text();
+            windowOver.show();
+			windowBox.show().css({
+                backgroundImage: "url('<?php echo $this->getSkinUrl('images/loading.gif')?>')"
+			});
+            try {
+                jQuery.ajax( {
+                    url : url,
+                    dataType : 'json',
+                    success : function(data) {
+                        //alert(data);
+                        if(data.status == 'SUCCESS'){    
+                            msgHtml = '<div style="float:left;">' + productImg + '</div><em>' + titleForBox + '</em> <?php echo $this->__('was successfully added to your shopping cart.') ?><div style="clear:both;"></div><a id="hidewindow" href="javascript:void(0);"><?php echo $this->__('Continue shopping') ?></a>&nbsp;<a href="<?php echo $this->getUrl('checkout/cart')?>"><?php echo $this->__('View cart & checkout') ?></a>';             
+                        }else{
+                            msgHtml = '<p class="error-msg" style="margin-bottom:15px;">' + data.message + '</p><a id="hidewindow" href="javascript:void(0);"><?php echo $this->__('Continue shopping') ?></a>&nbsp;<a href="<?php echo $this->getUrl('checkout/cart')?>"><?php echo $this->__('View cart & checkout') ?></a>';
+                        }            
+                        setAjaxData(data,false);
+                        
+  			            windowBox.css({
+               			      backgroundImage: 'none'
+	                    }).html(msgHtml);					   
+                        windowOver.one('click',function(){
+				            hidewindow(windowBox,windowOver);                    
+                        });	       
+                                         
+                        jQuery('#hidewindow').click(function(){
+				            hidewindow(windowBox,windowOver);                    
+                        });                        
+                    }
+                });
+            } catch (e) {
+            }
+        }
+        function hidewindow(windowBox,windowOver){
+            windowOver.fadeOut(400);
+            windowBox.fadeOut(400).html('');	
+        }        
+        </script>
     <div class="toolbar-bottom">
         <?php echo $this->getToolbarHtml() ?>
     </div>

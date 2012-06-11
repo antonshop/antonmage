@@ -930,7 +930,7 @@ tr.summary-details-excluded { font-style:italic; }
 .products-grid .ratings .rating-box {display:inline-block; float:none;}
 .products-grid .ratings .amount {display:inline-block; overflow:hidden;}
 .products-grid .availability { line-height:21px; }
-.products-grid .actions { float:right;}
+.products-grid .actions { text-align:center;}
 .products-grid .price-box { margin:0px 0 5px; float:left; text-align:center; width:100%;}
 .products-grid .regular-price .price,
 .products-grid .old-price .price {font-size:20px; line-height:normal; color:#C41230; font-family:'Open Sans',sans-serif; font-weight:600;}
