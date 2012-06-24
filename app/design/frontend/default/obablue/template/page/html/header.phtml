@@ -27,7 +27,7 @@
 <div class="header-container">
     <div class="header">
     	<div class="header-top">
-	    	<div class="top-form-search"><?php echo $this->getChildHtml('topSearch') ?></div>
+	    	<!-- <div class="top-form-search"><?php echo $this->getChildHtml('topSearch') ?></div> -->
 	        <?php if ($this->getIsHomePage()):?>
 	        <h2 class="logo"><strong><?php echo $this->getLogoAlt() ?></strong><a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo"><img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" /></a></h2>
 	        <?php else:?>
@@ -46,6 +46,7 @@
         <?php echo $this->getChildHtml('topContainer'); ?>
         <div class="nav-container">
         	<?php echo $this->getChildHtml('topMenu') ?>
+        	<div class="top-form-search"><?php echo $this->getChildHtml('topSearch') ?></div>
         	
 		</div>
     </div>

@@ -1,0 +1,71 @@
+<div class="homepage5in1">
+	<ul class="hp_tabs">
+		<?php if (Mage::getStoreConfig('homepage/new/enable')): ?>
+			<li id="hp_new" class="active first"><a href="#"><?php echo Mage::getStoreConfig('homepage/new/title');?></a></li>
+        <?php endif; ?>
+        <?php if (Mage::getStoreConfig('homepage/popular/enable')): ?>
+	        <li id="hp_popular"><a href="#"><?php echo Mage::getStoreConfig('homepage/popular/title');?></a></li>
+	    <?php endif; ?>
+		<?php if (Mage::getStoreConfig('homepage/topsell/enable')): ?>
+			<li id="hp_topsell"><a href="#"><?php echo Mage::getStoreConfig('homepage/topsell/title');?></a></li>
+        <?php endif; ?>
+		<?php if (Mage::getStoreConfig('homepage/toprated/enable')): ?>
+			<li id="hp_toprated"><a href="#"><?php echo Mage::getStoreConfig('homepage/toprated/title');?></a></li>
+	    <?php endif; ?>
+	    <?php if (Mage::getStoreConfig('homepage/review/enable')): ?>
+	    	<li id="hp_review"><a href="#"><?php echo Mage::getStoreConfig('homepage/review/title');?></a></li>
+	    <?php endif; ?>
+	</ul>
+	
+	<div class="hp_tabs_contents">
+		<?php if (Mage::getStoreConfig('homepage/new/enable')): ?>
+	        <div id="hp_new_contents"><?php echo $this->getLayout()->createBlock('homepage/new')->setTemplate('magazento/homepage/new.phtml')->toHtml(); ?></div>
+	    <?php endif; ?>
+	    <?php if (Mage::getStoreConfig('homepage/popular/enable')): ?>
+	        <div id="hp_popular_contents"><?php echo $this->getLayout()->createBlock('homepage/popular')->setTemplate('magazento/homepage/popular.phtml')->toHtml(); ?></div>
+	    <?php endif; ?>
+		<?php if (Mage::getStoreConfig('homepage/topsell/enable')): ?>
+	        <div id="hp_topsell_contents"><?php echo $this->getLayout()->createBlock('homepage/topsell')->setTemplate('magazento/homepage/topsell.phtml')->toHtml(); ?></div>
+	    <?php endif; ?>
+	    <?php if (Mage::getStoreConfig('homepage/toprated/enable')): ?>
+	        <div id="hp_toprated_contents"><?php echo $this->getLayout()->createBlock('homepage/toprated')->setTemplate('magazento/homepage/toprated.phtml')->toHtml(); ?></div>
+	    <?php endif; ?>
+	    <?php if (Mage::getStoreConfig('homepage/review/enable')): ?>
+	        <div id="hp_review_contents"><?php echo $this->getLayout()->createBlock('homepage/review')->setTemplate('magazento/homepage/review.phtml')->toHtml(); ?></div>
+	    <?php endif; ?>
+	</div>
+
+
+</div>
+<script type="text/javascript">
+Varien.Tabs = Class.create();
+Varien.Tabs.prototype = {
+  initialize: function(selector) {
+    var self=this;
+    $$(selector+' a').each(this.initTab.bind(this));
+  },
+
+  initTab: function(el) {
+      el.href = 'javascript:void(0)';
+      if ($(el.parentNode).hasClassName('active')) {
+        this.showContent(el);
+      }
+      el.observe('click', this.showContent.bind(this, el));
+  },
+
+  showContent: function(a) {
+    var li = $(a.parentNode), ul = $(li.parentNode);
+    ul.select('li', 'ol').each(function(el){
+      var contents = $(el.id+'_contents');
+      if (el==li) {
+        el.addClassName('active');
+        contents.show();
+      } else {
+        el.removeClassName('active');
+        contents.hide();
+      }
+    });
+  }
+}
+new Varien.Tabs('.hp_tabs');
+</script>

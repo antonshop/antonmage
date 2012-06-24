@@ -9,7 +9,7 @@
 
 <?php if(!Mage::getSingleton('customer/session')->isLoggedIn()):?>
 	<div id="fb-root"></div>
-	<div><!--<img src="<?php echo $this->getSkinUrl('images/sharesuit/login_with.jpg');?>">-->
+	<div style="float:right; padding-left:10px;">
 	<!-- Facebook login -->
 	<?php if(Mage::getModel('sharesuit/sharesuit')->getFbLogin()):?>
 		<script language="JavaScript" type="text/javascript">

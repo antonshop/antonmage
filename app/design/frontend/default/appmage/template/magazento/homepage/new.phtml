@@ -1,0 +1,46 @@
+<?php $_products = $this->getProductCollection(); ?>
+<?php $_collectionSize = sizeof($_products); ?>
+<?php $_columnCount = Mage::getStoreConfig('homepage/options/count'); ?>
+
+
+<div class="category-products">
+        <?php if (sizeof($_products)): ?>
+            <?php $i=0; foreach ($_products->getItems() as $_product): ?>
+                <?php if ($i++ % $_columnCount==0): ?>
+		        <ul class="products-grid">
+		        <?php endif ?>
+		            <li class="item<?php if(($i-1) % $_columnCount==0): ?> first<?php elseif($i % $_columnCount==0): ?> last<?php endif; ?>">
+		                <div class="clproductimage"><a class="product-image" href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->htmlEscape($this->getImageLabel($_product, 'small_image')) ?>" target="_blank"><img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(210,210); ?>" width="210" height="210" alt="<?php echo $this->htmlEscape($this->getImageLabel($_product, 'small_image')) ?>" /></a></div>            
+		                <h3 class="product-name"><a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->htmlEscape($_product->getName()) ?>" target="_blank"><?php echo $this->htmlEscape($_product->getName()) ?></a>
+		                	<span>
+		                		<div class="price-box">
+		                			<div class="special-price"><?php echo $this->getPriceHtml($_product) ?></div>
+		                		</div>
+		                	</span>
+		                </h3>
+		                <?php if($_product->getRatingSummary()): ?>
+		                <?php echo $this->getReviewsSummaryHtml($_product, 'short') ?>
+		                <?php endif; ?>
+		                
+		                <!--<div class="actions">
+		                    <?php if($_product->isSaleable()): ?>
+		                        <button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="button btn-cart" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button>
+		                    <?php else: ?>
+		                        <p class="availability out-of-stock"><span><?php echo $this->__('Out of stock') ?></span></p>
+		                    <?php endif; ?>
+		                </div>-->
+		            </li>
+		        <?php if ($i % $_columnCount==0 || $i==$_collectionSize): ?>
+		        </ul>
+		        <?php endif ?>
+
+            <?php endforeach; ?>
+
+        <?php else: ?>
+            <ol id="bestseller-sidebar" class="mini-products-list">
+                <li class="item odd">
+                    <?php echo Mage::getStoreConfig('homepage/options/noproduct') ?>
+                </li>
+            </ol>
+        <?php endif; ?>
+</div>

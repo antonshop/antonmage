@@ -1,0 +1,11 @@
+#ajaxcustomblock {display: block;position: absolute;top: 10%;left: 25%;width: 250px;z-index: 1129;padding: 5%;border-radius: 8px;background: #E2E9EB;border: 3px solid #3B4853;}
+.col-main {position: relative;}
+#ajaxcustomblock .productname {text-align: center;padding-left: 1px;font-weight: bold;}
+#ajaxcustomblock dt { float:left;}
+#ajaxcustomblock .price-box {text-align: center;}
+#ajaxcustomblock .input-box {text-align: center;margin: 10px;}
+#ajaxcustomblock label {padding-right: 8px;}
+#ajaxcustomblock label em {float:right;}
+#popup-block {    display: block;position: absolute;top: 10%;left: 25%;width: 250px;z-index: 1129;padding: 5%;border-radius: 8px;background: #E2E9EB;border: 3px solid #3B4853;}
+#popup-block #product-name {text-align: center;}
+#loading-box {position: absolute;top: 10%;left: 25%;width: 250px;background: #fff;height:19px;width:220px;z-index: 1129;padding: 5%;border: 1px solid #CCC;border-radius: 8px;}

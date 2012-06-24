@@ -45,7 +45,7 @@ class Appmagento_Sharesuit_Model_Sharesuit extends Mage_Core_Model_Abstract
     public function getFbLoginimg(){
     	$img = Mage::getStoreConfig('sharesuit/facebook/fb_login_img');
     	if(empty($img)) {
-            $img = Mage::getBaseUrl('skin').'frontend/default/default/images/sharesuit/login_facebook.jpg' ;
+            $img = Mage::getBaseUrl('skin').'frontend/default/default/images/sharesuit/login_facebook.png' ;
         } else {
             $img = Mage::getBaseUrl('media') . 'sharesuit/' . $img;
         }

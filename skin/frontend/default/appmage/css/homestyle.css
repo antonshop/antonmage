@@ -1,0 +1,66 @@
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     default_default
+ * @copyright   Copyright (c) 2011 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+
+/* Reset ================================================================================= */
+
+
+/*** slider css ***/
+#slides {position:relative;	float:left;}
+.slides_container {	width:607px;overflow:hidden;position:relative;}
+.slides_container div.slide {width:607px;height:327px;display:block;}
+.pagination {position:absolute;top:300px;right:0px;background: url("../images/paginationbg.jpg") 0 0 repeat-x;z-index:1000;height:20px;border:1px solid #B8B8B8;border-radius:5px;padding: 0 8px;}
+.pagination li {float:left;margin:0 1px;list-style:none;}
+.pagination li a {display: block;padding: 23px 0 0 5px;float: left;overflow: hidden;text-decoration: none;position: relative;margin: -21px 2px 0 0;width: 16px;height: 31px;color:#5B5B5B;font-size: 12px;}
+.pagination li.current a {background: url("../images/listimg.png")  no-repeat;background-position:100% 50%;padding: 20px 0 0 6px;width: 16px;height: 31px;color:#fff;}
+.prod_price{float:right;padding-bottom:12px;font-size:15px;color:#6E7871;font-weight:bold;}
+.slides_container .clsbuynowbtn{float:right;margin-bottom:17px;}
+.banner_content{float:right;width:225px;margin-top:55px;}
+.banner_content .p_name{font-size: 24px;color: #916D47;min-height:50px;margin-bottom:20px;line-height:25px;}
+.banner_content .p_des{min-height:90px;text-align:right;line-height:20px;}
+/*.clsbannerimg{float:left;width:380px;}*/
+
+#clscustomblock{float:right;width:310px;background: url("../images/bannerborder.jpg") top left repeat-y;padding-left:18px;}
+#clscustomblock .block-subscribe .block-title strong{display:block;margin:13px 0 0 0 ;border:none;background:none;padding-left:0px;color:#8B0000;font-size:18px;padding-bottom:25px;font-family: Georgia;text-transform: capitalize;font-weight: normal;}
+#clscustomblock .block .block-title {background:none;border:none;padding:0px;}
+#clscustomblock .block{border:none;margin:0 0 15px 0}
+#clscustomblock .block-subscribe .block-content {padding: 0px;background:none;}
+#clscustomblock .block-subscribe input.input-text {display: block;height:auto !important;line-height:normal;float:left;color:#680000;background:url("../images/newsinbox.jpg") 0 0 no-repeat;width:225px;padding:9px 5px;border:none;font-size: 12px;}
+#clscustomblock .block-subscribe .actions button.button span span{background:url("../images/gobtn.jpg") 0 0 no-repeat;display:block;border:none;width:51px;height:30px;text-indent:-999em;}
+#clscustomblock .block-subscribe .actions button.button{width:60px !important;height:auto !important;}
+#clscustomblock .block-subscribe .actions button.button span{border:none;background:none;height:30px;}
+#clscustomblock .block-subscribe label {font-weight: normal;color: #4D4A3F;font-size: 12px;display:block;padding-bottom:18px;}
+
+/*** Footer Content Css  ***/
+.footercontent {margin:25px 0 0 0;}
+.footercontent ul li{float:left;width:315px;background: url("../images/bannerborder.jpg") top right repeat-y;margin-right:10px;}
+.footercontent ul li:last-child{background:none;margin:0px;}
+.footerleftcontent{float:left;width:145px;}
+.footerrightcontent{float:right}
+.footerleftcontent h5{color:#63071D;font-size:18px;font-family:Georgia;text-transform: uppercase;font-weight: normal;}
+.footerleftcontent h6{color:#63071D;font-size:16px;font-family:Georgia;text-transform: capitalize;font-weight: normal;margin-top:3px;}
+.footerleftcontent p{text-align: center;}
+
+
+
