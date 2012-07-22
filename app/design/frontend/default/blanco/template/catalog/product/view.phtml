@@ -1,0 +1,202 @@
+<?php $_helper = $this->helper('catalog/output'); ?>
+<?php $_product = $this->getProduct(); ?>
+<script type="text/javascript">
+    var optionsPrice = new Product.OptionsPrice(<?php echo $this->getJsonConfig() ?>);
+</script>
+<a class="back-to" href="javascript: history.go(-1)"><?php echo $this->__('Return to Previous Page') ?></a>
+        
+<div id="messages_product_view"><?php echo $this->getMessagesBlock()->getGroupedHtml() ?></div>
+<div class="product-view">
+    <div class="product-essential">
+    <form action="<?php echo $this->getSubmitUrl($_product) ?>" method="post" id="product_addtocart_form"<?php if($_product->getOptions()): ?> enctype="multipart/form-data"<?php endif; ?>>
+        <div class="no-display">
+            <input type="hidden" name="product" value="<?php echo $_product->getId() ?>" />
+            <input type="hidden" name="related_product" id="related-products-field" value="" />
+        </div>
+        <div id="addedoverlay" style='display:none'> </div>
+        <div id='added' style='display:none'></div>
+        <div id='productname' style='display:none'><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></div>
+
+        <div class="product-img-box">
+            <?php echo $this->getChildHtml('media') ?>
+        </div>
+        
+        <div class="product-shop">
+            <div class="white-back">
+                <div class="product-name">
+                    <h2><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></h2>
+                </div>
+                
+                <?php echo $this->getReviewsSummaryHtml($_product, false, true)?>
+                <?php echo $this->getChildHtml('alert_urls') ?>
+                <?php echo $this->getChildHtml('extrahint') ?>
+                <?php if($_product->getTypeId() != 'bundle'): ?>
+                    <?php echo $this->getPriceHtml($_product) ?>
+                <?php else: ?>
+                    <?php echo $this->__('Product code:').'<strong>'.$_product->getId().'</strong>'; ?>
+                    <?php echo $this->getChildHtml('product_type_data') ?>
+                <?php endif;?>
+                
+                <div class="addtocont">
+                    <?php if($_product->getTypeId() != 'bundle'): ?>
+                        <span class="product-code"><?php echo $this->__('Product code:').' <strong>'.$_product->getId().'</strong>'; ?></span>
+                        <?php echo $this->getChildHtml('product_type_data') ?>
+                    <?php endif;?>
+                    <?php //echo $this->getLayout()->createBlock('cms/block')->setBlockId('productview')->toHtml(); ?>
+                </div>
+                <div class="clear"></div>
+                <?php echo $this->getTierPriceHtml() ?>
+                <?php if ($_product->getShortDescription()):?>
+                    <div class="short-description">
+                        <p><?php echo $this->__('Quick Overview:') ?></p>
+                        <div class="std"><?php echo $_helper->productAttribute($_product, nl2br($_product->getShortDescription()), 'short_description') ?></div>
+                    </div>
+                <?php endif;?>
+                <?php if ($_product->isSaleable() && $this->hasOptions()):?>
+                    <div id="container1"><?php echo $this->getChildChildHtml('container1', '', true, true) ?><div class="clear"></div></div>
+                <?php endif;?>   
+                
+                <?php echo $this->getChildHtml('product_type_data_grouped') ?>
+                <?php if (!$this->hasOptions()):?>
+                    <div class="add-to-box">
+                        <?php if($_product->isSaleable()): ?>
+                            <?php echo $this->getChildHtml('addtocart') ?>
+                            <?php if( $this->helper('wishlist')->isAllow() || $_compareUrl=$this->helper('catalog/product_compare')->getAddUrl($_product)): ?>
+                                <span class="or"><?php echo $this->__('OR') ?></span>
+                            <?php endif; ?>
+                        <?php endif; ?>
+                        <?php echo $this->getChildHtml('addto') ?>
+                    </div>
+                <?php endif; ?>   
+                
+                <?php echo $this->getChildHtml('other');?>
+            </div>
+            <div class="product_right">
+                <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('productview')->toHtml(); ?>
+                <?php $use_share = themeOptions('use_share'); ?>
+                <?php $share_code = themeOptions('share_code'); ?>
+                <?php if($use_share && $share_code): ?>  
+                    <?php echo $share_code; ?>
+                <?php endif; ?>
+            </div>
+        </div>
+
+
+        <div class="clearer"></div>
+        <?php if ($_product->isSaleable() && $this->hasOptions()):?>
+            <div id="container2"><?php echo $this->getChildChildHtml('container2', '', true, true) ?></div>
+        <?php endif;?>
+    </form>
+    <script type="text/javascript">
+    //<![CDATA[
+        var productAddToCartForm = new VarienForm('product_addtocart_form');
+    	productAddToCartForm.submit = function(button, url) {
+		if (this.validator.validate()) {
+			var form = this.form;
+			var oldUrl = form.action;
+			if (url) {
+				form.action = url;
+			}
+			var e = null;
+            var msgHtml;
+            var productImg = jQuery('.main-thumbnail').html();
+            var windowOver = jQuery('#addedoverlay');
+            var windowBox = jQuery('#added');
+            var titleForBox = jQuery('#productname').text();
+			if (!url) {
+				url = jQuery('#product_addtocart_form').attr('action');
+			}
+			url = url.replace("checkout/cart","ajax/index");
+			var data = jQuery('#product_addtocart_form').serialize();
+			data += '&isAjax=1';
+            windowOver.show();
+			windowBox.show().css({
+			 backgroundImage: "url('<?php echo $this->getSkinUrl('images/loading.gif')?>')"
+			});
+			try {
+				jQuery.ajax( {
+					url : url,
+					dataType : 'json',
+					type : 'post',
+					data : data,
+                    error : function(data) {
+  			            windowBox.css({
+               			      backgroundImage: 'none'
+	                    }).html('<?php echo $this->__('Error') ?>');					   
+                        windowOver.one('click',function(){
+				            hidewindow(windowBox,windowOver);                    
+                        });	       
+                                         
+                        jQuery('#hidewindow').click(function(){
+				            hidewindow(windowBox,windowOver);                    
+                        });	
+                    },
+					success : function(data) {
+					   
+                        if(data.status == 'SUCCESS'){
+                            if(jQuery('.block-cart')){
+                                jQuery('.block-cart').replaceWith(data.sidebar);
+                            }
+                            if(jQuery('.header .block-cart-header')){
+                                jQuery('.header .block-cart-header').replaceWith(data.topcart);
+                            }     
+                            msgHtml = '<div class="added-content"><div style="float:left;">' + productImg + '</div><em>' + titleForBox + '</em> <?php echo $this->__('was successfully added to your shopping cart.') ?><div style="clear:both;"></div><a id="hidewindow" href="javascript:void(0);"><?php echo $this->__('Continue shopping') ?></a>&nbsp;<a href="<?php echo $this->getUrl('checkout/cart')?>"><?php echo $this->__('View cart & checkout') ?></a></div>';             
+                        }else{
+                            msgHtml = '<div class="added-content"><p class="error-msg" style="margin-bottom:15px;">' + data.message + '</p><a id="hidewindow" href="javascript:void(0);"><?php echo $this->__('Continue shopping') ?></a>&nbsp;<a href="<?php echo $this->getUrl('checkout/cart')?>"><?php echo $this->__('View cart & checkout') ?></a></div>';
+                        }					   
+                       
+  			            windowBox.css({
+               			      backgroundImage: 'none'
+	                    }).html(msgHtml);					   
+                        windowOver.one('click',function(){
+				            hidewindow(windowBox,windowOver);                    
+                        });	       
+                                         
+                        jQuery('#hidewindow').click(function(){
+				            hidewindow(windowBox,windowOver);                    
+                        });	      
+                        
+         
+
+					}
+				});
+			} catch (e) {
+			}
+			this.form.action = oldUrl;
+			if (e) {
+				throw e;
+			}
+		}
+	}.bind(productAddToCartForm);
+    productAddToCartForm.submitLight = function(button, url){
+            if(this.validator) {
+                var nv = Validation.methods;
+                delete Validation.methods['required-entry'];
+                delete Validation.methods['validate-one-required'];
+                delete Validation.methods['validate-one-required-by-name'];
+                if (this.validator.validate()) {
+                    if (url) {
+                        this.form.action = url;
+                    }
+                    this.form.submit();
+                }
+                Object.extend(Validation.methods, nv);
+            }
+        }.bind(productAddToCartForm);
+        
+        function hidewindow(windowBox,windowOver){
+            windowOver.fadeOut(400);
+            windowBox.fadeOut(400).html('');	
+        }
+
+    //]]>
+    </script>
+    </div>
+
+    <div class="product-collateral">
+        <?php echo $this->getChildHtml('info_tabs') ?>
+        <?php echo $this->getChildHtml('product_additional_data') ?>
+    </div>
+        <?php echo $this->getChildHtml('related_products') ?>
+        <?php echo $this->getChildHtml('upsell_products') ?>
+</div>

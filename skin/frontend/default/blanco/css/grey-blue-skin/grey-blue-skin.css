@@ -1,0 +1,103 @@
+/******************************************************\
+*
+*  Grey-Blue skin
+*
+*    1. Arrows(direction) navigation
+*    2. Paging navigation
+*
+\******************************************************/
+
+
+
+/******************************************************\
+*
+*  1. Arrows (direction) navigation
+*
+\******************************************************/
+
+
+.touchcarousel.grey-blue .arrow-holder.right {
+    position: absolute;
+    top: 135px;
+    right: -16px;
+    width: 56px;
+    height: 70px;
+    cursor: pointer;
+    background: transparent url(../../images/next-horizontal.png) no-repeat 0 0;
+}
+
+.touchcarousel.grey-blue .arrow-holder.right:hover,
+.touchcarousel.grey-blue .arrow-holder.right:focus {
+    background-position: -56px 0;
+}
+
+.touchcarousel.grey-blue .arrow-holder.right:active {
+    background-position: -112px 0;
+}
+
+.touchcarousel.grey-blue .arrow-holder.disabled,
+.touchcarousel.grey-blue .arrow-holder.disabled:hover,
+.touchcarousel.grey-blue .arrow-holder.disabled:focus,
+.touchcarousel.grey-blue .arrow-holder.disabled:active {
+    cursor: default;
+    display: none;
+}
+
+.touchcarousel.grey-blue .arrow-holder.left {
+    position: absolute;
+    top: 135px;
+    left: -16px;
+    width: 56px;
+    height: 70px;
+    cursor: pointer;
+    background: transparent url(../../images/prev-horizontal.png) no-repeat 0 0;
+}
+
+
+.touchcarousel.grey-blue .arrow-holder.left:hover, 
+.touchcarousel.grey-blue .arrow-holder.left:focus {
+    background-position: -56px 0;
+}
+
+.touchcarousel.grey-blue .arrow-holder.left:active {
+    background-position: -112px 0;
+}
+
+.touchcarousel.grey-blue .arrow-holder.disabled,
+.touchcarousel.grey-blue .arrow-holder.disabled:hover,
+.touchcarousel.grey-blue .arrow-holder.disabled:focus,
+.touchcarousel.grey-blue .arrow-holder.disabled:active {
+    cursor: default;
+    display: none;
+}
+
+
+/******************************************************\
+*
+*  2. Paging navigation
+*
+\******************************************************/
+
+.touchcarousel.grey-blue .tc-paging-item {
+	background: url('sprite.png') no-repeat -95px -4px;
+	
+	width: 16px;
+	height: 16px;	
+	
+	-moz-opacity: 0.8;	
+	-webkit-opacity: 0.8;	
+	opacity: 0.8;	
+}
+.touchcarousel.grey-blue .tc-paging-item.current {	
+	background: url('sprite.png') no-repeat -95px -22px;
+}
+.touchcarousel.grey-blue .tc-paging-item:hover {		
+	-moz-opacity: 1;	
+	-webkit-opacity: 1;	
+	opacity: 1;		
+}
+
+
+
+
+

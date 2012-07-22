@@ -29,6 +29,7 @@ class Appmagento_Sharesuit_CustomerController extends Mage_Core_Controller_Front
 					FROM `" . $tablePrefix . "sharesuit_customer`
 					WHERE `user` = '" . $me['id'] . "'
 					LIMIT 1";
+            
             $data = $db_read->fetchRow($sql);
 
             if ($data) {
@@ -40,6 +41,7 @@ class Appmagento_Sharesuit_CustomerController extends Mage_Core_Controller_Front
 						LIMIT 1';
             	
             	$cus = $db_read->fetchRow($sql);
+            	
             	if($cus){
             		$db_write = Mage::getSingleton('core/resource')->getConnection('write');
             		$sql = 'INSERT INTO `' . $tablePrefix . 'sharesuit_customer` 
@@ -49,11 +51,13 @@ class Appmagento_Sharesuit_CustomerController extends Mage_Core_Controller_Front
             		$db_write->query($sql); 
             		$session->loginById($cus['customer_id']);
             	} else {
+            		
             		$this->_registerCustomer($me, $session, $type);
             	}
             }
             $this->_loginPostRedirect($session);
         }
+        $this->_redirect();
     }
     
     public function FblogoutAction()
@@ -102,7 +106,6 @@ class Appmagento_Sharesuit_CustomerController extends Mage_Core_Controller_Front
     }
     
     public function twloginAction(){
-    	print_r($_SESSION);
     	if(isset($_SESSION['oauth_twitter_httpcode']) && $_SESSION['oauth_twitter_httpcode']==200 && $_SESSION['oauth_twitter_content']){
     		$data = array(
     			'id' => '',
@@ -157,6 +160,7 @@ class Appmagento_Sharesuit_CustomerController extends Mage_Core_Controller_Front
         		(`customer_id`, `user`, `email`, `status`, `type`) 
 				VALUES (' . $customer_id . ', \'' . $data['id'] . '\', \''. $data['email'] .'\' ,1, '. $type .')';
         $db_write->query($sql);
+        $this->_redirect();
     }
 
     private function _loginPostRedirect(&$session)
