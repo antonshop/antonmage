@@ -1,0 +1,76 @@
+<?php if ($this->getIsNeedToDisplaySideBar()):?>
+<div class="block block-cart-header">
+    <?php $_cartQty = $this->getSummaryCount(); ?>
+    <div class="summary">
+            <table width="100%">
+                <tbody><tr>
+                    <td>
+                         <a href="<?php echo $this->getUrl('checkout/cart')?>"><?php echo $this->__('Shopping Cart')?></a><?php if($_cartQty > 0): ?> (<?php echo $_cartQty ?> <?php echo ($_cartQty == 1) ? $this->__('item') : $this->__('items'); ?>)<?php endif; ?>
+			        - <?php if ($this->canApplyMsrp()): ?>
+			            <span class="map-cart-sidebar-total"><?php echo $this->__('ORDER TOTAL WILL BE DISPLAYED BEFORE YOU SUBMIT THE ORDER'); ?></span>
+			        <?php else: ?>
+			            <?php echo Mage::helper('checkout')->formatPrice($this->getSubtotal()) ?>
+			            <?php if ($_subtotalInclTax = $this->getSubtotalInclTax()): ?>
+			                <?php echo Mage::helper('checkout')->formatPrice($_subtotalInclTax) ?> <?php echo Mage::helper('tax')->getIncExcText(true) ?>
+			            <?php endif; ?>
+			        <?php endif; ?>                                              
+                    </td>
+                    <td class="show-btn-td">      
+                        <span class="button-show"><a href="<?php echo $this->getUrl('checkout/cart')?>">Cart</a></span>
+                    </td>
+                </tr>
+            </tbody></table>
+        </div>
+
+
+    <?php if($_cartQty && $this->isPossibleOnepageCheckout()): ?>
+    <div class="actions">
+        <?php echo $this->getChildHtml('extra_actions') ?>
+        <button type="button" title="<?php echo $this->__('Checkout') ?>" class="button" onclick="setLocation('<?php echo $this->getCheckoutUrl() ?>')"><span><span><?php echo $this->__('Checkout') ?></span></span></button>
+    </div>
+    <?php endif ?>
+    <?php $_items = $this->getRecentItems() ?>
+    <?php if(count($_items)): ?>
+            <div id="header-items">
+          
+                <div class="block-subtitle"><span><?php echo $this->__('Recently added item(s)') ?></span> <div style="clear: both;"></div></div>
+                
+                <ol id="cart-sidebar" class="mini-products-list">
+                <?php foreach($_items as $_item): ?>
+                    <?php echo $this->getItemHtml($_item) ?>
+                <?php endforeach; ?>
+                </ol>
+                <div class="summary">
+                    <?php echo $this->__('Total:') ?> 
+                    <?php if ($this->canApplyMsrp()): ?>
+                        <span class="map-cart-sidebar-total"><?php echo $this->__('ORDER TOTAL WILL BE DISPLAYED BEFORE YOU SUBMIT THE ORDER'); ?></span>
+                    <?php else: ?>
+                        <?php echo Mage::helper('checkout')->formatPrice($this->getSubtotal()) ?>
+                        <?php if ($_subtotalInclTax = $this->getSubtotalInclTax()): ?>
+                            <?php echo Mage::helper('checkout')->formatPrice($_subtotalInclTax) ?> <?php echo Mage::helper('tax')->getIncExcText(true) ?>
+                        <?php endif; ?>
+                    <?php endif; ?> 
+                </div>                                  
+                <a class="view_all" href="<?php echo $this->getUrl('checkout/cart')?>"><?php echo $this->__('View Cart') ?></a>                                
+                <button type="button" title="<?php echo $this->__('Checkout') ?>" class="button checkout" onclick="window.location='<?php echo $this->getUrl('checkout/onepage')?>';"><span><span><?php echo $this->__('Checkout') ?></span></span></button>
+                <div class="clear"></div>                                
+            </div>
+        <script type="text/javascript">decorateList('cart-sidebar', 'none-recursive')</script>
+        
+
+    <?php else: ?>
+        <div id="header-items" class="empty">
+            <p class="empty"><?php echo $this->__('You have no items in your shopping cart.') ?></p>
+        </div>
+    <?php endif ?>
+
+</div>
+<script type="text/javascript">
+	/* Ajax Cart */
+	jQuery('.block-cart-header').hover(function() {
+		jQuery('.block-cart-header').addClass('active');
+	},function() {
+		jQuery('.block-cart-header').removeClass('active');
+	});  
+</script>
+<?php endif;?>

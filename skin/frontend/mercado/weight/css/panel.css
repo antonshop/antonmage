@@ -1,0 +1,125 @@
+.etheme_cp{
+    position: fixed;
+    left:0;
+    top:38px;
+    z-index: 1000;
+    width: 126px;
+    border:3px solid;
+    border-left:0;
+    padding:15px;
+    background: #fff;
+}
+
+.etheme_cp a{
+    color:#00a1db;
+}
+
+.etheme_cp p{
+    font-size:11px;
+}
+
+.etheme_cp_btn_show {
+    background: url("../images/etheme_cp_btn_show.png") no-repeat center center;
+    width:50px;
+    height:50px;
+    position: fixed;
+    left:0px;
+    top:38px; 
+    cursor:pointer;  
+    z-index:1000;
+}
+
+.etheme_cp .etheme_cp_head{
+    margin:-15px;
+}
+
+.etheme_cp .etheme_cp_head .etheme_cp_btn_close{
+    background: url("../images/etheme_remove.png") no-repeat center center;
+    width:14px;
+    height:14px;
+    float:right;
+    margin: 5px 10px 0 13px;
+    cursor:pointer;
+}
+
+.etheme_cp .etheme_cp_head h3{
+    text-transform: uppercase;
+    float:left;
+    color:white;
+    display: block;
+    padding: 3px 0 0 15px;
+    font-size:16px;
+}
+
+.etheme_cp .etheme_cp_content{
+    margin:15px 0 0 0;
+    background: #fff;
+}
+
+.etheme_cp .etheme_cp_content .etheme_cp_section {
+    width: 100%;
+}
+
+.etheme_cp .etheme_cp_content .etheme_cp_section .etheme_cp_section_header{
+    width: 100%;
+    margin-bottom:5px;
+    border-bottom: 1px solid #ddd;
+    padding:10px 0 0 0;
+}
+
+.etheme_cp .etheme_cp_content .etheme_cp_section .etheme_cp_section_header h3{
+    color:#090909;
+    float:left;
+    font-size:14px;
+}
+
+.etheme_cp .etheme_cp_content .etheme_cp_section .etheme_cp_section_header .etheme_cp_btn_clear{
+    float:right;
+    margin: 3px 5px 0;
+    cursor:pointer;
+    font-size:10px;
+}
+
+.etheme_cp .etheme_cp_content .etheme_cp_section .pattern_select {
+    width:30px;
+    height:30px;
+    float:left;
+    margin:0 15px 15px 0;
+    background-repeat: no-repeat;
+    background-position: center center;
+    border:1px solid #ddd;
+    cursor: pointer;
+}
+
+.etheme_cp .etheme_cp_content .etheme_cp_section .pattern_select.selected {
+    border-color:#090909;
+}
+
+.etheme_cp .etheme_cp_content .etheme_cp_section .pattern_select.last {
+    margin-right:0;
+}
+
+.etheme_cp .etheme_cp_content .pattern_selecting {
+    padding: 10px 0 0 0 ;
+}
+
+.etheme_cp .etheme_cp_content .pattern_selecting li {
+    display: block;
+    clear: both;
+    height:47px;
+    width:126px;
+}
+
+.etheme_cp .etheme_cp_content .color_block  {
+    margin:0 0 10px;
+}
+
+.etheme_cp .etheme_cp_content .color_block .color_block_label {
+    float:left;
+    font-size:11px;
+    padding: 9px 0;
+}
+
+.etheme_cp .etheme_cp_content .color_block #colorSelector {
+    float:right;
+}

@@ -1,0 +1,22 @@
+<div class="footer  footer1">
+	<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('footer_shipping')->toHtml(); ?>
+</div>
+<div class="footer footer2">
+    <?php echo $this->getChildHtml('bottomContainer') ?>
+    <div class="f-left">
+        <?php echo $this->getChildHtml('footer_links') ?><br />
+        <?php echo $this->getCopyright() ?>&nbsp;&nbsp;
+        <?php echo $this->getChildHtml('cms_footer_links') ?>
+    </div>
+    <div class="f-right">
+        <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('verifi')->toHtml(); ?>
+    </div>
+    <div class="right-conteiner">
+        <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('footer_time')->toHtml(); ?>
+        <?php if(themeOptions('topbtn')): ?>                    
+        	<div id="message"><a href="#top" id="top-link"><?php echo $this->__('') ?></a></div> 
+        <?php endif; ?>
+        <div style="clear: both;"></div>
+    </div>
+</div>
+
