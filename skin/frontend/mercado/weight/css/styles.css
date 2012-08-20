@@ -287,7 +287,7 @@ p.required { font-size:11px; text-align:right; color:#EB340A; }
 .breadcrumbs { margin: 11px 20px 0 30px; }
 .breadcrumbs a { font-style: italic; }
 .breadcrumbs li { display:inline; }
-.breadcrumbs li strong {  font-style: italic; color:#353535; font-weight: normal; }
+.breadcrumbs li strong {  color:#353535; font-weight: normal; }
 
 /* Page Heading */
 .page-title { width:100%; overflow:hidden; margin: 20px 0 16px; }
@@ -1756,13 +1756,13 @@ span.currency-code { background-position: bottom center; }
 .bottom-container h2 { border-bottom:1px solid #dfdfdd;}
 .bottom-container iframe {margin:-39px 0 0 0;}
 
-.footer { padding: 32px 30px; color: #828282; background-color:#F5F5F5 ; }
+.footer { padding: 32px 30px; color: #fff; background-color:#F5F5F5 ; }
 .footer1 {  }
 .footer1 h2 { font-size:22px; }
 .footer .links { text-align: left; }
 
 .footer2 { padding:10px 30px; }
-.footer a {  color: #828282; }
+.footer a {  color: #fff; }
 .footer a:hover {  color: #fff; }
 .footer h2 { border-bottom:1px solid #908d82;}
 .footer.footer1 li { padding:2px 0 2px 15px; background: url(../images/li-arr.png) no-repeat left center; margin: 0 0 0 5px;}
@@ -1773,6 +1773,8 @@ span.currency-code { background-position: bottom center; }
 .phones div.icon1 { background-image: url(../images/icon_mail.png); }
 .phones div.icon2 { background-image: url(../images/icon_mobile.png); }
 .phones div.icon3 { background-image: url(../images/icon_phone.png); }
+
+.col4-set, .col4-set a{ color:#828282;}
 /* ======================================================================================= */
 
 
@@ -1871,24 +1873,24 @@ span.currency-code { background-position: bottom center; }
     button.button span,#added a.button, .arrow-holder.right, .arrow-holder.left,.phones div ,.etheme_cp_btn_show,.back-to,#banner-rotator .tintButton,.jcarousel-next-horizontal,.jcarousel-prev-horizontal,#message a,.view-mode strong,.btn-remove,.block-progress dt,.btn-remove2,.newproduct_grid                  { background-color: #009dda;}    
     
     /* Button 1:hover */ 
-    button.button:hover span,#added a.button:hover,.back-to:hover,#message a:hover,.etheme_cp_btn_show:hover,#banner-rotator .tintButton:hover,.btn-remove2:hover, .arrow-holder.right:hover, .arrow-holder.left:hover, .arrow-holder.right:active, .arrow-holder.left:active,.jcarousel-next-horizontal:hover,.jcarousel-prev-horizontal:hover            { background-color: #68c3c4!important;}
+    button.button:hover span,#added a.button:hover,.back-to:hover,#message a:hover,.etheme_cp_btn_show:hover,#banner-rotator .tintButton:hover,.btn-remove2:hover, .arrow-holder.right:hover, .arrow-holder.left:hover, .arrow-holder.right:active, .arrow-holder.left:active,.jcarousel-next-horizontal:hover,.jcarousel-prev-horizontal:hover            { background-color: #0b6fa5!important;}
 
     /* Button 2 */    
-    #nav > li  > ul ul > li,#nav > li > ul > li ul > li ,.left-categorys-container a,.button-show,.btn-edit,.block-progress dt.complete,button.btn-checkout span,button.button.btn-cart span,.block-cart-header button.checkout span             { background-color: #68c3c4;} 
+    #nav > li  > ul ul > li,#nav > li > ul > li ul > li ,.left-categorys-container a,.button-show,.btn-edit,.block-progress dt.complete,button.btn-checkout span,button.button.btn-cart span,.block-cart-header button.checkout span             { background-color: #0b6fa5;} 
     /* Button 2:hover */
     #nav > li  > ul ul > li:hover,#nav > li > ul > li ul > li:hover ,.left-categorys-container a:hover, .lang-container.active div,.lang-container:hover div,button.btn-checkout span:hover,button.button.btn-cart:hover span,.block-cart-header button.checkout:hover span { background-color: #009dda!important;}
     
     /* Light Color */
-    .nav-container,.footer2,.header .logo img,.etheme_cp .etheme_cp_head               { background-color: #68c3c4; }
+    .nav-container,.footer2,.header .logo img,.etheme_cp .etheme_cp_head               { background-color: #0b6fa5; }
         
-    #nav .chield,.etheme_cp,.block-cart-header #header-items        { border-color: #68c3c4; }
+    #nav .chield,.etheme_cp,.block-cart-header #header-items        { border-color: #0b6fa5; }
      
     /*  */
     .fieldset .legend,
     .dashboard .box .box-title,
     .data-table thead, .data-table thead tr                          { background-color: #dfdfdf;}
         
-    #nav > li.active > a > span         { color: #68c3c4; }
+    #nav > li.active > a > span         { color: #0b6fa5; }
     
     /* Fonts */    
     h1, h2, h3, h4, h5, h6,
@@ -1903,30 +1905,30 @@ a:hover, .block-cart-header .view_all, .form-language .lang, .currency span, #na
     border-color: #00A1DC;
 }
 button.button span, #added a.button,  .arrow-holder.right,  .arrow-holder.left, .phones div, .etheme_cp_btn_show, .back-to, #banner-rotator .tintButton, .jcarousel-next-horizontal, .jcarousel-prev-horizontal, #message a, .view-mode strong, .btn-remove, .block-progress dt, .btn-remove2, .newproduct_grid {
-    background-color: #68c3c4;
+    background-color: #0b6fa5;
 }
 button.button:hover span, #added a.button:hover, .back-to:hover, #message a:hover, .etheme_cp_btn_show:hover, #banner-rotator .tintButton:hover, .btn-remove2:hover,  .arrow-holder.right:hover,  .arrow-holder.left:hover,  .arrow-holder.right:active,  .arrow-holder.left:active, .jcarousel-next-horizontal:hover, .jcarousel-prev-horizontal:hover {
-    background-color: #68c3c4 !important;
+    background-color: #0b6fa5 !important;
 }
 #nav > li > ul ul > li, #nav > li > ul > li ul > li, .left-categorys-container a, .button-show, .btn-edit, .block-progress dt.complete, button.btn-checkout span, button.button.btn-cart span, .block-cart-header button.checkout span {
-    background-color: #68c3c4;
+    background-color: #0b6fa5;
 }
 #nav > li > ul ul > li:hover, #nav > li > ul > li ul > li:hover, .left-categorys-container a:hover, .lang-container.active div, .lang-container:hover div, button.btn-checkout span:hover, button.button.btn-cart:hover span, .block-cart-header button.checkout:hover span {
     background-color: #009DDA !important;
 }
 .nav-container, .footer2, .header .logo img, .etheme_cp .etheme_cp_head {
-    background-color: #68c3c4;
+    background-color: #0b6fa5;
 }
 
 #nav .chield, .etheme_cp, .block-cart-header #header-items {
-    border-color: #68c3c4;
+    border-color: #0b6fa5;
 }
 .header .logo img{ background:none;}
 .fieldset .legend, .dashboard .box .box-title, .data-table thead, .data-table thead tr {
     background-color: #DFDFDF;
 }
 #nav > li.active > a > span {
-    color: #68c3c4;
+    color: #0b6fa5;
 }
 h1, h2, h3, h4, h5, h6, #nav > li > a > span, .product-tabs li a, .block .block-title strong {
     font-family: Ebrima,Tahoma;

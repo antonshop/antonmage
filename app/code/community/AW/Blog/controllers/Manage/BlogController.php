@@ -33,7 +33,7 @@ class AW_Blog_Manage_BlogController extends Mage_Adminhtml_Controller_Action {
     }
 
     public function indexAction() {
-    	echo 123;
+    	
         $this->_initAction()
                 ->renderLayout();
     }
