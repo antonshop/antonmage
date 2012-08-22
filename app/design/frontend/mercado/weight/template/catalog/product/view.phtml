@@ -6,13 +6,13 @@ $url = $_product->getProducturl();
 //echo $_product->getData('page_container');
 $page_container = $_product->getResource()->getAttribute('page_container')->getFrontend()->getValue($_product);
 // sucess story container
-if($page_container == 'success-story') {
+//if($page_container == 'success-story') {
 	echo 123;
 ?>
 
 
 <?php 
-} else{
+//} else{
 ?>
 <script type="text/javascript">
     var optionsPrice = new Product.OptionsPrice(<?php echo $this->getJsonConfig() ?>);
@@ -224,4 +224,4 @@ if($page_container == 'success-story') {
 
     
 </div>
-<?php }?>
+<?php //}?>
