@@ -34,7 +34,8 @@ cms => pages =>  homepage
 <div class="home-text"><img src="{{media url="wysiwyg/mercado/b1.jpg"}}" alt="" /><a class="readmore" href="#">Shop Now</a></div>
 <div class="home-text last"><img src="{{media url="wysiwyg/mercado/b2.jpg"}}" alt="" /><a class="readmore" href="#">Shop Now</a></div>
 <div class="clear">{{block type="catalog/product_new" name="home.catalog.product.new" alias="product_homepage"  template="catalog/product/new.phtml"}}</div>
-<p>{{block type="catalog/product_list" category_id="8" template="catalog/product/home.phtml"}}</p>
+<p>{{block type="catalog/product_list" category_id="3" template="catalog/product/home.phtml"}}</p>
+
 
 
 =====================================================================================================
@@ -101,6 +102,35 @@ url="wysiwyg/mercado/facebook.png"}}" alt="facebook" /></a></div>
 url="wysiwyg/mercado/rss.png"}}" alt="rss" /></a></div> 
 
 
-#0b6fa5
-#68C3C4
 
+
+main_bottom:
+<div class="main-bottom">
+<div class="bot-clumon bot-first">
+    	<div><img src="{{media url="wysiwyg/weight/home_its_easy_v2.gif"}}" /></div>
+        <div>You can continue to eat all your favorite foods and still lose weight. Just sprinkle
+SENSA®
+onto your meals and snacks to safely and effectively lose weight without feeling deprived.† It's weight-loss made simple.</div>
+    </div>
+    <div class="bot-clumon">
+    	<div><img src="{{media url="wysiwyg/weight/home_its_effective_v2.gif"}}" /></div>
+        <div>SENSA®
+was designed to work with your sense of smell to help you feel full faster and eat less. There are no pills, stimulants, drugs or special foods to buy. And
+SENSA®
+is calorie-free, sugar-free and sodium-free.
+		</div>
+    </div>
+    <div class="bot-clumon">
+    	<div><img src="{{media url="wysiwyg/weight/home_its_proven_v2.gif"}}" /></div>
+        <div>In one of the largest clinical studies ever conducted on a non-prescription weight-loss product, 1,436 men and women lost an average of 30.5 pounds in 6 months without changing their existing diet or exercise program.</div>
+    </div>
+    <div class="bot-clumon bot-last">
+    	<div><img src="{{media url="wysiwyg/weight/home_its_guaranteed_v2.gif"}}" /></div>
+        <div>We're so confident you'll lose weight with
+SENSA®
+that we give you a full 30-day satisfaction guarantee. If for any reason you're dissatisfied with
+SENSA®
+within 30-days of your purchase, simply contact us for your full money back (less shipping and handling).</div>
+</div>
+</div>
+<div style="clear: both;"></div>

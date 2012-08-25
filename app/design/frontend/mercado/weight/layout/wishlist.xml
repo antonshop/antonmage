@@ -34,10 +34,10 @@ Default layout, loads most of the pages
 
     <default>
 
-        <reference name="top.links">
+        <!--<reference name="top.links">
             <block type="wishlist/links" name="wishlist_link"/>
             <action method="addLinkBlock"><blockName>wishlist_link</blockName></action>
-        </reference>
+        </reference>-->
 
         <!-- Mage_Wishlist -->
         <reference name="left">
