@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+</head>
+<body>
+
+
+<form name="bmi_input" action="" method="post">
+Gender<input type="radio" checked="checked" value="1" >
+<label>Male</label>   
+<input type="radio" value="1" >
+<label>Female</label><br />
+Age <input type="text" style="width: 60px;" maxlength="2" name"age"><br />
+Height <input tabindex="1" type="text" name="htf" id="htf" size="4">&nbsp;feet&nbsp;&nbsp;<input tabindex="2" type="text" name="hti" id="hti" size="4"> inches<br />
+Weight <input tabindex="3" id="wt" type="text" name="wt" size="4">&nbsp;pounds&nbsp;&nbsp;<br />
+
+<button onclick="calcuhealthy();" type="button">Calculate my healthy weight</button>
+</form>
+<div id="bmi_r" style="display:none;">
+
+</div>
+</div>
+<script type="text/javascript">
+
+ms001="Please enter your height and weight.";ms002="Error in height.";ms003="Error in weight.";ms004="Your weight is in the normal range.";ms018="You are underweight by ";ms019=" kilograms (";ms020=" pounds).";ms026="You are overweight by ";ms027=" kilograms (";ms028=" pounds)";function calcuhealthy(){w=document.getElementById('wt').value;v=document.getElementById('htf').value;u=document.getElementById('hti').value;var w1=w/2.2;var ii=parseFloat(u);var fi=parseFloat(v*12);var i=fi+ii;i=i*2.54;bm=cal_bmikg(w1,i);document.getElementById('bmi_r').style.display='block';document.getElementById('bmi_r').innerHTML=bmitxt(bm);}
+function bmitxt(bm){var txt1="You are in an unhealthy range. Your Body Mass Index, or BMI, is in the 'underweight' category. Based on your results, we recommend that you contact your physician to develop a plan to help you achieve a 'healthy weight' range.";var txt2="You are in an healthy range.Congrats! Your Body Mass Index, or BMI, is in the 'healthy weight' category.";var txt3="You are in an unhealthy range.Your Body Mass Index, or BMI, is above your 'healthy' range of 18.5-25. Currently, your BMI is in the 'overweight' category. By losing weight, you will increase your confidence and energy and reduce your risk of diabetes and heart disease. With Pallas weight-loss tea, you will get the tools and support you need to lose weight, and keep it off.";var txt4="Your Body Mass Index, or BMI, is above your 'healthy' range of 18.5-25. Currently, your BMI is in the 'obese' category. By losing weight, you will increase your confidence and energy and reduce your risk of diabetes and heart disease. With Pallas weight-loss tea, you will get the tools and support you need to lose weight, and keep it off.";var txt5="Your Body Mass Index, or BMI, is above your 'healthy' range of 18.5-25. Currently, your BMI is in the 'obese' category. By losing weight, you will increase your confidence and energy and reduce your risk of diabetes and heart disease. Pallas weight-loss tea, you will get the tools and support you need to lose weight, and keep it off.";if(bm<18.5){var txt=txt1;}else if(bm>=18.5&&bm<=25){var txt=txt2;}else if(bm>25&&bm<=30){var txt=txt3;}else if(bm>30&&bm<=40){var txt=txt4;}else if(bm>40){var txt=txt5;}
+return txt;}
+function rounder(x){var x1;x=x+0.05;f_bmi=Math.floor(x);diff=Math.floor((x-f_bmi)*10);x1=f_bmi+"."+diff;return(x1);}
+function cal_bmikg(kg,htc){var i,i1,minbm,maxbm;var f=document.forms[0];if(htc<100||htc>250){alert(ms002);return 0;}
+if(kg<25||kg>250){alert(ms003);return 0;}
+m=htc/100;h2=m*m;bmi=kg/h2;bmix=rounder(bmi);minbm=18.5;maxbm=24.9;return bmix;}
+</script>
+</body>
+</html>

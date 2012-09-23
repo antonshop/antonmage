@@ -12,7 +12,7 @@
         <ul class="products-grid">
         <?php endif ?>
             <li class="item<?php if(($i-1)%$_columnCount==0): ?> first<?php elseif($i%$_columnCount==0 || $i==$_collectionSize): ?> last<?php endif; ?>">
-                <div class="homeinfo-img"><a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" class="product-image"><img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(120); ?>" width="120" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" /></a></div>
+                <div class="homeinfo-img"><a href="<?php echo $this->getUrl('success-story')."#".$_product->getSku(); ?>" title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" class="product-image"><img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(120); ?>" width="120" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" /></a></div>
                 <div class="homeinfo-txt">
                     <h2 class="product-name"><b><?php echo $this->htmlEscape($_product->getName()) ?></b></h2>
                     <?php echo $this->htmlEscape($_product->getShortDescription()) ?>
