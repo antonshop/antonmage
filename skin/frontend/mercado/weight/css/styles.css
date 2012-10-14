@@ -1975,7 +1975,15 @@ h1, h2, h3, h4, h5, h6, #nav > li > a > span, .product-tabs li a, .block .block-
 .home_calculate{ width:669px; float:left; margin-left:-20px;}
 .home_day{ width:302px; float:right; margin-right:-20px;}
 
-
+.success-story{ background:url(../images/icon_success_stories.jpg) no-repeat; padding-left:70px; height:156px; border:1px #ddd solid;}
+.success-story{  }
+.success-story ul li{ float:left; width:300px; margin-bottom:12px;}
+.story_img{ float:left; width:107px; padding-top:12px;}
+.story_txt{ float:left; width:193px;padding-top:12px; text-align:left; color:#444;}
+.story_txt_top{ text-align:center;}
+.story_txt_title1{ font-weight:bold; color:#FF6C00; text-align:center;}
+.story_txt_title2{ font-weight:bold; color:#669A38;text-align:center;}
+.story_txt_title3{ font-weight:bold; color:#3A93EF;text-align:center;}
 
 
 

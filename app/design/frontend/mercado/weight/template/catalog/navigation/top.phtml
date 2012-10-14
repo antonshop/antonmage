@@ -8,14 +8,14 @@
 ?>
 <?php $_menu = $this->renderCategoriesMenuHtml(0,'level-top') ?>
 <div class="nav-container">
-    <ul id="nav">
-        <li class="level0 first homelink"><a href="<?php echo $this->getBaseUrl(); ?>"><span><?php echo $this->__('Home') ?></span></a></li>
-        <li class="level0 first homelink"><a href="<?php echo $this->getUrl('how-it-work'); ?>"><span><?php echo $this->__('How it work') ?></span></a></li>
-        <li class="level0 first homelink"><a href="<?php echo $this->getUrl('certified'); ?>"><span><?php echo $this->__('Certified') ?></span></a></li>
-        <li class="level0 first homelink"><a href="<?php echo $this->getUrl('success-story'); ?>"><span><?php echo $this->__('Success story') ?></span></a></li>
-        <li class="level0 first homelink"><a href="<?php echo $this->getUrl('press-release'); ?>"><span><?php echo $this->__('Press release') ?></span></a></li>
-        <li class="level0 first homelink"><a href="<?php echo $this->getUrl('how-to-use'); ?>"><span><?php echo $this->__('How to use') ?></span></a></li>
-        <li class="level0 first homelink"><a href="<?php echo $this->getUrl("weightcate.html"); ?>"><span><?php echo $this->__('Shop') ?></span></a></li>
+    <ul id="">
+        <li><a href="<?php echo $this->getBaseUrl(); ?>"><img src="<?php echo $this->getSkinUrl('images/nav_home.gif'); ?>" /></a></li>
+        <li><a href="<?php echo $this->getUrl('how-it-work'); ?>"><img src="<?php echo $this->getSkinUrl('images/nav_howitworks.jpg'); ?>" /></a></li>
+        <li><a href="<?php echo $this->getUrl('certified'); ?>"><img src="<?php echo $this->getSkinUrl('images/nav_successstory.jpg'); ?>" /></a></li>
+        <li><a href="<?php echo $this->getUrl('success-story'); ?>"><img src="<?php echo $this->getSkinUrl('images/nav_suggesteduse.jpg'); ?>" /></a></li>
+        <li><a href="<?php echo $this->getUrl('press-release'); ?>"><img src="<?php echo $this->getSkinUrl('images/nav_teabenefits.jpg'); ?>" /></a></li>
+        <li><a href="<?php echo $this->getUrl('how-to-use'); ?>"><img src="<?php echo $this->getSkinUrl('images/nav_shop.jpg'); ?>" /></a></li>
+        <li><a href="<?php echo $this->getUrl("weightcate.html"); ?>"><img src="<?php echo $this->getSkinUrl('images/nav_about.gif'); ?>" /></a></li>
         <?php //if($_menu): ?>
             <?php //echo $_menu ?>
         <?php //endif ?>
