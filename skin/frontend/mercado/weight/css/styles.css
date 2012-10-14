@@ -66,11 +66,8 @@ ul,ol         { list-style:none; }
 
 
 /* Layout ================================================================================ */
-.wrapper { }
-.page { width:1000px; background: white; margin:30px auto; text-align:left; 
--webkit-box-shadow: 0px 0px 10px #aaa;
--moz-box-shadow:    0px 0px 10px #aaa;
-box-shadow:         0px 0px 10px #aaa;}
+.wrapper { background:url(../images/body_bg_page.jpg) no-repeat white; margin:0px auto; }
+.page { width:1000px; background:url(../images/header_bg.jpg) no-repeat white; margin:0px auto; text-align:left; }
 .page-print { background:#fff; padding:25px 30px; text-align:left; }
 .page-empty { background:#fff; padding:20px; text-align:left; }
 .page-popup { background:#fff; padding:25px 30px; text-align:left; }
@@ -119,7 +116,8 @@ box-shadow:         0px 0px 10px #aaa;}
 
 /* ======================================================================================= */
 
-
+.nav-container ul{ padding-left:10px;}
+.nav-container ul li{ float:left;}
 
 /* Global Styles ========================================================================= */
 /* Form Elements */
@@ -467,7 +465,7 @@ tr.summary-details-excluded { font-style:italic; }
 
 /* Header ================================================================================ */
 .logo { float:left; }
-.header-container { margin: 0 0 10px; }
+.header-container { margin: 0px; }
 
 .header { padding:0 0 15px 0; }
 .header .header-top { padding:10px 30px; clear:both; }
@@ -531,7 +529,6 @@ span.currency-code { background-position: bottom center; }
 .left-categorys-container .currentcat {  margin:3px 5px; padding:10px 3px;  font-size: 16px;}
 
 /********** < Navigation */
-.nav-container { padding:5px 25px 5px 46px;font-size:13px; font-weight:bold; }
 /* 0 Level */
 #nav > li { float:left; margin: 0 5px 0 0; padding: 5px 20px 5px;
 }
@@ -1918,9 +1915,9 @@ button.button:hover span, #added a.button:hover, .back-to:hover, #message a:hove
 #nav > li > ul ul > li:hover, #nav > li > ul > li ul > li:hover, .left-categorys-container a:hover, .lang-container.active div, .lang-container:hover div, button.btn-checkout span:hover, button.button.btn-cart:hover span, .block-cart-header button.checkout:hover span {
     background-color: #009DDA !important;
 }
-.nav-container, .footer2, .header .logo img, .etheme_cp .etheme_cp_head {
+/*.nav-container, .footer2, .header .logo img, .etheme_cp .etheme_cp_head {
     background-color: #7d4399;
-}
+}*/
 
 #nav .chield, .etheme_cp, .block-cart-header #header-items {
     border-color: #7d4399;
@@ -1975,7 +1972,8 @@ h1, h2, h3, h4, h5, h6, #nav > li > a > span, .product-tabs li a, .block .block-
 .main-bottom .bot-last{ border:none; padding-right:10px;}
 .homeinfo-img{ float:left; width:120px;}
 .homeinfo-txt{ float:right; width:170px;}
-
+.home_calculate{ width:669px; float:left; margin-left:-20px;}
+.home_day{ width:302px; float:right; margin-right:-20px;}
 
 
 
