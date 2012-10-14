@@ -63,6 +63,17 @@ footer_shipping:
 </div>
 
 
+verifi:
+<div style="padding-top: 2px;"><img src="{{media url="wysiwyg/mercado/paypal.png"}}" alt="paypal" />&nbsp;&nbsp; &nbsp;<img src="{{media url="wysiwyg/mercado/discover.png"}}" alt="discover" />&nbsp; &nbsp;&nbsp;<img src="{{media url="wysiwyg/mercado/visa_straight.png"}}" alt="visa_straight" />&nbsp; &nbsp;&nbsp;<img src="{{media url="wysiwyg/mercado/aex.png"}}" alt="aex" />&nbsp; &nbsp;&nbsp;<img src="{{media url="wysiwyg/mercado/mastercard.png"}}" alt="mastercard" />&nbsp;&nbsp; &nbsp;<img src="{{media url="wysiwyg/mercado/maestro.png"}}" alt="maestro" /></div>
+
+follow_us:
+<div class="twitter"><a href="http://twitter.com"><img style="float: left; margin-bottom: 5px; margin-top: 5px;" src="{{media 
+url="wysiwyg/mercado/twitter.png"}}" alt="twitter" /></a></div> 
+<div class="rss"><a href="http://www.facebook.com"><img style="float: left; margin-left: 15px; margin-bottom: 5px; margin-top: 5px;" src="{{media 
+url="wysiwyg/mercado/facebook.png"}}" alt="facebook" /></a></div> 
+<div class="facebook"><a href=" http://feedburner.com"><img style="float: left; margin-left: 15px; margin-bottom: 5px; margin-top: 5px;" src="{{media 
+url="wysiwyg/mercado/rss.png"}}" alt="rss" /></a></div> 
+
 
 
 
