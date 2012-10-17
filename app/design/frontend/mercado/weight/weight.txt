@@ -1,98 +1,116 @@
 cms => pages =>  homepage
 <div id="banner-rotator" class="royalSlider default">
 <ul class="royalSlidesContainer">
-<li class="royalSlide"> <img class="royalImage" src="{{media url="wysiwyg/weight/slid.jpg"}}" alt="" /> </li>
+<li class="royalSlide"> <a><img class="royalImage" src="{{media url="wysiwyg/weight/banner_bg.jpg"}}" alt="" /></a> </li>
 </ul>
 </div>
-<p>{{block type="catalog/product_list" category_id="3" template="catalog/product/home.phtml"}}</p>
-
-
-success story
-<p>{{block type="catalog/product_list" category_id="3" template="catalog/product/success-story.phtml"}}</p>
+<div class="home_calculate"><a href="#"><img src="{{media url="wysiwyg/weight/home_calculate.jpg"}}" alt="" /></a></div>
+<div class="home_day"><a href="#"><img src="{{media url="wysiwyg/weight/home_45day.jpg"}}" alt="" /></a></div>
+<div class="clear">{{block type="catalog/product_new" name="home.catalog.product.new" alias="product_homepage"  template="catalog/product/new.phtml"}}</div>
+<div class="main_bot">
+<div class="success-story">
+<ul>
+<li>
+<div class="story_img"><img src="{{media url="wysiwyg/weight/home_success_img1.gif"}}" alt="" /></div>
+<div class="story_txt">
+<div class="story_txt_top">
+<div class="story_txt_title1">Jennifer lost 58 Pounds</div>
+<strong>in 10 months&dagger;</strong></div>
+"I sprinkle salt and pepper on my food anyway, so all I have to remember to do is sprinkle Sensa, too!"                        <a href="###">view more...</a></div>
+</li>
+<li>
+<div class="story_img"><img src="{{media url="wysiwyg/weight/home_success_img2.gif"}}" alt="" /></div>
+<div class="story_txt">
+<div class="story_txt_top">
+<div class="story_txt_title2">Jennifer lost 58 Pounds</div>
+<strong>in 10 months&dagger;</strong></div>
+"The best thing about Sensa is that it has given me the ability to control my appetite so I eat less."<br /> <a href="###">view more...</a></div>
+</li>
+<li>
+<div class="story_img"><img src="{{media url="wysiwyg/weight/home_success_img3.gif"}}" alt="" /></div>
+<div class="story_txt">
+<div class="story_txt_top">
+<div class="story_txt_title3">Jennifer lost 58 Pounds</div>
+<strong>in 10 months&dagger;</strong></div>
+"I knew was working when I felt full from eating only half of my plate of pasta. Since then, I've never forgotten to sprinkle."<br /> <a href="###">view more...</a></div>
+</li>
+</ul>
+</div>
+<div class="bottom_list">
+<div class="bottom_list_top">
+<ul>
+<li style="border: none;">
+<div class="bottom_list_img"><img src="{{media url="wysiwyg/weight/icon_easy.jpg"}}" alt="" /></div>
+<div class="bottom_list_txt">You can continue to eat all your favorite foods and still lose weight. Just sprinkle SENSA&reg; onto your meals and snacks to safely and effectively lose weight without feeling deprived.&dagger; It's weight-loss made simple.</div>
+</li>
+<li>
+<div class="bottom_list_img"><img src="{{media url="wysiwyg/weight/icon_effective.jpg"}}" alt="" /></div>
+<div class="bottom_list_txt">SENSA&reg; was designed to work with your sense of smell to help you feel full faster and eat less. There are no pills, stimulants, drugs or special foods to buy. And SENSA&reg; is calorie-free, sugar-free and sodium-free.</div>
+</li>
+<li>
+<div class="bottom_list_img"><img src="{{media url="wysiwyg/weight/icon_proven.jpg"}}" alt="" /></div>
+<div class="bottom_list_txt">In one of the largest clinical studies ever conducted on a non-prescription weight-loss product, 1,436 men and women lost an average of 30.5 pounds in 6 months without changing their existing diet or exercise program.</div>
+</li>
+<li>
+<div class="bottom_list_img"><img src="{{media url="wysiwyg/weight/icon_guarantee.jpg"}}" alt="" /></div>
+<div class="bottom_list_txt">We're so confident you'll lose weight with SENSA&reg; that we give you a full 30-day satisfaction guarantee. If for any reason you're dissatisfied with SENSA&reg; within 30-days of your purchase, simply contact us for your full money back (less shipping and handling).</div>
+</li>
+</ul>
+</div>
+<div class="bottom_list_bot">
+<div class="bottom_list_bot_l">
+<div class="bottom_connect"><img src="{{media url="wysiwyg/weight/home_connect.jpg"}}" alt="" /></div>
+<div class="bot_column"><strong>Community</strong><br /> 
+<ul>
+<li>Forums</li>
+<li>Groups</li>
+<li>Meal Plan</li>
+<li>Blog</li>
+</ul>
+</div>
+<div class="bot_column"><strong>About</strong><br /> 
+<ul>
+<li>Shop</li>
+<li>How It Works</li>
+<li>Success Stories</li>
+<li>Doctor Formulated</li>
+</ul>
+</div>
+<div class="bot_column"><strong>Company</strong><br /> 
+<ul>
+<li>Contact Us</li>
+<li>Get Help</li>
+<li>My Account</li>
+<li>Store Locator</li>
+</ul>
+</div>
+</div>
+<div class="bottom_list_bot_r"><a><img src="{{media url="wysiwyg/weight/bottom_img1.jpg"}}" alt="" /></a></div>
+</div>
+</div>
+</div>
 
 
 =====================================================================================================
 cms => Static Blocks
 footer_shipping:
-<div class="col4-set">
-<div class="col-1">
-<h4>Company Info</h4>
-<ul>
-<li><a href="{{store direct_url="about-us"}}" target="_blank">About Us</a></li>
-<li><a rel="nofollow" href="{{store direct_url="our-guarantee"}}" target="_blank">Our Guarantee</a></li>
-<li><a rel="nofollow" href="{{store direct_url="rss"}}" target="_blank">RSS</a></li>
-<li><a rel="nofollow" href="{{store direct_url="catalog/seo_sitemap/category/"}}" target="_blank">Sitemap</a></li>
-</ul>
+<div class="footer_left">
+<div>SENSA&reg; advocates a healthy lifestyle with regular exercise and portion control. *30-day trial period with satisfaction guarantee. Shipping and handling fees apply. **Remunerated for excellent results. &dagger; Studies show average weight loss of 30.5 lbs in 6 months. In one study, 1436 participants out of 2437 completed a 6-month research study. Some Sensa users depicted lost more than 30.5lbs by using Sensa longer than 6 months and/or following a sensible diet and/or exercise regimen.</div>
+<div class="imp">&copy; SENSA Products, LLC. All Rights Reserved 2012 Manhattan Beach, CA 90245-4967   |   (866) 514-2554</div>
 </div>
-<div class="col-2">
-<h4>Customer Service</h4>
-<ul>
-<li><a rel="nofollow" href="{{store direct_url="contact-us"}}" target="_blank">Contact Us</a></li>
-<li><a rel="nofollow" href="http://settings.messenger.live.com/Conversation/IMMe.aspx?invitee=shopping.west@hotmail.com" target="_blank">Live Help</a></li>
-<li><a rel="nofollow" href="{{store direct_url="size-help"}}" target="_blank">Size Help</a></li>
-<li><a rel="nofollow" href="{{store direct_url="catalogsearch/term/popular/"}}" target="_blank">Search Terms</a></li>
-</ul>
-</div>
-<div class="col-3">
-<h4>Payment &amp; Shipping</h4>
-<ul>
-<li><a rel="nofollow" href="{{store direct_url="payment-methods"}}" target="_blank">Payment Methods</a></li>
-<li><a rel="nofollow" href="{{store direct_url="shipping-guide"}}" target="_blank">Shipping Guide</a></li>
-<li><a rel="nofollow" href="{{store direct_url="locations-we-ship-to"}}" target="_blank">Locations We Ship To</a></li>
-<li><a rel="nofollow" href="{{store direct_url="return-policy"}}" target="_blank">Return Policy</a></li>
-</ul>
-</div>
-<div class="col-4">
-<h4>Company Policies</h4>
-<ul>
-<li><a rel="nofollow" href="{{store direct_url="privacy-policy"}}" target="_blank">Privacy Policy </a></li>
-<li><a rel="nofollow" href="{{store direct_url="term-of-use-intellectual"}}" target="_blank">Terms of Use Intellectual </a></li>
-<li><a rel="nofollow" href="{{store direct_url="intellectual-property-policy"}}" target="_blank">Intellectual Property Policy</a></li>
-<li><a rel="nofollow" href="{{store direct_url="membership-policy"}}" target="_blank">Membership Policy</a></li>
-</ul>
-</div>
-<div class="col-5">
-<h4>Join Our Community</h4>
-<ul class="clearfix">
-<li><a href="{{store direct_url="web"}}" target="_blank"><img src="{{media url='blogger.png'}}" alt="My Blog" /></a></li>
-<li><a href="{{store direct_url="web"}}" target="_blank"><img src="{{media url='twitter.png'}}" alt="My Twitter" /></a></li>
-<li><a rel="nofollow" href="http://www.facebook.com" target="_blank"><img src="{{media url='facebook.png'}}" alt="My Facebook" /></a></li>
-<li><a rel="nofollow" href="http://www.youtube.com" target="_blank"><img src="{{media url='youtube.png'}}" alt="My YouTube" /></a></li>
-</ul>
-</div>
-</div>
+<div class="footer_right"><img src="{{media url="wysiwyg/weight/footer_se.gif"}}" alt="" /></div>
 
 
-verifi:
-<div style="padding-top: 2px;"><img src="{{media url="wysiwyg/mercado/paypal.png"}}" alt="paypal" />&nbsp;&nbsp; &nbsp;<img src="{{media url="wysiwyg/mercado/discover.png"}}" alt="discover" />&nbsp; &nbsp;&nbsp;<img src="{{media url="wysiwyg/mercado/visa_straight.png"}}" alt="visa_straight" />&nbsp; &nbsp;&nbsp;<img src="{{media url="wysiwyg/mercado/aex.png"}}" alt="aex" />&nbsp; &nbsp;&nbsp;<img src="{{media url="wysiwyg/mercado/mastercard.png"}}" alt="mastercard" />&nbsp;&nbsp; &nbsp;<img src="{{media url="wysiwyg/mercado/maestro.png"}}" alt="maestro" /></div>
-
-follow_us:
-<div class="twitter"><a href="http://twitter.com"><img style="float: left; margin-bottom: 5px; margin-top: 5px;" src="{{media 
-url="wysiwyg/mercado/twitter.png"}}" alt="twitter" /></a></div> 
-<div class="rss"><a href="http://www.facebook.com"><img style="float: left; margin-left: 15px; margin-bottom: 5px; margin-top: 5px;" src="{{media 
-url="wysiwyg/mercado/facebook.png"}}" alt="facebook" /></a></div> 
-<div class="facebook"><a href=" http://feedburner.com"><img style="float: left; margin-left: 15px; margin-bottom: 5px; margin-top: 5px;" src="{{media 
-url="wysiwyg/mercado/rss.png"}}" alt="rss" /></a></div> 
 
 
 
 
 main_bottom:
-<div class="main-bottom">
-<div class="bot-clumon bot-first">
-<div><img src="{{media url="wysiwyg/weight/home_its_easy_v2.gif"}}" alt="" /></div>
-<div>You can continue to eat all your favorite foods and still lose weight. Just sprinkle SENSA&reg; onto your meals and snacks to safely and effectively lose weight without feeling deprived.&dagger; It's weight-loss made simple.</div>
+<div class="bottom_social">
+	<a href="http://www.facebook.com"><img src="{{media url="wysiwyg/weight/footer_facebook.png"}}" alt="" /></a>
+	<a href="http://www.twitter.com"><img src="{{media url="wysiwyg/weight/footer_twitter.png"}}" alt="" /></a>
+	<a href="http://www.youtube.com"><img src="{{media url="wysiwyg/weight/footer_youtube.png"}}" alt="" /></a> 
+	<a href="http://www.bloger.com"><img src="{{media url="wysiwyg/weight/footer_blog.png"}}" alt="" /></a> 
+	<a href="###"><img src="{{media url="wysiwyg/weight/footer_mobile.png"}}" alt="" /></a>
 </div>
-<div class="bot-clumon">
-<div><img src="{{media url="wysiwyg/weight/home_its_effective_v2.gif"}}" alt="" /></div>
-<div>SENSA&reg; was designed to work with your sense of smell to help you feel full faster and eat less. There are no pills, stimulants, drugs or special foods to buy. And SENSA&reg; is calorie-free, sugar-free and sodium-free.</div>
-</div>
-<div class="bot-clumon">
-<div><img src="{{media url="wysiwyg/weight/home_its_proven_v2.gif"}}" alt="" /></div>
-<div>In one of the largest clinical studies ever conducted on a non-prescription weight-loss product, 1,436 men and women lost an average of 30.5 pounds in 6 months without changing their existing diet or exercise program.</div>
-</div>
-<div class="bot-clumon bot-last">
-<div><img src="{{media url="wysiwyg/weight/home_its_guaranteed_v2.gif"}}" alt="" /></div>
-<div>We're so confident you'll lose weight with SENSA&reg; that we give you a full 30-day satisfaction guarantee. If for any reason you're dissatisfied with SENSA&reg; within 30-days of your purchase, simply contact us for your full money back (less shipping and handling).</div>
-</div>
-</div>
+

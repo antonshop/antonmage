@@ -2,14 +2,8 @@
 <div class="header-container">
     <div class="header">
     	<div class="header-top">
-    		<div class="minicart">
-                <?php echo $this->getChildHtml('top_cart') ?>
-            </div> 
     	</div>
-        <div class="header-left">
-            <div style="min-height: 30px;">
-                <?php echo $this->getChildHtml('store_language') ?>
-            </div>            
+        <div class="header-left">          
             <?php if ($this->getIsHomePage()):?>
             <a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo"><img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" /></a>
             <?php else:?>
@@ -24,9 +18,13 @@
         </div>        
         <div class="header-right">
              
-            <?php echo $this->getChildHtml('currency') ?>  
-            <div class="clear"></div>   
+            <?php echo $this->getChildHtml('currency') ?>
+             <?php echo $this->getChildHtml('store_language') ?> 
+            <div class="clear"></div>
+            <div>
             <?php echo $this->getChildHtml('topLinks') ?>  
+            <?php echo $this->getChildHtml('top_cart') ?>
+            </div>
         </div>      
     </div>
     <?php echo $this->getChildHtml('topMenu') ?>
