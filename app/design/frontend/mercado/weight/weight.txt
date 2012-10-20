@@ -41,11 +41,11 @@ cms => pages =>  homepage
 <ul>
 <li style="border: none;">
 <div class="bottom_list_img"><img src="{{media url="wysiwyg/weight/icon_easy.jpg"}}" alt="" /></div>
-<div class="bottom_list_txt">You can continue to eat all your favorite foods and still lose weight. Just sprinkle SENSA&reg; onto your meals and snacks to safely and effectively lose weight without feeling deprived.&dagger; It's weight-loss made simple.</div>
+<div class="bottom_list_txt">You are allowed to eat your favorite foods and still lose weight. Just drink a cup of Pallas weight-loss tea half an hour after lunch or supper two times everyday. It is simple to slim your body.</div>
 </li>
 <li>
 <div class="bottom_list_img"><img src="{{media url="wysiwyg/weight/icon_effective.jpg"}}" alt="" /></div>
-<div class="bottom_list_txt">SENSA&reg; was designed to work with your sense of smell to help you feel full faster and eat less. There are no pills, stimulants, drugs or special foods to buy. And SENSA&reg; is calorie-free, sugar-free and sodium-free.</div>
+<div class="bottom_list_txt">Pallas weight-loss tea contain Nuciferine and Tea polyphenol which can expel and eliminate fat. Pallas weight-loss tea is certificated 100% organic. And it is calorie-free, sugar-free, sodium-free.</div>
 </li>
 <li>
 <div class="bottom_list_img"><img src="{{media url="wysiwyg/weight/icon_proven.jpg"}}" alt="" /></div>
@@ -53,39 +53,9 @@ cms => pages =>  homepage
 </li>
 <li>
 <div class="bottom_list_img"><img src="{{media url="wysiwyg/weight/icon_guarantee.jpg"}}" alt="" /></div>
-<div class="bottom_list_txt">We're so confident you'll lose weight with SENSA&reg; that we give you a full 30-day satisfaction guarantee. If for any reason you're dissatisfied with SENSA&reg; within 30-days of your purchase, simply contact us for your full money back (less shipping and handling).</div>
+<div class="bottom_list_txt">We are so confident that you&rsquo;ll lose weight with Pallas weight-loss tea, so we give you 45 days satisfaction guarantee. If you are failed to lose weight within 45 days, just contact us for your money back.</div>
 </li>
 </ul>
-</div>
-<div class="bottom_list_bot">
-<div class="bottom_list_bot_l">
-<div class="bottom_connect"><img src="{{media url="wysiwyg/weight/home_connect.jpg"}}" alt="" /></div>
-<div class="bot_column"><strong>Community</strong><br /> 
-<ul>
-<li>Forums</li>
-<li>Groups</li>
-<li>Meal Plan</li>
-<li>Blog</li>
-</ul>
-</div>
-<div class="bot_column"><strong>About</strong><br /> 
-<ul>
-<li>Shop</li>
-<li>How It Works</li>
-<li>Success Stories</li>
-<li>Doctor Formulated</li>
-</ul>
-</div>
-<div class="bot_column"><strong>Company</strong><br /> 
-<ul>
-<li>Contact Us</li>
-<li>Get Help</li>
-<li>My Account</li>
-<li>Store Locator</li>
-</ul>
-</div>
-</div>
-<div class="bottom_list_bot_r"><a><img src="{{media url="wysiwyg/weight/bottom_img1.jpg"}}" alt="" /></a></div>
 </div>
 </div>
 </div>
@@ -95,20 +65,58 @@ cms => pages =>  homepage
 cms => Static Blocks
 footer_shipping:
 <div class="footer_left">
-<div>SENSA&reg; advocates a healthy lifestyle with regular exercise and portion control. *30-day trial period with satisfaction guarantee. Shipping and handling fees apply. **Remunerated for excellent results. &dagger; Studies show average weight loss of 30.5 lbs in 6 months. In one study, 1436 participants out of 2437 completed a 6-month research study. Some Sensa users depicted lost more than 30.5lbs by using Sensa longer than 6 months and/or following a sensible diet and/or exercise regimen.</div>
-<div class="imp">&copy; SENSA Products, LLC. All Rights Reserved 2012 Manhattan Beach, CA 90245-4967   |   (866) 514-2554</div>
+<div>
+<p class="p0">Forvin&reg; advocates a healthy lifestyle with regular exercise and portion control. *45-day trial period with satisfaction guarantee. Shipping and handling fees apply. **Remunerated for excellent results. &dagger; Studies show average weight loss of 30.5 lbs in 6 months. In one study, 1436 participants out of 2437 completed a 6-month research study. Some Forvin users depicted lost more than 30.5lbs by using Sensa longer than 6 months and/or following a sensible diet and/or exercise regimen.</p>
+</div>
+<div class="imp">&copy; Forvin Products, LLC. All Rights Reserved 2012 Manhattan Beach, CA 90245-4967   |   (866) 514-2554</div>
 </div>
 <div class="footer_right"><img src="{{media url="wysiwyg/weight/footer_se.gif"}}" alt="" /></div>
 
 
 
-
+main_footer
+<div class="bottom_list_bot">
+<div class="bottom_list_bot_l">
+<div class="bottom_connect"><img src="{{media url="wysiwyg/weight/home_connect.jpg"}}" alt="" /></div>
+<div class="bot_column"><strong>Community</strong><br /> 
+<ul>
+<li>Facebook</li>
+<li>Twitter</li>
+<li>Youtube</li>
+<li>Blog</li>
+<li>Forums</li>
+<li>Calculator</li>
+</ul>
+</div>
+<div class="bot_column"><strong>About Pallas</strong><br /> 
+<ul>
+<li>Pallas Story</li>
+<li>How It Works</li>
+<li>Success Stories</li>
+<li>Suggested Use</li>
+<li>Tea Benefits</li>
+<li>Shop</li>
+</ul>
+</div>
+<div class="bot_column"><strong>Company</strong><br /> 
+<ul>
+<li>Contact Us</li>
+<li>Payment Methods</li>
+<li>Return Policy </li>
+<li>Privacy Policy</li>
+<li>Term of Use</li>
+<li>Site Map</li>
+</ul>
+</div>
+</div>
+<div class="bottom_list_bot_r"><a><img src="{{media url="wysiwyg/weight/bottom_img1.png"}}" alt="" /></a></div>
+</div>
 
 
 main_bottom:
 <div class="bottom_social">
 	<a href="http://www.facebook.com"><img src="{{media url="wysiwyg/weight/footer_facebook.png"}}" alt="" /></a>
-	<a href="http://www.twitter.com"><img src="{{media url="wysiwyg/weight/footer_twitter.png"}}" alt="" /></a>
+	<a href="http://www.twitter.com"><img src="{{media url="wysiwyg/weight/footer_twitter.png"}}" alt="" /></a> 
 	<a href="http://www.youtube.com"><img src="{{media url="wysiwyg/weight/footer_youtube.png"}}" alt="" /></a> 
 	<a href="http://www.bloger.com"><img src="{{media url="wysiwyg/weight/footer_blog.png"}}" alt="" /></a> 
 	<a href="###"><img src="{{media url="wysiwyg/weight/footer_mobile.png"}}" alt="" /></a>
