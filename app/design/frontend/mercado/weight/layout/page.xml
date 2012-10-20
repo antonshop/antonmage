@@ -60,11 +60,11 @@ Default layout, loads most of the pages
                 <block type="page/html_wrapper" name="top.bar" as="topBar" translate="label">
                     <action method="setElementClass"><value>top-bar</value></action>
                 </block>   
-                <block type="page/html_wrapper" name="top.bread" as="topBread" translate="label">
+                <!-- <block type="page/html_wrapper" name="top.bread" as="topBread" translate="label">
                     <label>Breadcrumbs</label>
                     <action method="setElementClass"><value>top-bread</value></action>
                     <block type="page/html_breadcrumbs" name="breadcrumbs" as="breadcrumbs"/>
-                </block>                             
+                </block> -->                             
                 <block type="page/html_wrapper" name="top.container" as="topContainer" translate="label">
                     <label>Page Header</label>
                     <action method="setElementClass"><value>top-container</value></action>

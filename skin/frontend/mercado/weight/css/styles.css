@@ -72,7 +72,7 @@ ul,ol         { list-style:none; }
 .page-empty { background:#fff; padding:20px; text-align:left; }
 .page-popup { background:#fff; padding:25px 30px; text-align:left; }
 .main-container {}
-.main {  min-height:350px; margin: 0 0 10px 0; padding:0 30px; }
+.main {background:url(../images/body_bg_page.jpg) repeat-y 8px 10px ;  min-height:350px; margin: 0 0 0px 0; padding:0 0px 0px 30px; }
 
 /* Base Columns */
 .col-left { float:left; width: 220px; padding:0 0 1px; }
@@ -1973,7 +1973,7 @@ h1, h2, h3, h4, h5, h6, #nav > li > a > span, .product-tabs li a, .block .block-
 .homeinfo-img{ float:left; width:120px;}
 .homeinfo-txt{ float:right; width:170px;}
 .home_calculate{ width:669px; float:left; margin-left:-20px;}
-.home_day{ width:302px; float:right; margin-right:-20px;}
+.home_day{ width:302px; float:right; margin-right:10px;}
 
 .success-story{ background:url(../images/icon_success_stories.jpg) no-repeat; padding-left:70px; height:156px; border:1px #ddd solid;}
 .success-story{  }
@@ -1985,8 +1985,8 @@ h1, h2, h3, h4, h5, h6, #nav > li > a > span, .product-tabs li a, .block .block-
 .story_txt_title2{ font-weight:bold; color:#669A38;text-align:center;}
 .story_txt_title3{ font-weight:bold; color:#3A93EF;text-align:center;}
 
-.main_bot{ background:url(../images/body_bg_page.jpg) repeat-y -3px 0 ; width:980px; margin: 10px 0 0 -20px;}
-.bottom_list{ border:1px solid #ccc; border-top:6px #ccc solid; margin-top:10px; height:580px; padding-top:15px;}
+.main_bot{ width:980px; margin: 10px 0 0 -19px;}
+.bottom_list{ border-top:6px #ccc solid; margin-top:10px; height:270px; padding-top:15px;}
 .bottom_list_top ul li{ float:left; width:205px; height:240px; padding:20px 20px 0px 18px; border-left:1px #ccc solid;}
 li.nborder { border:none;}
 .bottom_list_img{}
@@ -1999,6 +1999,7 @@ li.nborder { border:none;}
 .bottom_connect{ height:60px; width:600px; text-align:left;}
 .bottom_list_bot_r{ float:right; width:300px;}
 
+.main_footer{ background:url(../images/footer_bg_main.jpg) no-repeat; margin-left:11px; height:20px;}
 .bottom_social{ background:url(../images/bottom_social.jpg) no-repeat; padding-top:10px; height:105px; width:980px; margin:5px 0px 0px 10px; text-align:center;}
 
 
