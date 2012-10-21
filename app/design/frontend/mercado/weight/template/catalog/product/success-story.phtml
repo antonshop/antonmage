@@ -4,9 +4,10 @@
 
 <p class="note-msg"><?php echo $this->__('There are no products matching the selection.') ?></p>
 <?php else: ?>
+
+<div class="ahome-products">
 <script type="text/javascript" src="<?php echo $this->getSkinUrl();?>js/artDialog.js"></script>
 <script type="text/javascript" src="<?php echo $this->getSkinUrl();?>js/jquery.artDialog.js"></script>
-<div class="ahome-products">
 <?php $_collectionSize = $_productCollection->count() ?>
 <input type="hidden" id="idcount" value="<?php echo $_collectionSize;?>">
     <?php $_columnCount = 3; ?>

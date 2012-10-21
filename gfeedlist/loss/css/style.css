@@ -119,13 +119,27 @@ li.nborder { border:none;}
 .bmi_cont_left{ float:left; width:560px;}
 .bmi_cont_right{ float:right; width:400px;}
 
-.bmi_cont_submit{ background:url(../images/purple-btn-left.png) right 1px no-repeat; border:none; height:25px; color:#fff; width:234px; font-weight:bold;}
+.bmi_cont_submit{ background:url(../images/purple-btn-left.png) right 1px no-repeat; border:none; height:25px; color:#fff; width:234px; font-weight:bold;text-align: center; cursor:pointer;}
 #bmi_r{ border:1px #ddd solid; padding:15px; margin-bottom:20px; color:#000;}
 .bodybmi{ color:#007500; font-size:16px; margin-bottom:20px;}
 
 
+.tea_ben{ margin-top:15px; color:#444;}
+.tea_ben_content{ text-align:left; line-height:22px; width:940px;}
+.tea_ben_content h3{ font-size:14px; font-weight:bold; color:#007500;}
+.tea_ben_left{ float:left; width:690px; }
+.tea_ben_right{ float:left; width:230px; margin-left:15px;}
 
-
+.pallas_story{ margin-top:15px; color:#444;}
+.pallas_story_cont{ width:940px;text-align:left; line-height:22px;}
+.pallas_story_cont h3{ font-size:14px; font-weight:bold; color:#007500;}
+.pallas_story_left{ float:left; width:420px; margin-right:20px;}
+.pallas_story_right{float:left; width:500px;}
+.pallas_story_img{ text-align:center;}
+.pallas_story_img2{ margin:15px 0; }
+.pallas_story_img3{ margin-left:158px;}
+.pallas_story_img3 ul li{ float:left; margin:20px 10px; line-height:25px;}
+.pallas_story_img3 ul li img{ border:1px solid #ddd; padding:1px;}
 
 
 
