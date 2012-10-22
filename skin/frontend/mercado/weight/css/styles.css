@@ -1975,7 +1975,7 @@ h1, h2, h3, h4, h5, h6, #nav > li > a > span, .product-tabs li a, .block .block-
 .homeinfo-img{ float:left; width:120px;}
 .homeinfo-txt{ float:right; width:170px;}
 .home_calculate{ width:669px; float:left; margin-left:-20px;}
-.home_day{ width:302px; float:right; margin-right:10px;}
+.home_day{ width:302px; float:right; margin-right:-5px;}
 
 .success-story{ background:url(../images/icon_success_stories.jpg) no-repeat; padding-left:70px; height:156px; border:1px #ddd solid;}
 .success-story{  }
@@ -2002,7 +2002,7 @@ li.nborder { border:none;}
 .bottom_list_bot_r{ float:right; width:300px;}
 
 .main_footer{ background:url(../images/footer_bg_main.jpg) no-repeat; margin-left:11px; height:20px;}
-.bottom_social{ background:url(../images/bottom_social.jpg) no-repeat; padding-top:10px; height:105px; width:980px; margin:5px 0px 0px 10px; text-align:center;}
+.bottom_social{ background:url(../images/bottom_social.jpg) no-repeat; padding-top:10px; height:105px; width:980px; margin:5px 0px 0px 0px; text-align:center;}
 
 
 .footer_left{ width:500px; float:left; color:#666; text-align:left; font-size:10px;}
@@ -2029,11 +2029,11 @@ li.nborder { border:none;}
 .suggest_bot img{margin:10px 15px;}
 
 .bmi_calculate{ text-align:left; line-height:22px; color:#444;}
-.bmi_desc{ line-height:25px; border-bottom:1px solid #ddd;width:930px; padding-bottom:20px; margin-bottom:20px;}
+.bmi_desc{ line-height:25px; border-bottom:1px solid #ddd;width:930px; padding:15px 0; height:240px; margin-bottom:20px;}
 .bmi_desc_left{ float:left; width:580px; height: 232px;}
 .bmi_desc_right{ float:right; width:320px; height: 232px; margin-left:30px;}
 .bmi_desc_title{ font-size:16px; color:#007500; margin:35px 0 15px 0;}
-.bmi_content{ height:340px; margin-bottom:20px;}
+.bmi_content{ height:340px; margin:15px 0;}
 .bmi_cont_left_top{}
 .bmi_cont_left_top h3{ font-size:16px; color:#007500;}
 .bmi_cont_left_bot{ margin-top:15px; line-height:25px;}
@@ -2043,7 +2043,7 @@ li.nborder { border:none;}
 .bmi_cont_left_bot .inp{ float:left;}
 .bmi_cont_left_bot .inp .intxt{ height:22px; background:url(../images/input-text-bg.gif) repeat-x; width:70px; border:1px solid #ccc;}
 .bmi_cont_left{ float:left; width:560px;}
-.bmi_cont_right{ float:right; width:400px;}
+.bmi_cont_right{ float:right; width:390px;}
 
 .bmi_cont_submit{ background:url(../images/purple-btn-left.png) right 1px no-repeat; border:none; height:25px; color:#fff; width:234px; font-weight:bold;cursor:pointer; text-align:center;}
 #bmi_r{ border:1px #ddd solid; padding:15px; margin-bottom:20px; color:#000;}
