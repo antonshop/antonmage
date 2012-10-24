@@ -192,6 +192,7 @@ bmi-calculator:
 Body Mass Index (BMI) is an assessment that health experts, including the World Health Organization, and physicians use to determine if someone is overweight, underweight or within a healthy weight range. To calculate your BMI, complete the questions below!
                     </div>
                     <div class="bmi_cont_left_bot">
+		    <form>
                         <ul>
                             <li>
                             	<div class="nums">1</div>

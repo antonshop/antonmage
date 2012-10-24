@@ -67,7 +67,7 @@ ul,ol         { list-style:none; }
 
 /* Layout ================================================================================ */
 .wrapper { background:url(../images/body_bg_page.jpg) no-repeat white; margin:0px auto; }
-.page { width:1000px; background:url(../images/header_bg.jpg) no-repeat white; margin:0px auto; text-align:left; }
+.page { width:1000px; background:url(../images/header_bg.jpg) 10px 0 no-repeat white; margin:0px auto; text-align:left; }
 .page-print { background:#fff; padding:25px 30px; text-align:left; }
 .page-empty { background:#fff; padding:20px; text-align:left; }
 .page-popup { background:#fff; padding:25px 30px; text-align:left; }
