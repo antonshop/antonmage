@@ -2059,8 +2059,8 @@ li.nborder { border:none;}
 .pallas_story{ margin-top:15px; color:#444;}
 .pallas_story_cont{ width:940px;text-align:left; line-height:22px;}
 .pallas_story_cont h3{ font-size:14px; font-weight:bold; color:#007500;}
-.pallas_story_left{ float:left; width:420px; margin-right:20px;}
-.pallas_story_right{float:left; width:500px;}
+.pallas_story_left{ float:left; margin-left:80px; width:800px; margin-right:20px;}
+
 .pallas_story_img{ text-align:center;}
 .pallas_story_img2{ margin:25px 0 15px; text-align:center; color:#007500;}
 .pallas_story_img3{ margin-left:158px;text-align:center; color:#007500;}
@@ -2069,3 +2069,5 @@ li.nborder { border:none;}
 
 .wmain_bot{ width:980px; margin:0 auto;}
 
+.use_cont ul{ padding-left:15px; margin-bottom:10px;}
+.use_cont ul li{ background:url(../images/icon_1.jpg) 0 5px no-repeat; text-indent:20px; line-height:25px;}

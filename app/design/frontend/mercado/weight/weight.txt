@@ -98,26 +98,26 @@ main_footer
 </div>
 <div class="bot_column"><strong>About Pallas</strong><br /> 
 <ul>
-<li>Pallas Story</li>
-<li>How It Works</li>
-<li>Success Stories</li>
-<li>Suggested Use</li>
-<li>Tea Benefits</li>
-<li>Shop</li>
+<li><a href="{{store direct_url='pallas-story'}}">Pallas Story</a></li>
+<li><a href="{{store direct_url='how-it-work'}}">How It Works</a></li>
+<li><a href="{{store direct_url='success-story'}}">Success Stories</a></li>
+<li><a href="{{store direct_url='suggested-use'}}">Suggested Use</a></li>
+<li><a href="{{store direct_url='tea-benefits'}}">Tea Benefits</a></li>
+<li><a href="{{store direct_url='shop.html'}}">Shop</a></li>
 </ul>
 </div>
 <div class="bot_column"><strong>Company</strong><br /> 
 <ul>
 <li>Contact Us</li>
-<li>Payment Methods</li>
-<li>Return Policy </li>
-<li>Privacy Policy</li>
-<li>Term of Use</li>
+<li>My Account</li>
+<li><a href="{{store direct_url='payment-methods'}}">Payment Methods</a></li>
+<li><a href="{{store direct_url='privacy-policy'}}">Privacy Policy</a></li>
+<li><a href="{{store direct_url='term-of-use'}}">Term of Use</a></li>
 <li>Site Map</li>
 </ul>
 </div>
 </div>
-<div class="bottom_list_bot_r"><a><img src="{{media url="wysiwyg/weight/bottom_img1.png"}}" alt="" /></a></div>
+<div class="bottom_list_bot_r"><a href="{{store direct_url='shop.html'}}"><img src="{{media url="wysiwyg/weight/bottom_img1.png"}}" alt="" /></a></div>
 </div>
 
 ==========================================================================================================================
@@ -160,7 +160,7 @@ Another great benefit of this tea is that it can calm your mind and body thanks 
 This is useful as being on a diet can be stressful and anything that can ease that has got to be a good thing.
         </div>
         <div class="hwork_bot">
-        	<img src="{{media url='wysiwyg/weight/bottom_img1.png'}}">
+            <img src="{{media url='wysiwyg/weight/bottom_img1.png'}}">
             <img src="{{media url='wysiwyg/weight/work_img2.jpg'}}">
             <img src="{{media url='wysiwyg/weight/work_img3.jpg'}}">
             <img src="{{media url='wysiwyg/weight/work_img4.png'}}">
@@ -382,4 +382,142 @@ success-story:
 <div>{{block type="catalog/product_list" category_id="3" template="catalog/product/success-story.phtml"}}</div>
 
 
+==============================================================================================================================
 
+cms=>pages
+privacy-policy
+<div>{{block type="cms/block" block_id="home_flash" }}</div>
+<div class="pallas_story">
+			<div class="pallas_story_cont">
+            	<p>If you purchase a product or service from us, we request certain personally identifiable information from you on our order pages. You must provide contact information (such as name, email, and shipping address) and financial information (such as credit card number and expiration date) otherwise we cannot process your order. We use this information for billing purposes and to fill your orders. If we have trouble processing an order, we will use this information to contact you.</p>
+                <p><img src="{{media url='wysiwyg/weight/privacy_1.gif'}}" /></p>
+                <p>We collect personal information not only to fulfill your order, but also to make our services more rewarding for you to use. We usually use this information for internal purposes, such as studying our customers' preferences and improving the customer experience. We may also use your information to contact you for account and promotional purposes, including trusted third party promotions.</p>
+                <p>We may share your personal information with companies that perform services for us, such as fulfilling orders, delivering packages, sending postal mail, providing marketing assistance, processing credit card payments, conducting surveys, providing customer service, and other similar functions. Such companies may have access to your personal information in order to perform their roles, but they may not disclose your information for other purposes.</p>
+                <p>Personal information may be transferred in connection with the sale, merger, or acquisition of business assets of PALLAS Products, LLC or its parent company. We may share aggregate web site usage information with marketing partners and affiliates, however, this information does not identify individual users. We reserve the right to disclose your personal information as required by law and when we believe that disclosure is necessary to protect our rights and/or to comply with a judicial proceeding, court order, or legal process served on us.</p>
+                <p></p>
+                <p>We may also utilize information you have posted on community forums and message boards for use in marketing and promotions.</p>
+                <p><img src="{{media url='wysiwyg/weight/privacy_2.gif'}}" /></p>
+                <p>The security of your personal information is important to us. When you enter sensitive information (such as credit card number) on our order forms, we encrypt that information using secure socket layer technology (SSL). We follow generally accepted industry standards to protect the personal information submitted to us, both during transmission and once we receive it.</p>
+                <p>However, no method of transmission over the Internet, or method of electronic storage, is 100% secure. Therefore, while we strive to use commercially acceptable means to protect your personal information, we cannot guarantee its absolute security. If you have any questions about security on our site, please contact us as indicated below.</p>
+                <p><img src="{{media url='wysiwyg/weight/privacy_3.gif'}}" /></p>
+                <p>We may occasionally send you information on special offers, promotions, or product updates, or you may be a subscriber to our newsletters or you may have opted in to receive newsletters or special promotions from one of our trusted third party providers. If you ever decide you no longer wish to receive these communications, you may opt-out of receiving them by following the instructions included in each newsletter or communication, or by contacting the PALLAS® Products Customer Service Team on our contact page or by writing to us at the address below.</p>
+                <p><img src="{{media url='wysiwyg/weight/privacy_4.gif'}}" /></p>
+                <p>A cookie is a small text file that is stored on a user's computer for record-keeping purposes. We use cookies to collect anonymous information about how you use this site by setting and accessing cookies on your computer. These cookies track information such as how often you visit our site, what pages you view, and where you go after you leave our site. The cookies are not connected to your personal information.</p>
+                <p><img src="{{media url='wysiwyg/weight/privacy_5.gif'}}" /></p>
+                <p>"Web beacons" or clear gifs are tiny graphics with a unique identifier, similar in function to cookies, and are used to track the online movements of web users. In contrast to cookies, which are stored on a user's computer hard drive, web beacons are embedded invisibly on web pages and are about the size of the period at the end of this sentence. We utilize web beacons that help us better manage content on our site by informing us what content is effective. We do not tie the information gathered by web beacons to your personally identifiable information.</p>
+                <p><img src="{{media url='wysiwyg/weight/privacy_6.gif'}}" /></p>
+                <p>This site may contain links to other sites that are not owned or controlled by us. Please be aware that we are not responsible for the privacy practices of such other sites. This privacy statement applies only to information collected by this site. We encourage you to be aware when you leave our site and to read the privacy statements of each and every website that collects personally identifiable information.</p>
+                <p><img src="{{media url='wysiwyg/weight/privacy_7.gif'}}" /></p>
+                <p>Children under 13 may view our site, but they cannot make a purchase, nor provide any personal information. Our site is not designed for children and we do not wish to collect personal information from children under 13. If you register with us and we discover that you are under 13, we will delete your registration. We will send you a message if we do this.</p>
+                <p><img src="{{media url='wysiwyg/weight/privacy_8.gif'}}" /></p>
+                <p>If we decide to change our privacy policy, we will post those changes to this privacy statement, the homepage, and other places we deem appropriate so that you are aware of the change. We reserve the right to modify this privacy statement at any time, so please review it frequently.</p>
+            
+            </div>
+            <div class="clear"></div>
+            
+        </div>
+
+
+=============================================================================================================================
+
+term-of-use:
+<div>{{block type="cms/block" block_id="home_flash" }}</div>
+<div class="pallas_story">
+<div class="pallas_story_cont">
+<div class="use_cont">
+<p>PLEASE READ THESE TERMS AND CONDITIONS OF USE CAREFULLY BEFORE USING THIS WEBSITE. By using this Website, you signify your consent to these terms of use. If you do not agree to these terms of use, please do not use this Website. We reserve the right, at our discretion, to change, modify, add, or remove portions of these terms at any time. Please check these terms periodically for changes. Your continued use of this Website following the posting of changes to these terms (including our Privacy Statement), subject to our procedures for material changes to our&nbsp;Online Privacy Statement&nbsp;will mean you accept those changes.</p>
+<h3>RESTRICTIONS ON USE OF MATERIALS</h3>
+<p>This Website is owned and operated by Forvin Biotechnology Co.,Ltd its subsidiaries, or its affiliates (referred to as Tea4slimming, "we," "us," or "our" herein). Except as otherwise permitted by these Terms of Use, no material from this Website or any Website owned, operated, licensed or controlled by Tea4slimming may be modified, copied, reproduced, republished, uploaded, posted, transmitted, or distributed in any way, except that you may print one hard copy or download one copy of the materials on any single computer for your personal, noncommercial home use, or to place an order to purchase product from Tea4slimming, provided you keep intact all copyright and other proprietary notices. Use of the materials for any other purpose, modification of the materials, or use of the materials on any other website or networked computer environment is strictly prohibited. Absolutely no framing of this Website is permitted without the prior written consent of Tea4slimming. Except as expressly stated in this legal notice, no right or license to the materials, or any portion thereof, shall be granted or implied.</p>
+USE OF WIDGETS
+<p>Our widgets are tools that you may place on your website to permit your visitors to access our Website (each, the "Widget"). Subject to your compliance with these Terms of Use, we hereby grant you a non-exclusive, non-transferable, non-sublicensable, personal, revocable license to use and display the Widget on your website solely for your own personal, non-commercial use. You may not use the Widget for any other purpose without our prior written consent, and nothing in these Terms of Use shall be deemed to grant you any right, title or interest in the Widget. In addition, you may not:</p>
+<ul>
+<li>Use the Widget to offer or promote, or otherwise use the Widget in association with, any products or services for sale.</li>
+<li>Use the Widget (or any content displayed in connection with or through it) in any manner that would constitute an endorsement by us of any Product, service, activity or brand contained on your website.</li>
+<li>Place the Widget on any website that includes content that is offensive, harassing, threatening, abusive, discriminatory, vulgar, pornographic or otherwise in appropriate, as determined by us in our sole discretion.</li>
+<li>Use the Widget in any manner that prevents the end user of your website from linking directly to the applicable page of our Website.</li>
+</ul>
+<p>We reserve the right to discontinue providing any Widget at any time. We further reserve the right to direct you to cease displaying or otherwise using any Widget, for any or no reason and without liability to you or any third party.</p>
+<h3>ACCOUNTS</h3>
+<p>You may be required to create an account and specify a password to use certain features on our Website. You agree to provide, maintain and update true, accurate, current and complete information about yourself as prompted by the registration processes. You may not impersonate any person or entity or misrepresent your identity or affiliation with any person or entity, including using another person's username, password, or other account information.</p>
+<h3>CONTENT POSTED OR SUBMITTED BY YOU</h3>
+<p>Certain pages on the Website may allow you to post text, photographs, videos, audio, or other content ("Content"). Unless otherwise specified on a particular Website, you may only post Content to the Website if you are a resident of the United States and are thirteen (13) years of age or older. If you are a minor, you must have permission from your parent or legal guardian before you post any Content to this Website. You may only post Content that you created or which the owner of the Content has given you permission to post. If Content depicts any person other than yourself, you must have permission from that person or, if that person is a minor, permission from that person's parent or legal guardian, before you post the Content. You may be required to provide proof of such permission to Tea4slimming. You may not post or distribute Content that is illegal or that violates these Terms of Use. By posting or distributing Content to the Website, you represent and warrant that (a) you own all the rights to the Content or are authorized to use and distribute the Content to the Website and (b) the Content does not and will not infringe any copyright, trademark, right of publicity, or any other third-party right nor violate any law or regulation.</p>
+<p>By submitting or posting Content to the Website, you grant Tea4slimming the irrevocable, perpetual, worldwide right to reproduce, display, perform, distribute, adapt, and promote this Content in any medium. Once you submit or post Content to the Website, Tea4slimming does not need to give you any further right to inspect or approve uses of such Content or to compensate you for any such uses. Tea4slimming owns all right, title, and interest in any compilation, collective work, or other derivative work created by Tea4slimming using or incorporating Content posted to the Website.</p>
+<p>You are solely responsible for anything you may post on the Website and the consequences of posting anything on the Website.</p>
+<h3>CONTENT POSTED BY OTHER USERS</h3>
+<p>Tea4slimming is not responsible for, and does not endorse, Content in any posting made by other users on the Website. Under no circumstances shall Tea4slimming be held liable, directly or indirectly, for any loss or damage caused or alleged to have been caused to you in connection with any Content posted by a third party on the Website.</p>
+<h3>USE OF WEBSITE</h3>
+<p>Impersonation of others, including a Tea4slimming employee or representative, as well as another user is prohibited. You may not upload to, distribute, or otherwise publish through the Website any content which is libelous, defamatory, obscene, threatening, an invasion of privacy or publicity rights, abusive, illegal, or otherwise objectionable which may constitute or encourage a criminal offense, violate the rights of any party or which may otherwise give rise to liability or violate any law. You may not upload commercial content on the Website or use the Website to solicit others for any other commercial online service or other organization.</p>
+<p>You may not without the prior written permission of Tea4slimming, use any computer code, data mining software, "robot", "bot", "spider", "scraper" or other automatic device, or program, algorithm or methodology having similar processes or functionality, or any manual process, to monitor or copy any of the web pages, data or content found on this Website or accessed through this Website. You may not engage in the mass downloading of files from this Website; use the computer processing power of this Website for purposes other than those permitted above; or flood this Website with electronic traffic designed to slow or stop its operation. You may not establish links to or from other websites to this Website without the prior written consent of Tea4slimming.</p>
+<h3>ACTIVITIES PROHIBITED ON THE WEBSITE</h3>
+<p>The following is a partial list of the kinds of conduct that are illegal or prohibited on the Website. Tea4slimming reserves the right to investigate and take appropriate legal action against anyone who, in Forvin's sole discretion, engages in any of the prohibited activities.</p>
+<p>Prohibited activities include - but are not limited to - the following:</p>
+<ul>
+<li>Using the Website for any purpose in violation of local, state, or federal laws or regulations;</li>
+<li>Posting Content that infringes the intellectual property rights, privacy rights, publicity rights, trade secret rights, or any other rights of any party;</li>
+<li>Posting Content that is unlawful, obscene, defamatory, threatening, harassing, abusive, slanderous, hateful, or embarrassing to any other person or entity as determined by Tea4slimming in its sole discretion or pursuant to local community standards;</li>
+<li>Posting Content that constitutes cyber-bullying, as determined by Forvin in its sole discretion;</li>
+<li>Posting Content that depicts any dangerous, life-threatening, or otherwise risky behavior;</li>
+<li>Posting telephone numbers, street addresses, or last names of any person;</li>
+<li>Posting URLs to external websites or any form of HTML or programming code;</li>
+<li>Posting anything that may be "spam," as determined by Tea4slimming in its sole discretion;</li>
+<li>Impersonating another person when posting Content;</li>
+<li>Harvesting or otherwise collecting information about others, including e-mail addresses, without their consent;</li>
+<li>Allowing any other person or entity to use your identification for posting or viewing comments;</li>
+<li>Harassing, threatening, stalking, or abusing any person;</li>
+<li>Engaging in any other conduct that restricts or inhibits any other person from using or enjoying the Website, or which, in the sole discretion of Tea4slimming, exposes Tea4slimming or any of its customers, suppliers, or any other parties to any liability or detriment of any type; or</li>
+<li>Encouraging other people to engage in any prohibited activities as described herein.</li>
+</ul>
+<p>Tea4slimming reserves the right - but is not obligated - to do any or all of the following:</p>
+<ul>
+<li>Investigate an allegation that any Content posted on the Website does not conform to these Terms of Use and determine in its sole discretion to remove or request the removal of the Content;</li>
+<li>Remove Content which is abusive, illegal, or disruptive, or that otherwise fails to conform with these Terms of Use;</li>
+<li>Terminate a user's access to the Website upon any breach of these Terms of Use;</li>
+<li>Monitor, edit, or disclose any Content on the Website; and</li>
+<li>Edit or delete any Content posted on the Website, regardless of whether such Content violates these standards.</li>
+</ul>
+<h3>THIRD-PARTY COPYRIGHTS</h3>
+<p>If you believe any Content on the Website infringes your copyright, you may request removal of such Content (or access thereto) from this web Website by contacting Tea4slimming as set forth below and providing the following information:</p>
+<ul>
+<li>Identification of the copyrighted work that you believe to be infringed. Please describe the work and, where possible, include a copy or the location (e.g., URL) of an authorized version of the work.</li>
+<li>Identification of the material that you believe to be infringing and its location. Please describe the material, and provide us with its URL or any other pertinent information that will allow us to locate the material.</li>
+<li>Your name, address, telephone number, and e-mail address.</li>
+<li>A statement that you have a good faith belief that the complained of use of the materials is not authorized by the copyright owner, its agent, or the law.</li>
+<li>A statement that the information that you have supplied is accurate, and indicating that "under penalty of perjury," you are the copyright owner or are authorized to act on the copyright owner's behalf.</li>
+<li>A signature or the electronic equivalent from the copyright holder or authorized representative.</li>
+</ul>
+<h3>SUBMISSIONS TO Tea4slimming</h3>
+<p>Any information, including but not limited to remarks, suggestions, ideas, graphics or other submissions, communicated to Forvin through this Website becomes the exclusive property of Tea4slimming, and Tea4slimming is entitled to use the information submitted for any purpose without restriction or compensation to the user sending the submission. The user acknowledges the originality of any submission communicated to Tea4slimming and accepts responsibility for its accuracy, appropriateness and legality.</p>
+<h3>WARRANTY DISCLAIMER</h3>
+<p>This Website and the materials, Widgets and products on this Website are provided "as is" and without warranties of any kind, either expressed or implied. To the fullest extent permissible pursuant to applicable law, Tea4slimming disclaims all warranties, expressed or implied, including, but not limited to, implied warranties of merchantability and fitness for a particular purpose and non-infringement. Tea4slimming does not represent or warrant that the functions contained in the Website will be uninterrupted or error-free, that defects will be corrected, or that this Website or the server that makes it available are free of viruses or other harmful components. Tea4slimming does not warrant or make any representations regarding the use or the results of the use of the materials in this Website in terms of their correctness, accuracy, reliability or otherwise. You (and not Tea4slimming) assume the entire cost of all necessary servicing, repair or correction. Some states do not permit limitations or exclusions of implied warranties, so the above limitations may not apply to you.</p>
+<h3>LIMITATION OF LIABILITY</h3>
+<p>Under no circumstances, including, but not limited to, negligence, shall Tea4slimming be liable for any direct, indirect, punitive, incidental, special or consequential damages that result from the use of or the inability to use this Website or the performance of the Widgets or products, even if Tea4slimming or authorized representatives of Tea4slimming have been advised of the possibility of such damages. Some states do not permit limitation or exclusion of liability for incidental or consequential damages, so the above limitation or exclusion may not apply to you. In no event shall Tea4slimming's total liability to you for damages, losses and causes of action (whether in contract, negligence or otherwise) exceed the amount paid by you, if any, for accessing this Website.</p>
+<h3>INDEMNIFICATION</h3>
+<p>As a condition of use of this Website, you agree to indemnify, defend, and hold harmless Tea4slimming, its officers, directors, employees, agents, licensors and suppliers (collectively the "Service Providers") from and against any and all losses, expenses, damages and costs, including reasonable attorneys' fees, resulting from your use of this Website or any Widget, including any claims alleging facts that if true would constitute a violation of these terms or any activity related to your account (including negligent or wrongful conduct) by you or any other person accessing the Website using your account.</p>
+<h3>TYPOGRAPHICAL ERRORS</h3>
+<p>In the event that a product sold is mistakenly listed at an incorrect price, Tea4slimming reserves the right to refuse or cancel any orders placed for the product listed at the incorrect price, whether or not the order has been confirmed and your credit card charged. If your credit card has already been charged for the purchase and your order is cancelled, Tea4slimming shall issue a credit to your credit card account.</p>
+</div>
+</div>
+</div>
+
+
+=============================================================================================================================
+
+
+payment-methods:
+<div>{{block type="cms/block" block_id="home_flash" }}</div>
+<div class="pallas_story">
+<div class="pallas_story_cont">
+<p>PayPal is a safer, easier way to pay. You can use your credit card or bank account without exposing your financial information. You can link your credit card or bank account to your PayPal account so you don't have to enter your card number or address when you shop on TEA4SLIMMING. Just log in to PayPal and quickly check out in a few clicks. In addition, PayPal accepts payments in multiple currencies.</p>
+<p>Using PayPal with TEA4SLIMMING:</p>
+<p>1. Visit your Shopping Cart page, and click Check Out With PayPal or choose PayPal as your payment method on your Payment page after reviewing your order details. You will then leave en.Tea4slimming.com and enter PayPal's website.</p>
+<p>2. Log in to your PayPal account, or create one if you haven't had.</p>
+<p>3. Just follow the instructions given by PayPal. You will quickly check out in a few clicks.</p>
+<p>Advantages of using PayPal:</p>
+<p>Payment is traceable. You can trace the status of your payment using your PayPal account.</p>
+<p>Payment does not require you to use your credit card online (you can transfer directly from your bank account). If you do use your credit card through PayPal, en.Tea4slimming.com and other users cannot see your credit card information, therefore minimizing the risk of unauthorized use.</p>
+</div>
+</div>
+
+
+
+=============================================================================================================================
