@@ -32,26 +32,23 @@ $url = $_product->getProducturl();
         <div class="product-img-box">
             <?php echo $this->getChildHtml('media') ?>
             <div class="clearer"></div>
-        	<div class="one-relate-product">
-        		<?php echo $this->getChildHtml('related_products');?>
-        	</div>
+
         </div>
         
         <div id="one-product-up">
           <div class="product-shop">
-          	<div class="one-right-price">
-          		<?php echo $this->getChildHtml('product_options_wrapper_bottom');?>
-          	</div>
           	
           	<div class="one-product-info">
             <div class="white-back">
                 <div class="product-name">
                     <h2><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></h2>
                 </div>
-                
-                <?php echo $this->getReviewsSummaryHtml($_product, false, true)?>
+                <?php echo $this->getTierPriceHtml() ?>
+                <?php //echo $this->getReviewsSummaryHtml($_product, false, true)?>
                 <?php echo $this->getChildHtml('alert_urls') ?>
                 <?php echo $this->getChildHtml('extrahint') ?>
+                
+                <?php echo $this->getPriceHtml($_product) ?>
                 
                 
                 <div class="addtocont">
@@ -63,13 +60,7 @@ $url = $_product->getProducturl();
                     <?php //echo $this->getLayout()->createBlock('cms/block')->setBlockId('productview')->toHtml(); ?>
                 </div>
                 <div class="clear"></div>
-                <?php echo $this->getTierPriceHtml() ?>
-                <?php if ($_product->getShortDescription()):?>
-                    <div class="short-description">
-                        <p><?php echo $this->__('Quick Overview:') ?></p>
-                        <div class="std"><?php echo $_helper->productAttribute($_product, nl2br($_product->getShortDescription()), 'short_description') ?></div>
-                    </div>
-                <?php endif;?>
+               
             </div>
             <?php if ($_product->isSaleable() && $this->hasOptions()):?>
                 <div id="container1"><?php echo $this->getChildChildHtml('container1', '', true, true) ?><div class="clear"></div></div>
@@ -80,12 +71,11 @@ $url = $_product->getProducturl();
                 <div class="add-to-box">
                     <?php if($_product->isSaleable()): ?>
                         <?php echo $this->getChildHtml('addtocart') ?>
-                        <?php if( $this->helper('wishlist')->isAllow() || $_compareUrl=$this->helper('catalog/product_compare')->getAddUrl($_product)): ?>
-                            <span class="or"><?php echo $this->__('OR') ?></span>
-                        <?php endif; ?>
+
                     <?php endif; ?>
                     <?php echo $this->getChildHtml('addto') ?>
                 </div>
+                <div class="clear"></div>
             <?php endif; ?>   
             
             <div id="google_translate_element"></div>
@@ -104,21 +94,20 @@ $url = $_product->getProducturl();
 		<?php if ($_product->isSaleable() && $this->hasOptions()):?>
             <div id="container2"><?php echo $this->getChildChildHtml('container2', '', true, true) ?></div>
         <?php endif;?>
+        	<div class="pdescription">
+        		<?php echo $_product->getShortDescription();?>
+        	</div>
           </div>
           </div>
-          <div class="product-collateral">
-		       <?php echo $this->getChildHtml('info_tabs') ?>
-		       <?php echo $this->getChildHtml('product_additional_data') ?>
-		  </div>
-    		<?php echo $this->getChildHtml('upsell_products') ?>
+
         </div>
-        <div class="clearer"></div>
+        <div class="clear"></div>
         
     </form>
     
     <script type="text/javascript">
     //<![CDATA[
-        var productAddToCartForm = new VarienForm('product_addtocart_form');
+        var productAddToCartForm = new VarienForm('product_addto_form');
     	productAddToCartForm.submit = function(button, url) {
 		if (this.validator.validate()) {
 			var form = this.form;
