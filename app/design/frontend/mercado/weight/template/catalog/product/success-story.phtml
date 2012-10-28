@@ -6,6 +6,10 @@
 <?php else: ?>
 
 <div class="ahome-products">
+<div class="success_title">
+	<div class="success_title_img"><img src="<?php echo Mage::getBaseUrl('media'); ?>wysiwyg/weight/success_stories_meet.gif" /></div>
+	These real PALLAS ® users drink weight-loss tea to weight loss success. When you read their weight loss stories, you'll be amazed to discover that they reached their goals without traditional dieting - no pills, no stimulants and no counting calories. Just look at these transformations! They're proof that weight loss success can be achieved simply and healthily. If you would like to share your success story, just contact us, we will send you great gifts for your sharing. 
+</div>
 <script type="text/javascript" src="<?php echo $this->getSkinUrl();?>js/artDialog.js"></script>
 <script type="text/javascript" src="<?php echo $this->getSkinUrl();?>js/jquery.artDialog.js"></script>
 <?php $_collectionSize = $_productCollection->count() ?>
@@ -19,7 +23,7 @@
             <li class="item<?php if(($i-1)%$_columnCount==0): ?> first<?php elseif($i%$_columnCount==0): ?> last<?php endif; ?>">
                 <a href="#<?php echo $_product->getSku();?>" onclick="dial(<?php echo $_product->getId().",".$ids ?>);" title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" class="product-image"><img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(290, 400); ?>" width="260" height="320" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" /></a>
                 <div class="moreinfo">
-                    <h2 class="product-name"><a href="javascript:void(0)" style="color:#38922f;" onclick="dial(<?php echo $_product->getId().",".$ids ?>);" title="<?php echo $this->stripTags($_product->getName(), null, true) ?>"><?php echo $this->htmlEscape($_product->getName()) ?></a></h2>
+                    <h2 class="product-name"><a href="javascript:void(0)" style="color:#6291F1;" onclick="dial(<?php echo $_product->getId().",".$ids ?>);" title="<?php echo $this->stripTags($_product->getName(), null, true) ?>"><?php echo $this->htmlEscape($_product->getName()) ?></a></h2>
                     <div id='productname<?php echo $_product->getId()?>' style='display:none'><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></div>
                     <?php $productss = Mage::getModel('catalog/product')->load($_product->getId());//echo $this->getPriceHtml($_product, true) ?>
                     <div style="display: none;" id="productimg<?php echo $_product->getId()?>"><img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(350, 530); ?>" width="360" height="500" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" /></div>

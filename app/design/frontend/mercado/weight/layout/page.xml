@@ -57,6 +57,7 @@ Default layout, loads most of the pages
                 </block>
                 <block type="page/switch" name="store_language" as="store_language" template="page/switch/languages.phtml"/>
                 <block type="page/template_links" name="top.links" as="topLinks"/>
+                <block type="checkout/cart" name="mini_cart_top" as="mini_cart_top"/>
                 <block type="page/html_wrapper" name="top.bar" as="topBar" translate="label">
                     <action method="setElementClass"><value>top-bar</value></action>
                 </block>   

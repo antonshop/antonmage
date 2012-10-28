@@ -81,15 +81,7 @@
     </form>
     <div class="cart-collaterals">
         <div class="col3-set">
-            <div class="col-1">
-                <?php if($_crosssell = $this->getChildHtml('crosssell')): ?>
-                    <?php echo $_crosssell; ?>
-                <?php else: ?>
-                <div class="no-crosssell">
-                    <img src="<?php echo $this->getSkinUrl('images/media/fpo_no_crosssell.gif') ?>" alt="" />
-                </div>
-                <?php endif; ?>
-            </div>
+
             <div class="col-2">
                 <?php echo $this->getChildHtml('coupon') ?>
                 <?php if (!$this->getIsVirtual()): echo $this->getChildHtml('shipping'); endif; ?>

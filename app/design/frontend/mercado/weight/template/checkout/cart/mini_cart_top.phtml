@@ -1,4 +1,3 @@
-<?php if ($this->getIsNeedToDisplaySideBar()):?>
 <div class="block_cart ">
     <?php $_cartQty = $this->getSummaryCount(); ?>
     <div class="summary">
@@ -19,13 +18,4 @@
                 </tr>
             </tbody></table>
         </div>
-
-
-    <?php if($_cartQty && $this->isPossibleOnepageCheckout()): ?>
-    <div class="actions">
-        <?php echo $this->getChildHtml('extra_actions') ?>
-        <button type="button" title="<?php echo $this->__('Checkout') ?>" class="button" onclick="setLocation('<?php echo $this->getCheckoutUrl() ?>')"><span><span><?php echo $this->__('Checkout') ?></span></span></button>
-    </div>
-    <?php endif ?>
 </div>
-<?php endif;?>

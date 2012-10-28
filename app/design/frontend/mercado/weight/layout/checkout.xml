@@ -41,20 +41,20 @@ Default layout, loads most of the pages
             </block>
         </reference>-->
         <reference name="left">
-            <!--block type="checkout/cart_sidebar" name="cart_sidebar" template="checkout/cart/sidebar.phtml" before="-">
+            <!--<block type="checkout/cart_sidebar" name="cart_sidebar" template="checkout/cart/sidebar.phtml" before="-">
                 <action method="addItemRender"><type>simple</type><block>checkout/cart_item_renderer</block><template>checkout/cart/sidebar/default.phtml</template></action>
                 <action method="addItemRender"><type>grouped</type><block>checkout/cart_item_renderer_grouped</block><template>checkout/cart/sidebar/default.phtml</template></action>
                 <action method="addItemRender"><type>configurable</type><block>checkout/cart_item_renderer_configurable</block><template>checkout/cart/sidebar/default.phtml</template></action>
                 <block type="core/text_list" name="cart_sidebar.extra_actions" as="extra_actions" translate="label" module="checkout">
                     <label>Shopping Cart Sidebar Extra Actions</label>
                 </block>
-            </block-->
+            </block>-->
         </reference>
         <reference name="head">
             <block type="core/template" name="optional_zip_countries" as="optional_zip_countries" template="directory/js/optional_zip_countries.phtml" />
         </reference>
-        <reference name="header">
-            <block type="checkout/cart_header" name="top_cart" template="checkout/cart/mini_cart_top.phtml"></block>
+        <reference name="head">
+            <block type="checkout/cart_header" name="mini_cart_top" as="mini_cart_top" template="checkout/cart/mini_cart_top.phtml"></block>
         </reference> 
     </default>
 

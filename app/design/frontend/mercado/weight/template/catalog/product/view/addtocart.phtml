@@ -12,7 +12,7 @@
         </div>
         <?php endif; ?>
         
-        <button type="button" title="<?php echo $buttonTitle ?>" class="button btn-cart" onclick="productAddToCartForm.submit(this)"></button>
+        <button type="button" title="<?php echo $buttonTitle ?>" class="button btn-cart"  onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"></button>
         <?php echo $this->getChildHtml('', true, true) ?>
     </div>
 <?php endif; ?>

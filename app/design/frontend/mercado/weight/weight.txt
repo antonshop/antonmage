@@ -136,140 +136,26 @@ main_bottom:
 cms=>pages
 how-it-work:
 <div>{{block type="cms/block" block_id="home_flash"}}</div>
-
 <div class="hwork_main">
-    		<div class="hwork_one"> <span class="hwork_title">Green tea: </span>green tea is rich in tea polyphenol, which has benefits of anti-cancer, anti-aging and promoting fat metabolism. Further more, green tea can make our blend have good taste.</div>
-            <div class="hwork_two"> <span class="hwork_title">Lotus leaf:</span> Lotus leaf has effects in relieving inflammation, burning fat and relaxing bowel. After active ingredients of Lotus leaf has been absorbed, lipolytic enzyme will be activated shortly and then break down fat.</div>
-            <div class="hwork_the"> <span class="hwork_title">Malt, Semen raphani, Lily: </span>all of them have effects in relieving inflammation and improving digestion. Of course, they also can help break down fat.</div>
-        </div>
-        <div class="hwork_content">
-        Green tea has been drunk in China for its health benefits for thousands of years. There are many different varieties and the <span class="hwork_title">3 used in Tava Tea have been chosen for their weight loss boosting and general health benefits.</span><br>
-Tava Tea wellness blend works by burning extra calories, in fact it burns 2.5 times more calories than green tea. A study by Japan's University of Tokushima School of Medicine discovered that regular Oolong tea drinkers experienced over twice the calorie burning of drinking the same amount of Japanese green tea.<br />
-You'll read a lot on Slimming+ regarding carbs causing insulin spikes and how too much insulin will stop your body burning stored fat and encourage fat storage, which you obviously need to avoid. Scientists at the Suntory Research Center in Osaka, Japan, found that <span class="hwork_title">drinking Oolong tea 15 minutes before eating carbs, lessens the insulin spike normally associated with eating carbs.</span><br />
-In a Taiwanese randomised controlled trial, 78 obese women who took 400mg of green tea extract three times a day for 12 weeks experienced significant <span class="hwork_title">reduction in LDL-cholesterol and triglyceride levels</span>, and a simultaneous increase in levels of HDL-cholesterol, and the hormones adiponectin (promotes insulin sensitivity) and ghrelin (modulates hunger).<br />
-(Effect of green tea extract on obese women: a randomized, double-blind, placebo-controlled clinical trial. Clin Nutr. 2008 Jun;27(3):363-70).<br />
-A blind study was conducted in France several years ago with 500 hyperlipidemia patients (An advanced cholesterol condition, usually controlled with medication). Half of the controlled group consumed 3-4 cups of Pu'erh daily, the rest of the patients were given something else.<br />
-After 30-days the results showed <span class="hwork_title">drinking Pu'erh on a regular basis could significantly lower cholesterol.</span><br />
-A US team fed groups of genetically obese and lean mice a diet containing zero, 1%, or 2% green tea extract for six weeks. At the end of the study, the obese mice fed green tea extract weighed 23-25% less than obese mice fed the non-supplemented diet and the lean mice fed green tea extract weighed 11-20% less those on the non-supplemented diet.<br />
-Analysis revealed that drinking 1 - 2 cups of tea per day was associated with the greatest benefit on blood glucose levels; drinking more provided no further benefit. An increase of one cup per day was associated with a 70% lower likelihood of having diabetes (95% CI 41%-86%), after adjusting for confounding variables.<br />
-Panagiotakos DB, Lionis C, Zeimbekis A, Gelastopoulou K, Papairakleous N, Das UN, Polychronopoulos E. "Long-term tea intake is associated with reduced prevalence of (type 2) diabetes mellitus among elderly people from Mediterranean islands: MEDIS epidemiological study." Yonsei Med J. 2009 28;50(1):31-8.<br />
-Then of course there are the general health benefits of these special teas.<br />
-A study published in Antioxidants & Redox Signalling, found that <span class="hwork_title">test subjects consuming wu long had stronger immune systems and a reduced risk for infections</span> and researchers from Japan's Shiga University of Medical Science found that drinking wu long each day helped to clear up skin problems within one month.<br />
-Pu-erh tea is often consumed by Chinese after a greasy or fatty meal. The fat digests faster and you experience far less bloating normally associated with a heavy meal.<br />
-Another great benefit of this tea is that it can calm your mind and body thanks to the fact it contains the amino acid L-theanine. This amino is responsible for boosting alpha brain wave activity and increasing the production of the calming neurotransmitters dopamine and serotonin.<br />
-This is useful as being on a diet can be stressful and anything that can ease that has got to be a good thing.
-        </div>
-        <div class="hwork_bot">
-            <img src="{{media url='wysiwyg/weight/bottom_img1.png'}}">
-            <img src="{{media url='wysiwyg/weight/work_img2.jpg'}}">
-            <img src="{{media url='wysiwyg/weight/work_img3.jpg'}}">
-            <img src="{{media url='wysiwyg/weight/work_img4.png'}}">
-        </div>
+<div class="hwork_one"><span class="hwork_title">Green tea: </span>green tea is rich in tea polyphenol, which has benefits of anti-cancer, anti-aging and promoting fat metabolism. Further more, green tea can make our blend have good taste.</div>
+<div class="hwork_two"><span class="hwork_title">Lotus leaf:</span> Lotus leaf has effects in relieving inflammation, burning fat and relaxing bowel. After active ingredients of Lotus leaf has been absorbed, lipolytic enzyme will be activated shortly and then break down fat.</div>
+<div class="hwork_the"><span class="hwork_title">Malt, Semen raphani, Lily: </span>all of them have effects in relieving inflammation and improving digestion. Of course, they also can help break down fat.</div>
+</div>
+<div class="hwork_content">
+<h3>Formula Characteristics</h3>
+<p><strong>Herbal Essences----Two Active Ingredients </strong><br /> Tea polyphenol and nuciferine are exacted from classic slimming herbal plant by advanced exaction technology. Tea polyphenol has benefits of anti-cancer, anti-aging and promoting fat metabolism. Nuciferine has benefit of activating lipolytic enzyme in short time after it has been absorbed, redundant fat will be broken down quickly by lipolytic enzyme.</p>
+<p><strong>100% Organic----Green and Safe </strong><br /> Pallas weight-loss tea contains not only slimming ingredients but also nutritious ingredients. While It break down fat, it can regulate digestive system and dredge meridians. Slim your body but no harms for your health.</p>
+<p><strong>Simple and Fast----Just 3 Cups Everyday</strong> <br /> It couldn't be simpler. Make the tea and drink it daily. Slim your body simply and quickly while you enjoy green life.</p>
+<h3>Mechanism of Action</h3>
+<p>Pallas weight-loss tea are completely made from green tea and classic slimming herbal plant, so it is rich in tea polyphenol and nuciferine. The both active ingredients can speed up fat metabolism, break down fat and reduce probability of getting fat. Pallas weight-loss tea is produced by a scientific formula. In additional to tea polyphenol and nuciferine, Pallas weight-loss tea contains much useful nutritious ingredients, so our products not only slim your body but also keep you healthy.</p>
+</div>
+<div class="hwork_bot"><a href="{{store direct_url='shop.html'}}"><img src="{{media url='wysiwyg/weight/bottom_img1.png'}}" alt="" /></a> <img src="{{media url='wysiwyg/weight/work_img2.jpg'}}" alt="" /> <img src="{{media url='wysiwyg/weight/work_img3.jpg'}}" alt="" /> <img src="{{media url='wysiwyg/weight/work_img4.png'}}" alt="" /></div>
 
 ==========================================================================================================================
 
 cms=>pages
 bmi-calculator:
-<div>{{block type="cms/block" block_id="home_flash"}}</div>
-<div class="bmi_calculate">
-        	<div class="bmi_desc">
-            	<div class="bmi_desc_left">
-                    <div class="bmi_desc_title">What's your healthy weight?</div>
-            
-           <p> At LA Weight Loss, we know that losing weight isn't just about looking good. It's also about being healthy.</p>
-            <p>
-            Your healthy weight, or Body Mass Index (BMI) is a widely used method to determine whether you are overweight, underweight, or within a healthy weight range.</p>
-            	</div>
-                <div class="bmi_desc_right"><img src="{{media url='wysiwyg/weight/page-curl.jpg'}}" /></div>
-                <div class="clear"></div>
-			</div>
-            
-            <div class="bmi_content">
-            	<div class="bmi_cont_left">
-                	<div class="bmi_cont_left_top">
-                    <h3>Calculate your healthy weight in 4 easy steps!</h3>
-
-Body Mass Index (BMI) is an assessment that health experts, including the World Health Organization, and physicians use to determine if someone is overweight, underweight or within a healthy weight range. To calculate your BMI, complete the questions below!
-                    </div>
-                    <div class="bmi_cont_left_bot">
-		    <form>
-                        <ul>
-                            <li>
-                            	<div class="nums">1</div>
-                                <div class="txt">Gender</div>
-                                <div class="inp">
-                                    <input type="radio" checked="checked" value="1" >
-                                    <label>Male</label>   
-                                    <input type="radio" value="1" >
-                                    <label>Female</label>
-                                </div>
-                            </li>
-                            <li>
-                            	<div class="nums">2</div>
-                                <div class="txt">Age</div>
-                                <div class="inp">
-                                	<input type="text" class="intxt" maxlength="3" id="age" name"age">
-                                </div>
-                            </li>
-                            <li>
-                            	<div class="nums">3</div> 
-                                <div class="txt">Height</div>
-                                <div class="inp"><input tabindex="1" class="intxt" type="text" name="htf" id="htf" size="4">&nbsp;feet&nbsp;&nbsp;<input tabindex="2" type="text" class="intxt" name="hti" id="hti" size="4"> inches
-                                </div>
-                            </li>
-                            <li>
-                            	<div class="nums">4</div>
-                                <div class="txt">Weight</div>
-                                <div class="inp"><input tabindex="3" class="intxt" id="wt" type="text" name="wt" size="4">&nbsp;pounds</div>
-                            </li>
-                            
-                            <li><div onclick="calcuhealthy();" class="bmi_cont_submit">Calculate my healthy weight</div></li>
-                        </ul>
-                        <div id="bmi_r" style="display:none;"></div>
-<script type="text/javascript">
-
-var tips={temp:{},show:function(msg,id,time,color,width)
-{var target=this._get(id);if(!target){id='window';}
-if(this._get(id+'_tips')){this.remove(id);}
-msg=msg||'error';color=color||'#ea0000';width=width||300;time=time?parseInt(time):false;if(id=='window'){var y=document.body.clientHeight/2+document.body.scrollTop;var x=(document.body.clientWidth-width)/2;var textAlign='center',fontSize='15',fontWeight='bold';}else{for(var y=0,x=0;target!=null;y+=target.offsetTop,x+=target.offsetLeft,target=target.offsetParent);var textAlign='left',fontSize='12',fontWeight='normal';}
-var tipsDiv=this._create({display:'block',position:'absolute',zIndex:'1001',width:(width-2)+'px',left:(x+1)+'px',padding:'5px',color:'#ffffff',fontSize:fontSize+'px',backgroundColor:color,textAlign:textAlign,fontWeight:fontWeight,filter:'Alpha(Opacity=50)',opacity:'0.7'},{id:id+'_text',innerHTML:msg,onclick:function(){tips.hidden(id);}});document.body.appendChild(tipsDiv);tipsDiv.style.top=(y-tipsDiv.offsetHeight-12)+'px';document.body.appendChild(this._create({display:'block',position:'absolute',zIndex:'1000',width:(width+10)+'px',height:(tipsDiv.offsetHeight-2)+'px',left:x+'px',top:(y-tipsDiv.offsetHeight-11)+'px',backgroundColor:color,filter:'Alpha(Opacity=50)',opacity:'0.7'},{id:id+'_bg'}));if(id!='window'){var arrow=this._create({display:'block',position:'absolute',overflow:'hidden',zIndex:'999',width:'20px',height:'10px',left:(x+20)+'px',top:(y-13)+'px'},{id:id+'_arrow'});arrow.appendChild(this._create({display:'block',overflow:'hidden',width:'0px',height:'10px',borderTop:'10px solid '+color,borderRight:'10px solid #fff',borderLeft:'10px solid #fff',filter:'Alpha(Opacity=70)',opacity:'0.8'}));document.body.appendChild(arrow);}
-this.temp[id]=id;if(time){setTimeout(function(){tips.hidden(id);},time)}
-return id;},hidden:function(id)
-{if(!id){for(var i in this.temp){this.hidden(i);}return;}
-var t=this._get(id+'_text'),d=this._get(id+'_bg'),a=this._get(id+'_arrow');if(t){t.parentNode.removeChild(t);}
-if(d){d.parentNode.removeChild(d);}
-if(a){a.parentNode.removeChild(a);}},_create:function(set,attr)
-{var obj=document.createElement('div');for(var i in set){obj.style[i]=set[i];}
-for(var i in attr){obj[i]=attr[i];}
-return obj;},_get:function(id)
-{return document.getElementById(id);}};ms001="Please enter your height and weight.";ms002="Error in height.";ms003="Error in weight.";ms004="Your weight is in the normal range.";ms018="You are underweight by ";ms019=" kilograms (";ms020=" pounds).";ms026="You are overweight by ";ms027=" kilograms (";ms028=" pounds)";function calcuhealthy(){w=document.getElementById('wt').value;v=document.getElementById('htf').value;u=document.getElementById('hti').value;if(document.getElementById('age').value==''){tips.show('Please enter your age.','age',3000,'#a82106',250);return false;}
-if(v==''&&u==''){tips.show('Please enter your height.','htf',3000,'#a82106',250);return false;}
-if(w==''){tips.show('Please enter your weight.','wt',3000,'#a82106',250);return false;}
-var w1=w/2.2;var ii=parseFloat(u);var fi=parseFloat(v*12);var i=fi+ii;i=i*2.54;bm=cal_bmikg(w1,i);document.getElementById('bmi_r').style.display='block';document.getElementById('bmi_r').innerHTML=bmitxt(bm);}
-function bmitxt(bm){var bodybmi='<div class="bodybmi">Your Body Mass Index is '+bm+'</div>';var txt1="You are in an unhealthy range. Your Body Mass Index, or BMI, is in the 'underweight' category. Based on your results, we recommend that you contact your physician to develop a plan to help you achieve a 'healthy weight' range.";var txt2="You are in an healthy range.Congrats! Your Body Mass Index, or BMI, is in the 'healthy weight' category.";var txt3="You are in an unhealthy range.Your Body Mass Index, or BMI, is above your 'healthy' range of 18.5-25. Currently, your BMI is in the 'overweight' category. By losing weight, you will increase your confidence and energy and reduce your risk of diabetes and heart disease. With Pallas weight-loss tea, you will get the tools and support you need to lose weight, and keep it off.";var txt4="Your Body Mass Index, or BMI, is above your 'healthy' range of 18.5-25. Currently, your BMI is in the 'obese' category. By losing weight, you will increase your confidence and energy and reduce your risk of diabetes and heart disease. With Pallas weight-loss tea, you will get the tools and support you need to lose weight, and keep it off.";var txt5="Your Body Mass Index, or BMI, is above your 'healthy' range of 18.5-25. Currently, your BMI is in the 'obese' category. By losing weight, you will increase your confidence and energy and reduce your risk of diabetes and heart disease. Pallas weight-loss tea, you will get the tools and support you need to lose weight, and keep it off.";if(bm<18.5){var txt=bodybmi+txt1;}else if(bm>=18.5&&bm<=25){var txt=bodybmi+txt2;}else if(bm>25&&bm<=30){var txt=bodybmi+txt3;}else if(bm>30&&bm<=40){var txt=bodybmi+txt4;}else if(bm>40){var txt=bodybmi+txt5;}
-return txt;}
-function rounder(x){var x1;x=x+0.05;f_bmi=Math.floor(x);diff=Math.floor((x-f_bmi)*10);x1=f_bmi+"."+diff;return(x1);}
-function cal_bmikg(kg,htc){var i,i1,minbm,maxbm;var f=document.forms[0];if(htc<100||htc>250){alert(ms002);return 0;}
-if(kg<25||kg>250){alert(ms003);return 0;}
-m=htc/100;h2=m*m;bmi=kg/h2;bmix=rounder(bmi);minbm=18.5;maxbm=24.9;return bmix;}
-</script>
-                    </div>
-                </div>
-                <div class="bmi_cont_right">
-                	<img src="{{media url='wysiwyg/weight/two-girls.png'}}" />
-                </div>
-                <div class="clear"></div>
-            </div>
-            <div class="clear"></div>
-
-        
-        <div class="suggest_bot">
-        	<img src="{{media url='wysiwyg/weight/work_img1.png'}}">
-            <img src="{{media url='wysiwyg/weight/use_img1.jpg'}}">
-            <img src="{{media url='wysiwyg/weight/use_img2.jpg'}}">
-            <img src="{{media url='wysiwyg/weight/use_img3.png'}}">
-        </div>
-    </div>
+<div>{{block type="catalog/product_list"  template="catalog/product/bmi-calculator.phtml"}}</div>
 
 
 ==========================================================================================================================
@@ -307,8 +193,12 @@ pallas-story:
 <div>{{block type="cms/block" block_id="home_flash"}}</div>
 <div class="pallas_story">
 <div class="pallas_story_cont">
-<div class="pallas_story_left">There was an ancient trade route called Tea-Horse Road in southwestern china. The route earned name of Tea-Horse road because of the common trade of Tibetan ponies for Chinese tea. Drinking tea is so important for Tibetan nomads because their diet make fat store in their body only tea can help them break down fat. (Men Laden With Tea, Sichuan Sheng, China, 1908,&nbsp;Ernest Henry Wilson) It is common sense that tea can break down fat in china. Beijing Forvin Biotechnology Co.,Ltd associated with HuBei Zhiyuantang biomedical Technology Co.,Ltd has been dedicated to weight loss tea study for many years. Pallas weight-loss tea is our latest innovative products which is base on china's traditional tea-health care combined with modern biotechnology. Our aim is to bring organic weight loss therapy to the whole world.</div>
-<div class="pallas_story_right"><img src="{{media url="wysiwyg/weight/tea_img2.jpg"}}" alt="" height="400" /></div>
+<div class="pallas_story_left">
+<p>There was an ancient trade route called Tea-Horse Road in southwestern china. The route earned name of Tea-Horse road because of the common trade of Tibetan ponies for Chinese tea. Drinking tea is so important for Tibetan nomads because their diet make fat store in their body only tea can help them break down fat. It is common sense that tea can break down fat in china.</p>
+<p>Pallas weight-loss tea was launched by Beijing Forvin Biotechnology Co.,Ltd associated with HuBei Zhiyuantang biomedical Technology Co.,Ltd. Our products have been successful in china's market for many years. Pallas weight-loss tea is our latest innovative products which is base on china's traditional tea-health care combined with modern biotechnology. Our aim is to bring organic weight loss therapy to the whole world.</p>
+<p>At Tea4Slimming.com we understand how frustrating it can be to try slimming products that simply do not work. That is why we endeavour to bring to you&nbsp;a new weight loss products&nbsp;that you can not only trust, but that have been proven to work. Better still, all of our products are carefully checked before being despatched from Beijing and Hongkong based distribution centres. This means you get your order quicker and without any problems.</p>
+<p>With Tea4Slimming.com you know you are safe. We are a growing company with a sound financial record and we use industry-standard security throughout our entire order process, keeping your personal details safe and secure. Not only that but we also have strong relationships with International and National postal services to ensure we can offer you&nbsp;the best possible shipping&nbsp;at the lowest possible cost.All of orders or shipped out in&nbsp;plain, discreet packaging&nbsp;so no one will ever know what you have ordered - unless you tell them!</p>
+</div>
 </div>
 <div class="pallas_story_img2"><img src="{{media url="wysiwyg/weight/tea_img3.jpg"}}" alt="" /><br /> <strong>Office building</strong></div>
 <div class="pallas_story_img3">
@@ -388,34 +278,31 @@ cms=>pages
 privacy-policy
 <div>{{block type="cms/block" block_id="home_flash" }}</div>
 <div class="pallas_story">
-			<div class="pallas_story_cont">
-            	<p>If you purchase a product or service from us, we request certain personally identifiable information from you on our order pages. You must provide contact information (such as name, email, and shipping address) and financial information (such as credit card number and expiration date) otherwise we cannot process your order. We use this information for billing purposes and to fill your orders. If we have trouble processing an order, we will use this information to contact you.</p>
-                <p><img src="{{media url='wysiwyg/weight/privacy_1.gif'}}" /></p>
-                <p>We collect personal information not only to fulfill your order, but also to make our services more rewarding for you to use. We usually use this information for internal purposes, such as studying our customers' preferences and improving the customer experience. We may also use your information to contact you for account and promotional purposes, including trusted third party promotions.</p>
-                <p>We may share your personal information with companies that perform services for us, such as fulfilling orders, delivering packages, sending postal mail, providing marketing assistance, processing credit card payments, conducting surveys, providing customer service, and other similar functions. Such companies may have access to your personal information in order to perform their roles, but they may not disclose your information for other purposes.</p>
-                <p>Personal information may be transferred in connection with the sale, merger, or acquisition of business assets of PALLAS Products, LLC or its parent company. We may share aggregate web site usage information with marketing partners and affiliates, however, this information does not identify individual users. We reserve the right to disclose your personal information as required by law and when we believe that disclosure is necessary to protect our rights and/or to comply with a judicial proceeding, court order, or legal process served on us.</p>
-                <p></p>
-                <p>We may also utilize information you have posted on community forums and message boards for use in marketing and promotions.</p>
-                <p><img src="{{media url='wysiwyg/weight/privacy_2.gif'}}" /></p>
-                <p>The security of your personal information is important to us. When you enter sensitive information (such as credit card number) on our order forms, we encrypt that information using secure socket layer technology (SSL). We follow generally accepted industry standards to protect the personal information submitted to us, both during transmission and once we receive it.</p>
-                <p>However, no method of transmission over the Internet, or method of electronic storage, is 100% secure. Therefore, while we strive to use commercially acceptable means to protect your personal information, we cannot guarantee its absolute security. If you have any questions about security on our site, please contact us as indicated below.</p>
-                <p><img src="{{media url='wysiwyg/weight/privacy_3.gif'}}" /></p>
-                <p>We may occasionally send you information on special offers, promotions, or product updates, or you may be a subscriber to our newsletters or you may have opted in to receive newsletters or special promotions from one of our trusted third party providers. If you ever decide you no longer wish to receive these communications, you may opt-out of receiving them by following the instructions included in each newsletter or communication, or by contacting the PALLAS® Products Customer Service Team on our contact page or by writing to us at the address below.</p>
-                <p><img src="{{media url='wysiwyg/weight/privacy_4.gif'}}" /></p>
-                <p>A cookie is a small text file that is stored on a user's computer for record-keeping purposes. We use cookies to collect anonymous information about how you use this site by setting and accessing cookies on your computer. These cookies track information such as how often you visit our site, what pages you view, and where you go after you leave our site. The cookies are not connected to your personal information.</p>
-                <p><img src="{{media url='wysiwyg/weight/privacy_5.gif'}}" /></p>
-                <p>"Web beacons" or clear gifs are tiny graphics with a unique identifier, similar in function to cookies, and are used to track the online movements of web users. In contrast to cookies, which are stored on a user's computer hard drive, web beacons are embedded invisibly on web pages and are about the size of the period at the end of this sentence. We utilize web beacons that help us better manage content on our site by informing us what content is effective. We do not tie the information gathered by web beacons to your personally identifiable information.</p>
-                <p><img src="{{media url='wysiwyg/weight/privacy_6.gif'}}" /></p>
-                <p>This site may contain links to other sites that are not owned or controlled by us. Please be aware that we are not responsible for the privacy practices of such other sites. This privacy statement applies only to information collected by this site. We encourage you to be aware when you leave our site and to read the privacy statements of each and every website that collects personally identifiable information.</p>
-                <p><img src="{{media url='wysiwyg/weight/privacy_7.gif'}}" /></p>
-                <p>Children under 13 may view our site, but they cannot make a purchase, nor provide any personal information. Our site is not designed for children and we do not wish to collect personal information from children under 13. If you register with us and we discover that you are under 13, we will delete your registration. We will send you a message if we do this.</p>
-                <p><img src="{{media url='wysiwyg/weight/privacy_8.gif'}}" /></p>
-                <p>If we decide to change our privacy policy, we will post those changes to this privacy statement, the homepage, and other places we deem appropriate so that you are aware of the change. We reserve the right to modify this privacy statement at any time, so please review it frequently.</p>
-            
-            </div>
-            <div class="clear"></div>
-            
-        </div>
+<div class="pallas_story_cont">
+<p>If you purchase a product or service from us, we request certain personally identifiable information from you on our order pages. You must provide contact information (such as name, email, and shipping address) and financial information (such as credit card number and expiration date) otherwise we cannot process your order. We use this information for billing purposes and to fill your orders. If we have trouble processing an order, we will use this information to contact you.</p>
+<p><img src="{{media url='wysiwyg/weight/privacy_1.gif'}}" alt="" /></p>
+<p>We collect personal information not only to fulfill your order, but also to make our services more rewarding for you to use. We usually use this information for internal purposes, such as studying our customers' preferences and improving the customer experience. We may also use your information to contact you for account and promotional purposes, including trusted third party promotions.</p>
+<p>We may share your personal information with companies that perform services for us, such as fulfilling orders, delivering packages, sending postal mail, providing marketing assistance, processing credit card payments, conducting surveys, providing customer service, and other similar functions. Such companies may have access to your personal information in order to perform their roles, but they may not disclose your information for other purposes.</p>
+<p>Personal information may be transferred in connection with the sale, merger, or acquisition of business assets of PALLAS Products, LLC or its parent company. We may share aggregate web site usage information with marketing partners and affiliates, however, this information does not identify individual users. We reserve the right to disclose your personal information as required by law and when we believe that disclosure is necessary to protect our rights and/or to comply with a judicial proceeding, court order, or legal process served on us.</p>
+<p>&nbsp;</p>
+<p>We may also utilize information you have posted on community forums and message boards for use in marketing and promotions.</p>
+<p><img src="{{media url='wysiwyg/weight/privacy_2.gif'}}" alt="" /></p>
+<p>The security of your personal information is important to us. When you enter sensitive information (such as credit card number) on our order forms, we encrypt that information using secure socket layer technology (SSL). We follow generally accepted industry standards to protect the personal information submitted to us, both during transmission and once we receive it.</p>
+<p>However, no method of transmission over the Internet, or method of electronic storage, is 100% secure. Therefore, while we strive to use commercially acceptable means to protect your personal information, we cannot guarantee its absolute security. If you have any questions about security on our site, please contact us as indicated below.</p>
+<p><img src="{{media url='wysiwyg/weight/privacy_3.gif'}}" alt="" /></p>
+<p>We may occasionally send you information on special offers, promotions, or product updates, or you may be a subscriber to our newsletters or you may have opted in to receive newsletters or special promotions from one of our trusted third party providers. If you ever decide you no longer wish to receive these communications, you may opt-out of receiving them by following the instructions included in each newsletter or communication, or by contacting the PALLAS&reg; Products Customer Service Team on our contact page or by writing to us at the address below.</p>
+<p><img src="{{media url='wysiwyg/weight/privacy_4.gif'}}" alt="" /></p>
+<p>A cookie is a small text file that is stored on a user's computer for record-keeping purposes. We use cookies to collect anonymous information about how you use this site by setting and accessing cookies on your computer. These cookies track information such as how often you visit our site, what pages you view, and where you go after you leave our site. The cookies are not connected to your personal information.</p>
+<p><img src="{{media url='wysiwyg/weight/privacy_5.gif'}}" alt="" /></p>
+<p>"Web beacons" or clear gifs are tiny graphics with a unique identifier, similar in function to cookies, and are used to track the online movements of web users. In contrast to cookies, which are stored on a user's computer hard drive, web beacons are embedded invisibly on web pages and are about the size of the period at the end of this sentence. We utilize web beacons that help us better manage content on our site by informing us what content is effective. We do not tie the information gathered by web beacons to your personally identifiable information.</p>
+<p><img src="{{media url='wysiwyg/weight/privacy_6.gif'}}" alt="" /></p>
+<p>This site may contain links to other sites that are not owned or controlled by us. Please be aware that we are not responsible for the privacy practices of such other sites. This privacy statement applies only to information collected by this site. We encourage you to be aware when you leave our site and to read the privacy statements of each and every website that collects personally identifiable information.</p>
+<p><img src="{{media url='wysiwyg/weight/privacy_7.gif'}}" alt="" /></p>
+<p>Children under 13 may view our site, but they cannot make a purchase, nor provide any personal information. Our site is not designed for children and we do not wish to collect personal information from children under 13. If you register with us and we discover that you are under 13, we will delete your registration. We will send you a message if we do this.</p>
+<p><img src="{{media url='wysiwyg/weight/privacy_8.gif'}}" alt="" /></p>
+<p>If we decide to change our privacy policy, we will post those changes to this privacy statement, the homepage, and other places we deem appropriate so that you are aware of the change. We reserve the right to modify this privacy statement at any time, so please review it frequently.</p>
+</div>
+</div>
 
 
 =============================================================================================================================
