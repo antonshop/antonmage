@@ -21,12 +21,12 @@
         <ul class="products-grid">
         <?php endif ?>
             <li class="item<?php if(($i-1)%$_columnCount==0): ?> first<?php elseif($i%$_columnCount==0): ?> last<?php endif; ?>">
-                <a href="#<?php echo $_product->getSku();?>" onclick="dial(<?php echo $_product->getId().",".$ids ?>);" title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" class="product-image"><img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(290, 400); ?>" width="260" height="320" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" /></a>
+                <a href="#<?php echo $_product->getSku();?>" onclick="dial(<?php echo $_product->getId().",".$ids ?>);" title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" class="product-image"><img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(270, 270); ?>" width="270" height="270" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" /></a>
                 <div class="moreinfo">
                     <h2 class="product-name"><a href="javascript:void(0)" style="color:#6291F1;" onclick="dial(<?php echo $_product->getId().",".$ids ?>);" title="<?php echo $this->stripTags($_product->getName(), null, true) ?>"><?php echo $this->htmlEscape($_product->getName()) ?></a></h2>
                     <div id='productname<?php echo $_product->getId()?>' style='display:none'><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></div>
                     <?php $productss = Mage::getModel('catalog/product')->load($_product->getId());//echo $this->getPriceHtml($_product, true) ?>
-                    <div style="display: none;" id="productimg<?php echo $_product->getId()?>"><img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(350, 530); ?>" width="360" height="500" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" /></div>
+                    <div style="display: none;" id="productimg<?php echo $_product->getId()?>"><img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(360, 360); ?>" width="360" height="360" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" /></div>
                     <div style="display: none;" id="productdetail<?php echo $_product->getId();?>"><?php echo $productss->getDescription();?></div>
                     <div class="clear"></div>
                 </div>
@@ -53,8 +53,8 @@ function dial(id,ids){
 	var dialog = art.dialog({
 		//title: val,
 		//width:650,
-		height:500,
-		content: '<div class="dialogs" id="dialogs"><div style="float:left; width:370px;">'+img+'</div><div style="float:right; width:230px; max-height:500px;overflow:auto;"><font style="font-size:14px;"><b>'+name+'</b></font><br>'+detail+'</div></div>',
+		height:430,
+		content: '<div class="dialogs" id="dialogs"><div style="float:left; width:370px;">'+img+'</div><div style="float:right; width:230px; max-height:500px;overflow:auto;"><font style="font-size:14px;color:#6291F1;"><b>'+name+'</b></font><br>'+detail+'</div></div>',
 		drag: false,
 		lock: true,
 		button: [
