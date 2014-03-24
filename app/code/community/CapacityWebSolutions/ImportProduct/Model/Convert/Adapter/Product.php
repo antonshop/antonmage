@@ -155,7 +155,6 @@ class CapacityWebSolutions_ImportProduct_Model_Convert_Adapter_Product extends M
 						 'sort_order'=>$sort_order,
 						 'values'=>array()
 					  );
-					  //print_r($custom_options);exit;
 					  $i=1;
 					  foreach($values as $v) {
 						 $parts = explode(':',$v);
@@ -207,7 +206,6 @@ class CapacityWebSolutions_ImportProduct_Model_Convert_Adapter_Product extends M
 								  'is_delete'=>0,
 								  'title'=>$title,
 								  'option_type_id'=>-1,
-								  'is_require'=>1,
 								  'price_type'=>$price_type,
 								  'price'=>$price,
 								  'sku'=>$sku,
